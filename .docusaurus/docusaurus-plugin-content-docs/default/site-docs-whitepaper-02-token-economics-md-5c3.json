@@ -1,0 +1,25 @@
+{
+  "id": "whitepaper/token-economics",
+  "title": "Token Economics",
+  "description": "VCoin specifications, distribution, utility, and revenue model",
+  "source": "@site/docs/whitepaper/02-token-economics.md",
+  "sourceDirName": "whitepaper",
+  "slug": "/whitepaper/token-economics",
+  "permalink": "/docs/whitepaper/token-economics",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/whitepaper/02-token-economics.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "sidebar_position": 3,
+    "title": "Token Economics",
+    "description": "VCoin specifications, distribution, utility, and revenue model"
+  },
+  "sidebar": "whitepaperSidebar",
+  "previous": {
+    "title": "Introduction",
+    "permalink": "/docs/whitepaper/introduction"
+  }
+}

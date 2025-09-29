@@ -1,0 +1,29 @@
+{
+  "id": "whitepaper/smart-contracts",
+  "title": "Smart Contract Architecture",
+  "description": "Technical implementation of VCoin token and platform contracts",
+  "source": "@site/docs/whitepaper/smart-contracts.md",
+  "sourceDirName": "whitepaper",
+  "slug": "/whitepaper/smart-contracts",
+  "permalink": "/docs/whitepaper/smart-contracts",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/whitepaper/smart-contracts.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 5,
+  "frontMatter": {
+    "sidebar_position": 5,
+    "title": "Smart Contract Architecture",
+    "description": "Technical implementation of VCoin token and platform contracts"
+  },
+  "sidebar": "whitepaperSidebar",
+  "previous": {
+    "title": "Liquidity Strategy",
+    "permalink": "/docs/whitepaper/liquidity-strategy"
+  },
+  "next": {
+    "title": "User Experience",
+    "permalink": "/docs/whitepaper/user-experience"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "whitepaper/legal",
+  "title": "Legal Information",
+  "description": "Technical specifications, disclaimers, and legal notices",
+  "source": "@site/docs/whitepaper/legal.md",
+  "sourceDirName": "whitepaper",
+  "slug": "/whitepaper/legal",
+  "permalink": "/docs/whitepaper/legal",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/whitepaper/legal.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 12,
+  "frontMatter": {
+    "sidebar_position": 12,
+    "title": "Legal Information",
+    "description": "Technical specifications, disclaimers, and legal notices"
+  },
+  "sidebar": "whitepaperSidebar",
+  "previous": {
+    "title": "Risks and Challenges",
+    "permalink": "/docs/whitepaper/risks"
+  }
+}

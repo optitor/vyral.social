@@ -1,0 +1,26 @@
+{
+  "id": "compliance/terms",
+  "title": "Terms of Service (ToS)",
+  "description": "Complete Terms of Service (ToS) for VCoin (VCO)",
+  "source": "@site/docs/compliance/terms.md",
+  "sourceDirName": "compliance",
+  "slug": "/compliance/terms",
+  "permalink": "/docs/compliance/terms",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/compliance/terms.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1,
+    "title": "Terms of Service (ToS)",
+    "sidebar_label": "Terms of Service",
+    "description": "Complete Terms of Service (ToS) for VCoin (VCO)"
+  },
+  "sidebar": "complianceSidebar",
+  "next": {
+    "title": "Privacy Policy",
+    "permalink": "/docs/compliance/privacy"
+  }
+}

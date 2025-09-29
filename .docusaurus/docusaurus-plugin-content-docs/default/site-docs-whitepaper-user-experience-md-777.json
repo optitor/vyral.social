@@ -1,0 +1,29 @@
+{
+  "id": "whitepaper/user-experience",
+  "title": "User Experience",
+  "description": "Earning, spending, withdrawing, and cashing out VCoins",
+  "source": "@site/docs/whitepaper/user-experience.md",
+  "sourceDirName": "whitepaper",
+  "slug": "/whitepaper/user-experience",
+  "permalink": "/docs/whitepaper/user-experience",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/whitepaper/user-experience.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 6,
+  "frontMatter": {
+    "sidebar_position": 6,
+    "title": "User Experience",
+    "description": "Earning, spending, withdrawing, and cashing out VCoins"
+  },
+  "sidebar": "whitepaperSidebar",
+  "previous": {
+    "title": "Smart Contract Architecture",
+    "permalink": "/docs/whitepaper/smart-contracts"
+  },
+  "next": {
+    "title": "Community Participation",
+    "permalink": "/docs/whitepaper/governance"
+  }
+}

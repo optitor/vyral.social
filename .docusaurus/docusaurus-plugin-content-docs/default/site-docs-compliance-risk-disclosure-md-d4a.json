@@ -1,0 +1,26 @@
+{
+  "id": "compliance/risk-disclosure",
+  "title": "Risk Disclosure Statement",
+  "description": "Complete Risk Disclosure Statement for VCoin (VCO)",
+  "source": "@site/docs/compliance/risk-disclosure.md",
+  "sourceDirName": "compliance",
+  "slug": "/compliance/risk-disclosure",
+  "permalink": "/docs/compliance/risk-disclosure",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/compliance/risk-disclosure.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "sidebar_position": 4,
+    "title": "Risk Disclosure Statement",
+    "sidebar_label": "Risk Disclosure",
+    "description": "Complete Risk Disclosure Statement for VCoin (VCO)"
+  },
+  "sidebar": "complianceSidebar",
+  "previous": {
+    "title": "Acceptable Use Policy",
+    "permalink": "/docs/compliance/acceptable-use"
+  }
+}

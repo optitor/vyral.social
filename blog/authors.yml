@@ -1,0 +1,26 @@
+nima:
+  name: Nima Golsharifi
+  title: Co-founder Vyral
+  url: https://linkedin.com/in/ngolsharifi
+  image_url: https://github.com/golsharifi.png
+  page: true
+  socials:
+    x: golsharifi
+    linkedin: ngolsharifi
+    github: golsharifi
+    newsletter: https://www.golsharifi.com
+
+chakra:
+  name: Chakra Budiman
+  title: Co-founder Vyral
+  url: https://linkedin.com/in/chakrabudiman
+  image_url: https://github.com/chakrabudiman.png
+  page: true
+  socials:
+    x: chakrabudiman
+    linkedin: chakrabudiman
+    github: chkral
+    newsletter: https://chakrabudiman.com
+
+founders:
+  name: Founders

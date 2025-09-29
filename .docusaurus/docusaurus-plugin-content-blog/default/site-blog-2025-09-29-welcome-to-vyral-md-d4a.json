@@ -1,0 +1,66 @@
+{
+  "permalink": "/blog/welcome-to-vyral",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2025-09-29-welcome-to-vyral.md",
+  "source": "@site/blog/2025-09-29-welcome-to-vyral.md",
+  "title": "Welcome to VYRAL - Social Media, Reimagined",
+  "description": "Introducing VYRAL - A revolutionary social media platform where your content, connections, and contributions actually matter. Built on blockchain, powered by community, owned by you.",
+  "date": "2025-09-29T00:00:00.000Z",
+  "tags": [
+    {
+      "inline": false,
+      "label": "Announcement",
+      "permalink": "/blog/tags/announcement",
+      "description": "Announcement tag description"
+    },
+    {
+      "inline": false,
+      "label": "Launch",
+      "permalink": "/blog/tags/launch",
+      "description": "Launch tag description"
+    },
+    {
+      "inline": false,
+      "label": "VCoin",
+      "permalink": "/blog/tags/vcoin",
+      "description": "VCoin tag description"
+    },
+    {
+      "inline": false,
+      "label": "Social Media",
+      "permalink": "/blog/tags/social-media",
+      "description": "Social Media tag description"
+    },
+    {
+      "inline": false,
+      "label": "Web3",
+      "permalink": "/blog/tags/web3",
+      "description": "Web3 tag description"
+    }
+  ],
+  "readingTime": 10.2,
+  "hasTruncateMarker": false,
+  "authors": [
+    {
+      "name": "Founders",
+      "key": "founders",
+      "page": null
+    }
+  ],
+  "frontMatter": {
+    "slug": "welcome-to-vyral",
+    "title": "Welcome to VYRAL - Social Media, Reimagined",
+    "authors": [
+      "founders"
+    ],
+    "tags": [
+      "announcement",
+      "launch",
+      "vcoin",
+      "social-media",
+      "web3"
+    ],
+    "image": "/img/blog/vyral-launch-hero.jpg",
+    "description": "Introducing VYRAL - A revolutionary social media platform where your content, connections, and contributions actually matter. Built on blockchain, powered by community, owned by you."
+  },
+  "unlisted": false
+}
