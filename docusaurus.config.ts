@@ -141,7 +141,7 @@ const config: Config = {
             },
             {
               label: "Developers",
-              to: "/docs/developers/overview",
+              to: "",
             },
           ],
         },
