@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkvyral=self.webpackChunkvyral||[]).push([[7472],{5513:e=>{e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Welcome to VYRAL - Social Media, Reimagined","permalink":"/blog/welcome-to-vyral","unlisted":false,"date":"2025-09-29T00:00:00.000Z"}]}')}}]);

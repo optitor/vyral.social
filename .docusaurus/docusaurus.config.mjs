@@ -156,10 +156,6 @@ export default {
           "title": "More",
           "items": [
             {
-              "label": "Company",
-              "to": "/docs/developers/about"
-            },
-            {
               "label": "Blog",
               "to": "/blog"
             }
