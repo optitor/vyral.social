@@ -11,6 +11,8 @@ description: Introducing VYRAL - A revolutionary social media platform where you
 
 **TL;DR:** We're building a social media platform that actually respects you. No algorithmic manipulation. No data exploitation. No corporate overlords deciding what you see. Just authentic connections, fair rewards, and a platform where you're the customer, not the product.
 
+`<!-- truncate -->`
+
 ---
 
 ## The Problem With Social Media Today
