@@ -72,13 +72,16 @@ const config: Config = {
     // Replace with your project's social card
     image: "img/docusaurus-social-card.jpg",
     colorMode: {
+      defaultMode: "light",
+      disableSwitch: false,
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: "Vyral",
+      title: "",
       logo: {
         alt: "Vyral Logo",
-        src: "img/logo.svg",
+        src: "img/logo-light.svg",
+        srcDark: "img/logo.svg",
       },
       items: [
         {
@@ -195,6 +198,14 @@ const config: Config = {
         },
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Vyral, Inc.`,
+    },
+    announcementBar: {
+      id: "launch",
+      content:
+        '🎉 VYRAL is now live! Download on <a target="_blank" rel="noopener noreferrer" href="https://play.google.com/store">Google Play</a> or <a target="_blank" rel="noopener noreferrer" href="https://apps.apple.com">App Store</a>',
+      backgroundColor: "#00D4AA",
+      textColor: "#ffffff",
+      isCloseable: true,
     },
     prism: {
       theme: prismThemes.github,

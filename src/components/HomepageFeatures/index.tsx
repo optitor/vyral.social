@@ -1,65 +1,98 @@
-import type { ReactNode } from "react";
+import React from "react";
 import clsx from "clsx";
-import Heading from "@theme/Heading";
 import styles from "./styles.module.css";
 
 type FeatureItem = {
   title: string;
-  Svg: React.ComponentType<React.ComponentProps<"svg">>;
-  description: ReactNode;
+  icon: string;
+  description: JSX.Element;
 };
 
 const FeatureList: FeatureItem[] = [
   {
-    title: "Easy to Use",
-    Svg: require("@site/static/img/undraw_docusaurus_mountain.svg").default,
+    title: "True Ownership",
+    icon: "👑",
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Your content belongs to you. Export it, delete it, or move it anywhere.
+        No platform lock-in, ever.
       </>
     ),
   },
   {
-    title: "Focus on What Matters",
-    Svg: require("@site/static/img/undraw_docusaurus_tree.svg").default,
+    title: "Fair Rewards",
+    icon: "💰",
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Earn VCoins for creating great content. Keep 80-95% of what you make. No
+        hidden fees or surprise cuts.
       </>
     ),
   },
   {
-    title: "Powered by React",
-    Svg: require("@site/static/img/undraw_docusaurus_react.svg").default,
+    title: "End-to-End Encryption",
+    icon: "🔐",
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Military-grade encryption for your messages. Not even we can read them.
+        Privacy that's real, not just promised.
+      </>
+    ),
+  },
+  {
+    title: "Built-In Marketplace",
+    icon: "🛍️",
+    description: (
+      <>
+        Sell directly to your community. Low 5% fees, instant payments, built-in
+        buyer protection.
+      </>
+    ),
+  },
+  {
+    title: "You Control Your Feed",
+    icon: "🎯",
+    description: (
+      <>
+        Chronological or recommended—your choice. No shadow banning, no
+        manipulation, full transparency.
+      </>
+    ),
+  },
+  {
+    title: "Community Governed",
+    icon: "🗳️",
+    description: (
+      <>
+        Moving toward DAO governance where you vote on platform decisions. True
+        community ownership.
       </>
     ),
   },
 ];
 
-function Feature({ title, Svg, description }: FeatureItem) {
+function Feature({ title, icon, description }: FeatureItem) {
   return (
-    <div className={clsx("col col--4")}>
-      <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
-      </div>
-      <div className="text--center padding-horiz--md">
-        <Heading as="h3">{title}</Heading>
-        <p>{description}</p>
+    <div className={clsx("col col--4 margin-bottom--lg")}>
+      <div className={styles.featureCard}>
+        <div className={styles.featureIcon}>{icon}</div>
+        <h3 className={styles.featureTitle}>{title}</h3>
+        <p className={styles.featureDescription}>{description}</p>
       </div>
     </div>
   );
 }
 
-export default function HomepageFeatures(): ReactNode {
+export default function HomepageFeatures(): JSX.Element {
   return (
     <section className={styles.features}>
       <div className="container">
+        <div className={styles.featuresHeader}>
+          <h2 className={styles.featuresTitle}>Everything You Need</h2>
+          <p className={styles.featuresSubtitle}>
+            All the features you love, none of the exploitation
+          </p>
+        </div>
         <div className="row">
           {FeatureList.map((props, idx) => (
             <Feature key={idx} {...props} />
