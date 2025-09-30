@@ -337,7 +337,7 @@ function VCoinSection() {
             </div>
 
             <Link
-              to="/docs/vcoin"
+              to="/docs/whitepaper/abstract"
               className={clsx("button button--lg", styles.vcoinButton)}
             >
               Learn About VCoin
