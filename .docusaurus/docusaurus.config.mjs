@@ -70,7 +70,7 @@ export default {
     ]
   ],
   "themeConfig": {
-    "image": "img/docusaurus-social-card.jpg",
+    "image": "img/vcoin-3d.png",
     "colorMode": {
       "defaultMode": "light",
       "disableSwitch": false,
@@ -128,10 +128,6 @@ export default {
             {
               "label": "Whitepaper",
               "to": "/docs/whitepaper/abstract"
-            },
-            {
-              "label": "Developers",
-              "to": "/docs/developers/overview"
             }
           ]
         },

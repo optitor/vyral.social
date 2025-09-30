@@ -70,7 +70,7 @@ const config: Config = {
 
   themeConfig: {
     // Replace with your project's social card
-    image: "img/docusaurus-social-card.jpg",
+    image: "img/vcoin-3d.png",
     colorMode: {
       defaultMode: "light",
       disableSwitch: false,
@@ -138,10 +138,6 @@ const config: Config = {
             {
               label: "Whitepaper",
               to: "/docs/whitepaper/abstract",
-            },
-            {
-              label: "Developers",
-              to: "",
             },
           ],
         },
