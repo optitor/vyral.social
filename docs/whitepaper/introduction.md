@@ -62,7 +62,6 @@ Finally, we implement strong deflationary mechanisms that reduce supply over tim
 
 ```text
 Content & Social:
-
 ├── Feed: Algorithmic + chronological
 ├── Posts: Text, photos, videos, mixed media
 ├── Threads: X/Twitter-style conversations
@@ -70,18 +69,21 @@ Content & Social:
 ├── Encrypted messaging (E2E)
 ├── Group chats
 ├── Voice messages
-│
-└── File sharingCommerce:
+└── File sharing
+
+Commerce:
 ├── Marketplace: Buy/sell goods
 ├── Payments: VCoin native
 ├── Low fees: 5% vs 13% (eBay)
 │
-└── Instant settlementCommunities:
+└── Instant settlement
+
+Communities:
 ├── Topic-based groups
-├── Custom governance
+├── Custom moderation rules
 ├── Exclusive benefits
 └── Event coordination
-│
+
 AI & Tools:
 ├── Orb AI assistant
 ├── Content recommendations

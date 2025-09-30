@@ -24,7 +24,7 @@ This whitepaper outlines the complete technical architecture, economic model, se
 - [Liquidity Strategy](./liquidity-strategy) - Bootstrap plan and DEX launch
 - [Smart Contracts](./smart-contracts) - Technical architecture
 - [User Experience](./user-experience) - Earning, spending, and withdrawals
-- [Governance](./governance) - Community participation
+- [Governance](./governance) - User input and platform evolution
 - [Security & Compliance](./security-compliance) - Protection measures
 - [Roadmap](./roadmap) - Launch timeline and milestones
 - [Projections](./projections) - Financial forecasts

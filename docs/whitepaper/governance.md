@@ -4,10 +4,10 @@ title: Community Participation
 description: User feedback and platform evolution
 ---
 
-# Community Participation and Platform Development
+# Community Feedback and Platform Development
 
 :::info GOVERNANCE APPROACH
-VYRAL maintains centralized control over all financial parameters (fees, revenue allocation, treasury management) to ensure regulatory compliance and operational stability. Community input focuses on user experience, features, and content policies—areas where user feedback provides maximum value without creating securities classification risk.
+VYRAL maintains centralized control over all financial parameters (fees, revenue allocation, treasury management) to ensure regulatory compliance and operational stability. Community input focuses on user experience, features, and content policies—areas where user feedback provides maximum value.
 :::
 
 ## Community Feedback Model

@@ -2001,9 +2001,9 @@ Crypto saying meaning: If you don't control private keys, you don't truly own th
 
 **Platform Fee:**
 
-- 20% fee on all tips (to platform)
+- 19% fee on all tips (to platform)
 - 1% burned
-- Recipient gets only 79%
+- Recipient gets only 80%
 - **Result:** Less value transferred than expected
 
 ### 13.2 Marketplace Risks

@@ -360,7 +360,7 @@ function VCoinSection() {
                 <div className={styles.vcoinStatLabel}>Fixed Supply</div>
               </div>
               <div className={styles.vcoinStat}>
-                <div className={styles.vcoinStatNumber}>40%</div>
+                <div className={styles.vcoinStatNumber}>50%</div>
                 <div className={styles.vcoinStatLabel}>For Users</div>
               </div>
               <div className={styles.vcoinStat}>

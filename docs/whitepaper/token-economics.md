@@ -51,9 +51,9 @@ Platform Operations: 25% (2,500,000,000)
 ├── Then 156.25M tokens/quarter
 └── Aligns long-term interests
 
-User Rewards Pool: 25% (2,500,000,000)
+User Rewards Pool: 20% (2,000,000,000)
 ├── Distributed over 5 years
-├── 1,369,863 tokens maximum per day
+├── 1,095,890 tokens maximum per day
 ├── Rewards quality content
 └── Prevents inflation
 
@@ -77,7 +77,7 @@ The initial token allocation balances multiple stakeholder interests while maint
 
 **Platform Operations: 25% (2,500,000,000 tokens)** provides long-term compensation for the founding team and platform operators who build and maintain VYRAL. These tokens vest over four years with a six-month cliff, meaning no tokens unlock during the first six months of operation. After the cliff period, tokens unlock quarterly in equal installments over the remaining 42 months, totaling 14 unlocks of approximately 156.25 million tokens each. This extended vesting schedule aligns founder incentives with long-term platform success and prevents early token dumps that could destabilize price. The vesting contracts are immutable once deployed, providing transparency and certainty to the community.
 
-**User Rewards Pool: 25% (2,500,000,000 tokens)** distributes over five years to reward content creation, engagement, and platform participation. This allocation ensures users who contribute value to the platform receive proportional compensation. The distribution follows a controlled release schedule with a maximum daily allocation of 1,369,863 tokens. If demand exceeds this daily cap, all rewards scale proportionally to ensure the five-year timeline. This prevents hyperinflation while guaranteeing the pool lasts long enough to establish network effects before external buying pressure needs to sustain value.
+**User Rewards Pool: 20% (2,000,000,000 tokens)** distributes over five years to reward content creation, engagement, and platform participation. This allocation ensures users who contribute value to the platform receive proportional compensation. The distribution follows a controlled release schedule with a maximum daily allocation of 1,095,890 tokens.
 
 **Liquidity Reserve: 15% (1,500,000,000 tokens)** pairs with stablecoins to create trading pools on decentralized exchanges. This reserve releases gradually over five years as needed to maintain healthy liquidity depth. The tokens never enter circulation for trading—they're permanently paired with stablecoins in automated market maker pools, providing the backing needed for users to buy and sell freely.
 
@@ -93,20 +93,20 @@ How Users Spend VCoins:
 Tipping Creators:
 ├── User tips 100 VCoins
 ├── Creator gets 80 VCoins (80%)
-├── Platform keeps 20 VCoins (20%)
-└── 1 VCoin burns forever (1%)
+├── Platform keeps 19 VCoins (19%)
+└── 1 VCoin burns forever (1% from platform share)
 
 Subscriptions:
 ├── User pays 500 VCoins/month
-├── Creator keeps 450 VCoins (90%)
-├── Platform keeps 50 VCoins (10%)
+├── Creator keeps 475 VCoins (95%)
+├── Platform keeps 25 VCoins (5%)
 └── Creates recurring income
 
 Marketplace:
 ├── Item costs 1,000 VCoins
 ├── Seller gets 950 VCoins (95%)
-├── Platform keeps 50 VCoins (5%)
-└── Much better than eBay's 13%
+├── Platform keeps 40 VCoins (4%)
+└── 10 VCoins burns (1% from platform share)
 
 Premium Features:
 ├── Ad-free: 100 VCoins/month
@@ -205,7 +205,7 @@ Strategic Benefits:
 
 ### Additional Revenue Streams
 
-**Transaction fees** provide additional revenue. Tips incur a 20% platform fee, comparable to Twitch and other creator platforms. Subscriptions carry a 10% fee, significantly better than the 30% typical of app stores and traditional subscription platforms. Marketplace sales include a 5% transaction fee, far below the 10-15% charged by eBay, Etsy, or Amazon. Withdrawal fees of 2% (minimum $0.50) apply when users transfer VCoins to external wallets, covering blockchain gas costs and providing modest additional revenue.
+**Transaction fees** provide additional revenue. Tips incur a 20% platform fee, comparable to Twitch and other creator platforms. Subscriptions carry a 10% fee, significantly better than the 30% typical of app stores and traditional subscription platforms. Marketplace sales include a 5% transaction fee, far below the 10-15% charged by eBay, Etsy, or Amazon. Withdrawal fees of 2% (minimum $0.50) apply when users transfer VCoins to external wallets. The platform keeps the full 2% to cover blockchain gas costs, security infrastructure, fraud prevention, and operational overhead.
 
 **Premium features** generate pure profit margins. Ad-free experiences priced at 100 VCoins per month, advanced analytics at 200 VCoins per month, and verification badges at 1,000 VCoins one-time all represent high-margin revenue with minimal incremental costs. As the user base scales, these premium offerings become increasingly profitable.
 
@@ -219,11 +219,13 @@ Tip Burns:
 ├── 1% burns = 1M VCoins destroyed/day
 └── 365M VCoins burned/year
 
-Withdrawal Fee Burns:
+Withdrawal Fees (No Burn):
 ├── User withdraws $1,000 worth
 ├── 2% fee = $20 worth of VCoins
-├── 50% of fee burns = $10 worth
-└── Reduces supply gradually
+├── Platform keeps 100% of fee
+└── Covers gas fees and custodial costs
+
+The 2% withdrawal fee covers blockchain transaction costs, security infrastructure, and fraud prevention. Unlike tips and marketplace transactions, withdrawal fees do not include a burn mechanism, as the platform needs full fee revenue to maintain secure custodial operations.
 
 Premium Feature Burns:
 ├── 1,000 users buy ad-free
@@ -232,21 +234,21 @@ Premium Feature Burns:
 └── Monthly recurring burns
 
 5-Year Projection:
-├── Year 1: 50M tokens burned (0.5%)
-├── Year 2: 150M tokens burned (1.5%)
-├── Year 3: 300M tokens burned (3%)
-├── Year 4: 500M tokens burned (5%)
-└── Year 5: 800M total burned (8% of supply)
+├── Year 1: 40M tokens burned (0.4%)
+├── Year 2: 120M tokens burned (1.2%)
+├── Year 3: 250M tokens burned (2.5%)
+├── Year 4: 420M tokens burned (4.2%)
+└── Year 5: 700M total burned (7% of supply)
 ```
 
 To counterbalance the steady release of tokens from the User Rewards Pool and maintain long-term value appreciation, VCoin implements multiple deflationary mechanisms that permanently remove tokens from circulation.
 
 One percent of all tips are automatically burned, sent to a dead address from which recovery is cryptographically impossible. This creates a constant deflationary pressure proportional to platform activity—the more tips flow through the system, the more tokens permanently exit circulation. On a platform processing millions of tips daily, this mechanism can remove tens of millions of tokens annually.
 
-Fifty percent of all withdrawal fees burn rather than accruing to platform revenue. Users paying a 2% fee to transfer VCoins to external wallets see half that fee (1%) destroyed forever. This balances the cost of maintaining custodial infrastructure while reducing supply.
+The 2% withdrawal fee covers blockchain transaction costs, security infrastructure, and fraud prevention. Unlike tips and marketplace transactions, withdrawal fees do not include a burn mechanism, as the platform needs full fee revenue to maintain secure custodial operations.
 
 Thirty percent of premium feature payments burn. Users purchasing ad-free experiences, advanced analytics, or other premium features effectively remove tokens from circulation with each purchase. Unlike transaction fees that might re-enter circulation through platform operations, these burns create permanent scarcity.
 
-The cumulative effect over time is substantial. Conservative projections suggest approximately 50 million tokens burned in year one (0.5% of supply), 150 million in year two (1.5%), and 800 million total by year five (8% supply reduction). These burns accelerate as platform activity increases, creating a compounding deflationary effect that becomes more powerful as VYRAL scales.
+The cumulative effect over time is substantial. Conservative projections suggest approximately 40 million tokens burned in year one (0.4% of supply), 120 million in year two (1.2%), and 700 million total by year five (7% supply reduction). These burns accelerate as platform activity increases, creating a compounding deflationary effect that becomes more powerful as VYRAL scales.
 
 Combined with the fixed maximum supply and controlled release schedule for new tokens, these deflationary mechanisms establish favorable supply-demand dynamics. As active supply contracts through burning while demand grows through increasing user adoption and utility, fundamental economics create supply-demand dynamics without requiring speculative mania or unsustainable tokenomic tricks.

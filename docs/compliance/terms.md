@@ -221,10 +221,10 @@ VCoins can be spent within the Platform for:
 
 **Fee Structure:**
 
-- Tips: 20% platform fee, 1% burn
+- Tips: 19% platform fee, 1% burn
 - Subscriptions: 10% platform fee
 - Marketplace transactions: 5% platform fee
-- Withdrawal to external wallet: 2% fee (50% burned)
+- Withdrawal to external wallet: 2% fee
 - Premium features: Varies by feature
 
 Fees may be adjusted with 30 days' notice for increases exceeding 10% or introduction of new fee types. Minor adjustments (under 10%) may be made with 7 days' notice.

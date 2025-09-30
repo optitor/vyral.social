@@ -59,16 +59,6 @@ const FeatureList: FeatureItem[] = [
       </>
     ),
   },
-  {
-    title: "Community Governed",
-    icon: "🗳️",
-    description: (
-      <>
-        Moving toward DAO governance where you vote on platform decisions. True
-        community ownership.
-      </>
-    ),
-  },
 ];
 
 function Feature({ title, icon, description }: FeatureItem) {
