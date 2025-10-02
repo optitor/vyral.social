@@ -1,0 +1,116 @@
+---
+title: Smart Contract Architecture
+description: Technical implementation of VCoin token and platform contracts
+---
+
+
+# Smart Contract Architecture
+
+## VCoin Token Contract
+
+```text
+Token Technical Specifications:
+
+Blockchain: Solana Mainnet
+Standard: SPL Token-2022
+Name: VCoin
+Symbol: VCO
+Decimals: 9
+
+Total Supply: 10,000,000,000 (fixed)
+
+Key Features:
+├── Mint Authority: DISABLED (no more minting)
+├── Freeze Authority: DISABLED (tokens can't be frozen)
+├── Transfer Hooks: ENABLED (automated fees)
+├── Metadata: On-chain (name, symbol, logo)
+└── Burn Mechanism: Built-in (deflationary)
+
+Security Properties:
+├── Audited before mainnet
+├── Open source (public verification)
+├── Immutable supply
+└── No admin backdoors
+```
+
+The core VCoin token implements the SPL Token-2022 standard with specific configurations optimized for platform use. The total supply mints exactly once during initial deployment to the platform's treasury wallet, after which the mint authority disables permanently. This makes the 10 billion token supply absolutely fixed with no possibility of inflation through additional minting.
+
+Transfer hooks enable automated fee collection for certain transaction types. When users tip creators or make marketplace purchases, the hook automatically splits the transaction according to configured percentages—for example, routing 80% to the creator and 20% to platform fees on tips. The burn mechanism also operates through transfer hooks, automatically routing specified percentages to a dead address during qualifying transactions. These hooks eliminate the need for complex middleware or manual transaction processing, making the token "smart" in its ability to self-execute platform economic rules.
+
+Metadata extensions store rich information about VCoin directly on-chain including the token name, symbol, logo URI pointing to decentralized storage, and links to this whitepaper and other documentation. This metadata displays automatically in wallets, exchanges, and blockchain explorers without requiring manual updates or centralized registries.
+
+The token contract undergoes professional security audit before mainnet deployment. All critical and high severity findings must be resolved before launch, with audit reports published publicly for community review. A bug bounty program launches simultaneously with mainnet deployment, offering rewards up to $50,000 for critical vulnerabilities, incentivizing white-hat hackers to responsibly disclose issues rather than exploit them.
+
+## Custodial Wallet System
+
+```text
+How Your VCoins Are Secured:
+
+Hot Wallets (Daily Use):
+├── Hold: 10-20% of total balances
+├── Security: HSM, multi-factor auth
+├── Purpose: Process withdrawals quickly
+└── Risk: Limited exposure if breached
+
+Cold Storage (Bulk Reserves):
+├── Hold: 80-90% of total balances
+├── Security: Multi-sig (3-of-5 keys)
+├── Location: Air-gapped, geographically distributed
+└── Risk: Nearly impossible to breach
+
+Daily Sweep:
+├── Hot wallet fills up during day
+├── Automated sweep to cold storage
+├── Keeps hot wallet exposure minimal
+└── Maximizes security
+
+Your Balance:
+├── Tracked in database (instant updates)
+├── Backed by real tokens on blockchain
+├── Daily reconciliation verifies accuracy
+└── Best of both worlds
+```
+
+For optimal user experience, the platform maintains custodial control over user VCoins by default, similar to how Coinbase or other exchanges hold crypto on behalf of users. This enables instant transactions without blockchain confirmation delays, eliminates gas fees for in-app transfers, and removes the complexity of wallet management for non-technical users.
+
+The architecture segregates hot wallets for daily operations from cold storage for bulk reserves. Hot wallets hold approximately 10-20% of total user balances—enough to process daily withdrawal requests and transactions but not so much that a breach would be catastrophic. These hot wallets deploy on hardened servers with Hardware Security Modules (HSMs), multi-factor authentication, IP whitelisting, transaction rate limiting, and comprehensive logging of all operations.
+
+Cold storage holds the remaining 80-90% of reserves in multi-signature wallets requiring 3-of-5 signatures from geographically distributed keyholders. Cold wallet private keys never touch internet-connected computers, residing exclusively on air-gapped hardware wallets. Scheduled sweeps transfer excess funds from hot wallets to cold storage daily, minimizing hot wallet exposure. Cold-to-hot transfers require manual approval from multiple team members with justification logged.
+
+Individual user balances track in the platform's centralized database with redundant backups and point-in-time recovery capabilities. Daily reconciliation processes verify database balances match blockchain holdings exactly. Any discrepancies trigger immediate investigation and resolution. This hybrid approach provides the performance and user experience of centralized systems while maintaining the security and transparency of blockchain backing.
+
+## Liquidity Manager Contract
+
+A dedicated smart contract manages the accumulation and deployment of the 20% revenue allocation for liquidity. This contract operates autonomously once deployed, executing without human intervention according to programmed rules.
+
+The `receiveSalesRevenue()` function triggers automatically whenever a user purchases VCoins with fiat currency. It receives exactly 20% of the transaction amount in USDC, records the contribution on-chain with timestamp and amount, and emits an event visible to block explorers. Anyone can query the contract to verify the current accumulated balance and historical contribution timeline.
+
+The `batchAddLiquidity()` function monitors the accumulated balance and automatically adds to the Raydium pool whenever the threshold ($5,000 by default) is met. It transfers the accumulated USDC, calculates the matching number of VCoins needed based on current pool ratio, withdraws those VCoins from the Liquidity Reserve treasury, and executes the Raydium pool addition transaction. The entire process completes atomically—either all steps succeed or all revert, preventing partial executions that could create inconsistencies.
+
+The `getReserveProof()` function provides cryptographic proof of reserves, showing that claimed backing matches actual holdings. Users can independently verify that the liquidity pool contains the stated amounts of USDC and VCoins, building trust through transparency rather than requiring faith in platform statements.
+
+An `emergencyPause()` function enables authorized administrators to temporarily halt all liquidity operations if exploitation or severe bugs are detected. This pause requires multi-signature authorization from 3-of-5 designated key holders, preventing unilateral control while enabling rapid response to crises. The pause automatically expires after 7 days unless renewed through another multi-signature transaction, ensuring temporary pauses cannot become permanent without ongoing consensus.
+
+Parameter updates like changing the $5,000 addition threshold implement through time-locked transactions with a 48-hour delay between submission and execution. This gives the community time to review proposed changes and raise concerns before they take effect. All parameter update proposals publish publicly with rationale, allowing community oversight of contract management.
+
+## Vesting Contracts
+
+Team and operations token allocations deploy through battle-tested vesting contracts that enforce the four-year release schedule with six-month cliff. Each beneficiary (founder, team member, advisor) receives a dedicated contract instance deployed at launch containing their allocation.
+
+The contracts implement the standard cliff-and-linear-vesting pattern: zero tokens unlock during the first six months, then one-fourteenth of the total allocation unlocks every quarter for the subsequent 42 months. Beneficiaries can claim unlocked tokens at any time after they vest, or leave them in the contract for security. Unclaimed vested tokens remain in the contract and do not disappear or transfer elsewhere, ensuring beneficiaries never lose access to rightfully vested holdings.
+
+Importantly, these vesting contracts cannot be modified, canceled, or overridden after deployment. The schedule is immutable code on the blockchain, giving the community certainty that the stated vesting timeline will execute exactly as described regardless of team members' wishes or changing circumstances. This immutability builds trust that founders cannot simply give themselves early access to tokens if market conditions become favorable.
+
+Each vesting contract emits events when tokens vest and when beneficiaries claim them, creating a public audit trail. Block explorers and monitoring tools can track exactly when each vesting milestone occurs and whether beneficiaries are claiming and selling tokens. This transparency allows the community to observe founder behavior and adjust their own strategies accordingly.
+
+## Security Model and Risk Mitigation
+
+The smart contract architecture implements defense-in-depth with multiple overlapping security controls. Access controls restrict sensitive functions to specific authorized addresses with no single address having complete control. Time locks delay high-impact actions like parameter changes or liquidity withdrawals, enabling community review before execution. Rate limiting prevents rapid-fire transactions that might indicate exploitation attempts. Circuit breakers automatically pause operations if unusual activity is detected—for example, if more than 10% of TVL attempts to withdraw in a single hour.
+
+Formal verification proves critical contract properties mathematically, ensuring specific behaviors are impossible regardless of how functions are called or what parameters are provided. For example, formal verification can prove that the total supply can never exceed 10 billion tokens, that vesting schedules cannot release tokens early, and that fee calculations always sum correctly.
+
+The multi-signature model applies not just to cold storage wallets but to smart contract governance, requiring consensus among multiple keyholders before executing sensitive operations. The 3-of-5 threshold balances security against operational flexibility—three signatures is harder to compromise than single-signature but doesn't require all five keyholders to be available, preventing deadlock if one or two become unavailable.
+
+Insurance coverage for smart contract exploits and custodial breaches is explored as the platform scales. While crypto insurance remains expensive and limited, options like Nexus Mutual, Bridge Mutual, or traditional crypto custody insurance can provide some protection against catastrophic losses. Once platform reserves exceed $1 million, allocating $100,000+ annually for insurance becomes economically rational.
+
+Regular security reviews occur quarterly even after launch, as new vulnerabilities and attack vectors continuously emerge. Keeping security practices current requires ongoing investment rather than one-time audits. The bug bounty program remains active indefinitely with rewards scaling as TVL increases, maintaining incentives for responsible disclosure.

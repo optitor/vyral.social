@@ -1,0 +1,51 @@
+---
+title: Manage Docs Versions
+description: Learn how to manage multiple versions of your documentation
+---
+
+# Manage Docs Versions
+
+Fumadocs can manage multiple versions of your docs through its content organization system.
+
+## Organizing Documentation
+
+Fumadocs uses a file-based routing system where each directory can contain:
+
+- MDX files for content
+- `meta.json` for navigation configuration
+- Subdirectories for nested content
+
+## Version Control
+
+For version management, you can:
+
+1. **Use Git branches** - Create separate branches for different versions
+2. **Use directory structure** - Organize versions in separate folders
+3. **Use frontmatter** - Add version metadata to each document
+
+Example frontmatter:
+
+```yaml
+---
+title: API Reference
+version: 2.0
+---
+```
+
+## Navigation Configuration
+
+Configure navigation using `meta.json` files:
+
+```json
+{
+  "title": "Documentation",
+  "pages": ["getting-started", "api-reference", "guides"]
+}
+```
+
+## Update an existing version
+
+It is possible to edit versioned docs in their respective folder:
+
+- `versioned_docs/version-1.0/hello.md` updates `http://localhost:3000/docs/hello`
+- `docs/hello.md` updates `http://localhost:3000/docs/next/hello`

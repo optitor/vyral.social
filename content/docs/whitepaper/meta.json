@@ -1,0 +1,17 @@
+{
+  "title": "Whitepaper",
+  "pages": [
+    "index",
+    "introduction",
+    "token-economics",
+    "liquidity-strategy",
+    "smart-contracts",
+    "user-experience",
+    "governance",
+    "security-compliance",
+    "roadmap",
+    "projections",
+    "risks",
+    "legal"
+  ]
+}
