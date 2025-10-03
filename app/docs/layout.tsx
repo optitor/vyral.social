@@ -1,14 +1,17 @@
-import { DocsLayout } from 'fumadocs-ui/layouts/docs';
-import { baseOptions } from '@/lib/layout.shared';
-import { source } from '@/lib/source';
+import { DocsLayout } from "fumadocs-ui/layouts/docs";
+import { baseOptions } from "@/lib/layout.shared";
+import { source } from "@/lib/source";
 
-export default function Layout({ children }: LayoutProps<'/docs'>) {
+export default function Layout({ children }: LayoutProps<"/docs">) {
   return (
     <DocsLayout
       tree={source.pageTree}
       {...baseOptions()}
+      sidebar={{
+        defaultOpenLevel: 0
+      }}
       containerProps={{
-        className: 'max-w-[90rem] mx-auto'
+        className: 'max-w-full'
       }}
     >
       {children}

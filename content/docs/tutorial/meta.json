@@ -1,4 +1,11 @@
 {
   "title": "Tutorial",
-  "pages": ["index", "tutorial-basics", "tutorial-extras"]
+  "pages": [
+    "index",
+    "getting-started",
+    "social",
+    "communication",
+    "commerce",
+    "advanced"
+  ]
 }

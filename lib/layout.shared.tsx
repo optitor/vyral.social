@@ -1,4 +1,4 @@
-import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
+import type { BaseLayoutProps } from "fumadocs-ui/layouts/shared";
 
 /**
  * Shared layout configurations
@@ -36,20 +36,20 @@ export function baseOptions(): BaseLayoutProps {
     // see https://fumadocs.dev/docs/ui/navigation/links
     links: [
       {
-        text: 'Tutorial',
-        url: '/docs/tutorial',
+        text: "Tutorial",
+        url: "/docs/tutorial",
       },
       {
-        text: 'Whitepaper',
-        url: '/docs/whitepaper',
+        text: "Whitepaper",
+        url: "/docs/whitepaper",
       },
       {
-        text: 'Compliance',
-        url: '/docs/compliance',
+        text: "Compliance",
+        url: "/docs/compliance",
       },
       {
-        text: 'VCO Contract',
-        url: 'https://solscan.io/token/0x1f54638b6e759cc990d199ecca52cd6c8fca2c0b',
+        text: "VCO Contract",
+        url: "https://explorer.solana.com/address/Wuk2WeBmQGZHBq3E8k5iPrPHWbPbCvkJEzM1cDRWYt6/transfers?cluster=devnet",
         external: true,
       },
     ],

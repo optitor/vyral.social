@@ -1,150 +1,361 @@
 ---
 title: VYRAL Coin Whitepaper
-description: Complete technical and economic documentation for VCoin (VCO)
+description: Complete technical and economic documentation for VCoin (VYC)
 ---
 
 import { Callout } from 'fumadocs-ui/components/callout';
 import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
 
-# VYRAL COIN (VCO) - WHITEPAPER
+<div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary/10 via-primary/5 to-background p-8 md:p-12 border border-primary/20 mb-8">
+  <div className="relative z-10">
+    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-sm font-medium text-primary mb-4">
+      <span className="relative flex h-2 w-2">
+        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+        <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+      </span>
+      Version 1.0 | 2025
+    </div>
 
-<Callout type="info" title="Version 1.0 | 2025">
-  This is the official whitepaper for VCoin (VCO), the native utility token of the VYRAL platform.
-</Callout>
+    <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
+      VYRAL COIN (VYC)
+    </h1>
+
+    <h2 className="text-2xl md:text-3xl font-semibold text-muted-foreground mb-6">
+      Official Whitepaper
+    </h2>
+
+    <div className="text-lg text-muted-foreground max-w-3xl leading-relaxed">
+      Complete technical and economic documentation for VCoin (VYC), the native utility token powering the next generation of social media.
+    </div>
+  </div>
+
+  <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-primary/5 blur-3xl"></div>
+  <div className="absolute -left-20 -bottom-20 h-64 w-64 rounded-full bg-primary/5 blur-3xl"></div>
+</div>
 
 ## Abstract
 
-VYRAL is building the next generation social media platform that combines the best features of existing platforms—content feeds, encrypted messaging, marketplace, communities, and AI assistance—while fundamentally reimagining how value flows between users, creators, and the platform itself.
+<div className="text-lg leading-relaxed space-y-4">
 
-**At the heart of this ecosystem is VCoin (VCO)**, a utility token that enables seamless transactions, rewards quality content creation, and aligns economic incentives across all stakeholders.
+VYRAL is building the next generation social media platform that combines the best features of existing platforms—**content feeds**, **encrypted messaging**, **marketplace**, **communities**, and **AI assistance**—while fundamentally reimagining how value flows between users, creators, and the platform itself.
+
+<div className="p-6 rounded-xl bg-gradient-to-r from-primary/10 to-primary/5 border border-primary/20 my-6">
+  <p className="text-xl font-semibold text-foreground mb-2">
+    At the heart of this ecosystem is VCoin (VYC)
+  </p>
+  <p className="text-muted-foreground">
+    A utility token that enables seamless transactions, rewards quality content creation, and aligns economic incentives across all stakeholders.
+  </p>
+</div>
+
+</div>
 
 ### Key Differentiators
 
-<Cards>
-  <Card title="💰 User-Owned Economy">
-    Unlike traditional platforms where value flows to shareholders, VYRAL creates a transparent, user-owned economy where creators are fairly compensated.
-  </Card>
-  <Card title="📊 Sustainable Tokenomics">
-    Carefully designed tokenomics with deflationary mechanisms and revenue-funded liquidity pools ensure long-term value.
-  </Card>
-  <Card title="⚖️ Regulatory Compliance">
-    Built with transparency, legal compliance, and real utility—not speculative hype.
-  </Card>
-</Cards>
+<div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-8">
+  <div className="group relative overflow-hidden rounded-xl border border-border bg-card p-6 transition-all hover:border-primary/50 hover:shadow-lg">
+    <div className="text-4xl mb-4">💰</div>
+    <h3 className="text-lg font-semibold mb-2">User-Owned Economy</h3>
+    <p className="text-sm text-muted-foreground">
+      Unlike traditional platforms where value flows to shareholders, VYRAL creates a transparent, user-owned economy where creators are fairly compensated.
+    </p>
+    <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity -z-10"></div>
+  </div>
+
+  <div className="group relative overflow-hidden rounded-xl border border-border bg-card p-6 transition-all hover:border-primary/50 hover:shadow-lg">
+    <div className="text-4xl mb-4">📊</div>
+    <h3 className="text-lg font-semibold mb-2">Sustainable Tokenomics</h3>
+    <p className="text-sm text-muted-foreground">
+      Carefully designed tokenomics with deflationary mechanisms and revenue-funded liquidity pools ensure long-term value.
+    </p>
+    <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity -z-10"></div>
+  </div>
+
+  <div className="group relative overflow-hidden rounded-xl border border-border bg-card p-6 transition-all hover:border-primary/50 hover:shadow-lg">
+    <div className="text-4xl mb-4">⚖️</div>
+    <h3 className="text-lg font-semibold mb-2">Regulatory Compliance</h3>
+    <p className="text-sm text-muted-foreground">
+      Built with transparency, legal compliance, and real utility—not speculative hype.
+    </p>
+    <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity -z-10"></div>
+  </div>
+</div>
 
 ### Platform Vision
 
-VCoin serves as the native currency for all platform interactions, from tipping creators to purchasing premium features. Through careful tokenomic design and a phased rollout strategy, we've created a sustainable model that can scale from zero to hundreds of millions of users while maintaining token value and platform viability.
+<div className="p-6 rounded-xl border border-border bg-card/50 my-6">
+  <p className="text-lg leading-relaxed">
+    VCoin serves as the native currency for all platform interactions, from tipping creators to purchasing premium features. Through careful tokenomic design and a phased rollout strategy, we've created a sustainable model that can scale from zero to hundreds of millions of users while maintaining token value and platform viability.
+  </p>
+</div>
 
-<Callout type="warn" title="Important Notice">
+<Callout type="warn" title="⚠️ Important Notice">
   This whitepaper outlines the complete technical architecture, economic model, security framework, and growth strategy for VCoin. Please read all sections carefully, especially the [Risks](/docs/whitepaper/risks) and [Legal](/docs/whitepaper/legal) disclosures.
 </Callout>
 
 ## Whitepaper Sections
 
-### 📖 Core Documentation
+<div className="space-y-8 my-12">
 
-<Cards>
-  <Card
-    title="Introduction"
-    href="/docs/whitepaper/introduction"
-    description="The problem we're solving, our solution, and platform overview"
-  />
-  <Card
-    title="Token Economics"
-    href="/docs/whitepaper/token-economics"
-    description="Distribution model, utility, and revenue framework"
-  />
-  <Card
-    title="Liquidity Strategy"
-    href="/docs/whitepaper/liquidity-strategy"
-    description="Bootstrap plan and decentralized exchange (DEX) launch"
-  />
-</Cards>
+<div>
+  <div className="flex items-center gap-3 mb-6">
+    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary text-xl font-bold">
+      📖
+    </div>
+    <h3 className="text-2xl font-bold">Core Documentation</h3>
+  </div>
 
-### 🔧 Technical Implementation
+  <Cards>
+    <Card
+      title="Introduction"
+      href="/docs/whitepaper/introduction"
+      description="The problem we're solving, our solution, and platform overview"
+    />
+    <Card
+      title="Token Economics"
+      href="/docs/whitepaper/token-economics"
+      description="Distribution model, utility, and revenue framework"
+    />
+    <Card
+      title="Liquidity Strategy"
+      href="/docs/whitepaper/liquidity-strategy"
+      description="Bootstrap plan and decentralized exchange (DEX) launch"
+    />
+  </Cards>
+</div>
 
-<Cards>
-  <Card
-    title="Smart Contracts"
-    href="/docs/whitepaper/smart-contracts"
-    description="Technical architecture and contract specifications"
-  />
-  <Card
-    title="User Experience"
-    href="/docs/whitepaper/user-experience"
-    description="How users earn, spend, and withdraw VCoin"
-  />
-  <Card
-    title="Governance"
-    href="/docs/whitepaper/governance"
-    description="Community input and platform evolution"
-  />
-</Cards>
+<div>
+  <div className="flex items-center gap-3 mb-6">
+    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary text-xl font-bold">
+      🔧
+    </div>
+    <h3 className="text-2xl font-bold">Technical Implementation</h3>
+  </div>
 
-### 🛡️ Security & Operations
+  <Cards>
+    <Card
+      title="Smart Contracts"
+      href="/docs/whitepaper/smart-contracts"
+      description="Technical architecture and contract specifications"
+    />
+    <Card
+      title="User Experience"
+      href="/docs/whitepaper/user-experience"
+      description="How users earn, spend, and withdraw VCoin"
+    />
+    <Card
+      title="Governance"
+      href="/docs/whitepaper/governance"
+      description="Community input and platform evolution"
+    />
+  </Cards>
+</div>
 
-<Cards>
-  <Card
-    title="Security & Compliance"
-    href="/docs/whitepaper/security-compliance"
-    description="Protection measures and regulatory framework"
-  />
-  <Card
-    title="Roadmap"
-    href="/docs/whitepaper/roadmap"
-    description="Launch timeline, milestones, and development phases"
-  />
-</Cards>
+<div>
+  <div className="flex items-center gap-3 mb-6">
+    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary text-xl font-bold">
+      🛡️
+    </div>
+    <h3 className="text-2xl font-bold">Security & Operations</h3>
+  </div>
 
-### 📈 Financial Outlook
+  <Cards>
+    <Card
+      title="Security & Compliance"
+      href="/docs/whitepaper/security-compliance"
+      description="Protection measures and regulatory framework"
+    />
+    <Card
+      title="Roadmap"
+      href="/docs/whitepaper/roadmap"
+      description="Launch timeline, milestones, and development phases"
+    />
+  </Cards>
+</div>
 
-<Cards>
-  <Card
-    title="Projections"
-    href="/docs/whitepaper/projections"
-    description="Financial forecasts and growth scenarios"
-  />
-  <Card
-    title="Risks"
-    href="/docs/whitepaper/risks"
-    description="Important risks, challenges, and mitigation strategies"
-  />
-  <Card
-    title="Legal"
-    href="/docs/whitepaper/legal"
-    description="Disclaimers, legal specifications, and regulatory notices"
-  />
-</Cards>
+<div>
+  <div className="flex items-center gap-3 mb-6">
+    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary text-xl font-bold">
+      📈
+    </div>
+    <h3 className="text-2xl font-bold">Financial Outlook</h3>
+  </div>
+
+  <Cards>
+    <Card
+      title="Projections"
+      href="/docs/whitepaper/projections"
+      description="Financial forecasts and growth scenarios"
+    />
+    <Card
+      title="Risks"
+      href="/docs/whitepaper/risks"
+      description="Important risks, challenges, and mitigation strategies"
+    />
+    <Card
+      title="Legal"
+      href="/docs/whitepaper/legal"
+      description="Disclaimers, legal specifications, and regulatory notices"
+    />
+  </Cards>
+</div>
+
+</div>
 
 ---
 
-## Quick Links
+## Quick Reference
 
-<Tabs items={['Token Info', 'Platform', 'Community']}>
-  <Tab value="Token Info">
-    - **Token Name**: VCoin (VCO)
-    - **Blockchain**: Solana
-    - **Total Supply**: 10 Billion VCO
-    - **Initial Price**: $0.01 USD
-    - **Contract**: [View on Solscan](https://solscan.io/token/0x1f54638b6e759cc990d199ecca52cd6c8fca2c0b)
-  </Tab>
-  <Tab value="Platform">
-    - **Website**: [vyral.social](https://vyral.social)
-    - **Documentation**: [docs.vyral.social](https://docs.vyral.social)
-    - **Google Play**: [Download](https://play.google.com/store)
-    - **App Store**: [Download](https://apps.apple.com)
-  </Tab>
-  <Tab value="Community">
-    - **X (Twitter)**: [@vyral.social](https://x.com/vyral.social)
-    - **Discord**: [Join Community](https://discord.gg/vyral)
-    - **GitHub**: [vyral](https://github.com/vyral)
-    - **Support**: legal@vyral.social
-  </Tab>
-</Tabs>
+<div className="mt-8 mb-6">
+  <Tabs items={['Token Info', 'Contracts Info', 'Platform', 'Community']}>
+    <Tab value="Token Info">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
+        <div className="space-y-3">
+          <div className="flex items-center justify-between p-3 rounded-lg bg-muted/50">
+            <span className="text-sm font-medium text-muted-foreground">Token Name</span>
+            <span className="font-semibold">VCoin (VYC)</span>
+          </div>
+          <div className="flex items-center justify-between p-3 rounded-lg bg-muted/50">
+            <span className="text-sm font-medium text-muted-foreground">Blockchain</span>
+            <span className="font-semibold">Solana</span>
+          </div>
+          <div className="flex items-center justify-between p-3 rounded-lg bg-muted/50">
+            <span className="text-sm font-medium text-muted-foreground">Total Supply</span>
+            <span className="font-semibold">10 Billion VYC</span>
+          </div>
+        </div>
+        <div className="space-y-3">
+          <div className="flex items-center justify-between p-3 rounded-lg bg-muted/50">
+            <span className="text-sm font-medium text-muted-foreground">Initial Price</span>
+            <span className="font-semibold">$0.01 USD</span>
+          </div>
+          <div className="flex flex-col gap-2 p-3 rounded-lg bg-muted/50">
+            <span className="text-sm font-medium text-muted-foreground">Smart Contract</span>
+            <a href="https://explorer.solana.com/address/Wuk2WeBmQGZHBq3E8k5iPrPHWbPbCvkJEzM1cDRWYt6?cluster=devnet" className="text-sm font-mono text-primary hover:underline break-all">
+              View on Explorer →
+            </a>
+          </div>
+        </div>
+      </div>
+    </Tab>
+    <Tab value="Contracts Info">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 p-4">
+        <div className="rounded-lg border border-primary/20 bg-gradient-to-br from-primary/5 to-primary/10 p-4">
+          <div className="flex items-center gap-2 mb-2">
+            <span className="text-base">💰</span>
+            <span className="font-semibold text-xs">Reward Distribution</span>
+          </div>
+          <code className="text-[10px] font-mono text-primary/80 break-all block mb-2">EqjS5FgEfoGe9wnrRkvWyKendb3fb3Aza6WuxCbmaxPz</code>
+          <a href="https://explorer.solana.com/address/EqjS5FgEfoGe9wnrRkvWyKendb3fb3Aza6WuxCbmaxPz?cluster=devnet" target="_blank" rel="noopener noreferrer" className="text-[10px] text-primary hover:underline">
+            View on Explorer →
+          </a>
+        </div>
+        <div className="rounded-lg border border-primary/20 bg-gradient-to-br from-primary/5 to-primary/10 p-4">
+          <div className="flex items-center gap-2 mb-2">
+            <span className="text-base">🔥</span>
+            <span className="font-semibold text-xs">Burn Tracker</span>
+          </div>
+          <code className="text-[10px] font-mono text-primary/80 break-all block mb-2">HMf4URTq1NJCk7K9KNmPWnwxReFj6HX4wy2RdyXqXJoq</code>
+          <a href="https://explorer.solana.com/address/HMf4URTq1NJCk7K9KNmPWnwxReFj6HX4wy2RdyXqXJoq?cluster=devnet" target="_blank" rel="noopener noreferrer" className="text-[10px] text-primary hover:underline">
+            View on Explorer →
+          </a>
+        </div>
+        <div className="rounded-lg border border-primary/20 bg-gradient-to-br from-primary/5 to-primary/10 p-4">
+          <div className="flex items-center gap-2 mb-2">
+            <span className="text-base">⏰</span>
+            <span className="font-semibold text-xs">Vesting</span>
+          </div>
+          <code className="text-[10px] font-mono text-primary/80 break-all block mb-2">GAEVrgug7i7zUAZss1s7od2bhFiAhv2e91zT2svX7nb3</code>
+          <a href="https://explorer.solana.com/address/GAEVrgug7i7zUAZss1s7od2bhFiAhv2e91zT2svX7nb3?cluster=devnet" target="_blank" rel="noopener noreferrer" className="text-[10px] text-primary hover:underline">
+            View on Explorer →
+          </a>
+        </div>
+        <div className="rounded-lg border border-primary/20 bg-gradient-to-br from-primary/5 to-primary/10 p-4">
+          <div className="flex items-center gap-2 mb-2">
+            <span className="text-base">💳</span>
+            <span className="font-semibold text-xs">Fee Collection</span>
+          </div>
+          <code className="text-[10px] font-mono text-primary/80 break-all block mb-2">EU361fP6SN2zhXzHHwUhZ9b6ozWa7V9aV2CguuP9WKoB</code>
+          <a href="https://explorer.solana.com/address/EU361fP6SN2zhXzHHwUhZ9b6ozWa7V9aV2CguuP9WKoB?cluster=devnet" target="_blank" rel="noopener noreferrer" className="text-[10px] text-primary hover:underline">
+            View on Explorer →
+          </a>
+        </div>
+      </div>
+      <div className="flex gap-2 px-4 pb-4">
+        <a href="/docs/whitepaper/smart-contracts" className="flex-1 flex items-center justify-between p-2 rounded-lg bg-muted/50 hover:bg-muted transition-colors group text-xs">
+          <span className="font-medium">Smart Contracts</span>
+          <span className="text-primary group-hover:translate-x-1 transition-transform">→</span>
+        </a>
+        <a href="/docs/whitepaper/legal" className="flex-1 flex items-center justify-between p-2 rounded-lg bg-muted/50 hover:bg-muted transition-colors group text-xs">
+          <span className="font-medium">Legal Info</span>
+          <span className="text-primary group-hover:translate-x-1 transition-transform">→</span>
+        </a>
+      </div>
+    </Tab>
+    <Tab value="Platform">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
+        <a href="https://vyral.social" className="flex items-center justify-between p-4 rounded-lg bg-muted/50 hover:bg-muted transition-colors group">
+          <span className="font-medium">Website</span>
+          <span className="text-primary group-hover:translate-x-1 transition-transform">vyral.social →</span>
+        </a>
+        <a href="https://docs.vyral.social" className="flex items-center justify-between p-4 rounded-lg bg-muted/50 hover:bg-muted transition-colors group">
+          <span className="font-medium">Documentation</span>
+          <span className="text-primary group-hover:translate-x-1 transition-transform">docs.vyral.social →</span>
+        </a>
+        <a href="https://play.google.com/store" className="flex items-center justify-between p-4 rounded-lg bg-muted/50 hover:bg-muted transition-colors group">
+          <span className="font-medium">Google Play</span>
+          <span className="text-primary group-hover:translate-x-1 transition-transform">Download →</span>
+        </a>
+        <a href="https://apps.apple.com" className="flex items-center justify-between p-4 rounded-lg bg-muted/50 hover:bg-muted transition-colors group">
+          <span className="font-medium">App Store</span>
+          <span className="text-primary group-hover:translate-x-1 transition-transform">Download →</span>
+        </a>
+      </div>
+    </Tab>
+    <Tab value="Community">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
+        <a href="https://x.com/vyral.social" className="flex items-center gap-3 p-4 rounded-lg bg-muted/50 hover:bg-muted transition-colors group">
+          <span className="text-2xl">𝕏</span>
+          <div className="flex-1">
+            <div className="font-medium">X (Twitter)</div>
+            <div className="text-sm text-muted-foreground">@vyral.social</div>
+          </div>
+          <span className="text-primary group-hover:translate-x-1 transition-transform">→</span>
+        </a>
+        <a href="https://discord.gg/vyral" className="flex items-center gap-3 p-4 rounded-lg bg-muted/50 hover:bg-muted transition-colors group">
+          <span className="text-2xl">💬</span>
+          <div className="flex-1">
+            <div className="font-medium">Discord</div>
+            <div className="text-sm text-muted-foreground">Join Community</div>
+          </div>
+          <span className="text-primary group-hover:translate-x-1 transition-transform">→</span>
+        </a>
+        <a href="https://github.com/vyral" className="flex items-center gap-3 p-4 rounded-lg bg-muted/50 hover:bg-muted transition-colors group">
+          <span className="text-2xl">👨‍💻</span>
+          <div className="flex-1">
+            <div className="font-medium">GitHub</div>
+            <div className="text-sm text-muted-foreground">Open Source</div>
+          </div>
+          <span className="text-primary group-hover:translate-x-1 transition-transform">→</span>
+        </a>
+        <a href="mailto:legal@vyral.social" className="flex items-center gap-3 p-4 rounded-lg bg-muted/50 hover:bg-muted transition-colors group">
+          <span className="text-2xl">📧</span>
+          <div className="flex-1">
+            <div className="font-medium">Support</div>
+            <div className="text-sm text-muted-foreground">legal at vyral.social</div>
+          </div>
+          <span className="text-primary group-hover:translate-x-1 transition-transform">→</span>
+        </a>
+      </div>
+    </Tab>
+  </Tabs>
+</div>
 
 ---
 
-<Callout title="📚 Start Reading">
-  Begin with the [Introduction](/docs/whitepaper/introduction) to understand the problem we're solving and our innovative solution.
-</Callout>
+<div className="mt-8">
+  <Callout title="📚 Start Reading" type="info">
+    Begin with the [Introduction](/docs/whitepaper/introduction) to understand the problem we're solving and our innovative solution.
+  </Callout>
+</div>

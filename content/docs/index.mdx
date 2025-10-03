@@ -3,161 +3,506 @@ title: VYRAL Documentation
 description: Complete documentation for VYRAL - The next generation social media platform
 ---
 
-import { Callout } from 'fumadocs-ui/components/callout';
+import { Card, Cards } from 'fumadocs-ui/components/card';
 
-# Welcome to VYRAL Documentation
+<div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-purple-500/10 via-blue-500/5 to-background p-12 border border-purple-500/20 mb-12">
+  <div className="relative z-10">
+    <h1 className="text-5xl md:text-6xl font-bold mb-6">
+      Welcome to VYRAL
+    </h1>
+    <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl">
+      The next generation social media platform powered by VCoin (VYC). VYRAL combines the best features of existing platforms—<strong>content feeds</strong>, <strong>encrypted messaging</strong>, <strong>marketplace</strong>, <strong>communities</strong>, and <strong>AI assistance</strong>—while fundamentally reimagining how value flows between users, creators, and the platform itself.
+    </p>
+  </div>
+  <div className="absolute top-0 right-0 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
+  <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+</div>
 
-<Callout type="info" title="The Next Generation Social Media">
-  VYRAL combines the best features of existing platforms—**content feeds**, **encrypted messaging**, **marketplace**, **communities**, and **AI assistance**—while fundamentally reimagining how value flows between users, creators, and the platform itself.
-</Callout>
+---
 
 ## 🚀 Getting Started
 
-<Cards>
-  <Card
-    title="📚 Tutorial"
-    href="/docs/tutorial"
-    description="Step-by-step guides to get started with the VYRAL platform"
-  />
-  <Card
-    title="📄 Whitepaper"
-    href="/docs/whitepaper"
-    description="Complete technical and economic documentation for VCoin (VCO)"
-  />
-  <Card
-    title="⚖️ Compliance"
-    href="/docs/compliance"
-    description="Legal policies, terms of service, and compliance documentation"
-  />
-</Cards>
+<div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+  <div className="group rounded-xl border border-blue-500/30 bg-gradient-to-br from-blue-500/10 to-blue-500/5 p-6 hover:shadow-lg transition-all duration-300 hover:scale-105">
+    <a href="/docs/tutorial" className="no-underline">
+      <div className="text-4xl mb-4">📚</div>
+      <div className="font-bold text-xl mb-2 group-hover:text-blue-500 transition-colors">Tutorial</div>
+      <div className="text-sm text-muted-foreground">
+        Step-by-step guides to get started with the VYRAL platform
+      </div>
+    </a>
+  </div>
+
+  <div className="group rounded-xl border border-purple-500/30 bg-gradient-to-br from-purple-500/10 to-purple-500/5 p-6 hover:shadow-lg transition-all duration-300 hover:scale-105">
+    <a href="/docs/whitepaper" className="no-underline">
+      <div className="text-4xl mb-4">📄</div>
+      <div className="font-bold text-xl mb-2 group-hover:text-purple-500 transition-colors">Whitepaper</div>
+      <div className="text-sm text-muted-foreground">
+        Complete technical and economic documentation for VCoin (VYC)
+      </div>
+    </a>
+  </div>
+
+  <div className="group rounded-xl border border-green-500/30 bg-gradient-to-br from-green-500/10 to-green-500/5 p-6 hover:shadow-lg transition-all duration-300 hover:scale-105">
+    <a href="/docs/compliance" className="no-underline">
+      <div className="text-4xl mb-4">⚖️</div>
+      <div className="font-bold text-xl mb-2 group-hover:text-green-500 transition-colors">Compliance</div>
+      <div className="text-sm text-muted-foreground">
+        Legal policies, terms of service, and compliance documentation
+      </div>
+    </a>
+  </div>
+</div>
 
 ---
 
 ## 💡 What is VYRAL?
 
-VYRAL is an **all-in-one social platform** powered by VCoin (VCO), a utility token that enables:
+<div className="rounded-xl border border-purple-500/30 bg-gradient-to-br from-purple-500/10 to-purple-500/5 p-8 mb-8">
+  <div className="mb-6">
+    <div className="font-bold text-2xl mb-3">An All-in-One Social Platform</div>
+    <p className="text-muted-foreground">
+      VYRAL is powered by <strong>VCoin (VYC)</strong>, a utility token that enables seamless value transfer across the entire platform.
+    </p>
+  </div>
 
-- **Fair Creator Compensation** - 80% revenue share vs 30-40% on traditional platforms
-- **User Rewards** - Earn VCoin through engagement and content creation
-- **Seamless Transactions** - Tips, subscriptions, marketplace, all in one currency
-- **True Privacy** - Military-grade end-to-end encrypted messaging
-- **Community Ownership** - Transparent, user-first economics
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div className="rounded-lg border border-border bg-background p-5">
+      <div className="flex items-center gap-3 mb-3">
+        <span className="text-2xl">💰</span>
+        <div className="font-bold text-lg">Fair Creator Compensation</div>
+      </div>
+      <div className="text-sm text-muted-foreground">
+        <strong className="text-green-500">80% revenue share</strong> vs 30-40% on traditional platforms
+      </div>
+    </div>
 
-<Callout title="🎯 Our Mission">
-  To create a sustainable social media ecosystem where **value flows to creators and users**, not just shareholders.
-</Callout>
+    <div className="rounded-lg border border-border bg-background p-5">
+      <div className="flex items-center gap-3 mb-3">
+        <span className="text-2xl">🎁</span>
+        <div className="font-bold text-lg">User Rewards</div>
+      </div>
+      <div className="text-sm text-muted-foreground">
+        Earn VCoin through engagement and content creation
+      </div>
+    </div>
+
+    <div className="rounded-lg border border-border bg-background p-5">
+      <div className="flex items-center gap-3 mb-3">
+        <span className="text-2xl">🔄</span>
+        <div className="font-bold text-lg">Seamless Transactions</div>
+      </div>
+      <div className="text-sm text-muted-foreground">
+        Tips, subscriptions, marketplace, all in one currency
+      </div>
+    </div>
+
+    <div className="rounded-lg border border-border bg-background p-5">
+      <div className="flex items-center gap-3 mb-3">
+        <span className="text-2xl">🔒</span>
+        <div className="font-bold text-lg">True Privacy</div>
+      </div>
+      <div className="text-sm text-muted-foreground">
+        Military-grade end-to-end encrypted messaging
+      </div>
+    </div>
+
+    <div className="rounded-lg border border-border bg-background p-5 md:col-span-2">
+      <div className="flex items-center gap-3 mb-3">
+        <span className="text-2xl">🤝</span>
+        <div className="font-bold text-lg">Community Ownership</div>
+      </div>
+      <div className="text-sm text-muted-foreground">
+        Transparent, user-first economics that prioritize creators and users
+      </div>
+    </div>
+  </div>
+</div>
+
+<div className="rounded-xl border border-blue-500/30 bg-gradient-to-br from-blue-500/10 to-blue-500/5 p-6 mb-8">
+  <div className="flex items-start gap-3">
+    <span className="text-3xl">🎯</span>
+    <div>
+      <div className="font-bold text-lg mb-2">Our Mission</div>
+      <p className="text-muted-foreground">
+        To create a sustainable social media ecosystem where <strong>value flows to creators and users</strong>, not just shareholders.
+      </p>
+    </div>
+  </div>
+</div>
 
 ---
 
 ## 🔗 Quick Links
 
-<Cards>
-  <Card
-    title="🪙 VCO Token Contract"
-    href="https://solscan.io/token/0x1f54638b6e759cc990d199ecca52cd6c8fca2c0b"
-    description="View VCoin smart contract on Solscan"
-  />
-  <Card
-    title="🌐 VYRAL Website"
-    href="https://vyral.social"
-    description="Visit our official website"
-  />
-  <Card
-    title="📱 Download App"
-    href="https://play.google.com/store"
-    description="Available on Google Play and App Store"
-  />
-</Cards>
+<div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+  <div className="group rounded-xl border border-orange-500/30 bg-gradient-to-br from-orange-500/10 to-orange-500/5 p-6 hover:shadow-lg transition-all duration-300 hover:scale-105">
+    <a href="https://solscan.io/token/0x1f54638b6e759cc990d199ecca52cd6c8fca2c0b" target="_blank" rel="noopener noreferrer" className="no-underline">
+      <div className="text-4xl mb-4">🪙</div>
+      <div className="font-bold text-xl mb-2 group-hover:text-orange-500 transition-colors">VYC Token Contract</div>
+      <div className="text-sm text-muted-foreground">
+        View VCoin smart contract on Solscan
+      </div>
+      <div className="mt-3 text-xs text-orange-500 font-mono truncate">
+        0x1f5463...fca2c0b
+      </div>
+    </a>
+  </div>
+
+  <div className="group rounded-xl border border-cyan-500/30 bg-gradient-to-br from-cyan-500/10 to-cyan-500/5 p-6 hover:shadow-lg transition-all duration-300 hover:scale-105">
+    <a href="https://vyral.social" target="_blank" rel="noopener noreferrer" className="no-underline">
+      <div className="text-4xl mb-4">🌐</div>
+      <div className="font-bold text-xl mb-2 group-hover:text-cyan-500 transition-colors">VYRAL Website</div>
+      <div className="text-sm text-muted-foreground">
+        Visit our official website
+      </div>
+      <div className="mt-3 text-xs text-cyan-500">
+        vyral.social →
+      </div>
+    </a>
+  </div>
+
+  <div className="group rounded-xl border border-pink-500/30 bg-gradient-to-br from-pink-500/10 to-pink-500/5 p-6 hover:shadow-lg transition-all duration-300 hover:scale-105">
+    <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer" className="no-underline">
+      <div className="text-4xl mb-4">📱</div>
+      <div className="font-bold text-xl mb-2 group-hover:text-pink-500 transition-colors">Download App</div>
+      <div className="text-sm text-muted-foreground">
+        Available on Google Play and App Store
+      </div>
+      <div className="mt-3 text-xs text-pink-500">
+        Get started today →
+      </div>
+    </a>
+  </div>
+</div>
 
 ---
 
 ## 📊 Key Platform Features
 
-### Social & Content
-- **Feeds**: Algorithmic + chronological content discovery
-- **Posts**: Text, photos, videos, and mixed media
-- **Threads**: X/Twitter-style conversations
-- **Trending**: Real-time content discovery
+<div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+  <div className="rounded-xl border border-blue-500/30 bg-gradient-to-br from-blue-500/10 to-blue-500/5 p-6">
+    <div className="flex items-center gap-3 mb-4">
+      <span className="text-3xl">📱</span>
+      <div className="font-bold text-xl">Social & Content</div>
+    </div>
+    <div className="space-y-2">
+      <div className="flex items-start gap-2">
+        <span className="text-blue-500 mt-1">•</span>
+        <div className="text-sm">
+          <strong>Feeds:</strong> Algorithmic + chronological content discovery
+        </div>
+      </div>
+      <div className="flex items-start gap-2">
+        <span className="text-blue-500 mt-1">•</span>
+        <div className="text-sm">
+          <strong>Posts:</strong> Text, photos, videos, and mixed media
+        </div>
+      </div>
+      <div className="flex items-start gap-2">
+        <span className="text-blue-500 mt-1">•</span>
+        <div className="text-sm">
+          <strong>Threads:</strong> X/Twitter-style conversations
+        </div>
+      </div>
+      <div className="flex items-start gap-2">
+        <span className="text-blue-500 mt-1">•</span>
+        <div className="text-sm">
+          <strong>Trending:</strong> Real-time content discovery
+        </div>
+      </div>
+    </div>
+  </div>
 
-### Communication
-- **E2E Encryption**: Military-grade secure messaging
-- **Group Chats**: Private and public conversations
-- **Voice Messages**: Encrypted audio sharing
-- **File Sharing**: Secure document transfer
+  <div className="rounded-xl border border-purple-500/30 bg-gradient-to-br from-purple-500/10 to-purple-500/5 p-6">
+    <div className="flex items-center gap-3 mb-4">
+      <span className="text-3xl">💬</span>
+      <div className="font-bold text-xl">Communication</div>
+    </div>
+    <div className="space-y-2">
+      <div className="flex items-start gap-2">
+        <span className="text-purple-500 mt-1">•</span>
+        <div className="text-sm">
+          <strong>E2E Encryption:</strong> Military-grade secure messaging
+        </div>
+      </div>
+      <div className="flex items-start gap-2">
+        <span className="text-purple-500 mt-1">•</span>
+        <div className="text-sm">
+          <strong>Group Chats:</strong> Private and public conversations
+        </div>
+      </div>
+      <div className="flex items-start gap-2">
+        <span className="text-purple-500 mt-1">•</span>
+        <div className="text-sm">
+          <strong>Voice Messages:</strong> Encrypted audio sharing
+        </div>
+      </div>
+      <div className="flex items-start gap-2">
+        <span className="text-purple-500 mt-1">•</span>
+        <div className="text-sm">
+          <strong>File Sharing:</strong> Secure document transfer
+        </div>
+      </div>
+    </div>
+  </div>
 
-### Commerce & Economy
-- **Marketplace**: P2P buying and selling
-- **VCoin Payments**: Native cryptocurrency integration
-- **Low Fees**: 5% platform fee vs 13% traditional
-- **Creator Tools**: Monetization and analytics
+  <div className="rounded-xl border border-green-500/30 bg-gradient-to-br from-green-500/10 to-green-500/5 p-6">
+    <div className="flex items-center gap-3 mb-4">
+      <span className="text-3xl">💰</span>
+      <div className="font-bold text-xl">Commerce & Economy</div>
+    </div>
+    <div className="space-y-2">
+      <div className="flex items-start gap-2">
+        <span className="text-green-500 mt-1">•</span>
+        <div className="text-sm">
+          <strong>Marketplace:</strong> P2P buying and selling
+        </div>
+      </div>
+      <div className="flex items-start gap-2">
+        <span className="text-green-500 mt-1">•</span>
+        <div className="text-sm">
+          <strong>VCoin Payments:</strong> Native cryptocurrency integration
+        </div>
+      </div>
+      <div className="flex items-start gap-2">
+        <span className="text-green-500 mt-1">•</span>
+        <div className="text-sm">
+          <strong>Low Fees:</strong> 5% platform fee vs 13% traditional
+        </div>
+      </div>
+      <div className="flex items-start gap-2">
+        <span className="text-green-500 mt-1">•</span>
+        <div className="text-sm">
+          <strong>Creator Tools:</strong> Monetization and analytics
+        </div>
+      </div>
+    </div>
+  </div>
 
-### Community & AI
-- **Communities**: Discord/Reddit-style groups
-- **Orb AI**: Intelligent social assistant
-- **Events**: Coordination and ticketing
-- **Matchmaking**: Privacy-first recommendations
+  <div className="rounded-xl border border-orange-500/30 bg-gradient-to-br from-orange-500/10 to-orange-500/5 p-6">
+    <div className="flex items-center gap-3 mb-4">
+      <span className="text-3xl">🤖</span>
+      <div className="font-bold text-xl">Community & AI</div>
+    </div>
+    <div className="space-y-2">
+      <div className="flex items-start gap-2">
+        <span className="text-orange-500 mt-1">•</span>
+        <div className="text-sm">
+          <strong>Communities:</strong> Discord/Reddit-style groups
+        </div>
+      </div>
+      <div className="flex items-start gap-2">
+        <span className="text-orange-500 mt-1">•</span>
+        <div className="text-sm">
+          <strong>Orb AI:</strong> Intelligent social assistant
+        </div>
+      </div>
+      <div className="flex items-start gap-2">
+        <span className="text-orange-500 mt-1">•</span>
+        <div className="text-sm">
+          <strong>Events:</strong> Coordination and ticketing
+        </div>
+      </div>
+      <div className="flex items-start gap-2">
+        <span className="text-orange-500 mt-1">•</span>
+        <div className="text-sm">
+          <strong>Matchmaking:</strong> Privacy-first recommendations
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 ---
 
 ## 🎓 Documentation Sections
 
-### For Users
-- [Getting Started Tutorial](/docs/tutorial) - Learn how to use the platform
-- [User Experience Guide](/docs/whitepaper/user-experience) - Earning, spending, and withdrawals
-- [Privacy & Security](/docs/whitepaper/security-compliance) - How we protect your data
+<div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+  <div className="rounded-xl border border-blue-500/30 bg-gradient-to-br from-blue-500/10 to-blue-500/5 p-6">
+    <div className="flex items-center gap-3 mb-4">
+      <span className="text-3xl">👥</span>
+      <div className="font-bold text-xl">For Users</div>
+    </div>
+    <div className="space-y-3">
+      <a href="/docs/tutorial" className="block p-3 rounded-lg bg-background border border-border hover:border-blue-500/50 transition-colors no-underline group">
+        <div className="font-semibold text-sm group-hover:text-blue-500 transition-colors">Getting Started Tutorial</div>
+        <div className="text-xs text-muted-foreground">Learn how to use the platform</div>
+      </a>
+      <a href="/docs/whitepaper/user-experience" className="block p-3 rounded-lg bg-background border border-border hover:border-blue-500/50 transition-colors no-underline group">
+        <div className="font-semibold text-sm group-hover:text-blue-500 transition-colors">User Experience Guide</div>
+        <div className="text-xs text-muted-foreground">Earning, spending, and withdrawals</div>
+      </a>
+      <a href="/docs/whitepaper/security-compliance" className="block p-3 rounded-lg bg-background border border-border hover:border-blue-500/50 transition-colors no-underline group">
+        <div className="font-semibold text-sm group-hover:text-blue-500 transition-colors">Privacy & Security</div>
+        <div className="text-xs text-muted-foreground">How we protect your data</div>
+      </a>
+    </div>
+  </div>
 
-### For Investors & Researchers
-- [Whitepaper Overview](/docs/whitepaper) - Complete technical documentation
-- [Token Economics](/docs/whitepaper/token-economics) - VCoin distribution and utility
-- [Financial Projections](/docs/whitepaper/projections) - Growth forecasts and scenarios
-- [Risk Disclosure](/docs/compliance/risk-disclosure) - Important risks and challenges
+  <div className="rounded-xl border border-purple-500/30 bg-gradient-to-br from-purple-500/10 to-purple-500/5 p-6">
+    <div className="flex items-center gap-3 mb-4">
+      <span className="text-3xl">📈</span>
+      <div className="font-bold text-xl">For Investors</div>
+    </div>
+    <div className="space-y-3">
+      <a href="/docs/whitepaper" className="block p-3 rounded-lg bg-background border border-border hover:border-purple-500/50 transition-colors no-underline group">
+        <div className="font-semibold text-sm group-hover:text-purple-500 transition-colors">Whitepaper Overview</div>
+        <div className="text-xs text-muted-foreground">Complete technical documentation</div>
+      </a>
+      <a href="/docs/whitepaper/token-economics" className="block p-3 rounded-lg bg-background border border-border hover:border-purple-500/50 transition-colors no-underline group">
+        <div className="font-semibold text-sm group-hover:text-purple-500 transition-colors">Token Economics</div>
+        <div className="text-xs text-muted-foreground">VCoin distribution and utility</div>
+      </a>
+      <a href="/docs/whitepaper/projections" className="block p-3 rounded-lg bg-background border border-border hover:border-purple-500/50 transition-colors no-underline group">
+        <div className="font-semibold text-sm group-hover:text-purple-500 transition-colors">Financial Projections</div>
+        <div className="text-xs text-muted-foreground">Growth forecasts and scenarios</div>
+      </a>
+      <a href="/docs/compliance/risk-disclosure" className="block p-3 rounded-lg bg-background border border-border hover:border-purple-500/50 transition-colors no-underline group">
+        <div className="font-semibold text-sm group-hover:text-purple-500 transition-colors">Risk Disclosure</div>
+        <div className="text-xs text-muted-foreground">Important risks and challenges</div>
+      </a>
+    </div>
+  </div>
 
-### For Compliance
-- [Terms of Service](/docs/compliance/terms) - Platform usage agreement
-- [Privacy Policy](/docs/compliance/privacy) - Data protection practices
-- [Acceptable Use](/docs/compliance/acceptable-use) - Platform guidelines
-- [Legal Framework](/docs/whitepaper/legal) - Regulatory compliance
+  <div className="rounded-xl border border-green-500/30 bg-gradient-to-br from-green-500/10 to-green-500/5 p-6">
+    <div className="flex items-center gap-3 mb-4">
+      <span className="text-3xl">⚖️</span>
+      <div className="font-bold text-xl">For Compliance</div>
+    </div>
+    <div className="space-y-3">
+      <a href="/docs/compliance/terms" className="block p-3 rounded-lg bg-background border border-border hover:border-green-500/50 transition-colors no-underline group">
+        <div className="font-semibold text-sm group-hover:text-green-500 transition-colors">Terms of Service</div>
+        <div className="text-xs text-muted-foreground">Platform usage agreement</div>
+      </a>
+      <a href="/docs/compliance/privacy" className="block p-3 rounded-lg bg-background border border-border hover:border-green-500/50 transition-colors no-underline group">
+        <div className="font-semibold text-sm group-hover:text-green-500 transition-colors">Privacy Policy</div>
+        <div className="text-xs text-muted-foreground">Data protection practices</div>
+      </a>
+      <a href="/docs/compliance/acceptable-use" className="block p-3 rounded-lg bg-background border border-border hover:border-green-500/50 transition-colors no-underline group">
+        <div className="font-semibold text-sm group-hover:text-green-500 transition-colors">Acceptable Use</div>
+        <div className="text-xs text-muted-foreground">Platform guidelines</div>
+      </a>
+      <a href="/docs/whitepaper/legal" className="block p-3 rounded-lg bg-background border border-border hover:border-green-500/50 transition-colors no-underline group">
+        <div className="font-semibold text-sm group-hover:text-green-500 transition-colors">Legal Framework</div>
+        <div className="text-xs text-muted-foreground">Regulatory compliance</div>
+      </a>
+    </div>
+  </div>
+</div>
 
 ---
 
 ## 🌟 Why Choose VYRAL?
 
-<Callout type="info" title="Revolutionary Economics">
-  Traditional social media keeps **60-70%** of revenue. VYRAL gives **80%** directly to creators and rewards users for engagement. This isn't just better—it's a complete paradigm shift in how social platforms should work.
-</Callout>
+<div className="rounded-xl border border-orange-500/30 bg-gradient-to-br from-orange-500/10 to-orange-500/5 p-8 mb-8">
+  <div className="flex items-start gap-4 mb-6">
+    <span className="text-4xl">⚡</span>
+    <div>
+      <div className="font-bold text-2xl mb-2">Revolutionary Economics</div>
+      <p className="text-muted-foreground">
+        Traditional social media keeps <strong className="text-red-500">60-70%</strong> of revenue. VYRAL gives <strong className="text-green-500">80%</strong> directly to creators and rewards users for engagement. This isn't just better—it's a complete paradigm shift in how social platforms should work.
+      </p>
+    </div>
+  </div>
 
-**Key Advantages:**
-- ✅ **Fair Revenue Share** - Creators get 80% vs 30-40% elsewhere
-- ✅ **User Rewards** - Earn VCoin for engagement
-- ✅ **Transparent Economics** - Public tokenomics and reporting
-- ✅ **Privacy First** - End-to-end encryption standard
-- ✅ **No Crypto Complexity** - Works like any other app
-- ✅ **Sustainable Model** - Bootstrap funding, no VC dependency
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div className="flex items-start gap-3 p-4 rounded-lg bg-background border border-border">
+      <span className="text-green-500 text-xl">✅</span>
+      <div>
+        <div className="font-bold text-sm mb-1">Fair Revenue Share</div>
+        <div className="text-xs text-muted-foreground">Creators get 80% vs 30-40% elsewhere</div>
+      </div>
+    </div>
+
+    <div className="flex items-start gap-3 p-4 rounded-lg bg-background border border-border">
+      <span className="text-green-500 text-xl">✅</span>
+      <div>
+        <div className="font-bold text-sm mb-1">User Rewards</div>
+        <div className="text-xs text-muted-foreground">Earn VCoin for engagement</div>
+      </div>
+    </div>
+
+    <div className="flex items-start gap-3 p-4 rounded-lg bg-background border border-border">
+      <span className="text-green-500 text-xl">✅</span>
+      <div>
+        <div className="font-bold text-sm mb-1">Transparent Economics</div>
+        <div className="text-xs text-muted-foreground">Public tokenomics and reporting</div>
+      </div>
+    </div>
+
+    <div className="flex items-start gap-3 p-4 rounded-lg bg-background border border-border">
+      <span className="text-green-500 text-xl">✅</span>
+      <div>
+        <div className="font-bold text-sm mb-1">Privacy First</div>
+        <div className="text-xs text-muted-foreground">End-to-end encryption standard</div>
+      </div>
+    </div>
+
+    <div className="flex items-start gap-3 p-4 rounded-lg bg-background border border-border">
+      <span className="text-green-500 text-xl">✅</span>
+      <div>
+        <div className="font-bold text-sm mb-1">No Crypto Complexity</div>
+        <div className="text-xs text-muted-foreground">Works like any other app</div>
+      </div>
+    </div>
+
+    <div className="flex items-start gap-3 p-4 rounded-lg bg-background border border-border">
+      <span className="text-green-500 text-xl">✅</span>
+      <div>
+        <div className="font-bold text-sm mb-1">Sustainable Model</div>
+        <div className="text-xs text-muted-foreground">Bootstrap funding, no VC dependency</div>
+      </div>
+    </div>
+  </div>
+</div>
 
 ---
 
 ## 🤝 Community & Support
 
-<Cards>
-  <Card
-    title="💬 Discord Community"
-    href="https://discord.gg/vyral"
-    description="Join discussions, get support, and connect with other users"
-  />
-  <Card
-    title="🐦 Follow on X"
-    href="https://x.com/vyral.social"
-    description="Stay updated with latest news and announcements"
-  />
-  <Card
-    title="💻 GitHub"
-    href="https://github.com/vyral"
-    description="Explore our open-source projects and contribute"
-  />
-</Cards>
+<div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+  <div className="group rounded-xl border border-purple-500/30 bg-gradient-to-br from-purple-500/10 to-purple-500/5 p-6 hover:shadow-lg transition-all duration-300 hover:scale-105">
+    <a href="https://discord.gg/vyral" target="_blank" rel="noopener noreferrer" className="no-underline">
+      <div className="text-4xl mb-4">💬</div>
+      <div className="font-bold text-xl mb-2 group-hover:text-purple-500 transition-colors">Discord Community</div>
+      <div className="text-sm text-muted-foreground">
+        Join discussions, get support, and connect with other users
+      </div>
+    </a>
+  </div>
+
+  <div className="group rounded-xl border border-blue-500/30 bg-gradient-to-br from-blue-500/10 to-blue-500/5 p-6 hover:shadow-lg transition-all duration-300 hover:scale-105">
+    <a href="https://x.com/vyral.social" target="_blank" rel="noopener noreferrer" className="no-underline">
+      <div className="text-4xl mb-4">🐦</div>
+      <div className="font-bold text-xl mb-2 group-hover:text-blue-500 transition-colors">Follow on X</div>
+      <div className="text-sm text-muted-foreground">
+        Stay updated with latest news and announcements
+      </div>
+    </a>
+  </div>
+
+  <div className="group rounded-xl border border-green-500/30 bg-gradient-to-br from-green-500/10 to-green-500/5 p-6 hover:shadow-lg transition-all duration-300 hover:scale-105">
+    <a href="https://github.com/vyral" target="_blank" rel="noopener noreferrer" className="no-underline">
+      <div className="text-4xl mb-4">💻</div>
+      <div className="font-bold text-xl mb-2 group-hover:text-green-500 transition-colors">GitHub</div>
+      <div className="text-sm text-muted-foreground">
+        Explore our open-source projects and contribute
+      </div>
+    </a>
+  </div>
+</div>
 
 ---
 
-<Callout type="warn" title="📖 Important Reading">
-  Before using VYRAL or purchasing VCoin, please read our [Risk Disclosure](/docs/compliance/risk-disclosure) and [Legal Documentation](/docs/whitepaper/legal) carefully.
-</Callout>
+<div className="rounded-xl border border-yellow-500/30 bg-gradient-to-br from-yellow-500/10 to-orange-500/5 p-6 mb-8">
+  <div className="flex items-start gap-3">
+    <span className="text-3xl">📖</span>
+    <div>
+      <div className="font-bold text-lg mb-2">Important Reading</div>
+      <p className="text-muted-foreground text-sm">
+        Before using VYRAL or purchasing VCoin, please read our <a href="/docs/compliance/risk-disclosure" className="text-yellow-500 hover:underline font-semibold">Risk Disclosure</a> and <a href="/docs/whitepaper/legal" className="text-yellow-500 hover:underline font-semibold">Legal Documentation</a> carefully.
+      </p>
+    </div>
+  </div>
+</div>

@@ -7,39 +7,90 @@ import { Callout } from 'fumadocs-ui/components/callout';
 import { Step, Steps } from 'fumadocs-ui/components/steps';
 import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
 
-# Introduction
+<div className="mb-8">
+  <h1 className="text-4xl font-bold mb-4">Introduction</h1>
+  <p className="text-xl text-muted-foreground">
+    Understanding the fundamental problems with current social media and how VYRAL reimagines the creator economy
+  </p>
+</div>
+
+---
 
 ## The Problem with Current Social Media
 
-<Callout type="error" title="Broken Value Distribution">
-  The social media industry generates **$220B+ annually**, yet creators receive less than 5% and users get nothing.
-</Callout>
+<div className="relative overflow-hidden rounded-xl border border-destructive/20 bg-destructive/5 p-6 my-8">
+  <div className="relative z-10">
+    <div className="flex items-center gap-3 mb-3">
+      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-destructive/20 text-destructive">
+        ⚠️
+      </div>
+      <h3 className="text-lg font-semibold">Broken Value Distribution</h3>
+    </div>
+    <p className="text-lg">
+      The social media industry generates <strong className="text-destructive">$220B+ annually</strong>, yet creators receive less than 5% and users get nothing.
+    </p>
+  </div>
+  <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-destructive/10 blur-3xl"></div>
+</div>
 
 ### Traditional Social Media Value Flow
 
-The social media industry generates hundreds of billions in annual revenue, yet the value distribution remains fundamentally broken. Platforms like Facebook, Instagram, TikTok, and X (Twitter) extract enormous value from user-generated content and attention while compensating creators inadequately and offering users no stake in the platform's success.
+<div className="text-lg leading-relaxed mb-6">
+  The social media industry generates hundreds of billions in annual revenue, yet the value distribution remains fundamentally broken. Platforms like Facebook, Instagram, TikTok, and X (Twitter) extract enormous value from user-generated content and attention while compensating creators inadequately and offering users no stake in the platform's success.
+</div>
 
-<Cards>
-  <Card title="📘 Facebook">
-    **Revenue (2024)**: $150B+
+<div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-8">
+  <div className="relative overflow-hidden rounded-xl border border-border bg-gradient-to-br from-blue-500/5 to-blue-500/10 p-6">
+    <div className="text-4xl mb-3">📘</div>
+    <h3 className="text-xl font-bold mb-3">Facebook</h3>
+    <div className="space-y-2">
+      <div className="flex justify-between items-center">
+        <span className="text-sm text-muted-foreground">Revenue (2024)</span>
+        <span className="font-bold text-lg">$150B+</span>
+      </div>
+      <div className="flex justify-between items-center">
+        <span className="text-sm text-muted-foreground">Paid to creators</span>
+        <span className="font-bold text-destructive">Less than $5B (3%)</span>
+      </div>
+    </div>
+  </div>
 
-    **Paid to creators**: Less than $5B (3%)
-  </Card>
-  <Card title="🎵 TikTok">
-    **Revenue (2024)**: $20B+
+  <div className="relative overflow-hidden rounded-xl border border-border bg-gradient-to-br from-pink-500/5 to-pink-500/10 p-6">
+    <div className="text-4xl mb-3">🎵</div>
+    <h3 className="text-xl font-bold mb-3">TikTok</h3>
+    <div className="space-y-2">
+      <div className="flex justify-between items-center">
+        <span className="text-sm text-muted-foreground">Revenue (2024)</span>
+        <span className="font-bold text-lg">$20B+</span>
+      </div>
+      <div className="flex justify-between items-center">
+        <span className="text-sm text-muted-foreground">Creator Fund</span>
+        <span className="font-bold text-destructive">$1B (5%)</span>
+      </div>
+    </div>
+  </div>
 
-    **Creator Fund**: $1B (5%)
-  </Card>
-  <Card title="📸 Instagram">
-    **Revenue (2024)**: $50B+
-
-    **Creators get**: Brand deals only
-  </Card>
-</Cards>
+  <div className="relative overflow-hidden rounded-xl border border-border bg-gradient-to-br from-purple-500/5 to-purple-500/10 p-6">
+    <div className="text-4xl mb-3">📸</div>
+    <h3 className="text-xl font-bold mb-3">Instagram</h3>
+    <div className="space-y-2">
+      <div className="flex justify-between items-center">
+        <span className="text-sm text-muted-foreground">Revenue (2024)</span>
+        <span className="font-bold text-lg">$50B+</span>
+      </div>
+      <div className="flex justify-between items-center">
+        <span className="text-sm text-muted-foreground">Creators get</span>
+        <span className="font-bold text-destructive">Brand deals only</span>
+      </div>
+    </div>
+  </div>
+</div>
 
 ### Critical Problems
 
-Content creators receive a fraction of the advertising revenue they generate, often as little as 30-40%, with the platform retaining the majority. Meanwhile, regular users who drive engagement through likes, comments, and shares receive nothing despite being essential to the platform's value creation.
+<div className="text-lg leading-relaxed mb-6">
+  Content creators receive a fraction of the advertising revenue they generate, often as little as 30-40%, with the platform retaining the majority. Meanwhile, regular users who drive engagement through likes, comments, and shares receive nothing despite being essential to the platform's value creation.
+</div>
 
 <Steps>
   <Step>
@@ -67,7 +118,7 @@ Content creators receive a fraction of the advertising revenue they generate, of
   </Step>
 </Steps>
 
-<Callout title="Previous Attempts Failed">
+<Callout title="⚠️ Previous Attempts Failed" type="warn">
   While blockchain demonstrated alternative models are possible, most decentralized social media attempts failed due to **poor UX**, **complex onboarding**, and **unsustainable tokenomics** that prioritize speculation over utility.
 </Callout>
 
@@ -75,36 +126,116 @@ Content creators receive a fraction of the advertising revenue they generate, of
 
 ## The VYRAL Solution
 
-VYRAL addresses these problems by building a comprehensive social platform that combines proven features from existing platforms with a novel economic layer powered by VCoin.
+<div className="text-lg leading-relaxed mb-8">
+  VYRAL addresses these problems by building a comprehensive social platform that combines proven features from existing platforms with a novel economic layer powered by VCoin.
+</div>
 
 ### How VYRAL Is Different
 
-<Cards>
-  <Card title="✨ User Experience First">
-    No crypto knowledge needed. VCoin feels like in-app currency—blockchain operates invisibly in the background.
-  </Card>
-  <Card title="🚀 Bootstrap Funding">
-    Revenue-funded liquidity model. No VC dependency. Platform grows sustainably from $0.
-  </Card>
-  <Card title="⚡ Real Utility">
-    VCoin powers tips, subscriptions, marketplace, and premium features. Constant demand, not speculation.
-  </Card>
-  <Card title="🔥 Deflationary Model">
-    Supply reduces over time while demand grows. Favorable economics without inflationary rewards.
-  </Card>
-</Cards>
+<div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-8">
+  <div className="group relative overflow-hidden rounded-xl border border-border bg-card p-6 transition-all hover:border-primary/50 hover:shadow-lg">
+    <div className="flex items-start gap-4">
+      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-2xl">
+        ✨
+      </div>
+      <div>
+        <h3 className="text-lg font-semibold mb-2">User Experience First</h3>
+        <p className="text-sm text-muted-foreground">
+          No crypto knowledge needed. VCoin feels like in-app currency—blockchain operates invisibly in the background.
+        </p>
+      </div>
+    </div>
+    <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity -z-10"></div>
+  </div>
+
+  <div className="group relative overflow-hidden rounded-xl border border-border bg-card p-6 transition-all hover:border-primary/50 hover:shadow-lg">
+    <div className="flex items-start gap-4">
+      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-2xl">
+        🚀
+      </div>
+      <div>
+        <h3 className="text-lg font-semibold mb-2">Bootstrap Funding</h3>
+        <p className="text-sm text-muted-foreground">
+          Revenue-funded liquidity model. No VC dependency. Platform grows sustainably from $0.
+        </p>
+      </div>
+    </div>
+    <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity -z-10"></div>
+  </div>
+
+  <div className="group relative overflow-hidden rounded-xl border border-border bg-card p-6 transition-all hover:border-primary/50 hover:shadow-lg">
+    <div className="flex items-start gap-4">
+      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-2xl">
+        ⚡
+      </div>
+      <div>
+        <h3 className="text-lg font-semibold mb-2">Real Utility</h3>
+        <p className="text-sm text-muted-foreground">
+          VCoin powers tips, subscriptions, marketplace, and premium features. Constant demand, not speculation.
+        </p>
+      </div>
+    </div>
+    <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity -z-10"></div>
+  </div>
+
+  <div className="group relative overflow-hidden rounded-xl border border-border bg-card p-6 transition-all hover:border-primary/50 hover:shadow-lg">
+    <div className="flex items-start gap-4">
+      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-2xl">
+        🔥
+      </div>
+      <div>
+        <h3 className="text-lg font-semibold mb-2">Deflationary Model</h3>
+        <p className="text-sm text-muted-foreground">
+          Supply reduces over time while demand grows. Favorable economics without inflationary rewards.
+        </p>
+      </div>
+    </div>
+    <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity -z-10"></div>
+  </div>
+</div>
 
 ### Value Distribution Comparison
 
-| Aspect | Traditional Platforms | VYRAL |
-|--------|----------------------|-------|
-| **Creator Share** | 30-40% of ad revenue | 80% of direct payments |
-| **User Rewards** | Nothing | VCoin earnings |
-| **Platform Fee** | 60-70% | 20% |
-| **Onboarding** | Simple | Simple (crypto invisible) |
-| **Value Flow** | Extraction | Distribution |
+<div className="overflow-x-auto my-8">
+  <table className="w-full border-collapse">
+    <thead>
+      <tr className="border-b border-border">
+        <th className="p-4 text-left font-semibold">Aspect</th>
+        <th className="p-4 text-left font-semibold">Traditional Platforms</th>
+        <th className="p-4 text-left font-semibold bg-primary/5">VYRAL</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr className="border-b border-border">
+        <td className="p-4 font-medium">Creator Share</td>
+        <td className="p-4 text-muted-foreground">30-40% of ad revenue</td>
+        <td className="p-4 bg-primary/5 font-semibold text-primary">80% of direct payments</td>
+      </tr>
+      <tr className="border-b border-border">
+        <td className="p-4 font-medium">User Rewards</td>
+        <td className="p-4 text-muted-foreground">Nothing</td>
+        <td className="p-4 bg-primary/5 font-semibold text-primary">VCoin earnings</td>
+      </tr>
+      <tr className="border-b border-border">
+        <td className="p-4 font-medium">Platform Fee</td>
+        <td className="p-4 text-muted-foreground">60-70%</td>
+        <td className="p-4 bg-primary/5 font-semibold text-primary">20%</td>
+      </tr>
+      <tr className="border-b border-border">
+        <td className="p-4 font-medium">Onboarding</td>
+        <td className="p-4 text-muted-foreground">Simple</td>
+        <td className="p-4 bg-primary/5 font-semibold text-primary">Simple (crypto invisible)</td>
+      </tr>
+      <tr>
+        <td className="p-4 font-medium">Value Flow</td>
+        <td className="p-4 text-muted-foreground">Extraction</td>
+        <td className="p-4 bg-primary/5 font-semibold text-primary">Distribution</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-<Callout type="info" title="Key Insight">
+<Callout type="info" title="💡 Key Insight">
   VCoin isn't an afterthought—it's the **fundamental medium of exchange** for all platform features. Users need VCoins to fully participate, creating constant demand independent of speculative trading.
 </Callout>
 
@@ -112,120 +243,206 @@ VYRAL addresses these problems by building a comprehensive social platform that 
 
 ## VYRAL Platform Overview
 
-Before diving into VCoin's technical and economic details, it's important to understand the platform that gives the token its utility. **VYRAL is an all-in-one social application** that consolidates features from multiple platforms into a unified experience.
+<div className="text-lg leading-relaxed mb-6">
+  Before diving into VCoin's technical and economic details, it's important to understand the platform that gives the token its utility. **VYRAL is an all-in-one social application** that consolidates features from multiple platforms into a unified experience.
+</div>
 
 ### Core Features
 
 <Tabs items={['Content & Social', 'Communication', 'Commerce', 'Communities', 'AI & Tools']}>
   <Tab value="Content & Social">
-    **Social Feed**
-    - Algorithmic + chronological sorting
-    - Text, photos, videos, mixed media
-    - X/Twitter-style threads
-    - Trending content discovery
-    - Follow, like, comment, share
-
-    **Content Creation**
-    - Easy posting interface
-    - Rich media support
-    - Engagement analytics
-    - Creator monetization tools
+    <div className="p-6 space-y-4">
+      <div>
+        <h4 className="font-semibold text-lg mb-2">Social Feed</h4>
+        <ul className="space-y-1 text-muted-foreground">
+          <li>• Algorithmic + chronological sorting</li>
+          <li>• Text, photos, videos, mixed media</li>
+          <li>• X/Twitter-style threads</li>
+          <li>• Trending content discovery</li>
+          <li>• Follow, like, comment, share</li>
+        </ul>
+      </div>
+      <div>
+        <h4 className="font-semibold text-lg mb-2">Content Creation</h4>
+        <ul className="space-y-1 text-muted-foreground">
+          <li>• Easy posting interface</li>
+          <li>• Rich media support</li>
+          <li>• Engagement analytics</li>
+          <li>• Creator monetization tools</li>
+        </ul>
+      </div>
+    </div>
   </Tab>
 
   <Tab value="Communication">
-    **Encrypted Messaging (E2E)**
-    - Military-grade encryption (Signal-level)
-    - Private & group chats
-    - Voice messages
-    - File sharing
-    - Zero-knowledge architecture
-
-    **Privacy Guarantee**
-    - Messages encrypted on device
-    - VYRAL cannot access content
-    - Keys never leave user devices
-    - Protected from breaches/subpoenas
+    <div className="p-6 space-y-4">
+      <div>
+        <h4 className="font-semibold text-lg mb-2">Encrypted Messaging (E2E)</h4>
+        <ul className="space-y-1 text-muted-foreground">
+          <li>• Military-grade encryption (Signal-level)</li>
+          <li>• Private & group chats</li>
+          <li>• Voice messages</li>
+          <li>• File sharing</li>
+          <li>• Zero-knowledge architecture</li>
+        </ul>
+      </div>
+      <div>
+        <h4 className="font-semibold text-lg mb-2">Privacy Guarantee</h4>
+        <ul className="space-y-1 text-muted-foreground">
+          <li>• Messages encrypted on device</li>
+          <li>• VYRAL cannot access content</li>
+          <li>• Keys never leave user devices</li>
+          <li>• Protected from breaches/subpoenas</li>
+        </ul>
+      </div>
+    </div>
   </Tab>
 
   <Tab value="Commerce">
-    **Integrated Marketplace**
-    - Buy/sell physical & digital goods
-    - VCoin native payments
-    - 5% fees (vs 13% eBay)
-    - Instant settlement
-    - No intermediaries
-
-    **Transaction Benefits**
-    - Direct peer-to-peer
-    - Escrow protection
-    - Dispute resolution
-    - Transparent fees
+    <div className="p-6 space-y-4">
+      <div>
+        <h4 className="font-semibold text-lg mb-2">Integrated Marketplace</h4>
+        <ul className="space-y-1 text-muted-foreground">
+          <li>• Buy/sell physical & digital goods</li>
+          <li>• VCoin native payments</li>
+          <li>• 5% fees (vs 13% eBay)</li>
+          <li>• Instant settlement</li>
+          <li>• No intermediaries</li>
+        </ul>
+      </div>
+      <div>
+        <h4 className="font-semibold text-lg mb-2">Transaction Benefits</h4>
+        <ul className="space-y-1 text-muted-foreground">
+          <li>• Direct peer-to-peer</li>
+          <li>• Escrow protection</li>
+          <li>• Dispute resolution</li>
+          <li>• Transparent fees</li>
+        </ul>
+      </div>
+    </div>
   </Tab>
 
   <Tab value="Communities">
-    **Topic-Based Groups**
-    - Discord/Reddit-style communities
-    - Custom moderation rules
-    - Exclusive member benefits
-    - Event coordination
-    - Governance tools
-
-    **Community Features**
-    - Themed discussions
-    - Member roles & permissions
-    - Private/public spaces
-    - Integration with marketplace
+    <div className="p-6 space-y-4">
+      <div>
+        <h4 className="font-semibold text-lg mb-2">Topic-Based Groups</h4>
+        <ul className="space-y-1 text-muted-foreground">
+          <li>• Discord/Reddit-style communities</li>
+          <li>• Custom moderation rules</li>
+          <li>• Exclusive member benefits</li>
+          <li>• Event coordination</li>
+          <li>• Governance tools</li>
+        </ul>
+      </div>
+      <div>
+        <h4 className="font-semibold text-lg mb-2">Community Features</h4>
+        <ul className="space-y-1 text-muted-foreground">
+          <li>• Themed discussions</li>
+          <li>• Member roles & permissions</li>
+          <li>• Private/public spaces</li>
+          <li>• Integration with marketplace</li>
+        </ul>
+      </div>
+    </div>
   </Tab>
 
   <Tab value="AI & Tools">
-    **Orb AI Assistant**
-    - Intelligent matchmaking
-    - Personalized recommendations
-    - Conversational search
-    - Proximity-based discovery
-    - Compatibility analysis
-
-    **Privacy-First AI**
-    - Opt-in behavioral learning
-    - Full data transparency
-    - User control over AI access
-    - Revocable consent anytime
-    - No hidden profiling
+    <div className="p-6 space-y-4">
+      <div>
+        <h4 className="font-semibold text-lg mb-2">Orb AI Assistant</h4>
+        <ul className="space-y-1 text-muted-foreground">
+          <li>• Intelligent matchmaking</li>
+          <li>• Personalized recommendations</li>
+          <li>• Conversational search</li>
+          <li>• Proximity-based discovery</li>
+          <li>• Compatibility analysis</li>
+        </ul>
+      </div>
+      <div>
+        <h4 className="font-semibold text-lg mb-2">Privacy-First AI</h4>
+        <ul className="space-y-1 text-muted-foreground">
+          <li>• Opt-in behavioral learning</li>
+          <li>• Full data transparency</li>
+          <li>• User control over AI access</li>
+          <li>• Revocable consent anytime</li>
+          <li>• No hidden profiling</li>
+        </ul>
+      </div>
+    </div>
   </Tab>
 </Tabs>
 
 ### Orb AI: Privacy-Preserving Social Intelligence
 
-Orb, VYRAL's social AI assistant, provides intelligent matchmaking and personalized recommendations that go beyond traditional filtering systems. Users can interact conversationally with Orb to find connections—for example:
+<div className="text-lg leading-relaxed mb-4">
+  Orb, VYRAL's social AI assistant, provides intelligent matchmaking and personalized recommendations that go beyond traditional filtering systems. Users can interact conversationally with Orb to find connections—for example:
+</div>
 
-- *"Show me people interested in hiking near me"*
-- *"Find profiles similar to this person I liked"*
-- *"Suggest events happening this weekend"*
+<div className="space-y-2 mb-6 pl-4 border-l-2 border-primary/50">
+  <p className="italic text-muted-foreground">• "Show me people interested in hiking near me"</p>
+  <p className="italic text-muted-foreground">• "Find profiles similar to this person I liked"</p>
+  <p className="italic text-muted-foreground">• "Suggest events happening this weekend"</p>
+</div>
 
-<Callout type="warn" title="Privacy Protections">
+<Callout type="warn" title="🔒 Privacy Protections">
   **All behavioral analysis requires explicit, revocable consent:**
 
-  ✅ Users control what data Orb can access
-  ✅ View and delete all collected data anytime
-  ✅ AI never reveals non-public information
-  ✅ Match suggestions are one-way until mutual interest
-  ✅ Report inappropriate AI behavior
+  - ✅ Users control what data Orb can access
+  - ✅ View and delete all collected data anytime
+  - ✅ AI never reveals non-public information
+  - ✅ Match suggestions are one-way until mutual interest
+  - ✅ Report inappropriate AI behavior
 </Callout>
 
 ### Universal VCoin Integration
 
-<Callout type="info" title="Seamless Value Transfer">
-  Throughout **all platform features**, VCoin serves as the universal currency, enabling seamless value transfer without the friction of multiple payment systems, currencies, or intermediaries.
-</Callout>
+<div className="relative overflow-hidden rounded-xl border border-primary/20 bg-primary/5 p-6 my-8">
+  <div className="relative z-10">
+    <div className="flex items-center gap-3 mb-3">
+      <div className="text-2xl">💫</div>
+      <h4 className="text-lg font-semibold">Seamless Value Transfer</h4>
+    </div>
+    <p className="text-muted-foreground">
+      Throughout <strong>all platform features</strong>, VCoin serves as the universal currency, enabling seamless value transfer without the friction of multiple payment systems, currencies, or intermediaries.
+    </p>
+  </div>
+  <div className="absolute -right-10 -bottom-10 h-32 w-32 rounded-full bg-primary/10 blur-3xl"></div>
+</div>
 
-**VCoin enables:**
-- Creator tips and donations
-- Subscription payments
-- Marketplace transactions
-- Premium features access
-- Event tickets
-- Exclusive content unlocks
-- Community membership fees
+<div className="grid grid-cols-2 md:grid-cols-4 gap-3 my-6">
+  <div className="p-4 rounded-lg border border-border bg-card text-center">
+    <div className="text-2xl mb-2">💰</div>
+    <div className="text-sm font-medium">Creator tips</div>
+  </div>
+  <div className="p-4 rounded-lg border border-border bg-card text-center">
+    <div className="text-2xl mb-2">📺</div>
+    <div className="text-sm font-medium">Subscriptions</div>
+  </div>
+  <div className="p-4 rounded-lg border border-border bg-card text-center">
+    <div className="text-2xl mb-2">🛒</div>
+    <div className="text-sm font-medium">Marketplace</div>
+  </div>
+  <div className="p-4 rounded-lg border border-border bg-card text-center">
+    <div className="text-2xl mb-2">⭐</div>
+    <div className="text-sm font-medium">Premium features</div>
+  </div>
+  <div className="p-4 rounded-lg border border-border bg-card text-center">
+    <div className="text-2xl mb-2">🎫</div>
+    <div className="text-sm font-medium">Event tickets</div>
+  </div>
+  <div className="p-4 rounded-lg border border-border bg-card text-center">
+    <div className="text-2xl mb-2">🔓</div>
+    <div className="text-sm font-medium">Content unlocks</div>
+  </div>
+  <div className="p-4 rounded-lg border border-border bg-card text-center">
+    <div className="text-2xl mb-2">👥</div>
+    <div className="text-sm font-medium">Communities</div>
+  </div>
+  <div className="p-4 rounded-lg border border-border bg-card text-center">
+    <div className="text-2xl mb-2">🎁</div>
+    <div className="text-sm font-medium">And more</div>
+  </div>
+</div>
 
 ---
 

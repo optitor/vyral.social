@@ -3,73 +3,146 @@ title: Token Economics
 description: VCoin specifications, distribution, utility, and revenue model
 ---
 
-
-# VCoin Token Economics
+<div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-emerald-500/10 via-teal-500/5 to-background p-8 border border-emerald-500/20 mb-8">
+  <div className="relative z-10">
+    <h1 className="text-4xl md:text-5xl font-bold mb-3">VCoin Token Economics</h1>
+    <p className="text-lg text-muted-foreground">SPL Token-2022 on Solana • 10B Fixed Supply • Deflationary Utility Token</p>
+  </div>
+  <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/5 rounded-full blur-3xl"></div>
+</div>
 
 ## Token Specifications
 
-```text
-Why Solana for VCoin:
+<div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
+  <div className="rounded-xl border border-purple-500/30 bg-gradient-to-br from-purple-500/10 to-purple-500/5 p-6">
+    <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
+      <span className="text-2xl">⚡</span>
+      Why Solana for VCoin
+    </h3>
+    <div className="space-y-4">
+      <div className="p-3 rounded-lg bg-background border border-border">
+        <div className="flex justify-between items-center mb-1">
+          <span className="font-bold text-emerald-500">Speed</span>
+          <span className="font-mono font-bold">65,000 TPS</span>
+        </div>
+        <div className="text-xs text-muted-foreground">Compare: Ethereum ~15/second</div>
+      </div>
+      <div className="p-3 rounded-lg bg-background border border-border">
+        <div className="flex justify-between items-center mb-1">
+          <span className="font-bold text-blue-500">Cost</span>
+          <span className="font-mono font-bold">$0.00025</span>
+        </div>
+        <div className="text-xs text-muted-foreground">Compare: Ethereum $5-50 per transaction</div>
+      </div>
+      <div className="p-3 rounded-lg bg-background border border-border">
+        <div className="flex justify-between items-center mb-1">
+          <span className="font-bold text-cyan-500">Finality</span>
+          <span className="font-mono font-bold">&lt;1 second</span>
+        </div>
+        <div className="text-xs text-muted-foreground">Compare: Ethereum 13 seconds</div>
+      </div>
+      <div className="p-3 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-center">
+        <div className="font-bold text-emerald-500">✓ Result: Microtransactions actually work</div>
+      </div>
+    </div>
+  </div>
 
-├── Speed: 65,000 transactions/second
-│   └── Compare: Ethereum ~15/second
-│
-├── Cost: $0.00025 per transaction
-│   └── Compare: Ethereum $5-50 per transaction
-│
-├── Finality: Under 1 second
-│ └── Compare: Ethereum 13 seconds
-│
-└── Result: Microtransactions actually work
+  <div className="rounded-xl border border-orange-500/30 bg-gradient-to-br from-orange-500/10 to-orange-500/5 p-6">
+    <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
+      <span className="text-2xl">🔒</span>
+      Fixed Supply Impact
+    </h3>
+    <div className="space-y-4">
+      <div className="text-center p-4 rounded-lg bg-background border border-border">
+        <div className="text-sm text-muted-foreground mb-2">Total Supply</div>
+        <div className="text-3xl font-mono font-bold text-primary">10,000,000,000</div>
+        <div className="text-xs text-muted-foreground mt-2">Ten billion tokens</div>
+      </div>
+      <div className="p-3 rounded-lg bg-red-500/10 border border-red-500/30">
+        <div className="font-bold mb-1">Mint Authority: DISABLED</div>
+        <div className="text-sm text-muted-foreground">Can never create more tokens</div>
+      </div>
+      <div className="p-3 rounded-lg bg-background border border-border">
+        <div className="font-bold mb-1">Decimals: 9</div>
+        <div className="text-sm text-muted-foreground">Divisible for microtransactions</div>
+      </div>
+      <div className="p-3 rounded-lg bg-orange-500/10 border border-orange-500/30 text-center">
+        <div className="font-bold text-orange-500">Pure Scarcity Guaranteed</div>
+      </div>
+    </div>
+  </div>
+</div>
 
-Fixed Supply Impact:
+<div className="rounded-lg border border-border bg-card p-6 my-6">
+  <h4 className="font-bold mb-3">Technical Foundation: SPL Token-2022</h4>
+  <p className="text-sm text-muted-foreground mb-4">
+    VCoin is implemented as an SPL Token-2022 on the Solana blockchain. This technical foundation provides several critical advantages. Solana offers extremely high throughput, capable of processing up to 65,000 transactions per second with block times under one second. Transaction costs average approximately $0.00025, making microtransactions economically viable in ways impossible on higher-fee chains like Ethereum.
+  </p>
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-sm">
+    <div className="flex items-center gap-2 p-2 rounded bg-muted/50">
+      <span className="text-emerald-500">✓</span>
+      <span>Transfer hooks for automated fees</span>
+    </div>
+    <div className="flex items-center gap-2 p-2 rounded bg-muted/50">
+      <span className="text-emerald-500">✓</span>
+      <span>Metadata extensions for rich info</span>
+    </div>
+    <div className="flex items-center gap-2 p-2 rounded bg-muted/50">
+      <span className="text-emerald-500">✓</span>
+      <span>Confidential transfer capabilities</span>
+    </div>
+  </div>
+</div>
 
-├── Total: 10,000,000,000 tokens
-├── Mint authority: DISABLED forever
-│   └── Can never create more
-└── Pure scarcity
-```
-
-VCoin is implemented as an SPL Token-2022 on the Solana blockchain. This technical foundation provides several critical advantages. Solana offers extremely high throughput, capable of processing up to 65,000 transactions per second with block times under one second. Transaction costs average approximately $0.00025, making microtransactions economically viable in ways impossible on higher-fee chains like Ethereum. The SPL Token-2022 standard includes advanced features like transfer hooks for automated fee collection, metadata extensions for rich token information, and confidential transfer capabilities for enhanced privacy when needed.
-
+<p className="text-muted-foreground">
 The total supply is fixed at 10,000,000,000 (ten billion) tokens with nine decimal places for divisibility. This supply can never be increased—the mint authority is permanently disabled after initial distribution, eliminating inflation risk and establishing absolute scarcity. The large total supply allows for granular pricing and psychological accessibility, as users can hold thousands or millions of VCoins rather than fractional amounts.
+</p>
 
 ## Token Distribution
 
-```text
-Where All 10 Billion Tokens Go:
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-6">
+  <div className="relative overflow-hidden rounded-xl border border-emerald-500/30 bg-gradient-to-br from-emerald-500/10 to-emerald-500/5 p-6">
+    <div className="text-3xl font-bold text-emerald-500 mb-2">30%</div>
+    <h3 className="text-lg font-bold mb-2">Sales Inventory</h3>
+    <div className="text-2xl font-mono mb-3">3,000,000,000</div>
+    <p className="text-sm text-muted-foreground">Sold directly to users at $0.01 each = $30M max revenue</p>
+  </div>
 
-Sales Inventory: 30% (3,000,000,000)
-├── Sold directly to users
-├── At $0.01 each = $30M maximum revenue
-├── Once sold out: Must buy from DEX
-└── Creates natural scarcity
+  <div className="relative overflow-hidden rounded-xl border border-blue-500/30 bg-gradient-to-br from-blue-500/10 to-blue-500/5 p-6">
+    <div className="text-3xl font-bold text-blue-500 mb-2">25%</div>
+    <h3 className="text-lg font-bold mb-2">Platform Operations</h3>
+    <div className="text-2xl font-mono mb-3">2,500,000,000</div>
+    <p className="text-sm text-muted-foreground">4-year vesting, 6-month cliff, 156.25M/quarter unlock</p>
+  </div>
 
-Platform Operations: 25% (2,500,000,000)
-├── 4-year vesting schedule
-├── 6-month cliff (nothing unlocks)
-├── Then 156.25M tokens/quarter
-└── Aligns long-term interests
+  <div className="relative overflow-hidden rounded-xl border border-purple-500/30 bg-gradient-to-br from-purple-500/10 to-purple-500/5 p-6">
+    <div className="text-3xl font-bold text-purple-500 mb-2">20%</div>
+    <h3 className="text-lg font-bold mb-2">User Rewards Pool</h3>
+    <div className="text-2xl font-mono mb-3">2,000,000,000</div>
+    <p className="text-sm text-muted-foreground">5-year distribution, max 1,095,890 tokens/day</p>
+  </div>
 
-User Rewards Pool: 20% (2,000,000,000)
-├── Distributed over 5 years
-├── 1,095,890 tokens maximum per day
-├── Rewards quality content
-└── Prevents inflation
+  <div className="relative overflow-hidden rounded-xl border border-cyan-500/30 bg-gradient-to-br from-cyan-500/10 to-cyan-500/5 p-6">
+    <div className="text-3xl font-bold text-cyan-500 mb-2">15%</div>
+    <h3 className="text-lg font-bold mb-2">Liquidity Reserve</h3>
+    <div className="text-2xl font-mono mb-3">1,500,000,000</div>
+    <p className="text-sm text-muted-foreground">Paired with USDC on DEXs, provides trading depth</p>
+  </div>
 
-Liquidity Reserve: 15% (1,500,000,000)
-├── Paired with USDC on DEXs
-├── Provides trading depth
-├── Never circulates freely
-└── Supports token value
+  <div className="relative overflow-hidden rounded-xl border border-orange-500/30 bg-gradient-to-br from-orange-500/10 to-orange-500/5 p-6">
+    <div className="text-3xl font-bold text-orange-500 mb-2">7%</div>
+    <h3 className="text-lg font-bold mb-2">Team & Advisors</h3>
+    <div className="text-2xl font-mono mb-3">700,000,000</div>
+    <p className="text-sm text-muted-foreground">Same 4-year vesting schedule as operations</p>
+  </div>
 
-Team & Advisors: 7% (700,000,000)
-├── Same 4-year vesting
-└── Keeps team committed
-
-Strategic Reserve: 3% (300,000,000)
-└── Emergency fund, partnerships
-```
+  <div className="relative overflow-hidden rounded-xl border border-pink-500/30 bg-gradient-to-br from-pink-500/10 to-pink-500/5 p-6">
+    <div className="text-3xl font-bold text-pink-500 mb-2">3%</div>
+    <h3 className="text-lg font-bold mb-2">Strategic Reserve</h3>
+    <div className="text-2xl font-mono mb-3">300,000,000</div>
+    <p className="text-sm text-muted-foreground">Emergency fund, partnerships, and opportunities</p>
+  </div>
+</div>
 
 The initial token allocation balances multiple stakeholder interests while maintaining long-term sustainability. Each allocation serves a specific strategic purpose and includes appropriate vesting or distribution schedules to prevent market manipulation.
 
@@ -87,33 +160,105 @@ The initial token allocation balances multiple stakeholder interests while maint
 
 ## Token Utility
 
-```text
-How Users Spend VCoins:
+<div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+  <div className="rounded-xl border border-border bg-card p-6 hover:border-primary/50 transition-colors">
+    <div className="flex items-center gap-3 mb-4">
+      <div className="text-3xl">💰</div>
+      <h3 className="text-xl font-bold">Tipping Creators</h3>
+    </div>
+    <div className="space-y-2 text-sm">
+      <div className="flex justify-between items-center p-2 rounded bg-muted/50">
+        <span>User tips</span>
+        <span className="font-mono font-bold">100 VCoins</span>
+      </div>
+      <div className="flex justify-between items-center p-2 rounded bg-emerald-500/10">
+        <span>Creator receives</span>
+        <span className="font-mono font-bold text-emerald-500">80 VCoins (80%)</span>
+      </div>
+      <div className="flex justify-between items-center p-2 rounded bg-blue-500/10">
+        <span>Platform fee</span>
+        <span className="font-mono font-bold text-blue-500">19 VCoins (19%)</span>
+      </div>
+      <div className="flex justify-between items-center p-2 rounded bg-red-500/10">
+        <span>Burned forever</span>
+        <span className="font-mono font-bold text-red-500">1 VCoin (1%)</span>
+      </div>
+    </div>
+  </div>
 
-Tipping Creators:
-├── User tips 100 VCoins
-├── Creator gets 80 VCoins (80%)
-├── Platform keeps 19 VCoins (19%)
-└── 1 VCoin burns forever (1% from platform share)
+  <div className="rounded-xl border border-border bg-card p-6 hover:border-primary/50 transition-colors">
+    <div className="flex items-center gap-3 mb-4">
+      <div className="text-3xl">⭐</div>
+      <h3 className="text-xl font-bold">Subscriptions</h3>
+    </div>
+    <div className="space-y-2 text-sm">
+      <div className="flex justify-between items-center p-2 rounded bg-muted/50">
+        <span>Monthly payment</span>
+        <span className="font-mono font-bold">500 VCoins</span>
+      </div>
+      <div className="flex justify-between items-center p-2 rounded bg-emerald-500/10">
+        <span>Creator keeps</span>
+        <span className="font-mono font-bold text-emerald-500">475 VCoins (95%)</span>
+      </div>
+      <div className="flex justify-between items-center p-2 rounded bg-blue-500/10">
+        <span>Platform fee</span>
+        <span className="font-mono font-bold text-blue-500">25 VCoins (5%)</span>
+      </div>
+      <div className="mt-3 p-2 rounded bg-primary/10 text-xs text-center">
+        Creates recurring income stream
+      </div>
+    </div>
+  </div>
 
-Subscriptions:
-├── User pays 500 VCoins/month
-├── Creator keeps 475 VCoins (95%)
-├── Platform keeps 25 VCoins (5%)
-└── Creates recurring income
+  <div className="rounded-xl border border-border bg-card p-6 hover:border-primary/50 transition-colors">
+    <div className="flex items-center gap-3 mb-4">
+      <div className="text-3xl">🛒</div>
+      <h3 className="text-xl font-bold">Marketplace</h3>
+    </div>
+    <div className="space-y-2 text-sm">
+      <div className="flex justify-between items-center p-2 rounded bg-muted/50">
+        <span>Item price</span>
+        <span className="font-mono font-bold">1,000 VCoins</span>
+      </div>
+      <div className="flex justify-between items-center p-2 rounded bg-emerald-500/10">
+        <span>Seller receives</span>
+        <span className="font-mono font-bold text-emerald-500">950 VCoins (95%)</span>
+      </div>
+      <div className="flex justify-between items-center p-2 rounded bg-blue-500/10">
+        <span>Platform fee</span>
+        <span className="font-mono font-bold text-blue-500">40 VCoins (4%)</span>
+      </div>
+      <div className="flex justify-between items-center p-2 rounded bg-red-500/10">
+        <span>Burned forever</span>
+        <span className="font-mono font-bold text-red-500">10 VCoins (1%)</span>
+      </div>
+    </div>
+  </div>
 
-Marketplace:
-├── Item costs 1,000 VCoins
-├── Seller gets 950 VCoins (95%)
-├── Platform keeps 40 VCoins (4%)
-└── 10 VCoins burns (1% from platform share)
-
-Premium Features:
-├── Ad-free: 100 VCoins/month
-├── Analytics: 200 VCoins/month
-├── Verification: 1,000 VCoins one-time
-└── High-margin revenue for platform
-```
+  <div className="rounded-xl border border-border bg-card p-6 hover:border-primary/50 transition-colors">
+    <div className="flex items-center gap-3 mb-4">
+      <div className="text-3xl">✨</div>
+      <h3 className="text-xl font-bold">Premium Features</h3>
+    </div>
+    <div className="space-y-2 text-sm">
+      <div className="flex justify-between items-center p-2 rounded bg-muted/50">
+        <span>Ad-free browsing</span>
+        <span className="font-mono font-bold">100 VCoins/mo</span>
+      </div>
+      <div className="flex justify-between items-center p-2 rounded bg-muted/50">
+        <span>Advanced analytics</span>
+        <span className="font-mono font-bold">200 VCoins/mo</span>
+      </div>
+      <div className="flex justify-between items-center p-2 rounded bg-muted/50">
+        <span>Verification badge</span>
+        <span className="font-mono font-bold">1,000 VCoins</span>
+      </div>
+      <div className="mt-3 p-2 rounded bg-primary/10 text-xs text-center">
+        High-margin revenue for platform
+      </div>
+    </div>
+  </div>
+</div>
 
 VCoin's value derives from genuine utility across all platform functions, creating constant organic demand independent of speculative trading. This utility-first design distinguishes VCoin from purely speculative tokens whose value depends entirely on greater fool theory.
 
@@ -127,21 +272,58 @@ Premium features including ad-free browsing, advanced analytics, profile verific
 
 ## Revenue Model and Liquidity Strategy
 
-```text
-When User Buys $100 of VCoins:
-$100 received from user
-├── $80 (80%) → Operational funds
-└── $20 (20%) → Liquidity accumulation fund
-└── Saves toward $75K DEX launch
-
-User receives: 13,000 VCoins (from Sales Inventory)
-
-Why This Works:
-├── Platform get money immediately
-├── User gets tokens immediately
-├── Liquidity grows automatically
-└── No need for external funding
-```
+<div className="rounded-xl border border-border bg-gradient-to-br from-primary/5 to-background p-6 my-6">
+  <h3 className="text-xl font-bold mb-4">Revenue Split on VCoin Purchase</h3>
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div>
+      <div className="text-3xl font-bold mb-2">User Pays: $100</div>
+      <div className="space-y-3">
+        <div className="flex items-center gap-3 p-3 rounded-lg bg-blue-500/10 border border-blue-500/20">
+          <div className="text-2xl">🏢</div>
+          <div className="flex-1">
+            <div className="font-bold text-blue-500">$80 (80%)</div>
+            <div className="text-sm text-muted-foreground">Operational funds</div>
+          </div>
+        </div>
+        <div className="flex items-center gap-3 p-3 rounded-lg bg-emerald-500/10 border border-emerald-500/20">
+          <div className="text-2xl">💧</div>
+          <div className="flex-1">
+            <div className="font-bold text-emerald-500">$20 (20%)</div>
+            <div className="text-sm text-muted-foreground">Liquidity accumulation fund</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div className="text-3xl font-bold mb-2">User Receives</div>
+      <div className="flex items-center gap-3 p-4 rounded-lg bg-primary/10 border border-primary/20">
+        <div className="text-3xl">🪙</div>
+        <div>
+          <div className="text-2xl font-bold font-mono">13,000 VCoins</div>
+          <div className="text-sm text-muted-foreground">From Sales Inventory (30% bonus)</div>
+        </div>
+      </div>
+      <div className="mt-4 space-y-2 text-sm">
+        <div className="flex items-center gap-2">
+          <span className="text-emerald-500">✓</span>
+          <span>Platform gets money immediately</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="text-emerald-500">✓</span>
+          <span>User gets tokens immediately</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="text-emerald-500">✓</span>
+          <span>Liquidity grows automatically</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="text-emerald-500">✓</span>
+          <span>No external funding needed</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 The platform generates revenue through multiple streams while systematically building liquidity to support decentralized trading. This dual approach ensures operational sustainability while creating the financial infrastructure necessary for VCoin to function as a freely tradable utility.
 
@@ -149,55 +331,88 @@ The platform generates revenue through multiple streams while systematically bui
 
 When users purchase VCoins with cyrpto or fiat payment methods, they receive tokens from the Sales Inventory allocation at tiered pricing that incentivizes larger purchases:
 
-```text
-Complete Purchase Tier Structure:
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 my-6">
+  <div className="rounded-lg border border-border bg-card p-4 hover:shadow-lg transition-shadow">
+    <div className="text-2xl font-bold mb-1">$5</div>
+    <div className="text-3xl font-mono font-bold text-primary mb-2">500</div>
+    <div className="text-xs text-muted-foreground mb-3">VCoins • $0.01 each</div>
+    <div className="inline-block px-2 py-1 rounded text-xs bg-muted">0% bonus</div>
+  </div>
 
-$5 = 500 VCoins
-├── Price per coin: $0.01
-├── Bonus: None (0%)
-└── Best for: New users trying platform
+  <div className="rounded-lg border border-border bg-card p-4 hover:shadow-lg transition-shadow">
+    <div className="text-2xl font-bold mb-1">$10</div>
+    <div className="text-3xl font-mono font-bold text-primary mb-2">1,100</div>
+    <div className="text-xs text-muted-foreground mb-3">VCoins • $0.0091 each</div>
+    <div className="inline-block px-2 py-1 rounded text-xs bg-emerald-500/20 text-emerald-500">+10% bonus</div>
+  </div>
 
-$10 = 1,100 VCoins
-├── Price per coin: $0.0091
-├── Bonus: 100 VCoins (10%)
-└── Best for: Casual users
+  <div className="rounded-lg border border-border bg-card p-4 hover:shadow-lg transition-shadow">
+    <div className="text-2xl font-bold mb-1">$50</div>
+    <div className="text-3xl font-mono font-bold text-primary mb-2">6,000</div>
+    <div className="text-xs text-muted-foreground mb-3">VCoins • $0.0083 each</div>
+    <div className="inline-block px-2 py-1 rounded text-xs bg-emerald-500/20 text-emerald-500">+20% bonus</div>
+  </div>
 
-$50 = 6,000 VCoins
-├── Price per coin: $0.0083
-├── Bonus: 1,000 VCoins (20%)
-└── Best for: Regular users
+  <div className="rounded-lg border border-emerald-500/50 bg-gradient-to-br from-emerald-500/10 to-emerald-500/5 p-4 hover:shadow-lg transition-shadow">
+    <div className="text-xs font-bold text-emerald-500 mb-1">POPULAR</div>
+    <div className="text-2xl font-bold mb-1">$100</div>
+    <div className="text-3xl font-mono font-bold text-primary mb-2">13,000</div>
+    <div className="text-xs text-muted-foreground mb-3">VCoins • $0.0077 each</div>
+    <div className="inline-block px-2 py-1 rounded text-xs bg-emerald-500/30 text-emerald-500 font-bold">+30% bonus</div>
+  </div>
 
-$100 = 13,000 VCoins
-├── Price per coin: $0.0077
-├── Bonus: 3,000 VCoins (30%)
-└── Best for: Active participants
+  <div className="rounded-lg border border-border bg-card p-4 hover:shadow-lg transition-shadow">
+    <div className="text-2xl font-bold mb-1">$500</div>
+    <div className="text-3xl font-mono font-bold text-primary mb-2">70,000</div>
+    <div className="text-xs text-muted-foreground mb-3">VCoins • $0.0071 each</div>
+    <div className="inline-block px-2 py-1 rounded text-xs bg-blue-500/20 text-blue-500">+40% bonus</div>
+  </div>
 
-$500 = 70,000 VCoins
-├── Price per coin: $0.0071
-├── Bonus: 20,000 VCoins (40%)
-└── Best for: Power users
+  <div className="rounded-lg border border-border bg-card p-4 hover:shadow-lg transition-shadow">
+    <div className="text-2xl font-bold mb-1">$1,000</div>
+    <div className="text-3xl font-mono font-bold text-primary mb-2">150K</div>
+    <div className="text-xs text-muted-foreground mb-3">VCoins • $0.0067 each</div>
+    <div className="inline-block px-2 py-1 rounded text-xs bg-blue-500/20 text-blue-500">+50% bonus</div>
+  </div>
 
-$1,000 = 150,000 VCoins
-├── Price per coin: $0.0067
-├── Bonus: 50,000 VCoins (50%)
-└── Best for: Creators & businesses
+  <div className="rounded-lg border border-purple-500/50 bg-gradient-to-br from-purple-500/10 to-purple-500/5 p-4 hover:shadow-lg transition-shadow">
+    <div className="text-xs font-bold text-purple-500 mb-1">ENTERPRISE</div>
+    <div className="text-2xl font-bold mb-1">$10,000</div>
+    <div className="text-3xl font-mono font-bold text-primary mb-2">1.6M</div>
+    <div className="text-xs text-muted-foreground mb-3">VCoins • $0.00625 each</div>
+    <div className="inline-block px-2 py-1 rounded text-xs bg-purple-500/30 text-purple-500 font-bold">+60% bonus</div>
+  </div>
 
-$10,000 = 1,600,000 VCoins
-├── Price per coin: $0.00625
-├── Bonus: 600,000 VCoins (60%)
-└── Best for: High-volume platform users
+  <div className="rounded-lg border border-orange-500/50 bg-gradient-to-br from-orange-500/10 to-orange-500/5 p-4 hover:shadow-lg transition-shadow">
+    <div className="text-xs font-bold text-orange-500 mb-1">PARTNER</div>
+    <div className="text-2xl font-bold mb-1">$50,000</div>
+    <div className="text-3xl font-mono font-bold text-primary mb-2">8.5M</div>
+    <div className="text-xs text-muted-foreground mb-3">VCoins • $0.00588 each</div>
+    <div className="inline-block px-2 py-1 rounded text-xs bg-orange-500/30 text-orange-500 font-bold">+70% bonus</div>
+  </div>
+</div>
 
-$50,000 = 8,500,000 VCoins
-├── Price per coin: $0.00588
-├── Bonus: 3,500,000 VCoins (70%)
-└── Best for: Enterprise partners
-
-Strategic Benefits:
-├── Organizations can buy bulk with better rates
-├── Accelerates liquidity ($50K purchase = $10K to pool)
-├── Creates demand from businesses/partners
-└── Discounts incentivize bigger purchases
-```
+<div className="rounded-lg border border-primary/20 bg-primary/5 p-4 my-4">
+  <h4 className="font-bold mb-2">Strategic Benefits</h4>
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+    <div className="flex items-center gap-2">
+      <span className="text-emerald-500">✓</span>
+      <span>Organizations get bulk discounts</span>
+    </div>
+    <div className="flex items-center gap-2">
+      <span className="text-emerald-500">✓</span>
+      <span>Accelerates liquidity growth</span>
+    </div>
+    <div className="flex items-center gap-2">
+      <span className="text-emerald-500">✓</span>
+      <span>Creates business demand</span>
+    </div>
+    <div className="flex items-center gap-2">
+      <span className="text-emerald-500">✓</span>
+      <span>Incentivizes larger purchases</span>
+    </div>
+  </div>
+</div>
 
 **Every fiat purchase splits 80/20**: eighty percent goes to operational funds for salaries, development, marketing, infrastructure, and reserves, while twenty percent automatically transfers to a dedicated liquidity accumulation wallet. This 20% converts to USDC stablecoins and holds until sufficient capital accumulates to create a robust trading pool on decentralized exchanges. The process operates automatically through smart contracts, ensuring consistent execution without human intervention or discretionary delays.
 
@@ -211,35 +426,114 @@ Strategic Benefits:
 
 ## Deflationary Mechanisms
 
-```text
-How Tokens Get Permanently Removed:
+<div className="rounded-xl border border-red-500/30 bg-gradient-to-br from-red-500/10 to-red-500/5 p-6 my-6">
+  <div className="flex items-center gap-3 mb-4">
+    <div className="text-4xl">🔥</div>
+    <div>
+      <h3 className="text-2xl font-bold">Token Burn Mechanisms</h3>
+      <p className="text-sm text-muted-foreground">Permanent removal creates scarcity</p>
+    </div>
+  </div>
 
-Tip Burns:
-├── 1M tips sent daily = 100M VCoins
-├── 1% burns = 1M VCoins destroyed/day
-└── 365M VCoins burned/year
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+    <div className="rounded-lg border border-border bg-background p-4">
+      <h4 className="font-bold mb-3 flex items-center gap-2">
+        <span className="text-xl">💰</span>
+        Tip Burns (1%)
+      </h4>
+      <div className="space-y-2 text-sm">
+        <div className="flex justify-between">
+          <span className="text-muted-foreground">Daily tips sent</span>
+          <span className="font-mono">100M VCoins</span>
+        </div>
+        <div className="flex justify-between">
+          <span className="text-muted-foreground">1% burn rate</span>
+          <span className="font-mono text-red-500">-1M VCoins/day</span>
+        </div>
+        <div className="flex justify-between font-bold border-t pt-2">
+          <span>Annual burn</span>
+          <span className="font-mono text-red-500">-365M VCoins</span>
+        </div>
+      </div>
+    </div>
 
-Withdrawal Fees (No Burn):
-├── User withdraws $1,000 worth
-├── 2% fee = $20 worth of VCoins
-├── Platform keeps 100% of fee
-└── Covers gas fees and custodial costs
+    <div className="rounded-lg border border-border bg-background p-4">
+      <h4 className="font-bold mb-3 flex items-center gap-2">
+        <span className="text-xl">✨</span>
+        Premium Burns (30%)
+      </h4>
+      <div className="space-y-2 text-sm">
+        <div className="flex justify-between">
+          <span className="text-muted-foreground">1K users × 100 VCoins</span>
+          <span className="font-mono">100K VCoins</span>
+        </div>
+        <div className="flex justify-between">
+          <span className="text-muted-foreground">30% burn rate</span>
+          <span className="font-mono text-red-500">-30K VCoins</span>
+        </div>
+        <div className="flex justify-between font-bold border-t pt-2">
+          <span>Monthly recurring</span>
+          <span className="font-mono text-red-500">Continuous</span>
+        </div>
+      </div>
+    </div>
+  </div>
 
-The 2% withdrawal fee covers blockchain transaction costs, security infrastructure, and fraud prevention. Unlike tips and marketplace transactions, withdrawal fees do not include a burn mechanism, as the platform needs full fee revenue to maintain secure custodial operations.
+  <div className="rounded-lg border border-blue-500/30 bg-blue-500/5 p-4 mt-4">
+    <h4 className="font-bold mb-2 flex items-center gap-2">
+      <span className="text-xl">💸</span>
+      Withdrawal Fees (No Burn)
+    </h4>
+    <p className="text-sm text-muted-foreground mb-3">
+      2% withdrawal fee covers blockchain costs, security infrastructure, and fraud prevention. Platform keeps 100% to maintain custodial operations.
+    </p>
+    <div className="flex items-center gap-2 text-sm">
+      <span className="text-blue-500">ℹ️</span>
+      <span>Example: $1,000 withdrawal = $20 fee (covers gas + security)</span>
+    </div>
+  </div>
+</div>
 
-Premium Feature Burns:
-├── 1,000 users buy ad-free
-├── 100 VCoins each = 100K VCoins
-├── 30% burns = 30K VCoins destroyed
-└── Monthly recurring burns
-
-5-Year Projection:
-├── Year 1: 40M tokens burned (0.4%)
-├── Year 2: 120M tokens burned (1.2%)
-├── Year 3: 250M tokens burned (2.5%)
-├── Year 4: 420M tokens burned (4.2%)
-└── Year 5: 700M total burned (7% of supply)
-```
+<div className="my-6">
+  <h4 className="font-bold text-lg mb-4">5-Year Burn Projection</h4>
+  <div className="space-y-2">
+    <div className="flex items-center gap-3 p-3 rounded-lg bg-muted/50">
+      <div className="font-bold w-20">Year 1</div>
+      <div className="flex-1 bg-red-500/20 rounded-full h-3 overflow-hidden">
+        <div className="bg-red-500 h-full" style={{width: '0.4%'}}></div>
+      </div>
+      <div className="font-mono text-sm w-32 text-right">40M (0.4%)</div>
+    </div>
+    <div className="flex items-center gap-3 p-3 rounded-lg bg-muted/50">
+      <div className="font-bold w-20">Year 2</div>
+      <div className="flex-1 bg-red-500/20 rounded-full h-3 overflow-hidden">
+        <div className="bg-red-500 h-full" style={{width: '1.2%'}}></div>
+      </div>
+      <div className="font-mono text-sm w-32 text-right">120M (1.2%)</div>
+    </div>
+    <div className="flex items-center gap-3 p-3 rounded-lg bg-muted/50">
+      <div className="font-bold w-20">Year 3</div>
+      <div className="flex-1 bg-red-500/20 rounded-full h-3 overflow-hidden">
+        <div className="bg-red-500 h-full" style={{width: '2.5%'}}></div>
+      </div>
+      <div className="font-mono text-sm w-32 text-right">250M (2.5%)</div>
+    </div>
+    <div className="flex items-center gap-3 p-3 rounded-lg bg-muted/50">
+      <div className="font-bold w-20">Year 4</div>
+      <div className="flex-1 bg-red-500/20 rounded-full h-3 overflow-hidden">
+        <div className="bg-red-500 h-full" style={{width: '4.2%'}}></div>
+      </div>
+      <div className="font-mono text-sm w-32 text-right">420M (4.2%)</div>
+    </div>
+    <div className="flex items-center gap-3 p-3 rounded-lg bg-gradient-to-r from-red-500/20 to-red-500/10 border border-red-500/30">
+      <div className="font-bold w-20">Year 5</div>
+      <div className="flex-1 bg-red-500/20 rounded-full h-3 overflow-hidden">
+        <div className="bg-red-500 h-full" style={{width: '7%'}}></div>
+      </div>
+      <div className="font-mono text-sm w-32 text-right font-bold text-red-500">700M (7%)</div>
+    </div>
+  </div>
+</div>
 
 To counterbalance the steady release of tokens from the User Rewards Pool and maintain long-term value appreciation, VCoin implements multiple deflationary mechanisms that permanently remove tokens from circulation.
 

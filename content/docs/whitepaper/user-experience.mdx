@@ -3,8 +3,14 @@ title: User Experience
 description: Earning, spending, withdrawing, and cashing out VCoins
 ---
 
+<div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-emerald-500/10 via-blue-500/5 to-background p-8 border border-emerald-500/20 mb-8">
+  <div className="relative z-10">
+    <h1 className="text-4xl md:text-5xl font-bold mb-3">User Experience and Custodial Model</h1>
+    <p className="text-lg text-muted-foreground">Earning, spending, withdrawing, and cashing out VCoins</p>
+  </div>
+  <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/5 rounded-full blur-3xl"></div>
+</div>
 
-# User Experience and Custodial Model
 
 ## Simplified Onboarding
 
@@ -22,41 +28,135 @@ Users view their VCoin balance prominently in the app interface alongside tradit
 
 ## Earning VCoins
 
-```text
-How Much Can You Earn:
+<div className="rounded-xl border border-border bg-card p-6 my-6">
+  <h3 className="text-xl font-bold mb-4">💰 How Much Can You Earn</h3>
 
-Content Creation:
-├── Text post: 2-20 VCoins
-├── Photo: 5-50 VCoins
-├── Video: 10-100 VCoins
-└── Multipliers: 1.5x-3x for quality/virality
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+    <div className="rounded-lg border border-blue-500/30 bg-gradient-to-br from-blue-500/10 to-blue-500/5 p-4">
+      <h4 className="font-bold mb-3">Content Creation</h4>
+      <div className="space-y-2 text-sm">
+        <div className="flex justify-between items-center p-2 rounded bg-background">
+          <span>Text post</span>
+          <span className="font-mono font-bold">2-20 VCoins</span>
+        </div>
+        <div className="flex justify-between items-center p-2 rounded bg-background">
+          <span>Photo</span>
+          <span className="font-mono font-bold">5-50 VCoins</span>
+        </div>
+        <div className="flex justify-between items-center p-2 rounded bg-background">
+          <span>Video</span>
+          <span className="font-mono font-bold">10-100 VCoins</span>
+        </div>
+        <div className="p-2 rounded bg-blue-500/10 border border-blue-500/30 text-center text-xs">
+          Multipliers: 1.5x-3x for quality/virality
+        </div>
+      </div>
+    </div>
 
-Daily Engagement (Realistic User):
-├── Post 3 photos: 45 VCoins average
-├── 20 comments: 10 VCoins
-├── 50 likes given: 5 VCoins
-├── 10 shares: 10 VCoins
-└── Total: 70 VCoins/day = $0.70/day
+    <div className="rounded-lg border border-emerald-500/30 bg-gradient-to-br from-emerald-500/10 to-emerald-500/5 p-4">
+      <h4 className="font-bold mb-3">Daily Engagement (Realistic)</h4>
+      <div className="space-y-2 text-sm">
+        <div className="flex justify-between items-center p-2 rounded bg-background">
+          <span>Post 3 photos</span>
+          <span className="font-mono">45 VCoins</span>
+        </div>
+        <div className="flex justify-between items-center p-2 rounded bg-background">
+          <span>20 comments</span>
+          <span className="font-mono">10 VCoins</span>
+        </div>
+        <div className="flex justify-between items-center p-2 rounded bg-background">
+          <span>50 likes given</span>
+          <span className="font-mono">5 VCoins</span>
+        </div>
+        <div className="flex justify-between items-center p-2 rounded bg-background">
+          <span>10 shares</span>
+          <span className="font-mono">10 VCoins</span>
+        </div>
+        <div className="p-2 rounded bg-emerald-500/20 border border-emerald-500/40 text-center">
+          <div className="font-mono font-bold">70 VCoins/day = $0.70/day</div>
+        </div>
+      </div>
+    </div>
 
-Monthly Earnings (Active User):
-├── Daily: 70 VCoins × 30 days = 2,100 VCoins
-├── Milestones: 500 VCoins bonus
-├── Tips received: Variable
-└── Total: ~3,000 VCoins/month = $30/month
+    <div className="rounded-lg border border-purple-500/30 bg-gradient-to-br from-purple-500/10 to-purple-500/5 p-4">
+      <h4 className="font-bold mb-3">Monthly Earnings (Active)</h4>
+      <div className="space-y-2 text-sm">
+        <div className="flex justify-between items-center p-2 rounded bg-background">
+          <span>Daily × 30</span>
+          <span className="font-mono">2,100 VCoins</span>
+        </div>
+        <div className="flex justify-between items-center p-2 rounded bg-background">
+          <span>Milestones</span>
+          <span className="font-mono">500 VCoins</span>
+        </div>
+        <div className="flex justify-between items-center p-2 rounded bg-background">
+          <span>Tips received</span>
+          <span className="font-mono">Variable</span>
+        </div>
+        <div className="p-2 rounded bg-purple-500/20 border border-purple-500/40 text-center">
+          <div className="font-mono font-bold">~3,000 VCoins = $30/mo</div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-Top Creator (10K followers):
-├── Daily posts: 300 VCoins
-├── Tips from fans: 1,000 VCoins
-├── Subscriptions: 5,000 VCoins
-├── Marketplace: 2,000 VCoins
-└── Total: ~8,000 VCoins/day = $2,400/month
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+    <div className="rounded-lg border border-orange-500/30 bg-gradient-to-br from-orange-500/10 to-orange-500/5 p-4">
+      <h4 className="font-bold mb-3 flex items-center gap-2">
+        <span className="text-xl">⭐</span>
+        Top Creator (10K followers)
+      </h4>
+      <div className="space-y-2 text-sm">
+        <div className="flex justify-between items-center p-2 rounded bg-background">
+          <span>Daily posts</span>
+          <span className="font-mono">300 VCoins</span>
+        </div>
+        <div className="flex justify-between items-center p-2 rounded bg-background">
+          <span>Tips from fans</span>
+          <span className="font-mono">1,000 VCoins</span>
+        </div>
+        <div className="flex justify-between items-center p-2 rounded bg-background">
+          <span>Subscriptions</span>
+          <span className="font-mono">5,000 VCoins</span>
+        </div>
+        <div className="flex justify-between items-center p-2 rounded bg-background">
+          <span>Marketplace</span>
+          <span className="font-mono">2,000 VCoins</span>
+        </div>
+        <div className="p-2 rounded bg-orange-500/20 border border-orange-500/40 text-center">
+          <div className="font-mono font-bold text-orange-500">8,000 VCoins/day = $2,400/mo</div>
+        </div>
+      </div>
+    </div>
 
-Reality Check:
-├── Most users: $10-30/month
-├── Active creators: $200-1,000/month
-├── Top 1% creators: $5,000+/month
-└── Better than getting $0 elsewhere
-```
+    <div className="rounded-lg border border-primary/30 bg-primary/5 p-4">
+      <h4 className="font-bold mb-3">Reality Check</h4>
+      <div className="space-y-3 text-sm">
+        <div className="p-3 rounded bg-background border border-border">
+          <div className="flex justify-between items-center">
+            <span>Most users</span>
+            <span className="font-mono font-bold">$10-30/month</span>
+          </div>
+        </div>
+        <div className="p-3 rounded bg-background border border-border">
+          <div className="flex justify-between items-center">
+            <span>Active creators</span>
+            <span className="font-mono font-bold">$200-1,000/month</span>
+          </div>
+        </div>
+        <div className="p-3 rounded bg-background border border-border">
+          <div className="flex justify-between items-center">
+            <span>Top 1% creators</span>
+            <span className="font-mono font-bold">$5,000+/month</span>
+          </div>
+        </div>
+        <div className="p-3 rounded bg-emerald-500/10 border border-emerald-500/30 text-center font-bold text-emerald-500">
+          Better than getting $0 elsewhere
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 The platform rewards quality contributions through the User Rewards Pool allocation, distributing VCoins based on content quality, engagement, and community value. Content creators earn VCoins when their posts receive views, likes, comments, and shares, with rates adjusted by quality factors. A photo that receives 10,000 views might earn 50 VCoins, while a viral video with 1 million views could earn 5,000 VCoins. Quality multipliers up to 3x apply for original content, high engagement rates, and viral reach.
 
@@ -68,36 +168,114 @@ The earning mechanisms carefully balance generosity with sustainability. Daily d
 
 ## Withdrawal to Self-Custody
 
-```text
-Taking VCoins to Your Own Wallet:
+<div className="rounded-xl border border-border bg-card p-6 my-6">
+  <h3 className="text-xl font-bold mb-4">💸 Taking VCoins to Your Own Wallet</h3>
 
-Step-by-Step:
-├── 1. Click "Withdraw to Wallet"
-├── 2. Connect Phantom/Solflare wallet
-├── 3. Enter amount to withdraw
-├── 4. Confirm (2% fee applies)
-└── 5. Wait 24-48 hours for processing
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+    <div className="rounded-lg border border-blue-500/30 bg-gradient-to-br from-blue-500/10 to-blue-500/5 p-6">
+      <h4 className="font-bold mb-3">Step-by-Step Process</h4>
+      <div className="space-y-3 text-sm">
+        <div className="flex items-start gap-3 p-2 rounded bg-background">
+          <span className="font-bold text-blue-500 mt-0.5">1.</span>
+          <span>Click "Withdraw to Wallet"</span>
+        </div>
+        <div className="flex items-start gap-3 p-2 rounded bg-background">
+          <span className="font-bold text-blue-500 mt-0.5">2.</span>
+          <span>Connect Phantom/Solflare wallet</span>
+        </div>
+        <div className="flex items-start gap-3 p-2 rounded bg-background">
+          <span className="font-bold text-blue-500 mt-0.5">3.</span>
+          <span>Enter amount to withdraw</span>
+        </div>
+        <div className="flex items-start gap-3 p-2 rounded bg-background">
+          <span className="font-bold text-blue-500 mt-0.5">4.</span>
+          <span>Confirm (2% fee applies)</span>
+        </div>
+        <div className="flex items-start gap-3 p-2 rounded bg-background">
+          <span className="font-bold text-blue-500 mt-0.5">5.</span>
+          <span>Wait 24-48 hours for processing</span>
+        </div>
+      </div>
+    </div>
 
-Fees Breakdown:
-├── Withdraw 10,000 VCoins ($100 worth)
-├── 2% fee = 200 VCoins ($2)
-│ ├── 100 VCoins burn forever
-│ └── 100 VCoins to platform (covers costs)
-└── You receive: 9,800 VCoins in your wallet
+    <div className="rounded-lg border border-orange-500/30 bg-gradient-to-br from-orange-500/10 to-orange-500/5 p-6">
+      <h4 className="font-bold mb-3">Fees Breakdown Example</h4>
+      <div className="space-y-3 text-sm">
+        <div className="p-3 rounded bg-background border border-border">
+          <div className="font-bold mb-1">Withdraw</div>
+          <div className="font-mono text-lg">10,000 VCoins ($100)</div>
+        </div>
+        <div className="p-3 rounded bg-orange-500/10 border border-orange-500/30">
+          <div className="font-bold mb-2">2% fee = 200 VCoins ($2)</div>
+          <div className="space-y-1 text-xs">
+            <div className="flex items-center gap-2">
+              <span className="text-red-500">🔥</span>
+              <span>100 VCoins burn forever</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-blue-500">💼</span>
+              <span>100 VCoins to platform (covers costs)</span>
+            </div>
+          </div>
+        </div>
+        <div className="p-3 rounded bg-emerald-500/10 border border-emerald-500/30 text-center">
+          <div className="font-bold text-emerald-500">You receive:</div>
+          <div className="font-mono text-xl text-emerald-500">9,800 VCoins</div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-Large Withdrawal (>$10K):
-├── Requires KYC verification
-├── Extra review time: 2-3 days
-├── Prevents money laundering
-└── Compliance protection
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div className="rounded-lg border border-red-500/30 bg-red-500/5 p-4">
+      <h4 className="font-bold mb-3">Large Withdrawal (&gt;$10K)</h4>
+      <div className="space-y-2 text-sm">
+        <div className="flex items-center gap-2">
+          <span className="text-red-500">⚠️</span>
+          <span>Requires KYC verification</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="text-red-500">⏱️</span>
+          <span>Extra review time: 2-3 days</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="text-red-500">🛡️</span>
+          <span>Prevents money laundering</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="text-emerald-500">✓</span>
+          <span>Compliance protection</span>
+        </div>
+      </div>
+    </div>
 
-After Withdrawal:
-├── VCoins now in YOUR wallet
-├── You control private keys
-├── Can trade on DEXs
-├── Can send to others
-└── Platform can't freeze/reverse
-```
+    <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/5 p-4">
+      <h4 className="font-bold mb-3">After Withdrawal</h4>
+      <div className="space-y-2 text-sm">
+        <div className="flex items-center gap-2">
+          <span className="text-emerald-500">✓</span>
+          <span>VCoins now in YOUR wallet</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="text-emerald-500">✓</span>
+          <span>You control private keys</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="text-emerald-500">✓</span>
+          <span>Can trade on DEXs</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="text-emerald-500">✓</span>
+          <span>Can send to others</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="text-emerald-500">✓</span>
+          <span>Platform can't freeze/reverse</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 Users who want true ownership of their VCoins can withdraw to personal Solana wallets at any time. The withdrawal process guides users through connecting their wallet (like Phantom or Solflare), specifying the amount to withdraw, and confirming the transaction. The platform clearly explains that withdrawn VCoins leave custodial protection and become the user's sole responsibility, ensuring informed consent.
 

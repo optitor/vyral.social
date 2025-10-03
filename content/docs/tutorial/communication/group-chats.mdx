@@ -1,0 +1,1577 @@
+---
+title: Group Chats
+description: Manage and participate in group conversations
+---
+
+<div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-orange-500/10 via-purple-500/5 to-background p-8 border border-orange-500/20 mb-8">
+  <div className="relative z-10">
+    <h1 className="text-4xl md:text-5xl font-bold mb-4">Group Chats</h1>
+    <p className="text-xl text-muted-foreground mb-6">
+      Communicate with multiple people at once - perfect for teams, friends, family, or communities. Support for 2-256 participants with powerful admin controls and privacy features.
+    </p>
+  </div>
+  <div className="absolute top-0 right-0 w-64 h-64 bg-orange-500/5 rounded-full blur-3xl"></div>
+  <div className="absolute bottom-0 left-0 w-64 h-64 bg-purple-500/5 rounded-full blur-3xl"></div>
+</div>
+
+## Creating a Group
+
+<div className="rounded-xl border border-green-500/30 bg-gradient-to-br from-green-500/10 to-green-500/5 p-6 my-6">
+  <div className="flex items-center gap-3 mb-4">
+    <span className="text-3xl">➕</span>
+    <div>
+      <div className="font-bold text-lg">Start a New Group</div>
+      <div className="text-sm text-muted-foreground">Create your group in 5 easy steps</div>
+    </div>
+  </div>
+
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div className="relative rounded-xl border border-border bg-background p-6">
+      <div className="absolute -top-3 -left-3 w-10 h-10 rounded-full bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center text-white font-bold text-lg shadow-lg">1</div>
+      <div className="mt-2">
+        <div className="font-bold mb-2">Navigate to Messages</div>
+        <div className="text-sm text-muted-foreground">
+          Go to <span className="font-semibold text-foreground">Messages</span> tab
+        </div>
+      </div>
+    </div>
+
+    <div className="relative rounded-xl border border-border bg-background p-6">
+      <div className="absolute -top-3 -left-3 w-10 h-10 rounded-full bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center text-white font-bold text-lg shadow-lg">2</div>
+      <div className="mt-2">
+        <div className="font-bold mb-2">Start New Group</div>
+        <div className="text-sm text-muted-foreground">
+          Tap <span className="font-semibold text-foreground">+ New Message</span> → <span className="font-semibold text-foreground">New Group</span>
+        </div>
+      </div>
+    </div>
+
+    <div className="relative rounded-xl border border-border bg-background p-6">
+      <div className="absolute -top-3 -left-3 w-10 h-10 rounded-full bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center text-white font-bold text-lg shadow-lg">3</div>
+      <div className="mt-2">
+        <div className="font-bold mb-2">Add Members</div>
+        <div className="text-sm text-muted-foreground space-y-1">
+          <div>• Search by name or @username</div>
+          <div>• Select 2-256 members</div>
+          <div>• Tap checkmark when done</div>
+        </div>
+      </div>
+    </div>
+
+    <div className="relative rounded-xl border border-border bg-background p-6">
+      <div className="absolute -top-3 -left-3 w-10 h-10 rounded-full bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center text-white font-bold text-lg shadow-lg">4</div>
+      <div className="mt-2">
+        <div className="font-bold mb-2">Set Group Info</div>
+        <div className="text-sm text-muted-foreground space-y-1">
+          <div>• <span className="font-semibold text-foreground">Group Name</span> (required, max 25 chars)</div>
+          <div>• <span className="font-semibold text-foreground">Group Icon</span> (optional image)</div>
+          <div>• <span className="font-semibold text-foreground">Description</span> (group purpose)</div>
+        </div>
+      </div>
+    </div>
+
+    <div className="relative rounded-xl border border-border bg-background p-6">
+      <div className="absolute -top-3 -left-3 w-10 h-10 rounded-full bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center text-white font-bold text-lg shadow-lg">5</div>
+      <div className="mt-2">
+        <div className="font-bold mb-2">Create Group</div>
+        <div className="text-sm text-muted-foreground">
+          Tap <span className="font-semibold text-foreground">Create</span> and you're done!
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div className="rounded-xl border border-blue-500/30 bg-gradient-to-br from-blue-500/10 to-blue-500/5 p-6 my-6">
+  <div className="flex items-center gap-3">
+    <span className="text-3xl">💡</span>
+    <div>
+      <div className="font-bold text-lg">Group Size Limits</div>
+      <div className="text-sm text-muted-foreground">
+        Groups support 2-256 participants. For larger communities, consider creating a <a href="/docs/tutorial/social/communities" className="text-blue-500 hover:underline font-semibold">Community</a> instead.
+      </div>
+    </div>
+  </div>
+</div>
+
+## Group Settings
+
+<div className="rounded-xl border border-purple-500/30 bg-gradient-to-br from-purple-500/10 to-purple-500/5 p-6 my-6">
+  <div className="flex items-center gap-3 mb-4">
+    <span className="text-3xl">⚙️</span>
+    <div>
+      <div className="font-bold text-lg">Configure Your Group</div>
+      <div className="text-sm text-muted-foreground">Customize appearance and information</div>
+    </div>
+  </div>
+
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+    <div className="rounded-lg border border-border bg-background p-5">
+      <div className="text-2xl mb-3">✏️</div>
+      <div className="font-bold mb-2">Edit Group Info</div>
+      <div className="text-sm text-muted-foreground mb-3">As Admin:</div>
+      <div className="text-sm space-y-1">
+        <div className="flex items-start gap-2">
+          <span className="text-purple-500 mt-1">•</span>
+          <span>Open group chat</span>
+        </div>
+        <div className="flex items-start gap-2">
+          <span className="text-purple-500 mt-1">•</span>
+          <span>Tap group name at top</span>
+        </div>
+        <div className="flex items-start gap-2">
+          <span className="text-purple-500 mt-1">•</span>
+          <span>Tap <span className="font-semibold">Edit Group Info</span></span>
+        </div>
+        <div className="flex items-start gap-2">
+          <span className="text-purple-500 mt-1">•</span>
+          <span>Modify name, icon, or description</span>
+        </div>
+        <div className="flex items-start gap-2">
+          <span className="text-purple-500 mt-1">•</span>
+          <span>Save changes</span>
+        </div>
+      </div>
+    </div>
+
+    <div className="rounded-lg border border-border bg-background p-5">
+      <div className="text-2xl mb-3">🖼️</div>
+      <div className="font-bold mb-2">Group Icon</div>
+      <div className="text-sm text-muted-foreground mb-3">Upload custom image:</div>
+      <div className="text-sm space-y-1">
+        <div className="flex items-start gap-2">
+          <span className="text-purple-500 mt-1">•</span>
+          <span>Square image recommended (512x512)</span>
+        </div>
+        <div className="flex items-start gap-2">
+          <span className="text-purple-500 mt-1">•</span>
+          <span>Max 5MB file size</span>
+        </div>
+        <div className="flex items-start gap-2">
+          <span className="text-purple-500 mt-1">•</span>
+          <span>JPG, PNG, GIF supported</span>
+        </div>
+        <div className="flex items-start gap-2">
+          <span className="text-purple-500 mt-1">•</span>
+          <span>Visible to all members</span>
+        </div>
+      </div>
+    </div>
+
+    <div className="rounded-lg border border-border bg-background p-5">
+      <div className="text-2xl mb-3">📝</div>
+      <div className="font-bold mb-2">Group Description</div>
+      <div className="text-sm text-muted-foreground mb-3">Add useful information:</div>
+      <div className="text-sm space-y-1">
+        <div className="flex items-start gap-2">
+          <span className="text-purple-500 mt-1">•</span>
+          <span>Purpose of group</span>
+        </div>
+        <div className="flex items-start gap-2">
+          <span className="text-purple-500 mt-1">•</span>
+          <span>Rules or guidelines</span>
+        </div>
+        <div className="flex items-start gap-2">
+          <span className="text-purple-500 mt-1">•</span>
+          <span>Important links</span>
+        </div>
+        <div className="flex items-start gap-2">
+          <span className="text-purple-500 mt-1">•</span>
+          <span>Meeting schedules</span>
+        </div>
+        <div className="flex items-start gap-2">
+          <span className="text-purple-500 mt-1">•</span>
+          <span>Contact information</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+## Managing Members
+
+<div className="rounded-xl border border-cyan-500/30 bg-gradient-to-br from-cyan-500/10 to-cyan-500/5 p-6 my-6">
+  <div className="flex items-center gap-3 mb-4">
+    <span className="text-3xl">👥</span>
+    <div>
+      <div className="font-bold text-lg">Member Management</div>
+      <div className="text-sm text-muted-foreground">Add, remove, and control group membership</div>
+    </div>
+  </div>
+
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div>
+      <div className="rounded-lg border border-cyan-500/50 bg-background p-5 mb-4">
+        <div className="flex items-center gap-2 mb-3">
+          <span className="text-xl">➕</span>
+          <div className="font-bold">Add Members</div>
+        </div>
+        <div className="text-sm text-muted-foreground mb-3">As Admin or if permitted:</div>
+        <div className="text-sm space-y-2">
+          <div className="flex items-start gap-2">
+            <span className="text-cyan-500 font-bold">1.</span>
+            <span>Tap group name → <span className="font-semibold">Add Members</span></span>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="text-cyan-500 font-bold">2.</span>
+            <span>Search for users</span>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="text-cyan-500 font-bold">3.</span>
+            <span>Select new members</span>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="text-cyan-500 font-bold">4.</span>
+            <span>They join immediately</span>
+          </div>
+        </div>
+      </div>
+
+      <div className="rounded-lg border border-cyan-500/50 bg-background p-5">
+        <div className="flex items-center gap-2 mb-3">
+          <span className="text-xl">🔗</span>
+          <div className="font-bold">Share Invite Link</div>
+        </div>
+        <div className="text-sm space-y-2">
+          <div className="flex items-start gap-2">
+            <span className="text-cyan-500 font-bold">1.</span>
+            <span>Group Info → <span className="font-semibold">Invite Link</span></span>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="text-cyan-500 font-bold">2.</span>
+            <span>Copy link or share directly</span>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="text-cyan-500 font-bold">3.</span>
+            <span>Anyone with link can join</span>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="text-cyan-500 font-bold">4.</span>
+            <span>Disable link anytime</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div className="rounded-lg border border-cyan-500/50 bg-background p-5 mb-4">
+        <div className="flex items-center gap-2 mb-3">
+          <span className="text-xl">🚫</span>
+          <div className="font-bold">Remove Members</div>
+        </div>
+        <div className="text-sm text-muted-foreground mb-3">As Admin:</div>
+        <div className="text-sm space-y-2">
+          <div className="flex items-start gap-2">
+            <span className="text-cyan-500 font-bold">1.</span>
+            <span>Group Info → <span className="font-semibold">Members</span></span>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="text-cyan-500 font-bold">2.</span>
+            <span>Find member to remove</span>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="text-cyan-500 font-bold">3.</span>
+            <span>Tap <span className="font-semibold">⋮</span> → <span className="font-semibold">Remove from Group</span></span>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="text-cyan-500 font-bold">4.</span>
+            <span>Confirm action</span>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="text-cyan-500 font-bold">5.</span>
+            <span>They're removed (can be re-added)</span>
+          </div>
+        </div>
+      </div>
+
+      <div className="rounded-lg border border-cyan-500/50 bg-background p-5">
+        <div className="flex items-center gap-2 mb-3">
+          <span className="text-xl">👋</span>
+          <div className="font-bold">Leave Group</div>
+        </div>
+        <div className="text-sm text-muted-foreground mb-3">As Member:</div>
+        <div className="text-sm space-y-2">
+          <div className="flex items-start gap-2">
+            <span className="text-cyan-500 font-bold">1.</span>
+            <span>Tap group name</span>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="text-cyan-500 font-bold">2.</span>
+            <span>Scroll down → <span className="font-semibold">Leave Group</span></span>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="text-cyan-500 font-bold">3.</span>
+            <span>Confirm your choice</span>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="text-cyan-500 font-bold">4.</span>
+            <span>You'll no longer receive messages</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div className="rounded-xl border border-yellow-500/30 bg-gradient-to-br from-yellow-500/10 to-yellow-500/5 p-6 my-6">
+  <div className="flex items-center gap-3">
+    <span className="text-3xl">⚠️</span>
+    <div>
+      <div className="font-bold text-lg">Leaving Groups as Admin</div>
+      <div className="text-sm text-muted-foreground">
+        If you're the only admin, you must appoint another admin before leaving, or the group will be deleted.
+      </div>
+    </div>
+  </div>
+</div>
+
+## Admin Controls
+
+<div className="rounded-xl border border-blue-500/30 bg-gradient-to-br from-blue-500/10 to-blue-500/5 p-6 my-6">
+  <div className="flex items-center gap-3 mb-4">
+    <span className="text-3xl">👑</span>
+    <div>
+      <div className="font-bold text-lg">Admin Privileges</div>
+      <div className="text-sm text-muted-foreground">Manage administrators and their permissions</div>
+    </div>
+  </div>
+
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div className="rounded-lg border border-blue-500/50 bg-background p-5">
+      <div className="flex items-center gap-2 mb-3">
+        <span className="text-xl">⬆️</span>
+        <div className="font-bold">Assign Admins</div>
+      </div>
+      <div className="text-sm text-muted-foreground mb-3">Make someone admin:</div>
+      <div className="text-sm space-y-2 mb-4">
+        <div className="flex items-start gap-2">
+          <span className="text-blue-500 font-bold">1.</span>
+          <span>Group Info → <span className="font-semibold">Members</span></span>
+        </div>
+        <div className="flex items-start gap-2">
+          <span className="text-blue-500 font-bold">2.</span>
+          <span>Tap member name</span>
+        </div>
+        <div className="flex items-start gap-2">
+          <span className="text-blue-500 font-bold">3.</span>
+          <span><span className="font-semibold">Make Group Admin</span></span>
+        </div>
+        <div className="flex items-start gap-2">
+          <span className="text-blue-500 font-bold">4.</span>
+          <span>They get admin privileges</span>
+        </div>
+      </div>
+
+      <div className="p-3 rounded-lg bg-blue-500/10 border border-blue-500/20">
+        <div className="text-xs font-semibold text-blue-500 mb-2">ADMIN PERMISSIONS:</div>
+        <div className="text-sm space-y-1">
+          <div className="flex items-center gap-2">
+            <span className="text-blue-500">✓</span>
+            <span>Edit group info</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="text-blue-500">✓</span>
+            <span>Add/remove members</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="text-blue-500">✓</span>
+            <span>Promote/demote admins</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="text-blue-500">✓</span>
+            <span>Delete messages</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="text-blue-500">✓</span>
+            <span>Pin messages</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="text-blue-500">✓</span>
+            <span>Change group settings</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div className="rounded-lg border border-blue-500/50 bg-background p-5">
+      <div className="flex items-center gap-2 mb-3">
+        <span className="text-xl">⬇️</span>
+        <div className="font-bold">Remove Admin</div>
+      </div>
+      <div className="text-sm text-muted-foreground mb-3">Demote admin to member:</div>
+      <div className="text-sm space-y-2">
+        <div className="flex items-start gap-2">
+          <span className="text-blue-500 font-bold">1.</span>
+          <span>Group Info → <span className="font-semibold">Admins</span></span>
+        </div>
+        <div className="flex items-start gap-2">
+          <span className="text-blue-500 font-bold">2.</span>
+          <span>Tap admin name</span>
+        </div>
+        <div className="flex items-start gap-2">
+          <span className="text-blue-500 font-bold">3.</span>
+          <span><span className="font-semibold">Remove as Admin</span></span>
+        </div>
+        <div className="flex items-start gap-2">
+          <span className="text-blue-500 font-bold">4.</span>
+          <span>They become regular member</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+## Group Permissions
+
+<div className="rounded-xl border border-orange-500/30 bg-gradient-to-br from-orange-500/10 to-orange-500/5 p-6 my-6">
+  <div className="flex items-center gap-3 mb-4">
+    <span className="text-3xl">🔒</span>
+    <div>
+      <div className="font-bold text-lg">Permission Controls</div>
+      <div className="text-sm text-muted-foreground">Configure who can do what in your group</div>
+    </div>
+  </div>
+
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+    <div className="rounded-lg border border-border bg-background p-5">
+      <div className="text-2xl mb-3">💬</div>
+      <div className="font-bold mb-2">Message Permissions</div>
+      <div className="text-sm text-muted-foreground mb-3">Who can send messages:</div>
+      <div className="space-y-2 mb-4">
+        <div className="p-3 rounded-lg bg-green-500/10 border border-green-500/20">
+          <div className="font-semibold text-sm mb-1">All Members</div>
+          <div className="text-xs text-muted-foreground">Default - everyone can chat</div>
+        </div>
+        <div className="p-3 rounded-lg bg-orange-500/10 border border-orange-500/20">
+          <div className="font-semibold text-sm mb-1">Admins Only</div>
+          <div className="text-xs text-muted-foreground">Announcements mode</div>
+        </div>
+      </div>
+      <div className="text-xs text-muted-foreground">
+        Change: Group Info → Settings → <span className="font-semibold">Send Messages</span>
+      </div>
+    </div>
+
+    <div className="rounded-lg border border-border bg-background p-5">
+      <div className="text-2xl mb-3">✏️</div>
+      <div className="font-bold mb-2">Edit Info Permissions</div>
+      <div className="text-sm text-muted-foreground mb-3">Who can edit group info:</div>
+      <div className="space-y-2 mb-4">
+        <div className="p-3 rounded-lg bg-blue-500/10 border border-blue-500/20">
+          <div className="font-semibold text-sm mb-1">All Members</div>
+          <div className="text-xs text-muted-foreground">Everyone can customize</div>
+        </div>
+        <div className="p-3 rounded-lg bg-purple-500/10 border border-purple-500/20">
+          <div className="font-semibold text-sm mb-1">Admins Only</div>
+          <div className="text-xs text-muted-foreground">Recommended setting</div>
+        </div>
+      </div>
+      <div className="text-xs text-muted-foreground space-y-1">
+        <div>Includes:</div>
+        <div>• Group name</div>
+        <div>• Group icon</div>
+        <div>• Description</div>
+      </div>
+    </div>
+
+    <div className="rounded-lg border border-border bg-background p-5">
+      <div className="text-2xl mb-3">➕</div>
+      <div className="font-bold mb-2">Add Members Permission</div>
+      <div className="text-sm text-muted-foreground mb-3">Who can add members:</div>
+      <div className="space-y-2 mb-4">
+        <div className="p-3 rounded-lg bg-cyan-500/10 border border-cyan-500/20">
+          <div className="font-semibold text-sm mb-1">All Members</div>
+          <div className="text-xs text-muted-foreground">Open growth</div>
+        </div>
+        <div className="p-3 rounded-lg bg-red-500/10 border border-red-500/20">
+          <div className="font-semibold text-sm mb-1">Admins Only</div>
+          <div className="text-xs text-muted-foreground">Controlled growth</div>
+        </div>
+      </div>
+      <div className="text-xs text-muted-foreground">
+        Control group growth and prevent spam
+      </div>
+    </div>
+  </div>
+</div>
+
+## Messaging in Groups
+
+<div className="rounded-xl border border-pink-500/30 bg-gradient-to-br from-pink-500/10 to-pink-500/5 p-6 my-6">
+  <div className="flex items-center gap-3 mb-4">
+    <span className="text-3xl">📨</span>
+    <div>
+      <div className="font-bold text-lg">Group Messaging Features</div>
+      <div className="text-sm text-muted-foreground">Enhance communication in your groups</div>
+    </div>
+  </div>
+
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div className="space-y-4">
+      <div className="rounded-lg border border-pink-500/50 bg-background p-5">
+        <div className="flex items-center gap-2 mb-3">
+          <span className="text-xl">@</span>
+          <div className="font-bold">@Mentions</div>
+        </div>
+        <div className="text-sm mb-3">Tag specific members for their attention:</div>
+        <div className="p-3 rounded-lg bg-muted/50 font-mono text-sm mb-3">
+          @username what do you think?
+        </div>
+        <div className="text-sm space-y-1">
+          <div className="flex items-start gap-2">
+            <span className="text-pink-500 mt-1">•</span>
+            <span>They get highlighted notification</span>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="text-pink-500 mt-1">•</span>
+            <span>Tap mention to view profile</span>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="text-pink-500 mt-1">•</span>
+            <span><span className="font-mono text-xs bg-orange-500/20 px-1 rounded">@everyone</span> mentions all (admins only)</span>
+          </div>
+        </div>
+      </div>
+
+      <div className="rounded-lg border border-pink-500/50 bg-background p-5">
+        <div className="flex items-center gap-2 mb-3">
+          <span className="text-xl">↩️</span>
+          <div className="font-bold">Reply to Messages</div>
+        </div>
+        <div className="text-sm mb-3">Quote-reply to keep context:</div>
+        <div className="text-sm space-y-2">
+          <div className="flex items-start gap-2">
+            <span className="text-pink-500 font-bold">1.</span>
+            <span>Long press message</span>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="text-pink-500 font-bold">2.</span>
+            <span>Tap <span className="font-semibold">Reply</span></span>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="text-pink-500 font-bold">3.</span>
+            <span>Type your response</span>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="text-pink-500 font-bold">4.</span>
+            <span>Shows original message with your reply</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div className="space-y-4">
+      <div className="rounded-lg border border-pink-500/50 bg-background p-5">
+        <div className="flex items-center gap-2 mb-3">
+          <span className="text-xl">🔕</span>
+          <div className="font-bold">Mute Notifications</div>
+        </div>
+        <div className="text-sm mb-3">Silence busy groups:</div>
+        <div className="text-sm space-y-2 mb-3">
+          <div className="flex items-start gap-2">
+            <span className="text-pink-500 font-bold">1.</span>
+            <span>Group Info → <span className="font-semibold">Mute Notifications</span></span>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="text-pink-500 font-bold">2.</span>
+            <span>Choose duration:</span>
+          </div>
+        </div>
+        <div className="grid grid-cols-3 gap-2 mb-3">
+          <div className="p-2 rounded bg-muted text-center text-sm">8 hours</div>
+          <div className="p-2 rounded bg-muted text-center text-sm">1 week</div>
+          <div className="p-2 rounded bg-muted text-center text-sm">Always</div>
+        </div>
+        <div className="text-xs text-muted-foreground">
+          You'll still see messages, just no alerts
+        </div>
+      </div>
+
+      <div className="rounded-lg border border-pink-500/50 bg-background p-5">
+        <div className="flex items-center gap-2 mb-3">
+          <span className="text-xl">🔔</span>
+          <div className="font-bold">Custom Notifications</div>
+        </div>
+        <div className="text-sm mb-3">Set per-group sounds:</div>
+        <div className="text-sm space-y-2">
+          <div className="flex items-start gap-2">
+            <span className="text-pink-500 font-bold">1.</span>
+            <span>Group Info → <span className="font-semibold">Custom Notifications</span></span>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="text-pink-500 font-bold">2.</span>
+            <span>Set unique options:</span>
+          </div>
+        </div>
+        <div className="mt-3 space-y-1 text-sm">
+          <div className="flex items-center gap-2">
+            <span className="text-pink-500">•</span>
+            <span>Sound</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="text-pink-500">•</span>
+            <span>Vibration pattern</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="text-pink-500">•</span>
+            <span>LED color</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+## Group Features
+
+<div className="rounded-xl border border-emerald-500/30 bg-gradient-to-br from-emerald-500/10 to-emerald-500/5 p-6 my-6">
+  <div className="flex items-center gap-3 mb-4">
+    <span className="text-3xl">✨</span>
+    <div>
+      <div className="font-bold text-lg">Advanced Group Features</div>
+      <div className="text-sm text-muted-foreground">Powerful tools for better group communication</div>
+    </div>
+  </div>
+
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div className="space-y-4">
+      <div className="rounded-lg border border-emerald-500/50 bg-background p-5">
+        <div className="flex items-center gap-2 mb-3">
+          <span className="text-xl">📌</span>
+          <div className="font-bold">Pin Messages</div>
+        </div>
+        <div className="text-sm text-muted-foreground mb-3">Highlight important info (Admin):</div>
+        <div className="text-sm space-y-2 mb-4">
+          <div className="flex items-start gap-2">
+            <span className="text-emerald-500 font-bold">1.</span>
+            <span>Long press message</span>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="text-emerald-500 font-bold">2.</span>
+            <span>Tap <span className="font-semibold">Pin Message</span></span>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="text-emerald-500 font-bold">3.</span>
+            <span>Appears at top of chat</span>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="text-emerald-500 font-bold">4.</span>
+            <span>Max 3 pinned messages</span>
+          </div>
+        </div>
+        <div className="p-3 rounded-lg bg-emerald-500/10 border border-emerald-500/20">
+          <div className="text-sm font-semibold mb-1">View Pinned Messages:</div>
+          <div className="text-xs space-y-1">
+            <div>• Tap "Pinned" banner at top</div>
+            <div>• See all pinned messages</div>
+            <div>• Tap to jump to message</div>
+          </div>
+        </div>
+      </div>
+
+      <div className="rounded-lg border border-emerald-500/50 bg-background p-5">
+        <div className="flex items-center gap-2 mb-3">
+          <span className="text-xl">📊</span>
+          <div className="font-bold">Polls</div>
+        </div>
+        <div className="text-sm mb-3">Create group polls for decisions:</div>
+        <div className="text-sm space-y-2 mb-3">
+          <div className="flex items-start gap-2">
+            <span className="text-emerald-500 font-bold">1.</span>
+            <span>Type <span className="font-mono text-xs bg-muted px-1 rounded">/poll</span> or tap poll icon</span>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="text-emerald-500 font-bold">2.</span>
+            <span>Enter question</span>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="text-emerald-500 font-bold">3.</span>
+            <span>Add options (2-10 choices)</span>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="text-emerald-500 font-bold">4.</span>
+            <span>Set duration</span>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="text-emerald-500 font-bold">5.</span>
+            <span>Send to group</span>
+          </div>
+        </div>
+        <div className="text-xs text-muted-foreground">
+          Members vote, results shown in real-time
+        </div>
+      </div>
+    </div>
+
+    <div className="space-y-4">
+      <div className="rounded-lg border border-emerald-500/50 bg-background p-5">
+        <div className="flex items-center gap-2 mb-3">
+          <span className="text-xl">📁</span>
+          <div className="font-bold">Shared Media</div>
+        </div>
+        <div className="text-sm mb-3">View all group media in one place:</div>
+        <div className="text-sm space-y-2 mb-4">
+          <div className="flex items-start gap-2">
+            <span className="text-emerald-500 font-bold">1.</span>
+            <span>Group Info → <span className="font-semibold">Media & Docs</span></span>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="text-emerald-500 font-bold">2.</span>
+            <span>Browse by type:</span>
+          </div>
+        </div>
+        <div className="grid grid-cols-2 gap-2 mb-3">
+          <div className="p-2 rounded bg-muted text-sm flex items-center gap-2">
+            <span>📷</span>
+            <span>Photos</span>
+          </div>
+          <div className="p-2 rounded bg-muted text-sm flex items-center gap-2">
+            <span>🎥</span>
+            <span>Videos</span>
+          </div>
+          <div className="p-2 rounded bg-muted text-sm flex items-center gap-2">
+            <span>📄</span>
+            <span>Documents</span>
+          </div>
+          <div className="p-2 rounded bg-muted text-sm flex items-center gap-2">
+            <span>🔗</span>
+            <span>Links</span>
+          </div>
+          <div className="p-2 rounded bg-muted text-sm flex items-center gap-2 col-span-2">
+            <span>🎙️</span>
+            <span>Voice messages</span>
+          </div>
+        </div>
+        <div className="text-xs text-muted-foreground">
+          Download or share any media
+        </div>
+      </div>
+
+      <div className="rounded-lg border border-emerald-500/50 bg-background p-5">
+        <div className="flex items-center gap-2 mb-3">
+          <span className="text-xl">📞</span>
+          <div className="font-bold">Group Calls</div>
+        </div>
+        <div className="text-sm mb-3">Voice or video call all members:</div>
+        <div className="text-sm space-y-2 mb-3">
+          <div className="flex items-start gap-2">
+            <span className="text-emerald-500 font-bold">1.</span>
+            <span>Tap call icon in group chat</span>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="text-emerald-500 font-bold">2.</span>
+            <span>All members notified</span>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="text-emerald-500 font-bold">3.</span>
+            <span>Members join/leave anytime</span>
+          </div>
+        </div>
+        <div className="grid grid-cols-2 gap-2">
+          <div className="p-3 rounded-lg bg-blue-500/10 border border-blue-500/20 text-center">
+            <div className="font-bold text-lg mb-1">8</div>
+            <div className="text-xs text-muted-foreground">Voice participants</div>
+          </div>
+          <div className="p-3 rounded-lg bg-purple-500/10 border border-purple-500/20 text-center">
+            <div className="font-bold text-lg mb-1">4</div>
+            <div className="text-xs text-muted-foreground">Video participants</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+## Privacy & Security
+
+<div className="rounded-xl border border-green-500/30 bg-gradient-to-br from-green-500/10 to-green-500/5 p-6 my-6">
+  <div className="flex items-center gap-3 mb-4">
+    <span className="text-3xl">🔐</span>
+    <div>
+      <div className="font-bold text-lg">Group Security Features</div>
+      <div className="text-sm text-muted-foreground">Your group conversations are protected</div>
+    </div>
+  </div>
+
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+    <div className="rounded-lg border border-border bg-background p-5">
+      <div className="text-2xl mb-3">🔒</div>
+      <div className="font-bold mb-2">Group Encryption</div>
+      <div className="text-sm text-muted-foreground mb-3">All messages are encrypted:</div>
+      <div className="text-sm space-y-2">
+        <div className="flex items-start gap-2">
+          <span className="text-green-500">✓</span>
+          <span>End-to-end encrypted</span>
+        </div>
+        <div className="flex items-start gap-2">
+          <span className="text-green-500">✓</span>
+          <span>Only group members can read</span>
+        </div>
+        <div className="flex items-start gap-2">
+          <span className="text-green-500">✓</span>
+          <span>VYRAL cannot access messages</span>
+        </div>
+        <div className="flex items-start gap-2">
+          <span className="text-green-500">✓</span>
+          <span>New members can't see old messages</span>
+        </div>
+      </div>
+    </div>
+
+    <div className="rounded-lg border border-border bg-background p-5">
+      <div className="text-2xl mb-3">⏱️</div>
+      <div className="font-bold mb-2">Disappearing Messages</div>
+      <div className="text-sm text-muted-foreground mb-3">Auto-delete group messages (Admin):</div>
+      <div className="text-sm space-y-2 mb-3">
+        <div className="flex items-start gap-2">
+          <span className="text-green-500 font-bold">1.</span>
+          <span>Group Info → <span className="font-semibold">Disappearing Messages</span></span>
+        </div>
+        <div className="flex items-start gap-2">
+          <span className="text-green-500 font-bold">2.</span>
+          <span>Enable and set duration:</span>
+        </div>
+      </div>
+      <div className="grid grid-cols-3 gap-2">
+        <div className="p-2 rounded bg-muted text-center text-xs">24h</div>
+        <div className="p-2 rounded bg-muted text-center text-xs">7d</div>
+        <div className="p-2 rounded bg-muted text-center text-xs">90d</div>
+      </div>
+      <div className="text-xs text-muted-foreground mt-3">
+        Applies to all new messages
+      </div>
+    </div>
+
+    <div className="rounded-lg border border-border bg-background p-5">
+      <div className="text-2xl mb-3">👁️</div>
+      <div className="font-bold mb-2">Group Privacy</div>
+      <div className="text-sm text-muted-foreground mb-3">Control visibility:</div>
+
+      <div className="space-y-3">
+        <div>
+          <div className="text-xs font-semibold mb-2">Group Visibility:</div>
+          <div className="space-y-1">
+            <div className="p-2 rounded bg-muted text-sm flex items-center justify-between">
+              <span>Private</span>
+              <span className="text-xs text-green-500">Invite/link only</span>
+            </div>
+            <div className="p-2 rounded bg-muted/50 text-sm flex items-center justify-between">
+              <span>Public</span>
+              <span className="text-xs bg-orange-500/20 text-orange-500 px-2 py-0.5 rounded">Coming Soon</span>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div className="text-xs font-semibold mb-2">Member Visibility:</div>
+          <div className="text-xs text-muted-foreground">
+            Show/hide member list to non-admins
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+## Group Types & Use Cases
+
+<div className="rounded-xl border border-purple-500/30 bg-gradient-to-br from-purple-500/10 to-purple-500/5 p-6 my-6">
+  <div className="flex items-center gap-3 mb-4">
+    <span className="text-3xl">🎯</span>
+    <div>
+      <div className="font-bold text-lg">Perfect For Every Occasion</div>
+      <div className="text-sm text-muted-foreground">Common group chat use cases</div>
+    </div>
+  </div>
+
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+    <div className="rounded-lg border border-border bg-background p-5">
+      <div className="text-2xl mb-3">👨‍👩‍👧‍👦</div>
+      <div className="font-bold mb-2">Friends & Family</div>
+      <div className="text-sm space-y-1">
+        <div className="flex items-center gap-2">
+          <span className="text-purple-500 text-xs">•</span>
+          <span className="text-sm">Coordinate plans</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="text-purple-500 text-xs">•</span>
+          <span className="text-sm">Share photos</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="text-purple-500 text-xs">•</span>
+          <span className="text-sm">Stay connected</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="text-purple-500 text-xs">•</span>
+          <span className="text-sm">Celebrate moments</span>
+        </div>
+      </div>
+    </div>
+
+    <div className="rounded-lg border border-border bg-background p-5">
+      <div className="text-2xl mb-3">💼</div>
+      <div className="font-bold mb-2">Work & Teams</div>
+      <div className="text-sm space-y-1">
+        <div className="flex items-center gap-2">
+          <span className="text-purple-500 text-xs">•</span>
+          <span className="text-sm">Project collaboration</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="text-purple-500 text-xs">•</span>
+          <span className="text-sm">Quick updates</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="text-purple-500 text-xs">•</span>
+          <span className="text-sm">File sharing</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="text-purple-500 text-xs">•</span>
+          <span className="text-sm">Meeting coordination</span>
+        </div>
+      </div>
+    </div>
+
+    <div className="rounded-lg border border-border bg-background p-5">
+      <div className="text-2xl mb-3">🎨</div>
+      <div className="font-bold mb-2">Interest Groups</div>
+      <div className="text-sm space-y-1">
+        <div className="flex items-center gap-2">
+          <span className="text-purple-500 text-xs">•</span>
+          <span className="text-sm">Hobby discussions</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="text-purple-500 text-xs">•</span>
+          <span className="text-sm">Learning groups</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="text-purple-500 text-xs">•</span>
+          <span className="text-sm">Support groups</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="text-purple-500 text-xs">•</span>
+          <span className="text-sm">Fan communities</span>
+        </div>
+      </div>
+    </div>
+
+    <div className="rounded-lg border border-border bg-background p-5">
+      <div className="text-2xl mb-3">🎉</div>
+      <div className="font-bold mb-2">Event Planning</div>
+      <div className="text-sm space-y-1">
+        <div className="flex items-center gap-2">
+          <span className="text-purple-500 text-xs">•</span>
+          <span className="text-sm">Wedding planning</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="text-purple-500 text-xs">•</span>
+          <span className="text-sm">Trip coordination</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="text-purple-500 text-xs">•</span>
+          <span className="text-sm">Party organization</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="text-purple-500 text-xs">•</span>
+          <span className="text-sm">Volunteer coordination</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+## Best Practices
+
+<div className="rounded-xl border border-blue-500/30 bg-gradient-to-br from-blue-500/10 to-blue-500/5 p-6 my-6">
+  <div className="flex items-center gap-3 mb-4">
+    <span className="text-3xl">⭐</span>
+    <div>
+      <div className="font-bold text-lg">Group Chat Best Practices</div>
+      <div className="text-sm text-muted-foreground">Do's and don'ts for admins and members</div>
+    </div>
+  </div>
+
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div className="space-y-4">
+      <div className="rounded-lg border border-blue-500/50 bg-background p-5">
+        <div className="flex items-center gap-2 mb-4">
+          <span className="text-xl">👑</span>
+          <div className="font-bold">For Group Admins</div>
+        </div>
+
+        <div className="space-y-4">
+          <div>
+            <div className="flex items-center gap-2 mb-2">
+              <span className="text-green-500 font-bold text-sm">✅ DO:</span>
+            </div>
+            <div className="text-sm space-y-1 ml-6">
+              <div className="flex items-start gap-2">
+                <span className="text-green-500 mt-1">•</span>
+                <span>Set clear group purpose (description)</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="text-green-500 mt-1">•</span>
+                <span>Establish rules early</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="text-green-500 mt-1">•</span>
+                <span>Moderate respectfully</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="text-green-500 mt-1">•</span>
+                <span>Remove inactive members periodically</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="text-green-500 mt-1">•</span>
+                <span>Use announcements mode for important updates</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="text-green-500 mt-1">•</span>
+                <span>Pin important information</span>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div className="flex items-center gap-2 mb-2">
+              <span className="text-red-500 font-bold text-sm">❌ DON'T:</span>
+            </div>
+            <div className="text-sm space-y-1 ml-6">
+              <div className="flex items-start gap-2">
+                <span className="text-red-500 mt-1">•</span>
+                <span>Add people without permission</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="text-red-500 mt-1">•</span>
+                <span>Tolerate harassment</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="text-red-500 mt-1">•</span>
+                <span>Over-moderate discussions</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="text-red-500 mt-1">•</span>
+                <span>Ignore member concerns</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="text-red-500 mt-1">•</span>
+                <span>Let spam accumulate</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="rounded-lg border border-blue-500/50 bg-background p-5">
+        <div className="flex items-center gap-2 mb-4">
+          <span className="text-xl">🤝</span>
+          <div className="font-bold">Group Etiquette</div>
+        </div>
+
+        <div className="space-y-3">
+          <div>
+            <div className="font-semibold text-sm mb-2">Timing:</div>
+            <div className="text-sm space-y-1">
+              <div className="flex items-start gap-2">
+                <span className="text-blue-500 mt-1">•</span>
+                <span>Respect time zones</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="text-blue-500 mt-1">•</span>
+                <span>Avoid late-night messages (unless urgent)</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="text-blue-500 mt-1">•</span>
+                <span>Use Do Not Disturb wisely</span>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div className="font-semibold text-sm mb-2">Content:</div>
+            <div className="text-sm space-y-1">
+              <div className="flex items-start gap-2">
+                <span className="text-blue-500 mt-1">•</span>
+                <span>Keep messages concise</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="text-blue-500 mt-1">•</span>
+                <span>Use voice notes for long explanations</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="text-blue-500 mt-1">•</span>
+                <span>Warn before sending many photos</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="text-blue-500 mt-1">•</span>
+                <span>Don't forward chain messages</span>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div className="font-semibold text-sm mb-2">Engagement:</div>
+            <div className="text-sm space-y-1">
+              <div className="flex items-start gap-2">
+                <span className="text-blue-500 mt-1">•</span>
+                <span>Reply to important questions</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="text-blue-500 mt-1">•</span>
+                <span>Acknowledge plans/announcements</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="text-blue-500 mt-1">•</span>
+                <span>React with emojis instead of "ok" messages</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="text-blue-500 mt-1">•</span>
+                <span>Voice opinions when asked</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div className="space-y-4">
+      <div className="rounded-lg border border-blue-500/50 bg-background p-5">
+        <div className="flex items-center gap-2 mb-4">
+          <span className="text-xl">👤</span>
+          <div className="font-bold">For Group Members</div>
+        </div>
+
+        <div className="space-y-4">
+          <div>
+            <div className="flex items-center gap-2 mb-2">
+              <span className="text-green-500 font-bold text-sm">✅ DO:</span>
+            </div>
+            <div className="text-sm space-y-1 ml-6">
+              <div className="flex items-start gap-2">
+                <span className="text-green-500 mt-1">•</span>
+                <span>Stay on topic</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="text-green-500 mt-1">•</span>
+                <span>Use @mentions appropriately</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="text-green-500 mt-1">•</span>
+                <span>Contribute value</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="text-green-500 mt-1">•</span>
+                <span>Respect others</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="text-green-500 mt-1">•</span>
+                <span>Read pinned messages</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="text-green-500 mt-1">•</span>
+                <span>Check before posting duplicates</span>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div className="flex items-center gap-2 mb-2">
+              <span className="text-red-500 font-bold text-sm">❌ DON'T:</span>
+            </div>
+            <div className="text-sm space-y-1 ml-6">
+              <div className="flex items-start gap-2">
+                <span className="text-red-500 mt-1">•</span>
+                <span>Spam messages</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="text-red-500 mt-1">•</span>
+                <span>Post off-topic content</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="text-red-500 mt-1">•</span>
+                <span>Abuse @mentions</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="text-red-500 mt-1">•</span>
+                <span>Share others' private info</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="text-red-500 mt-1">•</span>
+                <span>Leave without saying goodbye</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="rounded-lg border border-blue-500/50 bg-background p-5">
+        <div className="flex items-center gap-2 mb-4">
+          <span className="text-xl">📋</span>
+          <div className="font-bold">Quick Reference</div>
+        </div>
+
+        <div className="space-y-3">
+          <div className="p-3 rounded-lg bg-green-500/10 border border-green-500/20">
+            <div className="font-semibold text-sm mb-1 text-green-500">Good Group Culture</div>
+            <div className="text-xs space-y-1">
+              <div>✓ Clear purpose and rules</div>
+              <div>✓ Respectful communication</div>
+              <div>✓ Active but not overwhelming</div>
+              <div>✓ Everyone feels valued</div>
+            </div>
+          </div>
+
+          <div className="p-3 rounded-lg bg-red-500/10 border border-red-500/20">
+            <div className="font-semibold text-sm mb-1 text-red-500">Red Flags to Avoid</div>
+            <div className="text-xs space-y-1">
+              <div>✗ Constant notifications</div>
+              <div>✗ Off-topic spam</div>
+              <div>✗ Lack of moderation</div>
+              <div>✗ Unclear group purpose</div>
+            </div>
+          </div>
+
+          <div className="p-3 rounded-lg bg-blue-500/10 border border-blue-500/20">
+            <div className="font-semibold text-sm mb-1">Pro Tips</div>
+            <div className="text-xs space-y-1">
+              <div>💡 Pin group rules at top</div>
+              <div>💡 Use polls for decisions</div>
+              <div>💡 Schedule quiet hours</div>
+              <div>💡 Regular member check-ins</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+## Managing Group Activity
+
+<div className="rounded-xl border border-orange-500/30 bg-gradient-to-br from-orange-500/10 to-orange-500/5 p-6 my-6">
+  <div className="flex items-center gap-3 mb-4">
+    <span className="text-3xl">🔧</span>
+    <div>
+      <div className="font-bold text-lg">Group Management Tools</div>
+      <div className="text-sm text-muted-foreground">Archive, report, or delete groups</div>
+    </div>
+  </div>
+
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+    <div className="rounded-lg border border-border bg-background p-5">
+      <div className="text-2xl mb-3">📦</div>
+      <div className="font-bold mb-2">Archive Group</div>
+      <div className="text-sm text-muted-foreground mb-3">Hide without leaving:</div>
+      <div className="text-sm space-y-2">
+        <div className="flex items-start gap-2">
+          <span className="text-orange-500 font-bold">1.</span>
+          <span>Long press group in messages list</span>
+        </div>
+        <div className="flex items-start gap-2">
+          <span className="text-orange-500 font-bold">2.</span>
+          <span>Tap <span className="font-semibold">Archive</span></span>
+        </div>
+        <div className="flex items-start gap-2">
+          <span className="text-orange-500 font-bold">3.</span>
+          <span>Access: Menu → <span className="font-semibold">Archived Chats</span></span>
+        </div>
+        <div className="flex items-start gap-2">
+          <span className="text-orange-500 font-bold">4.</span>
+          <span>Unarchives on new message</span>
+        </div>
+      </div>
+    </div>
+
+    <div className="rounded-lg border border-border bg-background p-5">
+      <div className="text-2xl mb-3">🚨</div>
+      <div className="font-bold mb-2">Report Group</div>
+      <div className="text-sm text-muted-foreground mb-3">Report violations:</div>
+      <div className="text-sm space-y-2 mb-3">
+        <div className="flex items-start gap-2">
+          <span className="text-orange-500 font-bold">1.</span>
+          <span>Group Info → <span className="font-semibold">⋮ More</span></span>
+        </div>
+        <div className="flex items-start gap-2">
+          <span className="text-orange-500 font-bold">2.</span>
+          <span>Tap <span className="font-semibold">Report Group</span></span>
+        </div>
+        <div className="flex items-start gap-2">
+          <span className="text-orange-500 font-bold">3.</span>
+          <span>Choose reason</span>
+        </div>
+        <div className="flex items-start gap-2">
+          <span className="text-orange-500 font-bold">4.</span>
+          <span>Submit (anonymous)</span>
+        </div>
+      </div>
+    </div>
+
+    <div className="rounded-lg border border-border bg-background p-5">
+      <div className="text-2xl mb-3">🗑️</div>
+      <div className="font-bold mb-2">Delete Group</div>
+      <div className="text-sm text-muted-foreground mb-3">As Creator/Last Admin:</div>
+      <div className="text-sm space-y-2">
+        <div className="flex items-start gap-2">
+          <span className="text-orange-500 font-bold">1.</span>
+          <span>Group Info → <span className="font-semibold">Delete Group</span></span>
+        </div>
+        <div className="flex items-start gap-2">
+          <span className="text-orange-500 font-bold">2.</span>
+          <span>Confirm deletion</span>
+        </div>
+        <div className="flex items-start gap-2">
+          <span className="text-orange-500 font-bold">3.</span>
+          <span><span className="font-semibold text-red-500">Permanently removes</span> for ALL members</span>
+        </div>
+        <div className="flex items-start gap-2">
+          <span className="text-orange-500 font-bold">4.</span>
+          <span>Cannot be undone</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div className="rounded-xl border border-red-500/30 bg-gradient-to-br from-red-500/10 to-red-500/5 p-6 my-6">
+  <div className="flex items-center gap-3">
+    <span className="text-3xl">🚨</span>
+    <div>
+      <div className="font-bold text-lg text-red-500">Delete Warning</div>
+      <div className="text-sm text-muted-foreground">
+        Deleting a group removes it for <span className="font-bold text-foreground">ALL members permanently</span>. Consider making someone else admin if you want to leave instead.
+      </div>
+    </div>
+  </div>
+</div>
+
+## Troubleshooting
+
+<div className="rounded-xl border border-red-500/30 bg-gradient-to-br from-red-500/10 to-red-500/5 p-6 my-6">
+  <div className="flex items-center gap-3 mb-4">
+    <span className="text-3xl">🔧</span>
+    <div>
+      <div className="font-bold text-lg">Common Issues & Solutions</div>
+      <div className="text-sm text-muted-foreground">Fix group chat problems quickly</div>
+    </div>
+  </div>
+
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+    <div className="rounded-lg border border-border bg-background p-5">
+      <div className="text-2xl mb-3">❌</div>
+      <div className="font-bold mb-2">Can't Send Messages</div>
+      <div className="text-sm space-y-1">
+        <div className="flex items-start gap-2">
+          <span className="text-red-500 text-xs">•</span>
+          <span>Check if you have send permission</span>
+        </div>
+        <div className="flex items-start gap-2">
+          <span className="text-red-500 text-xs">•</span>
+          <span>Verify you're still a member</span>
+        </div>
+        <div className="flex items-start gap-2">
+          <span className="text-red-500 text-xs">•</span>
+          <span>Check if admins-only mode enabled</span>
+        </div>
+        <div className="flex items-start gap-2">
+          <span className="text-red-500 text-xs">•</span>
+          <span>Ensure not blocked by admin</span>
+        </div>
+      </div>
+    </div>
+
+    <div className="rounded-lg border border-border bg-background p-5">
+      <div className="text-2xl mb-3">🔕</div>
+      <div className="font-bold mb-2">Not Receiving Notifications</div>
+      <div className="text-sm space-y-1">
+        <div className="flex items-start gap-2">
+          <span className="text-red-500 text-xs">•</span>
+          <span>Check if group is muted</span>
+        </div>
+        <div className="flex items-start gap-2">
+          <span className="text-red-500 text-xs">•</span>
+          <span>Verify notification settings</span>
+        </div>
+        <div className="flex items-start gap-2">
+          <span className="text-red-500 text-xs">•</span>
+          <span>Check Do Not Disturb</span>
+        </div>
+        <div className="flex items-start gap-2">
+          <span className="text-red-500 text-xs">•</span>
+          <span>Ensure app notifications enabled</span>
+        </div>
+      </div>
+    </div>
+
+    <div className="rounded-lg border border-border bg-background p-5">
+      <div className="text-2xl mb-3">🚫</div>
+      <div className="font-bold mb-2">Can't Add Members</div>
+      <div className="text-sm space-y-1">
+        <div className="flex items-start gap-2">
+          <span className="text-red-500 text-xs">•</span>
+          <span>May not have permission</span>
+        </div>
+        <div className="flex items-start gap-2">
+          <span className="text-red-500 text-xs">•</span>
+          <span>Group might be at max (256)</span>
+        </div>
+        <div className="flex items-start gap-2">
+          <span className="text-red-500 text-xs">•</span>
+          <span>User may have blocked group invites</span>
+        </div>
+        <div className="flex items-start gap-2">
+          <span className="text-red-500 text-xs">•</span>
+          <span>Check admin settings</span>
+        </div>
+      </div>
+    </div>
+
+    <div className="rounded-lg border border-border bg-background p-5">
+      <div className="text-2xl mb-3">🔗</div>
+      <div className="font-bold mb-2">Group Link Not Working</div>
+      <div className="text-sm space-y-1">
+        <div className="flex items-start gap-2">
+          <span className="text-red-500 text-xs">•</span>
+          <span>Link may be disabled</span>
+        </div>
+        <div className="flex items-start gap-2">
+          <span className="text-red-500 text-xs">•</span>
+          <span>May have expired</span>
+        </div>
+        <div className="flex items-start gap-2">
+          <span className="text-red-500 text-xs">•</span>
+          <span>Group might be full</span>
+        </div>
+        <div className="flex items-start gap-2">
+          <span className="text-red-500 text-xs">•</span>
+          <span>Ask admin for new link</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+## Advanced Features
+
+<div className="rounded-xl border border-cyan-500/30 bg-gradient-to-br from-cyan-500/10 to-cyan-500/5 p-6 my-6">
+  <div className="flex items-center gap-3 mb-4">
+    <span className="text-3xl">🚀</span>
+    <div>
+      <div className="font-bold text-lg">Coming Soon</div>
+      <div className="text-sm text-muted-foreground">Exciting features on the roadmap</div>
+    </div>
+  </div>
+
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+    <div className="rounded-lg border border-border bg-background p-5">
+      <div className="flex items-center justify-between mb-3">
+        <div className="text-2xl">📋</div>
+        <span className="text-xs bg-orange-500/20 text-orange-500 px-2 py-1 rounded">Coming Soon</span>
+      </div>
+      <div className="font-bold mb-2">Group Templates</div>
+      <div className="text-sm text-muted-foreground mb-3">Pre-configured groups for:</div>
+      <div className="text-sm space-y-1">
+        <div className="flex items-center gap-2">
+          <span className="text-cyan-500">•</span>
+          <span>Study groups</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="text-cyan-500">•</span>
+          <span>Project teams</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="text-cyan-500">•</span>
+          <span>Event planning</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="text-cyan-500">•</span>
+          <span>Book clubs</span>
+        </div>
+      </div>
+    </div>
+
+    <div className="rounded-lg border border-border bg-background p-5">
+      <div className="flex items-center justify-between mb-3">
+        <div className="text-2xl">🤖</div>
+        <span className="text-xs bg-orange-500/20 text-orange-500 px-2 py-1 rounded">Coming Soon</span>
+      </div>
+      <div className="font-bold mb-2">Bots & Integrations</div>
+      <div className="text-sm text-muted-foreground mb-3">Automated assistants:</div>
+      <div className="text-sm space-y-1">
+        <div className="flex items-center gap-2">
+          <span className="text-cyan-500">•</span>
+          <span>Welcome bot for new members</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="text-cyan-500">•</span>
+          <span>Poll bot</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="text-cyan-500">•</span>
+          <span>Reminder bot</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="text-cyan-500">•</span>
+          <span>Game bots</span>
+        </div>
+      </div>
+    </div>
+
+    <div className="rounded-lg border border-border bg-background p-5">
+      <div className="flex items-center justify-between mb-3">
+        <div className="text-2xl">🔀</div>
+        <span className="text-xs bg-orange-500/20 text-orange-500 px-2 py-1 rounded">Coming Soon</span>
+      </div>
+      <div className="font-bold mb-2">Sub-Groups</div>
+      <div className="text-sm text-muted-foreground mb-3">Create related sub-groups:</div>
+      <div className="text-sm space-y-1">
+        <div className="flex items-center gap-2">
+          <span className="text-cyan-500">•</span>
+          <span>Break out groups</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="text-cyan-500">•</span>
+          <span>Topic-specific channels</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="text-cyan-500">•</span>
+          <span>Regional chapters</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+## What's Next?
+
+<div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-8">
+  <a href="/docs/tutorial/communication/calls" className="group rounded-xl border border-purple-500/30 bg-gradient-to-br from-purple-500/10 to-purple-500/5 p-6 hover:border-purple-500/50 transition-all hover:shadow-lg hover:shadow-purple-500/10">
+    <div className="text-3xl mb-3">📞</div>
+    <div className="font-bold text-lg mb-2 group-hover:text-purple-500 transition-colors">Voice & Video Calls</div>
+    <div className="text-sm text-muted-foreground">Make group voice and video calls</div>
+  </a>
+
+  <a href="/docs/tutorial/social/communities" className="group rounded-xl border border-blue-500/30 bg-gradient-to-br from-blue-500/10 to-blue-500/5 p-6 hover:border-blue-500/50 transition-all hover:shadow-lg hover:shadow-blue-500/10">
+    <div className="text-3xl mb-3">🏘️</div>
+    <div className="font-bold text-lg mb-2 group-hover:text-blue-500 transition-colors">Communities</div>
+    <div className="text-sm text-muted-foreground">Scale beyond 256 members with communities</div>
+  </a>
+
+  <a href="/docs/tutorial/advanced/privacy-security" className="group rounded-xl border border-green-500/30 bg-gradient-to-br from-green-500/10 to-green-500/5 p-6 hover:border-green-500/50 transition-all hover:shadow-lg hover:shadow-green-500/10">
+    <div className="text-3xl mb-3">🔒</div>
+    <div className="font-bold text-lg mb-2 group-hover:text-green-500 transition-colors">Privacy & Security</div>
+    <div className="text-sm text-muted-foreground">Advanced security settings for groups</div>
+  </a>
+</div>
+
+---
+
+<div className="rounded-xl border border-green-500/30 bg-gradient-to-br from-green-500/10 to-green-500/5 p-6 my-6">
+  <div className="flex items-center gap-3">
+    <span className="text-3xl">💡</span>
+    <div>
+      <div className="font-bold text-lg">Pro Tip</div>
+      <div className="text-sm text-muted-foreground">
+        Use pinned messages for group rules, important links, and recurring information. Members can always find them at the top!
+      </div>
+    </div>
+  </div>
+</div>

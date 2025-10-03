@@ -3,49 +3,146 @@ title: Business Projections
 description: Platform growth scenarios and operational metrics
 ---
 
+<div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-green-500/10 via-emerald-500/5 to-background p-8 border border-green-500/20 mb-8">
+  <div className="relative z-10">
+    <h1 className="text-4xl md:text-5xl font-bold mb-3">Business Projections and Success Metrics</h1>
+    <p className="text-lg text-muted-foreground">Platform growth scenarios and operational metrics</p>
+  </div>
+  <div className="absolute top-0 right-0 w-64 h-64 bg-green-500/5 rounded-full blur-3xl"></div>
+</div>
 
-# Business Projections and Success Metrics
-
-:::info BUSINESS PLANNING DOCUMENT
-This document outlines hypothetical business growth scenarios for platform operations. These are illustrative examples for planning purposes, not guarantees or promises. Actual results will vary based on execution, market conditions, and numerous unpredictable factors.
-:::
+<div className="rounded-xl border border-blue-500/30 bg-gradient-to-br from-blue-500/10 to-blue-500/5 p-6 my-6">
+  <div className="flex items-center gap-3 mb-3">
+    <span className="text-3xl">ℹ️</span>
+    <div>
+      <div className="font-bold text-lg">BUSINESS PLANNING DOCUMENT</div>
+    </div>
+  </div>
+  <div className="text-sm text-muted-foreground">
+    This document outlines hypothetical business growth scenarios for platform operations. These are illustrative examples for planning purposes, not guarantees or promises. Actual results will vary based on execution, market conditions, and numerous unpredictable factors.
+  </div>
+</div>
 
 ## Platform Revenue Scenarios
 
-:::warning HYPOTHETICAL PROJECTIONS
-These revenue scenarios are illustrative examples based on various user growth assumptions. Actual results may differ dramatically. This is NOT a promise or guarantee of revenue, growth, or business success.
-:::
+<div className="rounded-xl border border-yellow-500/30 bg-gradient-to-br from-yellow-500/10 to-yellow-500/5 p-6 my-6">
+  <div className="flex items-center gap-3 mb-3">
+    <span className="text-3xl">⚠️</span>
+    <div>
+      <div className="font-bold text-lg">HYPOTHETICAL PROJECTIONS</div>
+    </div>
+  </div>
+  <div className="text-sm text-muted-foreground">
+    These revenue scenarios are illustrative examples based on various user growth assumptions. Actual results may differ dramatically. This is NOT a promise or guarantee of revenue, growth, or business success.
+  </div>
+</div>
 
-```text
-Year 1 Revenue Scenarios:
+<div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-6">
+  <div className="rounded-xl border border-orange-500/30 bg-gradient-to-br from-orange-500/10 to-orange-500/5 p-6">
+    <h4 className="text-xl font-bold mb-3">CONSERVATIVE</h4>
+    <div className="text-sm text-muted-foreground mb-4">300K users by year-end</div>
+    <div className="space-y-3 text-sm">
+      <div className="flex justify-between items-center p-2 rounded bg-background">
+        <span>VCoin sales</span>
+        <span className="font-mono font-bold">$200K</span>
+      </div>
+      <div className="flex justify-between items-center p-2 rounded bg-background">
+        <span>Transaction fees</span>
+        <span className="font-mono font-bold">$30K</span>
+      </div>
+      <div className="flex justify-between items-center p-2 rounded bg-background">
+        <span>Premium features</span>
+        <span className="font-mono font-bold">$10K</span>
+      </div>
+      <div className="flex justify-between items-center p-3 rounded bg-orange-500/20 border border-orange-500/40">
+        <span className="font-bold">Total</span>
+        <span className="font-mono font-bold text-lg">$240K</span>
+      </div>
+      <div className="space-y-1 text-xs">
+        <div className="flex justify-between p-2 rounded bg-muted/50">
+          <span>To liquidity (20%)</span>
+          <span className="font-mono">$48K</span>
+        </div>
+        <div className="flex justify-between p-2 rounded bg-muted/50">
+          <span>Operations (80%)</span>
+          <span className="font-mono">$192K</span>
+        </div>
+      </div>
+      <div className="text-xs text-center text-muted-foreground italic mt-2">Covers basics, tight budget</div>
+    </div>
+  </div>
 
-CONSERVATIVE (300K users by year-end):
-├── VCoin sales: $200K
-├── Transaction fees: $30K
-├── Premium features: $10K
-├── Total: $240K
-│ ├── To liquidity: $48K
-│ └── Operations: $192K
-└── Reality: Covers basics, tight budget
+  <div className="rounded-xl border border-blue-500/50 bg-gradient-to-br from-blue-500/15 to-blue-500/5 p-6 shadow-lg">
+    <h4 className="text-xl font-bold mb-3 flex items-center gap-2">
+      MODERATE
+      <span className="text-xs text-blue-500">⭐</span>
+    </h4>
+    <div className="text-sm text-muted-foreground mb-4">2M users by year-end</div>
+    <div className="space-y-3 text-sm">
+      <div className="flex justify-between items-center p-2 rounded bg-background">
+        <span>VCoin sales</span>
+        <span className="font-mono font-bold">$1.5M</span>
+      </div>
+      <div className="flex justify-between items-center p-2 rounded bg-background">
+        <span>Transaction fees</span>
+        <span className="font-mono font-bold">$250K</span>
+      </div>
+      <div className="flex justify-between items-center p-2 rounded bg-background">
+        <span>Premium features</span>
+        <span className="font-mono font-bold">$100K</span>
+      </div>
+      <div className="flex justify-between items-center p-3 rounded bg-blue-500/20 border border-blue-500/40">
+        <span className="font-bold">Total</span>
+        <span className="font-mono font-bold text-lg text-blue-500">$1.85M</span>
+      </div>
+      <div className="space-y-1 text-xs">
+        <div className="flex justify-between p-2 rounded bg-muted/50">
+          <span>To liquidity (20%)</span>
+          <span className="font-mono">$370K</span>
+        </div>
+        <div className="flex justify-between p-2 rounded bg-muted/50">
+          <span>Operations (80%)</span>
+          <span className="font-mono">$1.48M</span>
+        </div>
+      </div>
+      <div className="text-xs text-center text-blue-500 font-bold mt-2">Hire small team, sustainable</div>
+    </div>
+  </div>
 
-MODERATE (2M users by year-end):
-├── VCoin sales: $1.5M
-├── Transaction fees: $250K
-├── Premium features: $100K
-├── Total: $1.85M
-│ ├── To liquidity: $370K
-│ └── Operations: $1.48M
-└── Reality: Hire small team, sustainable operations
-
-OPTIMISTIC (10M users by year-end):
-├── VCoin sales: $5M
-├── Transaction fees: $1M
-├── Premium features: $500K
-├── Total: $6.5M
-│ ├── To liquidity: $1.3M
-│ └── Operations: $5.2M
-└── Reality: Scale quickly, significant resources
-```
+  <div className="rounded-xl border border-emerald-500/30 bg-gradient-to-br from-emerald-500/10 to-emerald-500/5 p-6">
+    <h4 className="text-xl font-bold mb-3">OPTIMISTIC</h4>
+    <div className="text-sm text-muted-foreground mb-4">10M users by year-end</div>
+    <div className="space-y-3 text-sm">
+      <div className="flex justify-between items-center p-2 rounded bg-background">
+        <span>VCoin sales</span>
+        <span className="font-mono font-bold">$5M</span>
+      </div>
+      <div className="flex justify-between items-center p-2 rounded bg-background">
+        <span>Transaction fees</span>
+        <span className="font-mono font-bold">$1M</span>
+      </div>
+      <div className="flex justify-between items-center p-2 rounded bg-background">
+        <span>Premium features</span>
+        <span className="font-mono font-bold">$500K</span>
+      </div>
+      <div className="flex justify-between items-center p-3 rounded bg-emerald-500/20 border border-emerald-500/40">
+        <span className="font-bold">Total</span>
+        <span className="font-mono font-bold text-lg text-emerald-500">$6.5M</span>
+      </div>
+      <div className="space-y-1 text-xs">
+        <div className="flex justify-between p-2 rounded bg-muted/50">
+          <span>To liquidity (20%)</span>
+          <span className="font-mono">$1.3M</span>
+        </div>
+        <div className="flex justify-between p-2 rounded bg-muted/50">
+          <span>Operations (80%)</span>
+          <span className="font-mono">$5.2M</span>
+        </div>
+      </div>
+      <div className="text-xs text-center text-muted-foreground italic mt-2">Scale quickly, significant resources</div>
+    </div>
+  </div>
+</div>
 
 ### Conservative Scenario Analysis
 
@@ -79,188 +176,629 @@ These patterns remain speculative and depend entirely on execution quality, mark
 
 Revenue allocation across operational categories (based on moderate scenario):
 
-```text
-Business Operations (50% of operational funds):
-├── Infrastructure & hosting: 15%
-├── Development & engineering: 35%
-├── Marketing & user acquisition: 25%
-├── Legal & compliance: 15%
-└── Miscellaneous operational: 10%
+<div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-6">
+  <div className="rounded-xl border border-blue-500/30 bg-gradient-to-br from-blue-500/10 to-blue-500/5 p-6">
+    <h4 className="text-xl font-bold mb-3">Business Operations</h4>
+    <div className="text-2xl font-bold text-blue-500 mb-4">50%</div>
+    <div className="space-y-2 text-sm">
+      <div className="flex justify-between items-center p-2 rounded bg-background">
+        <span>Infrastructure & hosting</span>
+        <span className="font-mono font-bold">15%</span>
+      </div>
+      <div className="flex justify-between items-center p-2 rounded bg-background">
+        <span>Development & engineering</span>
+        <span className="font-mono font-bold">35%</span>
+      </div>
+      <div className="flex justify-between items-center p-2 rounded bg-background">
+        <span>Marketing & user acquisition</span>
+        <span className="font-mono font-bold">25%</span>
+      </div>
+      <div className="flex justify-between items-center p-2 rounded bg-background">
+        <span>Legal & compliance</span>
+        <span className="font-mono font-bold">15%</span>
+      </div>
+      <div className="flex justify-between items-center p-2 rounded bg-background">
+        <span>Miscellaneous operational</span>
+        <span className="font-mono font-bold">10%</span>
+      </div>
+    </div>
+  </div>
 
-Team Compensation (30% of operational funds):
-├── Core team salaries
-├── Contractor payments
-├── Advisor compensation
-└── Performance bonuses
+  <div className="rounded-xl border border-purple-500/30 bg-gradient-to-br from-purple-500/10 to-purple-500/5 p-6">
+    <h4 className="text-xl font-bold mb-3">Team Compensation</h4>
+    <div className="text-2xl font-bold text-purple-500 mb-4">30%</div>
+    <div className="space-y-2 text-sm">
+      <div className="flex items-center gap-2 p-2">
+        <span className="text-purple-500">✓</span>
+        <span>Core team salaries</span>
+      </div>
+      <div className="flex items-center gap-2 p-2">
+        <span className="text-purple-500">✓</span>
+        <span>Contractor payments</span>
+      </div>
+      <div className="flex items-center gap-2 p-2">
+        <span className="text-purple-500">✓</span>
+        <span>Advisor compensation</span>
+      </div>
+      <div className="flex items-center gap-2 p-2">
+        <span className="text-purple-500">✓</span>
+        <span>Performance bonuses</span>
+      </div>
+    </div>
+  </div>
 
-Reserve Fund (20% of operational funds):
-├── Emergency reserves
-├── Withdrawal liquidity buffer
-├── Legal defense fund
-└── Opportunity fund
-```
+  <div className="rounded-xl border border-orange-500/30 bg-gradient-to-br from-orange-500/10 to-orange-500/5 p-6">
+    <h4 className="text-xl font-bold mb-3">Reserve Fund</h4>
+    <div className="text-2xl font-bold text-orange-500 mb-4">20%</div>
+    <div className="space-y-2 text-sm">
+      <div className="flex items-center gap-2 p-2">
+        <span className="text-orange-500">✓</span>
+        <span>Emergency reserves</span>
+      </div>
+      <div className="flex items-center gap-2 p-2">
+        <span className="text-orange-500">✓</span>
+        <span>Withdrawal liquidity buffer</span>
+      </div>
+      <div className="flex items-center gap-2 p-2">
+        <span className="text-orange-500">✓</span>
+        <span>Legal defense fund</span>
+      </div>
+      <div className="flex items-center gap-2 p-2">
+        <span className="text-orange-500">✓</span>
+        <span>Opportunity fund</span>
+      </div>
+    </div>
+  </div>
+</div>
 
 ## Key Performance Indicators
 
-The platform tracks numerous metrics to evaluate business health and identify areas requiring improvement.
+<div className="rounded-xl border border-border bg-card p-6 my-6">
+  <p className="text-muted-foreground mb-6">The platform tracks numerous metrics to evaluate business health and identify areas requiring improvement.</p>
 
-### User Metrics
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+    <div className="rounded-lg border border-purple-500/30 bg-gradient-to-br from-purple-500/10 to-purple-500/5 p-5">
+      <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
+        <span className="text-2xl">👥</span>
+        User Metrics
+      </h3>
 
-**Acquisition:**
+      <div className="space-y-3">
+        <div className="border-b border-border pb-3">
+          <div className="text-sm font-bold text-purple-500 mb-2">Acquisition</div>
+          <div className="space-y-1 text-sm">
+            <div className="flex items-start gap-2">
+              <span className="text-purple-500 mt-0.5">•</span>
+              <span>Daily new registrations</span>
+            </div>
+            <div className="flex items-start gap-2">
+              <span className="text-purple-500 mt-0.5">•</span>
+              <span>User acquisition cost (UAC)</span>
+            </div>
+            <div className="flex items-start gap-2">
+              <span className="text-purple-500 mt-0.5">•</span>
+              <span>Conversion rate (visitor to registered user)</span>
+            </div>
+            <div className="flex items-start gap-2">
+              <span className="text-purple-500 mt-0.5">•</span>
+              <span>Registration source attribution</span>
+            </div>
+          </div>
+        </div>
 
-- Daily new registrations
-- User acquisition cost (UAC)
-- Conversion rate (visitor to registered user)
-- Registration source attribution
+        <div className="border-b border-border pb-3">
+          <div className="text-sm font-bold text-purple-500 mb-2">Engagement</div>
+          <div className="space-y-1 text-sm">
+            <div className="flex items-start gap-2">
+              <span className="text-purple-500 mt-0.5">•</span>
+              <span>Daily Active Users (DAU)</span>
+            </div>
+            <div className="flex items-start gap-2">
+              <span className="text-purple-500 mt-0.5">•</span>
+              <span>Monthly Active Users (MAU)</span>
+            </div>
+            <div className="flex items-start gap-2">
+              <span className="text-purple-500 mt-0.5">•</span>
+              <span>DAU/MAU ratio (stickiness)</span>
+            </div>
+            <div className="flex items-start gap-2">
+              <span className="text-purple-500 mt-0.5">•</span>
+              <span>Average session duration</span>
+            </div>
+            <div className="flex items-start gap-2">
+              <span className="text-purple-500 mt-0.5">•</span>
+              <span>Sessions per user per week</span>
+            </div>
+          </div>
+        </div>
 
-**Engagement:**
+        <div>
+          <div className="text-sm font-bold text-purple-500 mb-2">Retention</div>
+          <div className="space-y-1 text-sm">
+            <div className="flex items-start gap-2">
+              <span className="text-purple-500 mt-0.5">•</span>
+              <span>Day 1, Day 7, Day 30, Day 90 retention rates</span>
+            </div>
+            <div className="flex items-start gap-2">
+              <span className="text-purple-500 mt-0.5">•</span>
+              <span>Cohort retention analysis</span>
+            </div>
+            <div className="flex items-start gap-2">
+              <span className="text-purple-500 mt-0.5">•</span>
+              <span>Churn rate by user segment</span>
+            </div>
+            <div className="flex items-start gap-2">
+              <span className="text-purple-500 mt-0.5">•</span>
+              <span>Reactivation rate for churned users</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-- Daily Active Users (DAU)
-- Monthly Active Users (MAU)
-- DAU/MAU ratio (stickiness)
-- Average session duration
-- Sessions per user per week
+    <div className="rounded-lg border border-emerald-500/30 bg-gradient-to-br from-emerald-500/10 to-emerald-500/5 p-5">
+      <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
+        <span className="text-2xl">💰</span>
+        Economic Metrics
+      </h3>
 
-**Retention:**
+      <div className="space-y-3">
+        <div className="border-b border-border pb-3">
+          <div className="text-sm font-bold text-emerald-500 mb-2">Revenue</div>
+          <div className="space-y-1 text-sm">
+            <div className="flex items-start gap-2">
+              <span className="text-emerald-500 mt-0.5">•</span>
+              <span>VCoin sales volume (daily/monthly)</span>
+            </div>
+            <div className="flex items-start gap-2">
+              <span className="text-emerald-500 mt-0.5">•</span>
+              <span>Transaction fee revenue</span>
+            </div>
+            <div className="flex items-start gap-2">
+              <span className="text-emerald-500 mt-0.5">•</span>
+              <span>Premium feature revenue</span>
+            </div>
+            <div className="flex items-start gap-2">
+              <span className="text-emerald-500 mt-0.5">•</span>
+              <span>Average Revenue Per User (ARPU)</span>
+            </div>
+            <div className="flex items-start gap-2">
+              <span className="text-emerald-500 mt-0.5">•</span>
+              <span>Customer Lifetime Value (LTV)</span>
+            </div>
+            <div className="flex items-start gap-2">
+              <span className="text-emerald-500 mt-0.5">•</span>
+              <span>LTV:CAC ratio (target &gt;3:1)</span>
+            </div>
+          </div>
+        </div>
 
-- Day 1, Day 7, Day 30, Day 90 retention rates
-- Cohort retention analysis
-- Churn rate by user segment
-- Reactivation rate for churned users
+        <div className="border-b border-border pb-3">
+          <div className="text-sm font-bold text-emerald-500 mb-2">Platform Activity</div>
+          <div className="space-y-1 text-sm">
+            <div className="flex items-start gap-2">
+              <span className="text-emerald-500 mt-0.5">•</span>
+              <span>Total transactions processed</span>
+            </div>
+            <div className="flex items-start gap-2">
+              <span className="text-emerald-500 mt-0.5">•</span>
+              <span>Average transaction size</span>
+            </div>
+            <div className="flex items-start gap-2">
+              <span className="text-emerald-500 mt-0.5">•</span>
+              <span>Tips sent (volume and value)</span>
+            </div>
+            <div className="flex items-start gap-2">
+              <span className="text-emerald-500 mt-0.5">•</span>
+              <span>Subscription conversions</span>
+            </div>
+            <div className="flex items-start gap-2">
+              <span className="text-emerald-500 mt-0.5">•</span>
+              <span>Marketplace GMV (Gross Merchandise Value)</span>
+            </div>
+          </div>
+        </div>
 
-### Economic Metrics
+        <div>
+          <div className="text-sm font-bold text-emerald-500 mb-2">Liquidity Management</div>
+          <div className="space-y-1 text-sm">
+            <div className="flex items-start gap-2">
+              <span className="text-emerald-500 mt-0.5">•</span>
+              <span>Liquidity accumulation progress</span>
+            </div>
+            <div className="flex items-start gap-2">
+              <span className="text-emerald-500 mt-0.5">•</span>
+              <span>Outstanding user balances</span>
+            </div>
+            <div className="flex items-start gap-2">
+              <span className="text-emerald-500 mt-0.5">•</span>
+              <span>Withdrawal request volume and value</span>
+            </div>
+            <div className="flex items-start gap-2">
+              <span className="text-emerald-500 mt-0.5">•</span>
+              <span>Hot wallet utilization percentage</span>
+            </div>
+            <div className="flex items-start gap-2">
+              <span className="text-emerald-500 mt-0.5">•</span>
+              <span>Reserve ratio (reserves / outstanding balances)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-**Revenue:**
+    <div className="rounded-lg border border-blue-500/30 bg-gradient-to-br from-blue-500/10 to-blue-500/5 p-5">
+      <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
+        <span className="text-2xl">📊</span>
+        Platform Health
+      </h3>
 
-- VCoin sales volume (daily/monthly)
-- Transaction fee revenue
-- Premium feature revenue
-- Average Revenue Per User (ARPU)
-- Customer Lifetime Value (LTV)
-- LTV:CAC ratio (target >3:1)
+      <div className="space-y-3">
+        <div className="border-b border-border pb-3">
+          <div className="text-sm font-bold text-blue-500 mb-2">Content</div>
+          <div className="space-y-1 text-sm">
+            <div className="flex items-start gap-2">
+              <span className="text-blue-500 mt-0.5">•</span>
+              <span>Posts created per day (by type)</span>
+            </div>
+            <div className="flex items-start gap-2">
+              <span className="text-blue-500 mt-0.5">•</span>
+              <span>Engagement rate on content</span>
+            </div>
+            <div className="flex items-start gap-2">
+              <span className="text-blue-500 mt-0.5">•</span>
+              <span>Viral coefficient (shares per post)</span>
+            </div>
+            <div className="flex items-start gap-2">
+              <span className="text-blue-500 mt-0.5">•</span>
+              <span>Content quality score (algorithmic)</span>
+            </div>
+          </div>
+        </div>
 
-**Platform Activity:**
+        <div className="border-b border-border pb-3">
+          <div className="text-sm font-bold text-blue-500 mb-2">Community</div>
+          <div className="space-y-1 text-sm">
+            <div className="flex items-start gap-2">
+              <span className="text-blue-500 mt-0.5">•</span>
+              <span>Creator-to-consumer ratio</span>
+            </div>
+            <div className="flex items-start gap-2">
+              <span className="text-blue-500 mt-0.5">•</span>
+              <span>Active creator count</span>
+            </div>
+            <div className="flex items-start gap-2">
+              <span className="text-blue-500 mt-0.5">•</span>
+              <span>Tips per creator (average)</span>
+            </div>
+            <div className="flex items-start gap-2">
+              <span className="text-blue-500 mt-0.5">•</span>
+              <span>Subscriber conversion rate</span>
+            </div>
+            <div className="flex items-start gap-2">
+              <span className="text-blue-500 mt-0.5">•</span>
+              <span>Community guideline violations</span>
+            </div>
+          </div>
+        </div>
 
-- Total transactions processed
-- Average transaction size
-- Tips sent (volume and value)
-- Subscription conversions
-- Marketplace GMV (Gross Merchandise Value)
-
-**Liquidity Management:**
-
-- Liquidity accumulation progress
-- Outstanding user balances
-- Withdrawal request volume and value
-- Hot wallet utilization percentage
-- Reserve ratio (reserves / outstanding balances)
-
-### Platform Health Indicators
-
-**Content:**
-
-- Posts created per day (by type)
-- Engagement rate on content
-- Viral coefficient (shares per post)
-- Content quality score (algorithmic)
-
-**Community:**
-
-- Creator-to-consumer ratio
-- Active creator count
-- Tips per creator (average)
-- Subscriber conversion rate
-- Community guideline violations
-
-**Technical:**
-
-- System uptime percentage (target >99.9%)
-- API response time
-- Transaction success rate
-- Error rate by category
-- Support ticket resolution time
+        <div>
+          <div className="text-sm font-bold text-blue-500 mb-2">Technical</div>
+          <div className="space-y-1 text-sm">
+            <div className="flex items-start gap-2">
+              <span className="text-blue-500 mt-0.5">•</span>
+              <span>System uptime percentage (target &gt;99.9%)</span>
+            </div>
+            <div className="flex items-start gap-2">
+              <span className="text-blue-500 mt-0.5">•</span>
+              <span>API response time</span>
+            </div>
+            <div className="flex items-start gap-2">
+              <span className="text-blue-500 mt-0.5">•</span>
+              <span>Transaction success rate</span>
+            </div>
+            <div className="flex items-start gap-2">
+              <span className="text-blue-500 mt-0.5">•</span>
+              <span>Error rate by category</span>
+            </div>
+            <div className="flex items-start gap-2">
+              <span className="text-blue-500 mt-0.5">•</span>
+              <span>Support ticket resolution time</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 ## Success Criteria and Milestones
 
-Clear operational criteria define successful progression through platform development phases. These milestones focus on business health, not token price.
+<div className="rounded-xl border border-border bg-card p-6 my-6">
+  <p className="text-muted-foreground mb-6">Clear operational criteria define successful progression through platform development phases. These milestones focus on business health, not token price.</p>
 
-### Month 3 Checkpoint
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div className="rounded-xl border border-cyan-500/30 bg-gradient-to-br from-cyan-500/10 to-cyan-500/5 p-6">
+      <div className="flex items-center gap-3 mb-4">
+        <div className="flex items-center justify-center w-12 h-12 rounded-full bg-cyan-500/20 border border-cyan-500/40">
+          <span className="text-2xl">1️⃣</span>
+        </div>
+        <div>
+          <h3 className="text-xl font-bold">Month 3 Checkpoint</h3>
+          <div className="text-xs text-cyan-500 font-bold">EARLY VALIDATION</div>
+        </div>
+      </div>
+      <div className="space-y-2 text-sm mb-4">
+        <div className="flex items-start gap-2 p-2 rounded bg-background">
+          <span className="text-cyan-500 mt-0.5">✓</span>
+          <span>25,000+ total registered users</span>
+        </div>
+        <div className="flex items-start gap-2 p-2 rounded bg-background">
+          <span className="text-cyan-500 mt-0.5">✓</span>
+          <span>5,000+ users holding VCoins</span>
+        </div>
+        <div className="flex items-start gap-2 p-2 rounded bg-background">
+          <span className="text-cyan-500 mt-0.5">✓</span>
+          <span>$30,000 accumulated toward liquidity</span>
+        </div>
+        <div className="flex items-start gap-2 p-2 rounded bg-background">
+          <span className="text-cyan-500 mt-0.5">✓</span>
+          <span>500,000 platform transactions completed</span>
+        </div>
+        <div className="flex items-start gap-2 p-2 rounded bg-background">
+          <span className="text-cyan-500 mt-0.5">✓</span>
+          <span>&lt; 1% critical bugs or security issues</span>
+        </div>
+        <div className="flex items-start gap-2 p-2 rounded bg-background">
+          <span className="text-cyan-500 mt-0.5">✓</span>
+          <span>Positive user sentiment (NPS &gt;30)</span>
+        </div>
+        <div className="flex items-start gap-2 p-2 rounded bg-background">
+          <span className="text-cyan-500 mt-0.5">✓</span>
+          <span>Sustainable daily active user growth</span>
+        </div>
+      </div>
+      <div className="p-3 rounded-lg bg-cyan-500/10 border border-cyan-500/30">
+        <div className="text-xs font-bold text-cyan-500 mb-1">PRIMARY FOCUS</div>
+        <div className="text-sm">Validation of product-market fit and core functionality</div>
+      </div>
+    </div>
 
-✓ 25,000+ total registered users  
-✓ 5,000+ users holding VCoins  
-✓ $30,000 accumulated toward liquidity  
-✓ 500,000 platform transactions completed  
-✓ < 1% critical bugs or security issues  
-✓ Positive user sentiment (NPS >30)  
-✓ Sustainable daily active user growth
+    <div className="rounded-xl border border-blue-500/30 bg-gradient-to-br from-blue-500/10 to-blue-500/5 p-6">
+      <div className="flex items-center gap-3 mb-4">
+        <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 border border-blue-500/40">
+          <span className="text-2xl">2️⃣</span>
+        </div>
+        <div>
+          <h3 className="text-xl font-bold">Month 6 Checkpoint</h3>
+          <div className="text-xs text-blue-500 font-bold">DEX READINESS</div>
+        </div>
+      </div>
+      <div className="space-y-2 text-sm mb-4">
+        <div className="flex items-start gap-2 p-2 rounded bg-background">
+          <span className="text-blue-500 mt-0.5">✓</span>
+          <span>75,000+ total registered users</span>
+        </div>
+        <div className="flex items-start gap-2 p-2 rounded bg-background">
+          <span className="text-blue-500 mt-0.5">✓</span>
+          <span>10,000+ active VCoin holders</span>
+        </div>
+        <div className="flex items-start gap-2 p-2 rounded bg-background">
+          <span className="text-blue-500 mt-0.5">✓</span>
+          <span>$75,000 liquidity fund complete</span>
+        </div>
+        <div className="flex items-start gap-2 p-2 rounded bg-background">
+          <span className="text-blue-500 mt-0.5">✓</span>
+          <span>3 million platform transactions</span>
+        </div>
+        <div className="flex items-start gap-2 p-2 rounded bg-background">
+          <span className="text-blue-500 mt-0.5">✓</span>
+          <span>Monthly revenue covering operational costs</span>
+        </div>
+        <div className="flex items-start gap-2 p-2 rounded bg-background">
+          <span className="text-blue-500 mt-0.5">✓</span>
+          <span>All security audits passed</span>
+        </div>
+        <div className="flex items-start gap-2 p-2 rounded bg-background">
+          <span className="text-blue-500 mt-0.5">✓</span>
+          <span>Legal compliance frameworks established</span>
+        </div>
+      </div>
+      <div className="p-3 rounded-lg bg-blue-500/10 border border-blue-500/30">
+        <div className="text-xs font-bold text-blue-500 mb-1">PRIMARY FOCUS</div>
+        <div className="text-sm">Achieving operational sustainability and DEX launch readiness</div>
+      </div>
+    </div>
 
-**Focus:** Validation of product-market fit and core functionality
+    <div className="rounded-xl border border-purple-500/30 bg-gradient-to-br from-purple-500/10 to-purple-500/5 p-6">
+      <div className="flex items-center gap-3 mb-4">
+        <div className="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 border border-purple-500/40">
+          <span className="text-2xl">3️⃣</span>
+        </div>
+        <div>
+          <h3 className="text-xl font-bold">Year 1 Goals</h3>
+          <div className="text-xs text-purple-500 font-bold">SUSTAINABILITY</div>
+        </div>
+      </div>
+      <div className="space-y-2 text-sm mb-4">
+        <div className="flex items-start gap-2 p-2 rounded bg-background">
+          <span className="text-purple-500 mt-0.5">✓</span>
+          <span>1 million registered users</span>
+        </div>
+        <div className="flex items-start gap-2 p-2 rounded bg-background">
+          <span className="text-purple-500 mt-0.5">✓</span>
+          <span>100,000 daily active users</span>
+        </div>
+        <div className="flex items-start gap-2 p-2 rounded bg-background">
+          <span className="text-purple-500 mt-0.5">✓</span>
+          <span>10% DAU/MAU ratio (strong engagement)</span>
+        </div>
+        <div className="flex items-start gap-2 p-2 rounded bg-background">
+          <span className="text-purple-500 mt-0.5">✓</span>
+          <span>$3 million cumulative revenue generated</span>
+        </div>
+        <div className="flex items-start gap-2 p-2 rounded bg-background">
+          <span className="text-purple-500 mt-0.5">✓</span>
+          <span>Positive unit economics (LTV &gt; 3x CAC)</span>
+        </div>
+        <div className="flex items-start gap-2 p-2 rounded bg-background">
+          <span className="text-purple-500 mt-0.5">✓</span>
+          <span>VCoin listed on CoinGecko and CoinMarketCap</span>
+        </div>
+        <div className="flex items-start gap-2 p-2 rounded bg-background">
+          <span className="text-purple-500 mt-0.5">✓</span>
+          <span>Strong brand recognition in crypto/social space</span>
+        </div>
+        <div className="flex items-start gap-2 p-2 rounded bg-background">
+          <span className="text-purple-500 mt-0.5">✓</span>
+          <span>Core team of 10-15 full-time employees</span>
+        </div>
+      </div>
+      <div className="p-3 rounded-lg bg-purple-500/10 border border-purple-500/30">
+        <div className="text-xs font-bold text-purple-500 mb-1">PRIMARY FOCUS</div>
+        <div className="text-sm">Establishing sustainable business model and market position</div>
+      </div>
+    </div>
 
-### Month 6 Checkpoint (DEX Readiness)
-
-✓ 75,000+ total registered users  
-✓ 10,000+ active VCoin holders  
-✓ $75,000 liquidity fund complete  
-✓ 3 million platform transactions  
-✓ Monthly revenue covering operational costs  
-✓ All security audits passed  
-✓ Legal compliance frameworks established
-
-**Focus:** Achieving operational sustainability and DEX launch readiness
-
-### Year 1 Goals
-
-✓ 1 million registered users  
-✓ 100,000 daily active users  
-✓ 10% DAU/MAU ratio (strong engagement)  
-✓ $3 million cumulative revenue generated  
-✓ Positive unit economics (LTV > 3x CAC)  
-✓ VCoin listed on CoinGecko and CoinMarketCap  
-✓ Strong brand recognition in crypto/social space  
-✓ Core team of 10-15 full-time employees
-
-**Focus:** Establishing sustainable business model and market position
-
-### Year 2-3 Goals
-
-✓ 10 million registered users  
-✓ 1 million daily active users  
-✓ $20-50 million annual revenue  
-✓ Profitable operations (or clear path to profitability)  
-✓ Expanded feature set and platform capabilities  
-✓ Strategic partnerships established  
-✓ International market expansion
-
-**Focus:** Scaling operations and capturing market share
+    <div className="rounded-xl border border-emerald-500/30 bg-gradient-to-br from-emerald-500/10 to-emerald-500/5 p-6">
+      <div className="flex items-center gap-3 mb-4">
+        <div className="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40">
+          <span className="text-2xl">4️⃣</span>
+        </div>
+        <div>
+          <h3 className="text-xl font-bold">Year 2-3 Goals</h3>
+          <div className="text-xs text-emerald-500 font-bold">SCALE & GROWTH</div>
+        </div>
+      </div>
+      <div className="space-y-2 text-sm mb-4">
+        <div className="flex items-start gap-2 p-2 rounded bg-background">
+          <span className="text-emerald-500 mt-0.5">✓</span>
+          <span>10 million registered users</span>
+        </div>
+        <div className="flex items-start gap-2 p-2 rounded bg-background">
+          <span className="text-emerald-500 mt-0.5">✓</span>
+          <span>1 million daily active users</span>
+        </div>
+        <div className="flex items-start gap-2 p-2 rounded bg-background">
+          <span className="text-emerald-500 mt-0.5">✓</span>
+          <span>$20-50 million annual revenue</span>
+        </div>
+        <div className="flex items-start gap-2 p-2 rounded bg-background">
+          <span className="text-emerald-500 mt-0.5">✓</span>
+          <span>Profitable operations (or clear path to profitability)</span>
+        </div>
+        <div className="flex items-start gap-2 p-2 rounded bg-background">
+          <span className="text-emerald-500 mt-0.5">✓</span>
+          <span>Expanded feature set and platform capabilities</span>
+        </div>
+        <div className="flex items-start gap-2 p-2 rounded bg-background">
+          <span className="text-emerald-500 mt-0.5">✓</span>
+          <span>Strategic partnerships established</span>
+        </div>
+        <div className="flex items-start gap-2 p-2 rounded bg-background">
+          <span className="text-emerald-500 mt-0.5">✓</span>
+          <span>International market expansion</span>
+        </div>
+      </div>
+      <div className="p-3 rounded-lg bg-emerald-500/10 border border-emerald-500/30">
+        <div className="text-xs font-bold text-emerald-500 mb-1">PRIMARY FOCUS</div>
+        <div className="text-sm">Scaling operations and capturing market share</div>
+      </div>
+    </div>
+  </div>
+</div>
 
 ## Business Risks and Assumptions
 
-These projections assume:
+<div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+  <div className="rounded-xl border border-blue-500/30 bg-gradient-to-br from-blue-500/10 to-blue-500/5 p-6">
+    <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
+      <span className="text-2xl">✓</span>
+      Core Assumptions
+    </h3>
+    <div className="space-y-2 text-sm">
+      <div className="p-3 rounded-lg bg-background">
+        <div className="font-bold text-blue-500 mb-1">Technical execution</div>
+        <div className="text-muted-foreground">Platform launches without major issues</div>
+      </div>
+      <div className="p-3 rounded-lg bg-background">
+        <div className="font-bold text-blue-500 mb-1">Market timing</div>
+        <div className="text-muted-foreground">Favorable conditions for social platform adoption</div>
+      </div>
+      <div className="p-3 rounded-lg bg-background">
+        <div className="font-bold text-blue-500 mb-1">Regulatory environment</div>
+        <div className="text-muted-foreground">No major regulatory restrictions on operations</div>
+      </div>
+      <div className="p-3 rounded-lg bg-background">
+        <div className="font-bold text-blue-500 mb-1">Competition</div>
+        <div className="text-muted-foreground">Ability to differentiate from established platforms</div>
+      </div>
+      <div className="p-3 rounded-lg bg-background">
+        <div className="font-bold text-blue-500 mb-1">Team execution</div>
+        <div className="text-muted-foreground">Successful hiring and team performance</div>
+      </div>
+      <div className="p-3 rounded-lg bg-background">
+        <div className="font-bold text-blue-500 mb-1">User behavior</div>
+        <div className="text-muted-foreground">Assumptions about engagement and spending patterns</div>
+      </div>
+    </div>
+  </div>
 
-- **Technical execution:** Platform launches without major issues
-- **Market timing:** Favorable conditions for social platform adoption
-- **Regulatory environment:** No major regulatory restrictions on operations
-- **Competition:** Ability to differentiate from established platforms
-- **Team execution:** Successful hiring and team performance
-- **User behavior:** Assumptions about engagement and spending patterns
+  <div className="rounded-xl border border-red-500/30 bg-gradient-to-br from-red-500/10 to-red-500/5 p-6">
+    <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
+      <span className="text-2xl">⚠️</span>
+      Risk Factors
+    </h3>
+    <div className="space-y-2 text-sm">
+      <div className="flex items-start gap-2 p-3 rounded-lg bg-background">
+        <span className="text-red-500 mt-0.5">→</span>
+        <span>Failure to achieve product-market fit</span>
+      </div>
+      <div className="flex items-start gap-2 p-3 rounded-lg bg-background">
+        <span className="text-red-500 mt-0.5">→</span>
+        <span>Security breaches or technical failures</span>
+      </div>
+      <div className="flex items-start gap-2 p-3 rounded-lg bg-background">
+        <span className="text-red-500 mt-0.5">→</span>
+        <span>Regulatory crackdowns on crypto platforms</span>
+      </div>
+      <div className="flex items-start gap-2 p-3 rounded-lg bg-background">
+        <span className="text-red-500 mt-0.5">→</span>
+        <span>Dominant competitor responses</span>
+      </div>
+      <div className="flex items-start gap-2 p-3 rounded-lg bg-background">
+        <span className="text-red-500 mt-0.5">→</span>
+        <span>Inability to attract or retain talent</span>
+      </div>
+      <div className="flex items-start gap-2 p-3 rounded-lg bg-background">
+        <span className="text-red-500 mt-0.5">→</span>
+        <span>Broader cryptocurrency market collapse</span>
+      </div>
+      <div className="flex items-start gap-2 p-3 rounded-lg bg-background">
+        <span className="text-red-500 mt-0.5">→</span>
+        <span>Economic recession reducing discretionary spending</span>
+      </div>
+    </div>
+  </div>
+</div>
 
-**Risks that could impact projections:**
-
-- Failure to achieve product-market fit
-- Security breaches or technical failures
-- Regulatory crackdowns on crypto platforms
-- Dominant competitor responses
-- Inability to attract or retain talent
-- Broader cryptocurrency market collapse
-- Economic recession reducing discretionary spending
-
-These milestones provide objective assessment points for business progress. Missing milestones doesn't necessarily indicate failure—it may simply mean the timeline needs adjustment or strategy requires pivoting. Conversely, exceeding milestones validates assumptions and may justify accelerated investment in growth.
+<div className="rounded-xl border border-border bg-card p-6 my-6">
+  <p className="text-muted-foreground">These milestones provide objective assessment points for business progress. Missing milestones doesn't necessarily indicate failure—it may simply mean the timeline needs adjustment or strategy requires pivoting. Conversely, exceeding milestones validates assumptions and may justify accelerated investment in growth.</p>
+</div>
 
 ## VCoin Market Considerations
 
-:::danger IMPORTANT: NO PRICE PREDICTIONS
-The platform does not make predictions, projections, or promises about VCoin market price after DEX launch. Token price will be determined entirely by open market forces of supply and demand.
-:::
+<div className="rounded-xl border border-red-500/30 bg-gradient-to-br from-red-500/10 to-red-500/5 p-6 my-6">
+  <div className="flex items-center gap-3 mb-3">
+    <span className="text-3xl">🚨</span>
+    <div>
+      <div className="font-bold text-lg text-red-500">IMPORTANT: NO PRICE PREDICTIONS</div>
+    </div>
+  </div>
+  <div className="text-sm text-muted-foreground">
+    The platform does not make predictions, projections, or promises about VCoin market price after DEX launch. Token price will be determined entirely by open market forces of supply and demand.
+  </div>
+</div>
 
 After DEX launch, VCoin will trade on decentralized exchanges where price is determined by market participants. Numerous unpredictable factors influence cryptocurrency prices including:
 
@@ -281,14 +819,36 @@ The platform's focus remains on building a successful business with strong funda
 
 ## Conclusion
 
-These projections provide a framework for understanding potential business trajectories under various growth scenarios. They serve as planning tools for resource allocation, hiring decisions, and strategic prioritization.
+<div className="rounded-xl border border-emerald-500/30 bg-gradient-to-br from-emerald-500/10 to-emerald-500/5 p-6 my-6">
+  <p className="mb-4">These projections provide a framework for understanding potential business trajectories under various growth scenarios. They serve as planning tools for resource allocation, hiring decisions, and strategic prioritization.</p>
 
-**Critical reminders:**
+  <div className="rounded-lg border border-emerald-500/30 bg-background p-5 mb-4">
+    <div className="text-sm font-bold text-emerald-500 mb-3">Critical Reminders</div>
+    <div className="space-y-2 text-sm">
+      <div className="flex items-start gap-2">
+        <span className="text-emerald-500 mt-0.5">•</span>
+        <span>All projections are hypothetical and may not reflect actual results</span>
+      </div>
+      <div className="flex items-start gap-2">
+        <span className="text-emerald-500 mt-0.5">•</span>
+        <span>Focus is on building sustainable business, not token speculation</span>
+      </div>
+      <div className="flex items-start gap-2">
+        <span className="text-emerald-500 mt-0.5">•</span>
+        <span>Success measured by user satisfaction, platform utility, and business health</span>
+      </div>
+      <div className="flex items-start gap-2">
+        <span className="text-emerald-500 mt-0.5">•</span>
+        <span>Token price is outside platform control and irrelevant to core mission</span>
+      </div>
+      <div className="flex items-start gap-2">
+        <span className="text-emerald-500 mt-0.5">•</span>
+        <span>VCoin is utility token for services, not investment vehicle</span>
+      </div>
+    </div>
+  </div>
 
-- All projections are hypothetical and may not reflect actual results
-- Focus is on building sustainable business, not token speculation
-- Success measured by user satisfaction, platform utility, and business health
-- Token price is outside platform control and irrelevant to core mission
-- VCoin is utility token for services, not investment vehicle
-
-The platform commits to transparent reporting of actual business metrics, allowing the community to track real performance against these hypothetical scenarios.
+  <div className="p-4 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-sm">
+    The platform commits to transparent reporting of actual business metrics, allowing the community to track real performance against these hypothetical scenarios.
+  </div>
+</div>
