@@ -48,7 +48,7 @@ export function baseOptions(): BaseLayoutProps {
         url: "/docs/compliance",
       },
       {
-        text: "VCO Contract",
+        text: "VYC Contract",
         url: "https://explorer.solana.com/address/Wuk2WeBmQGZHBq3E8k5iPrPHWbPbCvkJEzM1cDRWYt6/transfers?cluster=devnet",
         external: true,
       },
