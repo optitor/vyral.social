@@ -66,6 +66,8 @@ jobs:
             exit 1
           fi
           echo "✅ Build verification successful!"
+          echo "Contents of build directory:"
+          ls -la build/ | head -20
 
       # Step 8: Deploy to Azure Static Web Apps
       - name: Deploy to Azure Static Web Apps
@@ -76,11 +78,12 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
           
-          ###### Repository/Build Configurations ######
-          app_location: "/"              # Location of application code
-          api_location: ""               # Location of API code (empty = no API)
-          output_location: "build"       # Build output directory
-          skip_app_build: true           # Skip Oryx build (we build manually above)
+          ###### Repository/Build Configurations - CRITICAL CHANGE ######
+          # Since we pre-built the app, point directly to the build folder
+          app_location: "build"          # The already-built static files are here
+          api_location: ""               # No API
+          output_location: ""            # No additional build output (empty string, not ".")
+          skip_app_build: true           # Don't rebuild - we already did it above
           ###### End of Repository/Build Configurations ######
 
       # Step 9: Output deployment URL
