@@ -5,8 +5,12 @@ description: VCoin specifications, distribution, utility, and revenue model
 
 <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-emerald-500/10 via-teal-500/5 to-background p-8 border border-emerald-500/20 mb-8">
   <div className="relative z-10">
-    <h1 className="text-4xl md:text-5xl font-bold mb-3">VCoin Token Economics</h1>
-    <p className="text-lg text-muted-foreground">SPL Token-2022 on Solana • 10B Fixed Supply • Deflationary Utility Token</p>
+    <h1 className="text-4xl md:text-5xl font-bold mb-3">
+      VCoin Token Economics
+    </h1>
+    <p className="text-lg text-muted-foreground">
+      SPL Token-2022 on Solana • 10B Fixed Supply • Deflationary Utility Token
+    </p>
   </div>
   <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/5 rounded-full blur-3xl"></div>
 </div>
@@ -14,7 +18,7 @@ description: VCoin specifications, distribution, utility, and revenue model
 ## Token Specifications
 
 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
-  <div className="rounded-xl border border-purple-500/30 bg-gradient-to-br from-purple-500/10 to-purple-500/5 p-6">
+  <div className="rounded-xl border border-cyan-500/30 bg-gradient-to-br from-cyan-500/10 to-cyan-500/5 p-6">
     <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
       <span className="text-2xl">⚡</span>
       Why Solana for VCoin
@@ -76,7 +80,12 @@ description: VCoin specifications, distribution, utility, and revenue model
 <div className="rounded-lg border border-border bg-card p-6 my-6">
   <h4 className="font-bold mb-3">Technical Foundation: SPL Token-2022</h4>
   <p className="text-sm text-muted-foreground mb-4">
-    VCoin is implemented as an SPL Token-2022 on the Solana blockchain. This technical foundation provides several critical advantages. Solana offers extremely high throughput, capable of processing up to 65,000 transactions per second with block times under one second. Transaction costs average approximately $0.00025, making microtransactions economically viable in ways impossible on higher-fee chains like Ethereum.
+    VCoin is implemented as an SPL Token-2022 on the Solana blockchain. This
+    technical foundation provides several critical advantages. Solana offers
+    extremely high throughput, capable of processing up to 65,000 transactions
+    per second with block times under one second. Transaction costs average
+    approximately $0.00025, making microtransactions economically viable in ways
+    impossible on higher-fee chains like Ethereum.
   </p>
   <div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-sm">
     <div className="flex items-center gap-2 p-2 rounded bg-muted/50">
@@ -95,7 +104,12 @@ description: VCoin specifications, distribution, utility, and revenue model
 </div>
 
 <p className="text-muted-foreground">
-The total supply is fixed at 10,000,000,000 (ten billion) tokens with nine decimal places for divisibility. This supply can never be increased—the mint authority is permanently disabled after initial distribution, eliminating inflation risk and establishing absolute scarcity. The large total supply allows for granular pricing and psychological accessibility, as users can hold thousands or millions of VCoins rather than fractional amounts.
+  The total supply is fixed at 10,000,000,000 (ten billion) tokens with nine
+  decimal places for divisibility. This supply can never be increased—the mint
+  authority is permanently disabled after initial distribution, eliminating
+  inflation risk and establishing absolute scarcity. The large total supply
+  allows for granular pricing and psychological accessibility, as users can hold
+  thousands or millions of VCoins rather than fractional amounts.
 </p>
 
 ## Token Distribution
@@ -108,33 +122,45 @@ The total supply is fixed at 10,000,000,000 (ten billion) tokens with nine decim
     <p className="text-sm text-muted-foreground">Sold directly to users at $0.01 each = $30M max revenue</p>
   </div>
 
-  <div className="relative overflow-hidden rounded-xl border border-blue-500/30 bg-gradient-to-br from-blue-500/10 to-blue-500/5 p-6">
-    <div className="text-3xl font-bold text-blue-500 mb-2">25%</div>
-    <h3 className="text-lg font-bold mb-2">Platform Operations</h3>
-    <div className="text-2xl font-mono mb-3">2,500,000,000</div>
-    <p className="text-sm text-muted-foreground">4-year vesting, 6-month cliff, 156.25M/quarter unlock</p>
-  </div>
+{" "}
+<div className="relative overflow-hidden rounded-xl border border-blue-500/30 bg-gradient-to-br from-blue-500/10 to-blue-500/5 p-6">
+  <div className="text-3xl font-bold text-blue-500 mb-2">25%</div>
+  <h3 className="text-lg font-bold mb-2">Platform Operations</h3>
+  <div className="text-2xl font-mono mb-3">2,500,000,000</div>
+  <p className="text-sm text-muted-foreground">
+    4-year vesting, 6-month cliff, 156.25M/quarter unlock
+  </p>
+</div>
 
-  <div className="relative overflow-hidden rounded-xl border border-purple-500/30 bg-gradient-to-br from-purple-500/10 to-purple-500/5 p-6">
-    <div className="text-3xl font-bold text-purple-500 mb-2">20%</div>
-    <h3 className="text-lg font-bold mb-2">User Rewards Pool</h3>
-    <div className="text-2xl font-mono mb-3">2,000,000,000</div>
-    <p className="text-sm text-muted-foreground">5-year distribution, max 1,095,890 tokens/day</p>
-  </div>
+{" "}
+<div className="relative overflow-hidden rounded-xl border border-cyan-500/30 bg-gradient-to-br from-cyan-500/10 to-cyan-500/5 p-6">
+  <div className="text-3xl font-bold text-cyan-500 mb-2">20%</div>
+  <h3 className="text-lg font-bold mb-2">User Rewards Pool</h3>
+  <div className="text-2xl font-mono mb-3">2,000,000,000</div>
+  <p className="text-sm text-muted-foreground">
+    5-year distribution, max 1,095,890 tokens/day
+  </p>
+</div>
 
-  <div className="relative overflow-hidden rounded-xl border border-cyan-500/30 bg-gradient-to-br from-cyan-500/10 to-cyan-500/5 p-6">
-    <div className="text-3xl font-bold text-cyan-500 mb-2">15%</div>
-    <h3 className="text-lg font-bold mb-2">Liquidity Reserve</h3>
-    <div className="text-2xl font-mono mb-3">1,500,000,000</div>
-    <p className="text-sm text-muted-foreground">Paired with USDC on DEXs, provides trading depth</p>
-  </div>
+{" "}
+<div className="relative overflow-hidden rounded-xl border border-cyan-500/30 bg-gradient-to-br from-cyan-500/10 to-cyan-500/5 p-6">
+  <div className="text-3xl font-bold text-cyan-500 mb-2">15%</div>
+  <h3 className="text-lg font-bold mb-2">Liquidity Reserve</h3>
+  <div className="text-2xl font-mono mb-3">1,500,000,000</div>
+  <p className="text-sm text-muted-foreground">
+    Paired with USDC on DEXs, provides trading depth
+  </p>
+</div>
 
-  <div className="relative overflow-hidden rounded-xl border border-orange-500/30 bg-gradient-to-br from-orange-500/10 to-orange-500/5 p-6">
-    <div className="text-3xl font-bold text-orange-500 mb-2">7%</div>
-    <h3 className="text-lg font-bold mb-2">Team & Advisors</h3>
-    <div className="text-2xl font-mono mb-3">700,000,000</div>
-    <p className="text-sm text-muted-foreground">Same 4-year vesting schedule as operations</p>
-  </div>
+{" "}
+<div className="relative overflow-hidden rounded-xl border border-orange-500/30 bg-gradient-to-br from-orange-500/10 to-orange-500/5 p-6">
+  <div className="text-3xl font-bold text-orange-500 mb-2">7%</div>
+  <h3 className="text-lg font-bold mb-2">Team & Advisors</h3>
+  <div className="text-2xl font-mono mb-3">700,000,000</div>
+  <p className="text-sm text-muted-foreground">
+    Same 4-year vesting schedule as operations
+  </p>
+</div>
 
   <div className="relative overflow-hidden rounded-xl border border-pink-500/30 bg-gradient-to-br from-pink-500/10 to-pink-500/5 p-6">
     <div className="text-3xl font-bold text-pink-500 mb-2">3%</div>
@@ -186,54 +212,60 @@ The initial token allocation balances multiple stakeholder interests while maint
     </div>
   </div>
 
-  <div className="rounded-xl border border-border bg-card p-6 hover:border-primary/50 transition-colors">
-    <div className="flex items-center gap-3 mb-4">
-      <div className="text-3xl">⭐</div>
-      <h3 className="text-xl font-bold">Subscriptions</h3>
+{" "}
+<div className="rounded-xl border border-border bg-card p-6 hover:border-primary/50 transition-colors">
+  <div className="flex items-center gap-3 mb-4">
+    <div className="text-3xl">⭐</div>
+    <h3 className="text-xl font-bold">Subscriptions</h3>
+  </div>
+  <div className="space-y-2 text-sm">
+    <div className="flex justify-between items-center p-2 rounded bg-muted/50">
+      <span>Monthly payment</span>
+      <span className="font-mono font-bold">500 VCoins</span>
     </div>
-    <div className="space-y-2 text-sm">
-      <div className="flex justify-between items-center p-2 rounded bg-muted/50">
-        <span>Monthly payment</span>
-        <span className="font-mono font-bold">500 VCoins</span>
-      </div>
-      <div className="flex justify-between items-center p-2 rounded bg-emerald-500/10">
-        <span>Creator keeps</span>
-        <span className="font-mono font-bold text-emerald-500">475 VCoins (95%)</span>
-      </div>
-      <div className="flex justify-between items-center p-2 rounded bg-blue-500/10">
-        <span>Platform fee</span>
-        <span className="font-mono font-bold text-blue-500">25 VCoins (5%)</span>
-      </div>
-      <div className="mt-3 p-2 rounded bg-primary/10 text-xs text-center">
-        Creates recurring income stream
-      </div>
+    <div className="flex justify-between items-center p-2 rounded bg-emerald-500/10">
+      <span>Creator keeps</span>
+      <span className="font-mono font-bold text-emerald-500">
+        475 VCoins (95%)
+      </span>
+    </div>
+    <div className="flex justify-between items-center p-2 rounded bg-blue-500/10">
+      <span>Platform fee</span>
+      <span className="font-mono font-bold text-blue-500">25 VCoins (5%)</span>
+    </div>
+    <div className="mt-3 p-2 rounded bg-primary/10 text-xs text-center">
+      Creates recurring income stream
     </div>
   </div>
+</div>
 
-  <div className="rounded-xl border border-border bg-card p-6 hover:border-primary/50 transition-colors">
-    <div className="flex items-center gap-3 mb-4">
-      <div className="text-3xl">🛒</div>
-      <h3 className="text-xl font-bold">Marketplace</h3>
+{" "}
+<div className="rounded-xl border border-border bg-card p-6 hover:border-primary/50 transition-colors">
+  <div className="flex items-center gap-3 mb-4">
+    <div className="text-3xl">🛒</div>
+    <h3 className="text-xl font-bold">Marketplace</h3>
+  </div>
+  <div className="space-y-2 text-sm">
+    <div className="flex justify-between items-center p-2 rounded bg-muted/50">
+      <span>Item price</span>
+      <span className="font-mono font-bold">1,000 VCoins</span>
     </div>
-    <div className="space-y-2 text-sm">
-      <div className="flex justify-between items-center p-2 rounded bg-muted/50">
-        <span>Item price</span>
-        <span className="font-mono font-bold">1,000 VCoins</span>
-      </div>
-      <div className="flex justify-between items-center p-2 rounded bg-emerald-500/10">
-        <span>Seller receives</span>
-        <span className="font-mono font-bold text-emerald-500">950 VCoins (95%)</span>
-      </div>
-      <div className="flex justify-between items-center p-2 rounded bg-blue-500/10">
-        <span>Platform fee</span>
-        <span className="font-mono font-bold text-blue-500">40 VCoins (4%)</span>
-      </div>
-      <div className="flex justify-between items-center p-2 rounded bg-red-500/10">
-        <span>Burned forever</span>
-        <span className="font-mono font-bold text-red-500">10 VCoins (1%)</span>
-      </div>
+    <div className="flex justify-between items-center p-2 rounded bg-emerald-500/10">
+      <span>Seller receives</span>
+      <span className="font-mono font-bold text-emerald-500">
+        950 VCoins (95%)
+      </span>
+    </div>
+    <div className="flex justify-between items-center p-2 rounded bg-blue-500/10">
+      <span>Platform fee</span>
+      <span className="font-mono font-bold text-blue-500">40 VCoins (4%)</span>
+    </div>
+    <div className="flex justify-between items-center p-2 rounded bg-red-500/10">
+      <span>Burned forever</span>
+      <span className="font-mono font-bold text-red-500">10 VCoins (1%)</span>
     </div>
   </div>
+</div>
 
   <div className="rounded-xl border border-border bg-card p-6 hover:border-primary/50 transition-colors">
     <div className="flex items-center gap-3 mb-4">
@@ -282,14 +314,18 @@ Premium features including ad-free browsing, advanced analytics, profile verific
           <div className="text-2xl">🏢</div>
           <div className="flex-1">
             <div className="font-bold text-blue-500">$80 (80%)</div>
-            <div className="text-sm text-muted-foreground">Operational funds</div>
+            <div className="text-sm text-muted-foreground">
+              Operational funds
+            </div>
           </div>
         </div>
         <div className="flex items-center gap-3 p-3 rounded-lg bg-emerald-500/10 border border-emerald-500/20">
           <div className="text-2xl">💧</div>
           <div className="flex-1">
             <div className="font-bold text-emerald-500">$20 (20%)</div>
-            <div className="text-sm text-muted-foreground">Liquidity accumulation fund</div>
+            <div className="text-sm text-muted-foreground">
+              Liquidity accumulation fund
+            </div>
           </div>
         </div>
       </div>
@@ -300,7 +336,9 @@ Premium features including ad-free browsing, advanced analytics, profile verific
         <div className="text-3xl">🪙</div>
         <div>
           <div className="text-2xl font-bold font-mono">13,000 VCoins</div>
-          <div className="text-sm text-muted-foreground">From Sales Inventory (30% bonus)</div>
+          <div className="text-sm text-muted-foreground">
+            From Sales Inventory (30% bonus)
+          </div>
         </div>
       </div>
       <div className="mt-4 space-y-2 text-sm">
@@ -339,49 +377,79 @@ When users purchase VCoins with cyrpto or fiat payment methods, they receive tok
     <div className="inline-block px-2 py-1 rounded text-xs bg-muted">0% bonus</div>
   </div>
 
-  <div className="rounded-lg border border-border bg-card p-4 hover:shadow-lg transition-shadow">
-    <div className="text-2xl font-bold mb-1">$10</div>
-    <div className="text-3xl font-mono font-bold text-primary mb-2">1,100</div>
-    <div className="text-xs text-muted-foreground mb-3">VCoins • $0.0091 each</div>
-    <div className="inline-block px-2 py-1 rounded text-xs bg-emerald-500/20 text-emerald-500">+10% bonus</div>
+{" "}
+<div className="rounded-lg border border-border bg-card p-4 hover:shadow-lg transition-shadow">
+  <div className="text-2xl font-bold mb-1">$10</div>
+  <div className="text-3xl font-mono font-bold text-primary mb-2">1,100</div>
+  <div className="text-xs text-muted-foreground mb-3">
+    VCoins • $0.0091 each
   </div>
+  <div className="inline-block px-2 py-1 rounded text-xs bg-emerald-500/20 text-emerald-500">
+    +10% bonus
+  </div>
+</div>
 
-  <div className="rounded-lg border border-border bg-card p-4 hover:shadow-lg transition-shadow">
-    <div className="text-2xl font-bold mb-1">$50</div>
-    <div className="text-3xl font-mono font-bold text-primary mb-2">6,000</div>
-    <div className="text-xs text-muted-foreground mb-3">VCoins • $0.0083 each</div>
-    <div className="inline-block px-2 py-1 rounded text-xs bg-emerald-500/20 text-emerald-500">+20% bonus</div>
+{" "}
+<div className="rounded-lg border border-border bg-card p-4 hover:shadow-lg transition-shadow">
+  <div className="text-2xl font-bold mb-1">$50</div>
+  <div className="text-3xl font-mono font-bold text-primary mb-2">6,000</div>
+  <div className="text-xs text-muted-foreground mb-3">
+    VCoins • $0.0083 each
   </div>
+  <div className="inline-block px-2 py-1 rounded text-xs bg-emerald-500/20 text-emerald-500">
+    +20% bonus
+  </div>
+</div>
 
-  <div className="rounded-lg border border-emerald-500/50 bg-gradient-to-br from-emerald-500/10 to-emerald-500/5 p-4 hover:shadow-lg transition-shadow">
-    <div className="text-xs font-bold text-emerald-500 mb-1">POPULAR</div>
-    <div className="text-2xl font-bold mb-1">$100</div>
-    <div className="text-3xl font-mono font-bold text-primary mb-2">13,000</div>
-    <div className="text-xs text-muted-foreground mb-3">VCoins • $0.0077 each</div>
-    <div className="inline-block px-2 py-1 rounded text-xs bg-emerald-500/30 text-emerald-500 font-bold">+30% bonus</div>
+{" "}
+<div className="rounded-lg border border-emerald-500/50 bg-gradient-to-br from-emerald-500/10 to-emerald-500/5 p-4 hover:shadow-lg transition-shadow">
+  <div className="text-xs font-bold text-emerald-500 mb-1">POPULAR</div>
+  <div className="text-2xl font-bold mb-1">$100</div>
+  <div className="text-3xl font-mono font-bold text-primary mb-2">13,000</div>
+  <div className="text-xs text-muted-foreground mb-3">
+    VCoins • $0.0077 each
   </div>
+  <div className="inline-block px-2 py-1 rounded text-xs bg-emerald-500/30 text-emerald-500 font-bold">
+    +30% bonus
+  </div>
+</div>
 
-  <div className="rounded-lg border border-border bg-card p-4 hover:shadow-lg transition-shadow">
-    <div className="text-2xl font-bold mb-1">$500</div>
-    <div className="text-3xl font-mono font-bold text-primary mb-2">70,000</div>
-    <div className="text-xs text-muted-foreground mb-3">VCoins • $0.0071 each</div>
-    <div className="inline-block px-2 py-1 rounded text-xs bg-blue-500/20 text-blue-500">+40% bonus</div>
+{" "}
+<div className="rounded-lg border border-border bg-card p-4 hover:shadow-lg transition-shadow">
+  <div className="text-2xl font-bold mb-1">$500</div>
+  <div className="text-3xl font-mono font-bold text-primary mb-2">70,000</div>
+  <div className="text-xs text-muted-foreground mb-3">
+    VCoins • $0.0071 each
   </div>
+  <div className="inline-block px-2 py-1 rounded text-xs bg-blue-500/20 text-blue-500">
+    +40% bonus
+  </div>
+</div>
 
-  <div className="rounded-lg border border-border bg-card p-4 hover:shadow-lg transition-shadow">
-    <div className="text-2xl font-bold mb-1">$1,000</div>
-    <div className="text-3xl font-mono font-bold text-primary mb-2">150K</div>
-    <div className="text-xs text-muted-foreground mb-3">VCoins • $0.0067 each</div>
-    <div className="inline-block px-2 py-1 rounded text-xs bg-blue-500/20 text-blue-500">+50% bonus</div>
+{" "}
+<div className="rounded-lg border border-border bg-card p-4 hover:shadow-lg transition-shadow">
+  <div className="text-2xl font-bold mb-1">$1,000</div>
+  <div className="text-3xl font-mono font-bold text-primary mb-2">150K</div>
+  <div className="text-xs text-muted-foreground mb-3">
+    VCoins • $0.0067 each
   </div>
+  <div className="inline-block px-2 py-1 rounded text-xs bg-blue-500/20 text-blue-500">
+    +50% bonus
+  </div>
+</div>
 
-  <div className="rounded-lg border border-purple-500/50 bg-gradient-to-br from-purple-500/10 to-purple-500/5 p-4 hover:shadow-lg transition-shadow">
-    <div className="text-xs font-bold text-purple-500 mb-1">ENTERPRISE</div>
-    <div className="text-2xl font-bold mb-1">$10,000</div>
-    <div className="text-3xl font-mono font-bold text-primary mb-2">1.6M</div>
-    <div className="text-xs text-muted-foreground mb-3">VCoins • $0.00625 each</div>
-    <div className="inline-block px-2 py-1 rounded text-xs bg-purple-500/30 text-purple-500 font-bold">+60% bonus</div>
+{" "}
+<div className="rounded-lg border border-cyan-500/50 bg-gradient-to-br from-cyan-500/10 to-cyan-500/5 p-4 hover:shadow-lg transition-shadow">
+  <div className="text-xs font-bold text-cyan-500 mb-1">ENTERPRISE</div>
+  <div className="text-2xl font-bold mb-1">$10,000</div>
+  <div className="text-3xl font-mono font-bold text-primary mb-2">1.6M</div>
+  <div className="text-xs text-muted-foreground mb-3">
+    VCoins • $0.00625 each
   </div>
+  <div className="inline-block px-2 py-1 rounded text-xs bg-cyan-500/30 text-cyan-500 font-bold">
+    +60% bonus
+  </div>
+</div>
 
   <div className="rounded-lg border border-orange-500/50 bg-gradient-to-br from-orange-500/10 to-orange-500/5 p-4 hover:shadow-lg transition-shadow">
     <div className="text-xs font-bold text-orange-500 mb-1">PARTNER</div>
@@ -477,6 +545,7 @@ When users purchase VCoins with cyrpto or fiat payment methods, they receive tok
         </div>
       </div>
     </div>
+
   </div>
 
   <div className="rounded-lg border border-blue-500/30 bg-blue-500/5 p-4 mt-4">
@@ -500,37 +569,39 @@ When users purchase VCoins with cyrpto or fiat payment methods, they receive tok
     <div className="flex items-center gap-3 p-3 rounded-lg bg-muted/50">
       <div className="font-bold w-20">Year 1</div>
       <div className="flex-1 bg-red-500/20 rounded-full h-3 overflow-hidden">
-        <div className="bg-red-500 h-full" style={{width: '0.4%'}}></div>
+        <div className="bg-red-500 h-full" style={{ width: "0.4%" }}></div>
       </div>
       <div className="font-mono text-sm w-32 text-right">40M (0.4%)</div>
     </div>
     <div className="flex items-center gap-3 p-3 rounded-lg bg-muted/50">
       <div className="font-bold w-20">Year 2</div>
       <div className="flex-1 bg-red-500/20 rounded-full h-3 overflow-hidden">
-        <div className="bg-red-500 h-full" style={{width: '1.2%'}}></div>
+        <div className="bg-red-500 h-full" style={{ width: "1.2%" }}></div>
       </div>
       <div className="font-mono text-sm w-32 text-right">120M (1.2%)</div>
     </div>
     <div className="flex items-center gap-3 p-3 rounded-lg bg-muted/50">
       <div className="font-bold w-20">Year 3</div>
       <div className="flex-1 bg-red-500/20 rounded-full h-3 overflow-hidden">
-        <div className="bg-red-500 h-full" style={{width: '2.5%'}}></div>
+        <div className="bg-red-500 h-full" style={{ width: "2.5%" }}></div>
       </div>
       <div className="font-mono text-sm w-32 text-right">250M (2.5%)</div>
     </div>
     <div className="flex items-center gap-3 p-3 rounded-lg bg-muted/50">
       <div className="font-bold w-20">Year 4</div>
       <div className="flex-1 bg-red-500/20 rounded-full h-3 overflow-hidden">
-        <div className="bg-red-500 h-full" style={{width: '4.2%'}}></div>
+        <div className="bg-red-500 h-full" style={{ width: "4.2%" }}></div>
       </div>
       <div className="font-mono text-sm w-32 text-right">420M (4.2%)</div>
     </div>
     <div className="flex items-center gap-3 p-3 rounded-lg bg-gradient-to-r from-red-500/20 to-red-500/10 border border-red-500/30">
       <div className="font-bold w-20">Year 5</div>
       <div className="flex-1 bg-red-500/20 rounded-full h-3 overflow-hidden">
-        <div className="bg-red-500 h-full" style={{width: '7%'}}></div>
+        <div className="bg-red-500 h-full" style={{ width: "7%" }}></div>
       </div>
-      <div className="font-mono text-sm w-32 text-right font-bold text-red-500">700M (7%)</div>
+      <div className="font-mono text-sm w-32 text-right font-bold text-red-500">
+        700M (7%)
+      </div>
     </div>
   </div>
 </div>

@@ -3,19 +3,29 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
+import Lottie, { LottieRefCurrentProps } from "lottie-react";
 import { NumberTicker } from "@/app/components/number-ticker";
 import { ShimmerButton } from "@/app/components/shimmer-button";
 import { ScrollProgress } from "@/app/components/scroll-progress";
-import { AnimatedGradientText } from "@/app/components/animated-gradient-text";
-import { BentoCard, BentoGrid } from "@/app/components/bento-grid";
-import { BorderBeam } from "@/app/components/border-beam";
+import { AnimatedInfoTooltip } from "@/app/components/ui/animated-tooltip";
+import { BentoGrid, BentoGridItem } from "@/app/components/bento-grid";
+import {
+  SocialFeedSkeleton,
+  EncryptedChatSkeleton,
+  MarketplaceSkeleton,
+  CommunitiesSkeleton,
+  OrbAISkeleton,
+  VCoinRewardsSkeleton,
+} from "@/app/components/feature-skeletons";
+import { CardSpotlight } from "@/app/components/ui/card-spotlight";
 import {
   Card,
   CardTitle,
   CardDescription,
   CardContent,
 } from "@/app/components/ui/card";
+import { Timeline } from "@/app/components/ui/timeline";
 import {
   ArrowRight,
   Sparkles,
@@ -25,19 +35,148 @@ import {
   Bot,
   Heart,
   Lock,
+  Coins,
+  Flame,
+  TrendingUp,
+  Zap,
 } from "lucide-react";
+
+const VCoinSupplyHeader = () => {
+  const lottieRef = useRef<LottieRefCurrentProps>(null);
+  const [isDark, setIsDark] = useState(false);
+  const [animationData, setAnimationData] = useState<any>(null);
+
+  useEffect(() => {
+    const checkTheme = () => {
+      const isDarkMode = document.documentElement.classList.contains("dark");
+      setIsDark(isDarkMode);
+    };
+
+    checkTheme();
+
+    const observer = new MutationObserver(checkTheme);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const loadAnimation = async () => {
+      const animation = isDark
+        ? await import("@/public/images/Vyral_Icon.json")
+        : await import("@/public/images/Vyral_logo_light.json");
+      setAnimationData(animation.default);
+    };
+    loadAnimation();
+  }, [isDark]);
+
+  const handleMouseEnter = () => {
+    if (lottieRef.current) {
+      lottieRef.current.play();
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (lottieRef.current) {
+      lottieRef.current.stop();
+    }
+  };
+
+  return (
+    <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-[#00D4AA] to-cyan-400 relative overflow-hidden">
+      <div className="absolute inset-0 bg-grid-white/10 [mask-image:radial-gradient(white,transparent_85%)]" />
+      <div className="flex items-center justify-center w-full gap-4">
+        <div
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          style={{ width: 48, height: 48, display: "flex" }}
+        >
+          {animationData && (
+            <Lottie
+              lottieRef={lottieRef}
+              animationData={animationData}
+              loop={false}
+              autoplay={false}
+              style={{ width: "100%", height: "100%" }}
+            />
+          )}
+        </div>
+        <div className="text-white">
+          <div className="text-4xl font-bold">10B</div>
+          <div className="text-sm opacity-90">Total Supply</div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const ComparisonItem = ({
+  title,
+  isNegative = false,
+}: {
+  title: string;
+  isNegative?: boolean;
+}) => {
+  return (
+    <li className="flex gap-2 items-start">
+      {isNegative ? <XIcon /> : <CheckIcon />}
+      <p className="text-gray-700 dark:text-white text-sm">{title}</p>
+    </li>
+  );
+};
+
+const CheckIcon = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className="h-4 w-4 text-[#00D4AA] mt-1 shrink-0"
+    >
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path
+        d="M12 2c-.218 0 -.432 .002 -.642 .005l-.616 .017l-.299 .013l-.579 .034l-.553 .046c-4.785 .464 -6.732 2.411 -7.196 7.196l-.046 .553l-.034 .579c-.005 .098 -.01 .198 -.013 .299l-.017 .616l-.004 .318l-.001 .324c0 .218 .002 .432 .005 .642l.017 .616l.013 .299l.034 .579l.046 .553c.464 4.785 2.411 6.732 7.196 7.196l.553 .046l.579 .034c.098 .005 .198 .01 .299 .013l.616 .017l.642 .005l.642 -.005l.616 -.017l.299 -.013l.579 -.034l.553 -.046c4.785 -.464 6.732 -2.411 7.196 -7.196l.046 -.553l.034 -.579c.005 -.098 .01 -.198 .013 -.299l.017 -.616l.005 -.642l-.005 -.642l-.017 -.616l-.013 -.299l-.034 -.579l-.046 -.553c-.464 -4.785 -2.411 -6.732 -7.196 -7.196l-.553 -.046l-.579 -.034a28.058 28.058 0 0 0 -.299 -.013l-.616 -.017l-.318 -.004l-.324 -.001zm2.293 7.293a1 1 0 0 1 1.497 1.32l-.083 .094l-4 4a1 1 0 0 1 -1.32 .083l-.094 -.083l-2 -2a1 1 0 0 1 1.32 -1.497l.094 .083l1.293 1.292l3.293 -3.292z"
+        fill="currentColor"
+        strokeWidth="0"
+      />
+    </svg>
+  );
+};
+
+const XIcon = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className="h-4 w-4 text-red-500 mt-1 shrink-0"
+    >
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path
+        d="M12 2c5.523 0 10 4.477 10 10s-4.477 10 -10 10s-10 -4.477 -10 -10s4.477 -10 10 -10zm3.6 5.2a1 1 0 0 0 -1.4 .2l-2.2 2.933l-2.2 -2.933a1 1 0 1 0 -1.6 1.2l2.55 3.4l-2.55 3.4a1 1 0 1 0 1.6 1.2l2.2 -2.933l2.2 2.933a1 1 0 0 0 1.6 -1.2l-2.55 -3.4l2.55 -3.4a1 1 0 0 0 -.2 -1.4z"
+        fill="currentColor"
+        strokeWidth="0"
+      />
+    </svg>
+  );
+};
 
 function EarningsCalculator() {
   const [followers, setFollowers] = useState(5000);
 
-  // Calculate earnings based on follower count
   const calculateEarnings = (followerCount: number) => {
     if (followerCount < 1000) {
-      // Casual user: $10-30/month
       const daily = 70;
-      const monthly = daily * 30 + 500; // 2,100 + milestone bonus
+      const monthly = daily * 30 + 500;
       return {
-        monthly: monthly * 0.01, // Convert VCoins to USD
+        monthly: monthly * 0.01,
         daily: daily * 0.01,
         tips: monthly * 0.3 * 0.01,
         subscriptions: 0,
@@ -45,7 +184,6 @@ function EarningsCalculator() {
         content: monthly * 0.6 * 0.01,
       };
     } else if (followerCount < 10000) {
-      // Active creator: $200-500/month
       const baseDaily = 200 + followerCount / 100;
       const monthly = baseDaily * 30;
       return {
@@ -57,7 +195,6 @@ function EarningsCalculator() {
         content: monthly * 0.25 * 0.01,
       };
     } else {
-      // Top creator: $2,000+/month
       const baseDaily = 300 + followerCount / 10;
       const tips = 1000 * (followerCount / 10000);
       const subscriptions = 5000 * (followerCount / 10000);
@@ -101,576 +238,555 @@ function EarningsCalculator() {
   const total = breakdown.reduce((sum, item) => sum + item.amount, 0);
 
   return (
-    <motion.div
-      initial={{ opacity: 0, x: -20 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true }}
-      className="relative"
-    >
-      <div className="absolute inset-0 bg-gradient-to-br from-pink-400/20 to-transparent rounded-3xl blur-2xl" />
-      <div className="relative bg-white/90 dark:bg-white/10 border-2 border-gray-200/50 dark:border-white/20 backdrop-blur-xl rounded-3xl p-8 shadow-2xl dark:shadow-none">
-        <div className="flex justify-between items-center mb-6">
-          <h3 className="text-2xl font-bold">Earnings Calculator</h3>
-          <span className="text-sm text-gray-600 dark:text-gray-400">
-            Per Month
+    <div className="bg-white dark:bg-black border border-neutral-200 dark:border-neutral-800 rounded-xl p-6">
+      <h3 className="text-xl font-bold mb-6">Earnings Calculator</h3>
+
+      <div className="mb-6">
+        <div className="flex justify-between items-center mb-3">
+          <label className="text-sm font-medium text-gray-600 dark:text-gray-400">
+            Your Followers
+          </label>
+          <span className="text-xl font-bold text-[#00D4AA]">
+            {followers.toLocaleString()}
           </span>
         </div>
-
-        {/* Follower Slider */}
-        <div className="mb-8">
-          <div className="flex justify-between items-center mb-3">
-            <label className="text-sm font-medium text-gray-600 dark:text-gray-400">
-              Your Followers
-            </label>
-            <span className="text-lg font-bold text-[#00D4AA]">
-              {followers.toLocaleString()}
-            </span>
-          </div>
-          <input
-            type="range"
-            min="100"
-            max="100000"
-            step="100"
-            value={followers}
-            onChange={(e) => setFollowers(parseInt(e.target.value))}
-            className="w-full h-2 bg-gray-200 dark:bg-gray-700 rounded-lg appearance-none cursor-pointer accent-[#00D4AA]"
-          />
-          <div className="flex justify-between text-xs text-gray-500 dark:text-gray-500 mt-1">
-            <span>100</span>
-            <span>50K</span>
-            <span>100K</span>
-          </div>
-        </div>
-
-        {/* Total Earnings */}
-        <div className="text-6xl font-bold text-[#00D4AA] mb-8">
-          ${total.toFixed(0)}
-        </div>
-
-        {/* Breakdown */}
-        <div className="space-y-4 mb-6">
-          {breakdown.map((item, idx) => {
-            const percentage = (item.amount / total) * 100;
-            return (
-              <div key={idx} className="space-y-2">
-                <div className="flex justify-between text-sm">
-                  <span className="font-medium">{item.label}</span>
-                  <span className="font-bold">${item.amount.toFixed(0)}</span>
-                </div>
-                <div className="h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
-                  <div
-                    className={`h-full bg-gradient-to-r ${item.color}`}
-                    style={{ width: `${percentage}%` }}
-                  />
-                </div>
-              </div>
-            );
-          })}
-        </div>
-
-        <div className="flex items-center gap-2 text-[#00D4AA] bg-[#00D4AA]/10 px-4 py-2 rounded-lg">
-          <span className="text-sm">💡</span>
-          <span className="text-sm">
-            {followers < 1000
-              ? "Build your following to unlock more revenue streams!"
-              : followers < 10000
-              ? "You're an active creator! Keep growing!"
-              : "Top 1% creator tier! 🚀"}
-          </span>
+        <input
+          type="range"
+          min="100"
+          max="100000"
+          step="100"
+          value={followers}
+          onChange={(e) => setFollowers(parseInt(e.target.value))}
+          className="w-full h-2 bg-gray-200 dark:bg-gray-700 rounded-lg appearance-none cursor-pointer accent-[#00D4AA]"
+        />
+        <div className="flex justify-between text-xs text-gray-500 mt-2">
+          <span>100</span>
+          <span>50K</span>
+          <span>100K</span>
         </div>
       </div>
-    </motion.div>
+
+      <div className="bg-gradient-to-br from-[#00D4AA] to-cyan-400 rounded-xl p-6 mb-6 text-center text-white">
+        <div className="text-5xl font-bold mb-1">${total.toFixed(0)}</div>
+        <div className="text-sm opacity-90">Potential Monthly Earnings</div>
+      </div>
+
+      <div className="space-y-3 mb-6">
+        {breakdown.map((item, idx) => (
+          <div key={idx} className="flex justify-between items-center text-sm">
+            <span className="font-medium text-gray-700 dark:text-gray-300">
+              {item.label}
+            </span>
+            <span className="font-bold text-[#00D4AA]">
+              ${item.amount.toFixed(0)}
+            </span>
+          </div>
+        ))}
+      </div>
+
+      <div className="flex items-center gap-2 text-[#00D4AA] bg-[#00D4AA]/10 px-4 py-3 rounded-lg text-sm">
+        <span>💡</span>
+        <span>
+          {followers < 1000
+            ? "Build your following to unlock more revenue streams!"
+            : followers < 10000
+            ? "You're an active creator! Keep growing!"
+            : "Top 1% creator tier! 🚀"}
+        </span>
+      </div>
+    </div>
   );
 }
 
 export default function HomePage() {
   return (
-    <main className="relative bg-white dark:bg-black text-gray-900 dark:text-white overflow-hidden min-h-screen">
+    <main className="relative bg-white dark:bg-black min-h-screen">
       <ScrollProgress className="bg-[#00D4AA]" />
 
-      {/* Dot grid pattern background */}
-      <div className="fixed inset-0 pointer-events-none opacity-30 dark:opacity-10">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle, #00D4AA 1px, transparent 1px)",
-            backgroundSize: "40px 40px",
-          }}
-        />
-      </div>
+      {/* Hero Section - New.png Style */}
+      <section className="relative pt-20 pb-32 px-6 overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage:
+                "radial-gradient(circle, #00D4AA 1px, transparent 1px)",
+              backgroundSize: "40px 40px",
+            }}
+          />
+        </div>
 
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left: Text Content */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              className="space-y-6"
-            >
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#00D4AA]/10 border border-[#00D4AA]/30 rounded-full">
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Left - Large Typography */}
+            <div className="space-y-8">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#00D4AA]/10 border border-[#00D4AA]/30 rounded-full"
+              >
                 <Sparkles className="w-4 h-4 text-[#00D4AA]" />
                 <span className="text-sm font-semibold">Now Available</span>
-              </div>
+              </motion.div>
 
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight">
-                Social Media{" "}
-                <span className="bg-gradient-to-r from-[#00D4AA] via-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                  Built For You
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="text-5xl md:text-6xl lg:text-7xl font-black leading-[0.95] tracking-tight"
+              >
+                <span className="text-gray-900 dark:text-white">
+                  SOCIAL MEDIA{" "}
+                </span>
+                <span className="bg-gradient-to-r from-[#00D4AA] to-cyan-400 bg-clip-text text-transparent">
+                  BUILT FOR YOU
                 </span>
                 <br />
-                <span className="text-3xl md:text-4xl lg:text-5xl text-gray-600 dark:text-gray-400">
-                  Not Against You
+                <span className="bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-400 bg-clip-text text-transparent">
+                  NOT AGAINST YOU
                 </span>
-              </h1>
+              </motion.h1>
 
-              <p className="text-lg text-gray-600 dark:text-gray-400 max-w-xl">
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 }}
+                className="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-xl font-medium leading-relaxed"
+              >
                 Own your content. Control your data. Earn real rewards. Join the
                 platform that actually respects you.
-              </p>
+              </motion.p>
 
-              <div className="flex flex-col sm:flex-row gap-3">
-                <Link
-                  href="https://play.google.com/store"
-                  target="_blank"
-                  rel="noopener noreferrer"
+              {/* App Download Buttons */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                className="flex flex-col sm:flex-row gap-3"
+              >
+                <AnimatedInfoTooltip
+                  title="📱 Android App Launch"
+                  description="We're putting the finishing touches on our Android app! Get ready for a seamless mobile experience with all VYRAL features, including content creation, messaging, marketplace, and VCoin wallet integration."
+                  status="Coming Q1 2026"
+                  timeline="Expected Launch"
                 >
-                  <ShimmerButton
-                    background="linear-gradient(to right, #00D4AA, #06b6d4)"
-                    className="px-6 py-3 text-base font-semibold flex items-center gap-2"
+                  <Link
+                    href="#"
+                    onClick={(e) => e.preventDefault()}
+                    className="block w-full sm:w-auto"
                   >
-                    <svg
-                      className="w-5 h-5"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
+                    <ShimmerButton
+                      background="linear-gradient(to right, #00D4AA, #06b6d4)"
+                      className="px-6 py-3 text-base font-semibold flex items-center gap-2 w-full justify-center"
                     >
-                      <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
-                    </svg>
-                    Google Play
-                  </ShimmerButton>
-                </Link>
-                <Link
-                  href="https://apps.apple.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                      <svg
+                        className="w-5 h-5"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                      >
+                        <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
+                      </svg>
+                      Google Play
+                    </ShimmerButton>
+                  </Link>
+                </AnimatedInfoTooltip>
+                <AnimatedInfoTooltip
+                  title="🍎 iOS App Launch"
+                  description="The iOS version is in active development! Experience VYRAL's revolutionary social platform on your iPhone and iPad with native performance, push notifications, and seamless iCloud integration."
+                  status="Coming Q1 2026"
+                  timeline="Expected Launch"
                 >
-                  <ShimmerButton
-                    background="linear-gradient(to right, #06b6d4, #8b5cf6)"
-                    className="px-6 py-3 text-base font-semibold flex items-center gap-2"
+                  <Link
+                    href="#"
+                    onClick={(e) => e.preventDefault()}
+                    className="block w-full sm:w-auto"
                   >
-                    <svg
-                      className="w-5 h-5"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
+                    <ShimmerButton
+                      background="linear-gradient(to right, #06b6d4, #8b5cf6)"
+                      className="px-6 py-3 text-base font-semibold flex items-center gap-2 w-full justify-center"
                     >
-                      <path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,21.97C14.32,22 13.89,21.18 12.37,21.18C10.84,21.18 10.37,21.95 9.1,22C7.79,22.05 6.8,20.68 5.96,19.47C4.25,17 2.94,12.45 4.7,9.39C5.57,7.87 7.13,6.91 8.82,6.88C10.1,6.86 11.32,7.75 12.11,7.75C12.89,7.75 14.37,6.68 15.92,6.84C16.57,6.87 18.39,7.1 19.56,8.82C19.47,8.88 17.39,10.1 17.41,12.63C17.44,15.65 20.06,16.66 20.09,16.67C20.06,16.74 19.67,18.11 18.71,19.5M13,3.5C13.73,2.67 14.94,2.04 15.94,2C16.07,3.17 15.6,4.35 14.9,5.19C14.21,6.04 13.07,6.7 11.95,6.61C11.8,5.46 12.36,4.26 13,3.5Z" />
-                    </svg>
-                    App Store
-                  </ShimmerButton>
-                </Link>
-              </div>
-            </motion.div>
+                      <svg
+                        className="w-5 h-5"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                      >
+                        <path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,21.97C14.32,22 13.89,21.18 12.37,21.18C10.84,21.18 10.37,21.95 9.1,22C7.79,22.05 6.8,20.68 5.96,19.47C4.25,17 2.94,12.45 4.7,9.39C5.57,7.87 7.13,6.91 8.82,6.88C10.1,6.86 11.32,7.75 12.11,7.75C12.89,7.75 14.37,6.68 15.92,6.84C16.57,6.87 18.39,7.1 19.56,8.82C19.47,8.88 17.39,10.1 17.41,12.63C17.44,15.65 20.06,16.66 20.09,16.67C20.06,16.74 19.67,18.11 18.71,19.5M13,3.5C13.73,2.67 14.94,2.04 15.94,2C16.07,3.17 15.6,4.35 14.9,5.19C14.21,6.04 13.07,6.7 11.95,6.61C11.8,5.46 12.36,4.26 13,3.5Z" />
+                      </svg>
+                      App Store
+                    </ShimmerButton>
+                  </Link>
+                </AnimatedInfoTooltip>
+              </motion.div>
+            </div>
 
-            {/* Right: iPhone Mockup */}
+            {/* Right - 3D Visual Card */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
+              initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2 }}
-              className="relative h-[500px] hidden lg:flex items-center justify-center"
+              transition={{ delay: 0.3 }}
+              className="relative flex items-center justify-center min-h-[600px]"
             >
+              {/* Central iPhone Mockup */}
+              <div className="relative z-10 lg:z-20">
+                <Image
+                  src="/images/feed.jpeg"
+                  alt="VYRAL Platform"
+                  width={280}
+                  height={560}
+                  className="rounded-[40px] shadow-2xl object-cover border-8 border-gray-800 dark:border-gray-700"
+                />
+              </div>
+
+              {/* Floating Stats Cards - Outside */}
               <motion.div
-                animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="absolute top-0 right-10 w-24 h-24 bg-gradient-to-br from-[#00D4AA]/20 to-[#7FE8C3]/20 rounded-[30px] blur-xl"
-              />
-              <motion.div
-                animate={{ y: [0, 20, 0] }}
-                transition={{
-                  duration: 5,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 0.5,
-                }}
-                className="absolute bottom-10 left-10 w-32 h-32 bg-gradient-to-br from-purple-400/20 to-purple-600/20 rounded-[35px] blur-xl"
-              />
+                animate={{ y: [0, -8, 0] }}
+                transition={{ duration: 2.5, repeat: Infinity, delay: 0 }}
+                className="absolute top-10 right-0 bg-white dark:bg-black/90 backdrop-blur-md rounded-2xl px-5 py-4 shadow-2xl z-30 border-2 border-[#00D4AA]/40"
+              >
+                <div className="text-xs text-gray-600 dark:text-gray-400 mb-1">
+                  VYC Supply
+                </div>
+                <div className="text-3xl font-black text-[#00D4AA]">
+                  <NumberTicker value={10} />B
+                </div>
+              </motion.div>
+
               <motion.div
                 animate={{ y: [0, -10, 0] }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="relative z-10"
+                transition={{ duration: 3, repeat: Infinity, delay: 0.3 }}
+                className="absolute top-48 left-0 bg-white dark:bg-black/90 backdrop-blur-md rounded-2xl px-5 py-4 shadow-2xl z-30 border-2 border-cyan-500/40"
               >
-                <div className="relative w-[240px] h-[500px] bg-black rounded-[40px] shadow-2xl p-2.5 border-[10px] border-gray-900">
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-28 h-5 bg-black rounded-b-3xl z-20" />
-                  <div className="relative w-full h-full bg-white rounded-[32px] overflow-hidden">
-                    <Image
-                      src="/images/feed.jpeg"
-                      alt="VYRAL App"
-                      fill
-                      className="object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#00D4AA]/10 to-transparent" />
-                  </div>
-                  <div className="absolute bottom-1.5 left-1/2 -translate-x-1/2 w-24 h-1 bg-white/30 rounded-full" />
+                <div className="text-xs text-gray-600 dark:text-gray-400 mb-1">
+                  TPS
                 </div>
+                <div className="text-3xl font-black text-purple-600 dark:text-purple-400">
+                  <NumberTicker value={65} />K
+                </div>
+              </motion.div>
+
+              <motion.div
+                animate={{ y: [0, -12, 0] }}
+                transition={{ duration: 2.8, repeat: Infinity, delay: 0.6 }}
+                className="absolute bottom-32 right-4 bg-white dark:bg-black/90 backdrop-blur-md rounded-2xl px-5 py-4 shadow-2xl z-30 border-2 border-yellow-500/40"
+              >
+                <div className="text-xs text-gray-600 dark:text-gray-400 mb-1">
+                  Creator Rev
+                </div>
+                <div className="text-3xl font-black text-yellow-600 dark:text-yellow-400">
+                  <NumberTicker value={80} />%
+                </div>
+              </motion.div>
+
+              <motion.div
+                animate={{ y: [0, -9, 0] }}
+                transition={{ duration: 3.2, repeat: Infinity, delay: 0.9 }}
+                className="absolute bottom-16 left-4 bg-white dark:bg-black/90 backdrop-blur-md rounded-2xl px-5 py-4 shadow-2xl z-30 border-2 border-blue-500/40"
+              >
+                <div className="text-xs text-gray-600 dark:text-gray-400 mb-1">
+                  Rewards
+                </div>
+                <div className="text-3xl font-black text-blue-600 dark:text-blue-400">
+                  <NumberTicker value={2} />B
+                </div>
+              </motion.div>
+
+              {/* Floating Star Element */}
+              <motion.div
+                animate={{ y: [0, -10, 0], rotate: [0, 5, 0] }}
+                transition={{ duration: 3, repeat: Infinity }}
+                className="absolute -top-6 -right-6 w-24 h-24 rounded-3xl bg-gradient-to-br from-yellow-400 to-yellow-500 shadow-2xl flex items-center justify-center text-4xl z-40"
+              >
+                ⭐
+              </motion.div>
+
+              {/* Top Badge */}
+              <motion.div
+                animate={{ y: [0, -5, 0] }}
+                transition={{ duration: 2, repeat: Infinity, delay: 0.2 }}
+                className="absolute -top-4 left-12 bg-white dark:bg-black/90 backdrop-blur-md rounded-full px-4 py-2 flex items-center gap-2 shadow-xl z-40 border-2 border-[#00D4AA]/40"
+              >
+                <div className="w-2 h-2 rounded-full bg-[#00D4AA] animate-pulse" />
+                <span className="text-xs font-bold">EXPLORE ECOSYSTEM</span>
               </motion.div>
             </motion.div>
           </div>
-
-          {/* Merged Stats & Feature Cards */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-            className="mt-20"
-          >
-            {/* Stats Row */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-              {[
-                { value: 10, suffix: "B", label: "Total VYC Supply" },
-                { value: 65, suffix: "K", label: "TPS on Solana" },
-                { value: 80, suffix: "%", label: "Creator Revenue" },
-                { value: 2, suffix: "B", label: "User Rewards Pool" },
-              ].map((stat, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.5 + i * 0.05 }}
-                  className="relative group"
-                >
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#00D4AA]/20 to-cyan-400/20 rounded-xl blur-xl opacity-50 group-hover:opacity-100 transition-opacity" />
-                  <div className="relative bg-white/80 dark:bg-white/[0.08] border border-gray-200/50 dark:border-white/10 backdrop-blur-xl rounded-xl p-4 text-center shadow-lg dark:shadow-none overflow-hidden">
-                    <BorderBeam
-                      size={100}
-                      duration={10}
-                      delay={i * 2.5}
-                      colorFrom="#00D4AA"
-                      colorTo="#06b6d4"
-                      borderWidth={2}
-                    />
-                    <div className="text-2xl md:text-3xl font-bold text-[#00D4AA] mb-1">
-                      <NumberTicker value={stat.value} />
-                      {stat.suffix}
-                    </div>
-                    <div className="text-xs font-medium text-gray-600 dark:text-gray-400">
-                      {stat.label}
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
         </div>
       </section>
 
-      {/* The VYRAL Difference - Compact */}
+      {/* AN ECOSYSTEM OF VYRAL APPS */}
       <section className="relative py-20 px-6 bg-gradient-to-b from-transparent via-gray-50 dark:via-gray-900/20 to-transparent">
         <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">
-              The{" "}
+          {/* Bold Header */}
+          <div className="mb-16">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight mb-4">
+              <span className="text-gray-900 dark:text-white">
+                /AN ECOSYSTEM OF{" "}
+              </span>
               <span className="bg-gradient-to-r from-[#00D4AA] to-cyan-400 bg-clip-text text-transparent">
-                VYRAL
-              </span>{" "}
-              Difference
+                VYRAL APPS
+              </span>
             </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              Everything you love about social media, none of the exploitation.
-            </p>
-          </motion.div>
+            <div className="flex items-center gap-4">
+              <p className="text-lg text-gray-600 dark:text-gray-400 max-w-md">
+                VYRAL Provides The Foundation For Powerful Social Features Like
+                Content Creation, Messaging, And Commerce.
+              </p>
+            </div>
+          </div>
 
-          {/* Compact Comparison */}
-          <div className="grid lg:grid-cols-2 gap-6 mb-12">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="relative"
-            >
-              <div className="relative bg-gradient-to-br from-red-50/50 to-gray-50/50 dark:from-red-900/5 dark:to-gray-900/5 border border-red-200/30 dark:border-red-500/20 backdrop-blur-xl rounded-2xl p-6 shadow-lg dark:shadow-none">
-                <div className="flex items-center gap-2 mb-4">
-                  <div className="w-8 h-8 rounded-xl bg-red-100 dark:bg-red-900/20 flex items-center justify-center text-lg">
-                    ❌
+          {/* Feature Cards - New Pattern */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* Large Featured Card - Social Feed */}
+            <div className="md:col-span-2 lg:col-span-1 lg:row-span-2 relative group">
+              <div className="h-full rounded-3xl bg-gradient-to-br from-[#00D4AA]/20 to-cyan-400/20 border-2 border-[#00D4AA]/40 p-8 hover:border-[#00D4AA] transition-all overflow-hidden">
+                <div className="mb-6">
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#00D4AA] to-cyan-400 flex items-center justify-center mb-4">
+                    <Heart className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-lg font-bold">Traditional Social</h3>
+                  <div className="inline-block px-3 py-1 bg-white dark:bg-black rounded-full text-xs font-bold text-[#00D4AA] mb-3">
+                    FEEDS
+                  </div>
                 </div>
-                <div className="grid grid-cols-2 gap-2">
-                  {[
-                    "Platform owns content",
-                    "Data sold",
-                    "Algorithm controls reach",
-                    "High fees (30-50%)",
-                    "Zero transparency",
-                    "You are the product",
-                  ].map((item, idx) => (
-                    <div key={idx} className="flex items-start gap-2 text-xs">
-                      <span className="text-red-500 mt-0.5">✕</span>
-                      <span className="text-gray-600 dark:text-gray-300">
-                        {item}
-                      </span>
-                    </div>
-                  ))}
-                </div>
+                <h3 className="text-3xl font-black mb-4 text-gray-900 dark:text-white">
+                  SOCIAL FEED
+                </h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                  Twitter-Style Threads, Rich Media Posts, And Trending
+                  Discovery. Connect With Your Community Through Powerful Social
+                  Features.
+                </p>
+
+                <Link href="/docs">
+                  <button className="mt-4 px-4 py-2 bg-white dark:bg-black border-2 border-gray-900 dark:border-white rounded-full text-sm font-bold hover:scale-105 transition-transform flex items-center gap-2">
+                    Visit Website
+                    <ArrowRight className="w-4 h-4" />
+                  </button>
+                </Link>
               </div>
-            </motion.div>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="relative group"
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-[#00D4AA]/20 to-cyan-400/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all" />
-              <div className="relative bg-gradient-to-br from-[#00D4AA]/5 to-cyan-400/5 dark:from-[#00D4AA]/10 dark:to-cyan-400/10 border border-[#00D4AA]/30 backdrop-blur-xl rounded-2xl p-6 shadow-lg dark:shadow-none">
-                <div className="flex items-center gap-2 mb-4">
-                  <div className="w-8 h-8 rounded-xl bg-[#00D4AA]/10 flex items-center justify-center text-lg">
-                    ✓
+            {/* Encrypted Chat */}
+            <div className="rounded-3xl bg-white dark:bg-black border-2 border-gray-200 dark:border-white/10 p-6 hover:border-[#00D4AA] transition-all">
+              <div className="flex items-start justify-between mb-4">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-400 to-blue-400 flex items-center justify-center">
+                  <MessageCircle className="w-6 h-6 text-white" />
+                </div>
+                <span className="px-2 py-1 bg-gray-100 dark:bg-white/5 rounded-full text-xs font-bold">
+                  MESSAGING
+                </span>
+              </div>
+              <h3 className="text-xl font-black mb-2">ENCRYPTED CHAT</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400">
+                End-To-End Encryption For Private & Group Chats. Your
+                Conversations Stay Private.
+              </p>
+            </div>
+
+            {/* Marketplace */}
+            <div className="rounded-3xl bg-white dark:bg-black border-2 border-gray-200 dark:border-white/10 p-6 hover:border-[#00D4AA] transition-all">
+              <div className="flex items-start justify-between mb-4">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-400 to-purple-400 flex items-center justify-center">
+                  <ShoppingBag className="w-6 h-6 text-white" />
+                </div>
+                <span className="px-2 py-1 bg-gray-100 dark:bg-white/5 rounded-full text-xs font-bold">
+                  COMMERCE
+                </span>
+              </div>
+              <h3 className="text-xl font-black mb-2">MARKETPLACE</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400">
+                5% Platform Fees vs 13% On eBay. Instant VCoin Settlement For
+                All Transactions.
+              </p>
+            </div>
+
+            {/* Communities */}
+            <div className="rounded-3xl bg-white dark:bg-black border-2 border-gray-200 dark:border-white/10 p-6 hover:border-[#00D4AA] transition-all">
+              <div className="flex items-start justify-between mb-4">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-400 to-pink-400 flex items-center justify-center">
+                  <Users className="w-6 h-6 text-white" />
+                </div>
+                <span className="px-2 py-1 bg-gray-100 dark:bg-white/5 rounded-full text-xs font-bold">
+                  PARAMETRICAL
+                </span>
+              </div>
+              <h3 className="text-xl font-black mb-2">COMMUNITIES</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400">
+                Discord/Reddit-Style Groups With Advanced Moderation Tools And
+                Community Governance.
+              </p>
+            </div>
+
+            {/* Orb AI */}
+            <div className="rounded-3xl bg-white dark:bg-black border-2 border-gray-200 dark:border-white/10 p-6 hover:border-[#00D4AA] transition-all">
+              <div className="flex items-start justify-between mb-4">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-pink-400 to-red-400 flex items-center justify-center">
+                  <Bot className="w-6 h-6 text-white" />
+                </div>
+                <span className="px-2 py-1 bg-gray-100 dark:bg-white/5 rounded-full text-xs font-bold">
+                  PARAMETRICAL
+                </span>
+              </div>
+              <h3 className="text-xl font-black mb-2">ORB AI</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400">
+                Privacy-First AI Recommendations And Content Discovery Tailored
+                To Your Interests.
+              </p>
+            </div>
+
+            {/* 80% Revenue - Featured */}
+            <div className="md:col-span-2 rounded-3xl bg-gradient-to-br from-yellow-400/20 to-yellow-500/20 border-2 border-yellow-500/40 p-8 hover:border-yellow-500 transition-all relative overflow-hidden">
+              <div className="flex items-start gap-6">
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-yellow-400 to-yellow-500 flex items-center justify-center shrink-0">
+                  <Lock className="w-8 h-8 text-white" />
+                </div>
+                <div className="flex-1">
+                  <div className="inline-block px-3 py-1 bg-white dark:bg-black rounded-full text-xs font-bold text-yellow-600 mb-3">
+                    CREATOR REVENUE
                   </div>
-                  <h3 className="text-lg font-bold bg-gradient-to-r from-[#00D4AA] to-cyan-400 bg-clip-text text-transparent">
-                    VYRAL
+                  <h3 className="text-3xl font-black mb-3 text-gray-900 dark:text-white">
+                    80% CREATOR REVENUE
                   </h3>
+                  <p className="text-base text-gray-600 dark:text-gray-400 max-w-lg">
+                    Fair Compensation For Creators. Keep 80-95% Of Your
+                    Earnings, Powered By VCoin.
+                  </p>
                 </div>
-                <div className="grid grid-cols-2 gap-2">
-                  {[
-                    "You own content",
-                    "Data stays private",
-                    "You control feed",
-                    "Fair fees (5-20%)",
-                    "100% transparent",
-                    "You are the customer",
-                  ].map((item, idx) => (
-                    <div key={idx} className="flex items-start gap-2 text-xs">
-                      <span className="text-[#00D4AA] mt-0.5">✓</span>
-                      <span className="font-medium text-gray-900 dark:text-white">
-                        {item}
-                      </span>
-                    </div>
-                  ))}
+                <div className="absolute bottom-0 right-0 w-48 h-48 opacity-10">
+                  <VCoinRewardsSkeleton />
                 </div>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Key Features - Modern Compact Bento */}
-      <section className="relative py-16 px-6">
+      {/* THE VYRAL DIFFERENCE */}
+      <section className="relative py-20 px-6">
         <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-center mb-8"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-3 tracking-tight">
-              Why VYRAL?
+          {/* Bold Header */}
+          <div className="mb-16">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight mb-4">
+              <span className="text-gray-900 dark:text-white">/THE </span>
+              <span className="bg-gradient-to-r from-[#00D4AA] to-cyan-400 bg-clip-text text-transparent">
+                VYRAL DIFFERENCE
+              </span>
             </h2>
-            <p className="text-gray-600 dark:text-gray-400 text-base">
-              Built for creators, powered by community
+            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl">
+              Everything You Love About Social Media, None Of The Exploitation.
+              See How We Stack Up Against Traditional Platforms.
             </p>
-          </motion.div>
+          </div>
 
-          <BentoGrid>
+          {/* Comparison Table */}
+          <div className="rounded-3xl bg-white dark:bg-black border-2 border-gray-200 dark:border-white/10 overflow-hidden">
+            {/* Table Header */}
+            <div className="grid md:grid-cols-3 border-b-2 border-gray-200 dark:border-white/10">
+              <div className="p-6 border-r border-gray-200 dark:border-white/10">
+                <h3 className="text-xl font-black text-gray-900 dark:text-white">
+                  FEATURE
+                </h3>
+              </div>
+              <div className="p-6 border-r border-gray-200 dark:border-white/10 bg-red-50 dark:bg-red-950/20">
+                <div className="flex items-center gap-2">
+                  <span className="text-2xl">❌</span>
+                  <h3 className="text-xl font-black text-red-600 dark:text-red-400">
+                    TRADITIONAL
+                  </h3>
+                </div>
+              </div>
+              <div className="p-6 bg-gradient-to-br from-[#00D4AA]/10 to-cyan-400/10">
+                <div className="flex items-center gap-2">
+                  <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#00D4AA] to-cyan-400 flex items-center justify-center">
+                    <span className="text-white text-lg">✓</span>
+                  </div>
+                  <h3 className="text-xl font-black bg-gradient-to-r from-[#00D4AA] to-cyan-400 bg-clip-text text-transparent">
+                    VYRAL
+                  </h3>
+                </div>
+              </div>
+            </div>
+
+            {/* Comparison Rows */}
             {[
               {
-                Icon: Heart,
-                name: "Social Feed",
-                description:
-                  "Twitter-style threads, rich media, trending discovery",
-                href: "/docs/whitepaper/introduction",
-                cta: "Learn more",
-                className: "col-span-3 lg:col-span-2",
-                background: (
-                  <div className="absolute inset-0 overflow-hidden">
-                    <Image
-                      src="/images/feed.jpeg"
-                      alt=""
-                      fill
-                      className="object-cover opacity-20"
-                    />
-                  </div>
-                ),
+                feature: "Content Ownership",
+                traditional: "Platform owns content",
+                vyral: "You own your content",
               },
               {
-                Icon: MessageCircle,
-                name: "Encrypted Chat",
-                description: "E2E encryption. Private & group chats",
-                href: "/docs/whitepaper/introduction",
-                cta: "Learn more",
-                className: "col-span-3 lg:col-span-1",
-                background: (
-                  <div className="absolute inset-0 overflow-hidden">
-                    <Image
-                      src="/images/message.jpeg"
-                      alt=""
-                      fill
-                      className="object-cover opacity-20"
-                    />
-                  </div>
-                ),
+                feature: "Data Privacy",
+                traditional: "Data sold to advertisers",
+                vyral: "Data stays private",
               },
               {
-                Icon: ShoppingBag,
-                name: "Marketplace",
-                description: "5% fees vs 13% eBay. Instant settlement",
-                href: "/docs/whitepaper/introduction",
-                cta: "Learn more",
-                className: "col-span-3 lg:col-span-1",
-                background: (
-                  <div className="absolute inset-0 overflow-hidden">
-                    <Image
-                      src="/images/marketplace.jpeg"
-                      alt=""
-                      fill
-                      className="object-cover opacity-20"
-                    />
-                  </div>
-                ),
+                feature: "Algorithm Control",
+                traditional: "Algorithm controls reach",
+                vyral: "You control your feed",
               },
               {
-                Icon: Users,
-                name: "Communities",
-                description: "Discord/Reddit-style groups with moderation",
-                href: "/docs/whitepaper/introduction",
-                cta: "Learn more",
-                className: "col-span-3 lg:col-span-1",
-                background: (
-                  <div className="absolute inset-0 overflow-hidden">
-                    <Image
-                      src="/images/community.jpeg"
-                      alt=""
-                      fill
-                      className="object-cover opacity-20"
-                    />
-                  </div>
-                ),
+                feature: "Platform Fees",
+                traditional: "High fees (30-50%)",
+                vyral: "Fair fees (5-20%)",
               },
               {
-                Icon: Bot,
-                name: "Orb AI",
-                description: "Privacy-first AI recommendations",
-                href: "/docs/whitepaper/introduction",
-                cta: "Learn more",
-                className: "col-span-3 lg:col-span-1",
-                background: (
-                  <div className="absolute inset-0 overflow-hidden">
-                    <Image
-                      src="/images/orbai.jpeg"
-                      alt=""
-                      fill
-                      className="object-cover opacity-20"
-                    />
-                  </div>
-                ),
+                feature: "Transparency",
+                traditional: "Zero transparency",
+                vyral: "100% transparent",
               },
               {
-                Icon: Lock,
-                name: "80% Revenue",
-                description: "Fair creator compensation. Powered by VCoin",
-                href: "/docs/whitepaper/token-economics",
-                cta: "Learn more",
-                className: "col-span-3 lg:col-span-1",
-                background: (
-                  <div className="absolute inset-0 bg-gradient-to-br from-pink-500/20 to-transparent" />
-                ),
+                feature: "User Priority",
+                traditional: "You are the product",
+                vyral: "You are the customer",
               },
-            ].map((feature, idx) => (
-              <BentoCard key={idx} {...feature} />
+            ].map((row, i) => (
+              <div
+                key={i}
+                className="grid md:grid-cols-3 border-b border-gray-200 dark:border-white/10 last:border-0 hover:bg-gray-50 dark:hover:bg-white/5 transition-colors"
+              >
+                <div className="p-6 border-r border-gray-200 dark:border-white/10">
+                  <p className="font-black text-gray-900 dark:text-white">
+                    {row.feature}
+                  </p>
+                </div>
+                <div className="p-6 border-r border-gray-200 dark:border-white/10">
+                  <div className="flex items-start gap-2">
+                    <XIcon />
+                    <p className="text-sm text-gray-700 dark:text-gray-300">
+                      {row.traditional}
+                    </p>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <div className="flex items-start gap-2">
+                    <CheckIcon />
+                    <p className="text-sm text-gray-700 dark:text-gray-300">
+                      {row.vyral}
+                    </p>
+                  </div>
+                </div>
+              </div>
             ))}
-          </BentoGrid>
+          </div>
         </div>
       </section>
 
-      {/* VCoin & Creators - Merged Section */}
-      <section className="relative py-20 px-6 bg-gradient-to-b from-transparent via-[#00D4AA]/5 to-pink-50 dark:to-pink-900/10">
+      {/* VCoin & Creators Section */}
+      <section className="relative py-20 px-6 bg-gradient-to-b from-transparent via-[#00D4AA]/5 to-transparent">
         <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="grid lg:grid-cols-2 gap-8 items-start"
-          >
-            {/* Left: VCoin + Stats */}
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Left: VCoin Info */}
             <div className="space-y-6">
               <div>
-                <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">
-                  Meet{" "}
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight mb-4">
+                  <span className="text-gray-900 dark:text-white">/MEET </span>
                   <span className="bg-gradient-to-r from-[#00D4AA] to-cyan-400 bg-clip-text text-transparent">
-                    VCoin
+                    VCOIN
                   </span>
                 </h2>
                 <p className="text-lg text-gray-600 dark:text-gray-400">
-                  The currency that powers VYRAL. Earn it creating content.
-                  Built on Solana for speed and low fees.
+                  The Currency That Powers VYRAL. Earn It Creating Content.
+                  Built On Solana For Speed And Low Fees.
                 </p>
-              </div>
-
-              <div className="grid grid-cols-3 gap-3">
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  className="col-span-3 relative group"
-                >
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#00D4AA]/20 to-transparent rounded-2xl blur-xl opacity-50 group-hover:opacity-100 transition-opacity" />
-                  <div className="relative bg-white/70 dark:bg-white/5 border border-[#00D4AA]/30 backdrop-blur-xl rounded-2xl p-6 text-center shadow-lg dark:shadow-none">
-                    <div className="text-4xl md:text-5xl font-bold text-[#00D4AA] mb-1">
-                      10B
-                    </div>
-                    <div className="text-base font-semibold mb-0.5">
-                      Fixed Supply
-                    </div>
-                    <div className="text-xs text-gray-600 dark:text-gray-400">
-                      Mint authority disabled forever
-                    </div>
-                  </div>
-                </motion.div>
-
-                {[
-                  { value: "50%", label: "For Users", desc: "Sales & rewards" },
-                  { value: "1%", label: "Burned", desc: "From every tip" },
-                  {
-                    value: "$0.01",
-                    label: "Initial Price",
-                    desc: "Starting value",
-                  },
-                ].map((stat, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.1 + i * 0.05 }}
-                    className="relative group"
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#00D4AA]/20 to-transparent rounded-2xl blur-xl opacity-50 group-hover:opacity-100 transition-opacity" />
-                    <div className="relative bg-white/70 dark:bg-white/5 border border-[#00D4AA]/20 backdrop-blur-xl rounded-2xl p-4 text-center shadow-lg dark:shadow-none">
-                      <div className="text-2xl md:text-3xl font-bold text-[#00D4AA] mb-1">
-                        {stat.value}
-                      </div>
-                      <div className="text-xs font-semibold mb-0.5">
-                        {stat.label}
-                      </div>
-                      <div className="text-[10px] text-gray-600 dark:text-gray-400">
-                        {stat.desc}
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -688,7 +804,7 @@ export default function HomePage() {
                         ✓
                       </span>
                     </div>
-                    <span className="text-gray-700 dark:text-gray-300">
+                    <span className="text-gray-700 dark:text-gray-300 font-medium">
                       {item}
                     </span>
                   </div>
@@ -696,258 +812,395 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right: Creators + Calculator */}
-            <div className="space-y-6">
+            {/* Right: 3D VCoin Visual */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2 }}
+              className="relative flex items-center justify-center min-h-[500px]"
+            >
+              {/* Central VCoin Card */}
+              <div className="relative z-10 lg:z-20 rounded-3xl bg-gradient-to-br from-[#00D4AA] to-cyan-400 p-8 shadow-2xl border-8 border-white dark:border-gray-800 w-full max-w-sm">
+                <div className="text-center mb-6">
+                  <div className="text-7xl font-black text-white mb-2">10B</div>
+                  <div className="text-xl font-bold text-white/90">
+                    Total Supply
+                  </div>
+                </div>
+                <div className="space-y-3">
+                  <div className="bg-white/20 backdrop-blur-sm rounded-xl p-4">
+                    <div className="text-sm text-white/80 mb-1">
+                      Fixed Supply
+                    </div>
+                    <div className="text-lg font-black text-white">
+                      No Inflation
+                    </div>
+                  </div>
+                  <div className="bg-white/20 backdrop-blur-sm rounded-xl p-4">
+                    <div className="text-sm text-white/80 mb-1">
+                      Initial Price
+                    </div>
+                    <div className="text-lg font-black text-white">$0.01</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Floating Stats Cards */}
+              <motion.div
+                animate={{ y: [0, -8, 0] }}
+                transition={{ duration: 2.5, repeat: Infinity, delay: 0 }}
+                className="absolute top-8 -left-6 bg-white dark:bg-black/90 backdrop-blur-md rounded-2xl px-4 py-3 shadow-2xl z-30 border-2 border-[#00D4AA]/40"
+              >
+                <div className="text-xs text-gray-600 dark:text-gray-400 mb-1">
+                  For Users
+                </div>
+                <div className="text-2xl font-black text-[#00D4AA]">50%</div>
+              </motion.div>
+
+              <motion.div
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 3, repeat: Infinity, delay: 0.3 }}
+                className="absolute top-24 -right-8 bg-white dark:bg-black/90 backdrop-blur-md rounded-2xl px-4 py-3 shadow-2xl z-30 border-2 border-orange-500/40"
+              >
+                <div className="text-xs text-gray-600 dark:text-gray-400 mb-1">
+                  Burned
+                </div>
+                <div className="text-2xl font-black text-orange-600 dark:text-orange-400">
+                  1%
+                </div>
+              </motion.div>
+
+              <motion.div
+                animate={{ y: [0, -12, 0] }}
+                transition={{ duration: 2.8, repeat: Infinity, delay: 0.6 }}
+                className="absolute bottom-24 -left-8 bg-white dark:bg-black/90 backdrop-blur-md rounded-2xl px-4 py-3 shadow-2xl z-30 border-2 border-cyan-500/40"
+              >
+                <div className="text-xs text-gray-600 dark:text-gray-400 mb-1">
+                  TPS
+                </div>
+                <div className="text-2xl font-black text-purple-600 dark:text-purple-400">
+                  65K
+                </div>
+              </motion.div>
+
+              {/* Floating Icon */}
+              <motion.div
+                animate={{ y: [0, -10, 0], rotate: [0, 5, 0] }}
+                transition={{ duration: 3, repeat: Infinity }}
+                className="absolute -top-6 -right-6 w-20 h-20 rounded-2xl bg-gradient-to-br from-yellow-400 to-yellow-500 shadow-2xl flex items-center justify-center text-3xl z-40"
+              >
+                🪙
+              </motion.div>
+            </motion.div>
+          </div>
+
+          {/* Built for Creators Section */}
+          <div className="mt-20 grid lg:grid-cols-2 gap-16 items-center">
+            {/* Left: 3D Calculator Visual */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2 }}
+              className="relative flex items-center justify-center min-h-[500px] order-2 lg:order-1"
+            >
+              {/* Central Calculator */}
+              <div className="relative z-10 lg:z-20 w-full max-w-md">
+                <EarningsCalculator />
+              </div>
+
+              {/* Floating Benefits Cards */}
+              <motion.div
+                animate={{ y: [0, -8, 0] }}
+                transition={{ duration: 2.5, repeat: Infinity, delay: 0 }}
+                className="absolute -top-4 -right-6 bg-gradient-to-br from-emerald-500 to-green-500 text-white rounded-2xl px-5 py-4 shadow-2xl z-30"
+              >
+                <div className="text-xs mb-1 opacity-90">Keep</div>
+                <div className="text-3xl font-black">80-95%</div>
+              </motion.div>
+
+              <motion.div
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 3, repeat: Infinity, delay: 0.3 }}
+                className="absolute top-32 -left-8 bg-white dark:bg-black/90 backdrop-blur-md rounded-2xl px-4 py-3 shadow-2xl z-30 border-2 border-blue-500/40"
+              >
+                <div className="text-xs text-gray-600 dark:text-gray-400 mb-1">
+                  Analytics
+                </div>
+                <div className="text-2xl font-black text-blue-600 dark:text-blue-400">
+                  📊
+                </div>
+              </motion.div>
+
+              <motion.div
+                animate={{ y: [0, -12, 0] }}
+                transition={{ duration: 2.8, repeat: Infinity, delay: 0.6 }}
+                className="absolute -bottom-4 -right-4 bg-white dark:bg-black/90 backdrop-blur-md rounded-2xl px-4 py-3 shadow-2xl z-30 border-2 border-cyan-500/40"
+              >
+                <div className="text-xs text-gray-600 dark:text-gray-400 mb-1">
+                  Streams
+                </div>
+                <div className="text-2xl font-black text-purple-600 dark:text-purple-400">
+                  💎
+                </div>
+              </motion.div>
+
+              {/* Floating Icon */}
+              <motion.div
+                animate={{ y: [0, -10, 0], rotate: [0, -5, 0] }}
+                transition={{ duration: 3, repeat: Infinity }}
+                className="absolute bottom-12 -left-6 w-20 h-20 rounded-2xl bg-gradient-to-br from-pink-400 to-red-500 shadow-2xl flex items-center justify-center text-3xl z-40"
+              >
+                💰
+              </motion.div>
+            </motion.div>
+
+            {/* Right: Creator Info */}
+            <div className="space-y-6 order-1 lg:order-2">
               <div>
-                <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">
-                  Built for{" "}
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight mb-4">
+                  <span className="text-gray-900 dark:text-white">
+                    /BUILT FOR{" "}
+                  </span>
                   <span className="bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent">
-                    Creators
+                    CREATORS
                   </span>
                 </h2>
                 <p className="text-lg text-gray-600 dark:text-gray-400">
-                  Stop giving away half your earnings. Monetize on your terms.
+                  Stop Giving Away Half Your Earnings. Monetize On Your Terms
+                  With Fair Revenue Sharing.
                 </p>
               </div>
 
-              <EarningsCalculator />
-            </div>
-          </motion.div>
-
-          {/* Creator Benefits - Below VCoin Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mt-12"
-          >
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-              {[
-                {
-                  icon: "💰",
-                  title: "Keep 80-95%",
-                  description: "Lowest fees in industry",
-                },
-                {
-                  icon: "📊",
-                  title: "Analytics",
-                  description: "Detailed insights",
-                },
-                {
-                  icon: "💎",
-                  title: "Multiple Streams",
-                  description: "Tips, subs, marketplace",
-                },
-                {
-                  icon: "🚫",
-                  title: "No Demonetization",
-                  description: "Fair enforcement",
-                },
-              ].map((item, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.05 }}
-                  whileHover={{ scale: 1.02 }}
-                >
-                  <Card className="bg-white/80 dark:bg-white/[0.08] border border-gray-200/50 dark:border-white/10 backdrop-blur-xl hover:border-[#00D4AA]/60 transition-all shadow-lg dark:shadow-none h-full">
-                    <CardContent className="py-4 px-4 flex items-start gap-3">
-                      <div className="text-2xl">{item.icon}</div>
-                      <div>
-                        <CardTitle className="text-sm mb-1">
-                          {item.title}
-                        </CardTitle>
-                        <CardDescription className="text-xs">
-                          {item.description}
-                        </CardDescription>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* VCoin Economics - Modern Slider */}
-      <section className="relative py-20 px-6 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#00D4AA]/5 to-transparent" />
-
-        <div className="max-w-7xl mx-auto relative">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-center mb-10"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-3 tracking-tight">
-              VCoin Economics
-            </h2>
-            <p className="text-gray-600 dark:text-gray-400 text-base">
-              10 billion tokens with deflationary mechanics
-            </p>
-          </motion.div>
-
-          {/* Feature Cards Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-            {[
-              {
-                icon: "⛓️",
-                title: "Solana Blockchain",
-                desc: "65,000 TPS, $0.00025 cost",
-                color: "from-[#00D4AA] to-cyan-400",
-              },
-              {
-                icon: "🔒",
-                title: "Fixed Supply",
-                desc: "10B tokens, mint disabled",
-                color: "from-cyan-400 to-blue-400",
-              },
-              {
-                icon: "🔥",
-                title: "Deflationary",
-                desc: "1% tips burned constantly",
-                color: "from-blue-400 to-purple-400",
-              },
-              {
-                icon: "⏰",
-                title: "4-Year Vesting",
-                desc: "Team tokens, 6-month cliff",
-                color: "from-purple-400 to-pink-400",
-              },
-            ].map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.05 }}
-                whileHover={{ scale: 1.05, y: -5 }}
-                className="relative group"
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-[#00D4AA]/20 to-transparent rounded-xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
-                <Card className="relative bg-white/80 dark:bg-white/[0.08] border border-gray-200/50 dark:border-white/10 backdrop-blur-xl hover:border-[#00D4AA]/60 transition-all shadow-lg dark:shadow-none h-full">
-                  <CardContent className="pt-5 pb-4 text-center">
-                    <div className="text-3xl mb-2">{item.icon}</div>
-                    <CardTitle className="text-sm mb-1.5 font-bold">
-                      {item.title}
-                    </CardTitle>
-                    <CardDescription className="text-xs">
-                      {item.desc}
-                    </CardDescription>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* Token Distribution - Horizontal Bars */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="relative"
-          >
-            <div className="absolute inset-0 bg-gradient-to-br from-[#00D4AA]/10 to-transparent rounded-2xl blur-2xl" />
-            <div className="relative bg-white/80 dark:bg-white/[0.08] border border-gray-200/50 dark:border-white/10 backdrop-blur-xl rounded-2xl p-6 shadow-lg dark:shadow-none">
-              <h3 className="text-lg font-bold mb-5 text-center">
-                Token Distribution (10B Total)
-              </h3>
-              <div className="grid md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {[
                   {
-                    label: "Sales Inventory",
-                    percent: 30,
-                    amount: "3B",
-                    color: "from-[#00D4AA] to-cyan-400",
+                    icon: "💰",
+                    title: "Keep 80-95%",
+                    desc: "Lowest fees in industry",
+                  },
+                  { icon: "📊", title: "Analytics", desc: "Detailed insights" },
+                  {
+                    icon: "💎",
+                    title: "Multiple Streams",
+                    desc: "Tips, subs, marketplace",
                   },
                   {
-                    label: "Platform Operations",
-                    percent: 25,
-                    amount: "2.5B",
-                    color: "from-cyan-400 to-blue-400",
+                    icon: "🚫",
+                    title: "No Demonetization",
+                    desc: "Fair enforcement",
                   },
-                  {
-                    label: "User Rewards Pool",
-                    percent: 20,
-                    amount: "2B",
-                    color: "from-blue-400 to-indigo-400",
-                  },
-                  {
-                    label: "Liquidity Reserve",
-                    percent: 15,
-                    amount: "1.5B",
-                    color: "from-indigo-400 to-purple-400",
-                  },
-                  {
-                    label: "Team & Advisors",
-                    percent: 7,
-                    amount: "700M",
-                    color: "from-purple-400 to-pink-400",
-                  },
-                  {
-                    label: "Strategic Reserve",
-                    percent: 3,
-                    amount: "300M",
-                    color: "from-pink-400 to-[#00D4AA]",
-                  },
-                ].map((item, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.05 }}
-                    className="space-y-2"
-                  >
-                    <div className="flex justify-between items-center">
-                      <span className="text-xs font-semibold text-gray-700 dark:text-gray-300">
-                        {item.label}
-                      </span>
-                      <span className="text-xs font-bold text-[#00D4AA]">
-                        {item.percent}% • {item.amount}
-                      </span>
+                ].map((item, idx) => (
+                  <div key={idx} className="flex items-start gap-3">
+                    <div className="text-3xl">{item.icon}</div>
+                    <div>
+                      <div className="font-black text-sm text-gray-900 dark:text-white">
+                        {item.title}
+                      </div>
+                      <div className="text-xs text-gray-600 dark:text-gray-400">
+                        {item.desc}
+                      </div>
                     </div>
-                    <div className="h-2 bg-gray-200 dark:bg-white/10 rounded-full overflow-hidden">
-                      <motion.div
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${item.percent}%` }}
-                        viewport={{ once: true }}
-                        transition={{
-                          duration: 1,
-                          delay: i * 0.1,
-                          ease: "easeOut",
-                        }}
-                        className={`h-full bg-gradient-to-r ${item.color}`}
-                      />
-                    </div>
-                  </motion.div>
+                  </div>
                 ))}
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* Roadmap - Compact */}
-      <section className="relative py-20 px-6">
+      {/* VCoin Economics */}
+      <section className="relative py-20 px-6 bg-gradient-to-b from-transparent via-gray-50 dark:via-gray-900/20 to-transparent">
         <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-center mb-10"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">
-              Development Roadmap
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Left: Info */}
+            <div className="space-y-6">
+              <div>
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight mb-4">
+                  <span className="text-gray-900 dark:text-white">/VCOIN </span>
+                  <span className="bg-gradient-to-r from-[#00D4AA] to-cyan-400 bg-clip-text text-transparent">
+                    ECONOMICS
+                  </span>
+                </h2>
+                <p className="text-lg text-gray-600 dark:text-gray-400 max-w-lg">
+                  10 Billion Tokens With Deflationary Mechanics. Built On Solana
+                  For Maximum Speed And Minimal Fees.
+                </p>
+              </div>
+
+              {/* Feature Cards */}
+              <div className="grid grid-cols-2 gap-4">
+                {/* Solana Blockchain */}
+                <div className="rounded-3xl bg-white dark:bg-black border-2 border-gray-200 dark:border-white/10 p-5 hover:border-cyan-500 transition-all">
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500 to-pink-500 flex items-center justify-center">
+                      <span className="text-xl">⛓️</span>
+                    </div>
+                    <div className="text-right">
+                      <div className="text-2xl font-black text-gray-900 dark:text-white">
+                        10B
+                      </div>
+                      <div className="text-[10px] text-gray-600 dark:text-gray-400">
+                        Supply
+                      </div>
+                    </div>
+                  </div>
+                  <h3 className="text-base font-black mb-1">SOLANA</h3>
+                  <p className="text-xs text-gray-600 dark:text-gray-400">
+                    65K TPS, Low Fees
+                  </p>
+                </div>
+
+                {/* Fixed Supply */}
+                <div className="rounded-3xl bg-white dark:bg-black border-2 border-gray-200 dark:border-white/10 p-5 hover:border-[#00D4AA] transition-all">
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#00D4AA] to-cyan-400 flex items-center justify-center">
+                      <span className="text-xl">🔒</span>
+                    </div>
+                    <div className="text-right">
+                      <div className="text-2xl font-black text-[#00D4AA]">
+                        10B
+                      </div>
+                      <div className="text-[10px] text-gray-600 dark:text-gray-400">
+                        Max
+                      </div>
+                    </div>
+                  </div>
+                  <h3 className="text-base font-black mb-1">FIXED SUPPLY</h3>
+                  <p className="text-xs text-gray-600 dark:text-gray-400">
+                    Mint Disabled Forever
+                  </p>
+                </div>
+
+                {/* Deflationary */}
+                <div className="rounded-3xl bg-white dark:bg-black border-2 border-gray-200 dark:border-white/10 p-5 hover:border-orange-500 transition-all">
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center mb-3">
+                    <span className="text-xl">🔥</span>
+                  </div>
+                  <h3 className="text-base font-black mb-1">DEFLATIONARY</h3>
+                  <p className="text-xs text-gray-600 dark:text-gray-400">
+                    1% Tips Burned
+                  </p>
+                </div>
+
+                {/* 4-Year Vesting */}
+                <div className="rounded-3xl bg-white dark:bg-black border-2 border-gray-200 dark:border-white/10 p-5 hover:border-blue-500 transition-all">
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-500 flex items-center justify-center mb-3">
+                    <span className="text-xl">⏰</span>
+                  </div>
+                  <h3 className="text-base font-black mb-1">4-YEAR VESTING</h3>
+                  <p className="text-xs text-gray-600 dark:text-gray-400">
+                    Team Alignment
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Right: Social Media Problems Visual */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2 }}
+              className="relative flex items-center justify-center min-h-[500px]"
+            >
+              {/* Central Problem Cards */}
+              <div className="relative z-10 lg:z-20 w-full max-w-lg space-y-4">
+                {/* Header */}
+                <div className="text-center mb-8">
+                  <h3 className="text-3xl md:text-4xl font-black mb-2">
+                    <span className="text-gray-900 dark:text-white">
+                      Social Media is{" "}
+                    </span>
+                    <span className="text-red-500">Broken</span>
+                  </h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">
+                    Big Tech profits while you get exploited. It's time for
+                    change.
+                  </p>
+                </div>
+
+                {/* Problem Cards Grid */}
+                <div className="grid grid-cols-2 gap-4">
+                  {/* Your Data, Their Billions */}
+                  <div className="rounded-2xl bg-white dark:bg-black border-2 border-gray-200 dark:border-white/10 p-5 hover:border-red-500 transition-all">
+                    <div className="text-3xl mb-3">🚫</div>
+                    <h4 className="text-base font-black mb-2 text-gray-900 dark:text-white">
+                      Your Data, Their Billions
+                    </h4>
+                    <p className="text-xs text-gray-600 dark:text-gray-400">
+                      Platforms make billions selling your personal information
+                      to advertisers. You get nothing.
+                    </p>
+                  </div>
+
+                  {/* Algorithmic Manipulation */}
+                  <div className="rounded-2xl bg-white dark:bg-black border-2 border-gray-200 dark:border-white/10 p-5 hover:border-red-500 transition-all">
+                    <div className="text-3xl mb-3">🎭</div>
+                    <h4 className="text-base font-black mb-2 text-gray-900 dark:text-white">
+                      Algorithmic Manipulation
+                    </h4>
+                    <p className="text-xs text-gray-600 dark:text-gray-400">
+                      Feeds optimized for engagement and addiction, not your
+                      wellbeing or interests.
+                    </p>
+                  </div>
+
+                  {/* Creators Exploited */}
+                  <div className="rounded-2xl bg-white dark:bg-black border-2 border-gray-200 dark:border-white/10 p-5 hover:border-red-500 transition-all">
+                    <div className="text-3xl mb-3">💸</div>
+                    <h4 className="text-base font-black mb-2 text-gray-900 dark:text-white">
+                      Creators Exploited
+                    </h4>
+                    <p className="text-xs text-gray-600 dark:text-gray-400">
+                      Platforms take 30-50% cuts and can demonetize you
+                      overnight without explanation.
+                    </p>
+                  </div>
+
+                  {/* Zero Privacy */}
+                  <div className="rounded-2xl bg-white dark:bg-black border-2 border-gray-200 dark:border-white/10 p-5 hover:border-red-500 transition-all">
+                    <div className="text-3xl mb-3">🔓</div>
+                    <h4 className="text-base font-black mb-2 text-gray-900 dark:text-white">
+                      Zero Privacy
+                    </h4>
+                    <p className="text-xs text-gray-600 dark:text-gray-400">
+                      Every click, message, and like tracked, analyzed, and
+                      monetized without your consent.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Floating Warning Badge */}
+              <motion.div
+                animate={{ y: [0, -10, 0], rotate: [0, 5, 0] }}
+                transition={{ duration: 3, repeat: Infinity }}
+                className="absolute -top-6 -right-6 w-20 h-20 rounded-2xl bg-gradient-to-br from-red-500 to-red-600 shadow-2xl flex items-center justify-center text-3xl z-40"
+              >
+                ⚠️
+              </motion.div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Roadmap */}
+      <section className="relative py-20 px-6 bg-gradient-to-b from-transparent via-gray-50 dark:via-gray-900/20 to-transparent">
+        <div className="max-w-7xl mx-auto">
+          {/* Bold Header */}
+          <div className="mb-8 text-center">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight mb-4">
+              <span className="text-gray-900 dark:text-white">
+                /DEVELOPMENT{" "}
+              </span>
+              <span className="bg-gradient-to-r from-[#00D4AA] to-cyan-400 bg-clip-text text-transparent">
+                ROADMAP
+              </span>
             </h2>
-            <p className="text-gray-600 dark:text-gray-400 text-lg mb-6">
-              Our journey to revolutionize social media
+            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-6">
+              Our Journey To Revolutionize Social Media. From Foundation To
+              Global Scale.
             </p>
-            <div className="max-w-3xl mx-auto bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800/50 rounded-xl p-4 text-left">
+            <div className="max-w-3xl mx-auto bg-amber-50 dark:bg-amber-900/20 border-2 border-amber-200 dark:border-amber-800/50 rounded-3xl p-5 text-left">
               <p className="text-xs text-gray-700 dark:text-gray-300 mb-2">
                 <strong>DISCLAIMER:</strong> Roadmap goals as of Oct 2025.
                 Timelines, user numbers, and features are projections subject to
@@ -960,377 +1213,454 @@ export default function HomePage() {
                 <li>VCoin is utility token, not investment</li>
               </ul>
             </div>
-          </motion.div>
+          </div>
 
-          <div className="relative max-w-6xl mx-auto">
-            {/* Completed Section */}
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mb-12"
-            >
-              <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-green-500/20 to-emerald-400/20 rounded-xl blur-xl" />
-                <Card className="relative bg-white/80 dark:bg-white/[0.08] border border-green-500/40 dark:border-green-500/60 backdrop-blur-xl shadow-lg dark:shadow-none">
-                  <CardContent className="py-6 px-6">
-                    <div className="flex items-center gap-2 mb-4">
-                      <div className="text-2xl">✅</div>
-                      <div>
-                        <CardTitle className="text-lg text-green-600 dark:text-green-400">
-                          Completed (Oct 2025)
-                        </CardTitle>
-                        <CardDescription className="text-xs">
-                          Foundation Built
-                        </CardDescription>
+          {/* Timeline Component */}
+          <div className="mb-20">
+            <Timeline
+              data={[
+                {
+                  title: "2025",
+                  content: (
+                    <div className="space-y-4 max-w-4xl">
+                      {/* Completed */}
+                      <div className="rounded-2xl bg-gradient-to-br from-green-500/10 to-emerald-400/10 border border-green-500/40 p-4">
+                        <div className="flex items-center gap-2 mb-3">
+                          <div className="text-xl">✅</div>
+                          <h3 className="text-base font-black text-green-600 dark:text-green-400">
+                            Completed (Oct 2025) - Foundation Built
+                          </h3>
+                        </div>
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+                          {[
+                            "Platform architecture designed",
+                            "VCoin smart contracts developed",
+                            "Deployed to Solana devnet",
+                            "Backend infrastructure complete",
+                            "Mobile applications built",
+                            "Core token economics implemented",
+                            "Custodial wallet system ready",
+                            "Terms of Service finalized",
+                          ].map((item, i) => (
+                            <div
+                              key={i}
+                              className="flex items-start gap-1.5 text-xs bg-white/50 dark:bg-black/50 border border-green-500/20 rounded-lg p-2"
+                            >
+                              <span className="text-green-500 mt-0.5 text-[10px]">
+                                ✓
+                              </span>
+                              <span className="text-gray-700 dark:text-gray-300">
+                                {item}
+                              </span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Q4 2025 */}
+                      <div className="rounded-2xl bg-white dark:bg-black border border-[#00D4AA]/40 p-4">
+                        <h4 className="text-sm font-black mb-3 text-[#00D4AA]">
+                          Q4 2025 - Final Prep
+                        </h4>
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+                          {[
+                            "Security audit",
+                            "Legal compliance",
+                            "Beta testing",
+                            "Payment integration",
+                          ].map((item, i) => (
+                            <div
+                              key={i}
+                              className="px-3 py-2 bg-gradient-to-r from-[#00D4AA]/10 to-transparent border border-[#00D4AA]/20 rounded-lg text-xs font-medium"
+                            >
+                              {item}
+                            </div>
+                          ))}
+                        </div>
                       </div>
                     </div>
-                    <div className="grid md:grid-cols-2 gap-2">
-                      {[
-                        "Platform architecture designed",
-                        "VCoin smart contracts developed",
-                        "Deployed to Solana devnet",
-                        "Backend infrastructure complete",
-                        "Mobile applications built",
-                        "Core token economics implemented",
-                        "Custodial wallet system ready",
-                        "Terms of Service finalized",
-                      ].map((item, i) => (
-                        <div key={i} className="flex items-start gap-2 text-xs">
-                          <span className="text-green-500 mt-0.5">✓</span>
-                          <span className="text-gray-700 dark:text-gray-300">
-                            {item}
+                  ),
+                },
+                {
+                  title: "2026",
+                  content: (
+                    <div className="space-y-4 max-w-4xl">
+                      {/* Q1 2026 */}
+                      <div className="rounded-2xl bg-white dark:bg-black border border-[#00D4AA]/40 p-4">
+                        <div className="flex items-center justify-between mb-3">
+                          <h4 className="text-sm font-black text-[#00D4AA]">
+                            Q1 - Launch
+                          </h4>
+                          <span className="px-2 py-0.5 bg-[#00D4AA]/20 rounded-full text-[10px] font-bold text-[#00D4AA]">
+                            10K+ USERS
                           </span>
                         </div>
-                      ))}
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+                          {[
+                            "Mainnet live",
+                            "VCoin sales",
+                            "Creator onboarding",
+                            "Platform launch",
+                          ].map((item, i) => (
+                            <div
+                              key={i}
+                              className="px-3 py-2 bg-gradient-to-r from-[#00D4AA]/10 to-transparent border border-[#00D4AA]/20 rounded-lg text-xs font-medium"
+                            >
+                              {item}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Q2 2026 */}
+                      <div className="rounded-2xl bg-white dark:bg-black border border-cyan-500/40 p-4">
+                        <div className="flex items-center justify-between mb-3">
+                          <h4 className="text-sm font-black text-cyan-600 dark:text-cyan-400">
+                            Q2 - Growth
+                          </h4>
+                          <span className="px-2 py-0.5 bg-cyan-500/20 rounded-full text-[10px] font-bold text-cyan-600 dark:text-cyan-400">
+                            50K+ USERS
+                          </span>
+                        </div>
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+                          {[
+                            "Earning features",
+                            "Marketplace",
+                            "Partnerships",
+                            "Mobile optimization",
+                          ].map((item, i) => (
+                            <div
+                              key={i}
+                              className="px-3 py-2 bg-gradient-to-r from-cyan-500/10 to-transparent border border-cyan-500/20 rounded-lg text-xs font-medium"
+                            >
+                              {item}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Q3 2026 */}
+                      <div className="rounded-2xl bg-white dark:bg-black border border-blue-500/40 p-4">
+                        <div className="flex items-center justify-between mb-3">
+                          <h4 className="text-sm font-black text-blue-600 dark:text-blue-400">
+                            Q3 - DEX
+                          </h4>
+                          <span className="px-2 py-0.5 bg-blue-500/20 rounded-full text-[10px] font-bold text-blue-600 dark:text-blue-400">
+                            100K+ USERS
+                          </span>
+                        </div>
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+                          {[
+                            "Raydium pool",
+                            "Public trading",
+                            "CMC/CG listing",
+                            "Creator tools",
+                          ].map((item, i) => (
+                            <div
+                              key={i}
+                              className="px-3 py-2 bg-gradient-to-r from-blue-500/10 to-transparent border border-blue-500/20 rounded-lg text-xs font-medium"
+                            >
+                              {item}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Q4 2026 */}
+                      <div className="rounded-2xl bg-white dark:bg-black border border-indigo-500/40 p-4">
+                        <div className="flex items-center justify-between mb-3">
+                          <h4 className="text-sm font-black text-indigo-600 dark:text-indigo-400">
+                            Q4 - Platform Enhancement
+                          </h4>
+                          <span className="px-2 py-0.5 bg-indigo-500/20 rounded-full text-[10px] font-bold text-indigo-600 dark:text-indigo-400">
+                            500K+ USERS
+                          </span>
+                        </div>
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+                          {[
+                            "Orb AI advanced features",
+                            "Cross-platform integration",
+                            "International expansion",
+                            "Enterprise solutions beta",
+                          ].map((item, i) => (
+                            <div
+                              key={i}
+                              className="px-3 py-2 bg-gradient-to-r from-indigo-500/10 to-transparent border border-indigo-500/20 rounded-lg text-xs font-medium"
+                            >
+                              {item}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
                     </div>
-                  </CardContent>
-                </Card>
-              </div>
-            </motion.div>
+                  ),
+                },
+                {
+                  title: "2027",
+                  content: (
+                    <div className="space-y-4 max-w-4xl">
+                      {/* Q1-Q2 2027 */}
+                      <div className="rounded-2xl bg-white dark:bg-black border border-cyan-500/40 p-4">
+                        <div className="flex items-center justify-between mb-3">
+                          <h4 className="text-sm font-black text-purple-600 dark:text-purple-400">
+                            Q1-Q2 - Scale & Innovation
+                          </h4>
+                          <span className="px-2 py-0.5 bg-cyan-500/20 rounded-full text-[10px] font-bold text-purple-600 dark:text-purple-400">
+                            5-10M USERS
+                          </span>
+                        </div>
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+                          {[
+                            "Multi-language support",
+                            "Advanced marketplace",
+                            "DeFi integrations",
+                            "Metaverse integration",
+                          ].map((item, i) => (
+                            <div
+                              key={i}
+                              className="px-3 py-2 bg-gradient-to-r from-cyan-500/10 to-transparent border border-cyan-500/20 rounded-lg text-xs font-medium"
+                            >
+                              {item}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
 
-            {/* Roadmap Timeline - Modern Compact */}
+                      {/* Q2-Q4 2027 */}
+                      <div className="rounded-2xl bg-white dark:bg-black border border-pink-500/40 p-4">
+                        <div className="flex items-center justify-between mb-3">
+                          <h4 className="text-sm font-black text-pink-600 dark:text-pink-400">
+                            Q2-Q4 - Global Expansion
+                          </h4>
+                          <span className="px-2 py-0.5 bg-pink-500/20 rounded-full text-[10px] font-bold text-pink-600 dark:text-pink-400">
+                            50-100M USERS
+                          </span>
+                        </div>
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+                          {[
+                            "Multi-chain support",
+                            "Advanced AI capabilities",
+                            "Enterprise launch",
+                            "Web3 ecosystem integration",
+                          ].map((item, i) => (
+                            <div
+                              key={i}
+                              className="px-3 py-2 bg-gradient-to-r from-pink-500/10 to-transparent border border-pink-500/20 rounded-lg text-xs font-medium"
+                            >
+                              {item}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  ),
+                },
+                {
+                  title: "2028-2029",
+                  content: (
+                    <div className="space-y-4 max-w-4xl">
+                      <div className="rounded-2xl bg-white dark:bg-black border border-orange-500/40 p-4">
+                        <div className="flex items-center justify-between mb-3">
+                          <h4 className="text-sm font-black text-orange-600 dark:text-orange-400">
+                            Mass Adoption
+                          </h4>
+                          <span className="px-2 py-0.5 bg-orange-500/20 rounded-full text-[10px] font-bold text-orange-600 dark:text-orange-400">
+                            500M USERS
+                          </span>
+                        </div>
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+                          {[
+                            "Full platform decentralization",
+                            "Cross-platform interoperability",
+                            "Advanced metaverse presence",
+                            "Quantum-ready security prep",
+                          ].map((item, i) => (
+                            <div
+                              key={i}
+                              className="px-3 py-2 bg-gradient-to-r from-orange-500/10 to-transparent border border-orange-500/20 rounded-lg text-xs font-medium"
+                            >
+                              {item}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  ),
+                },
+                {
+                  title: "Beyond 2029",
+                  content: (
+                    <div className="space-y-4 max-w-4xl">
+                      {/* Vision Realized */}
+                      <div className="rounded-2xl bg-gradient-to-br from-[#00D4AA]/20 to-cyan-400/20 border border-[#00D4AA] p-4">
+                        <div className="flex items-center justify-between mb-3">
+                          <h4 className="text-sm font-black text-[#00D4AA]">
+                            Vision Realized
+                          </h4>
+                          <span className="px-2 py-0.5 bg-[#00D4AA]/30 rounded-full text-[10px] font-bold text-[#00D4AA]">
+                            1B+ USERS
+                          </span>
+                        </div>
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+                          {[
+                            "Leading Web3 social platform",
+                            "Full metaverse integration",
+                            "Quantum-resistant infrastructure",
+                            "Neural interface compatibility",
+                          ].map((item, i) => (
+                            <div
+                              key={i}
+                              className="px-3 py-2 bg-gradient-to-r from-[#00D4AA]/10 to-transparent border border-[#00D4AA]/30 rounded-lg text-xs font-medium"
+                            >
+                              {item}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Innovation Areas */}
+                      <div className="rounded-2xl bg-gradient-to-br from-cyan-500/20 to-pink-500/20 border border-cyan-500/40 p-4">
+                        <h4 className="text-sm font-black mb-3 text-purple-600 dark:text-purple-400">
+                          Continuous Innovation
+                        </h4>
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+                          {[
+                            "Autonomous AI agents",
+                            "Cross-reality experiences",
+                            "Universal digital identity",
+                            "Global digital economy leader",
+                          ].map((item, i) => (
+                            <div
+                              key={i}
+                              className="px-3 py-2 bg-gradient-to-r from-cyan-500/10 to-transparent border border-cyan-500/20 rounded-lg text-xs font-medium"
+                            >
+                              {item}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  ),
+                },
+              ]}
+            />
+          </div>
+
+          {/* Development Principles - 3D Visual Card */}
+          <div className="mt-16 grid lg:grid-cols-2 gap-16 items-center">
+            {/* Left: Info */}
             <div className="space-y-6">
-              {/* Near-term phases */}
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-                {[
-                  {
-                    phase: "Q4 2025",
-                    title: "Final Prep",
-                    target: "",
-                    items: [
-                      "Security audit",
-                      "Legal compliance",
-                      "Beta testing",
-                      "Payment integration",
-                    ],
-                  },
-                  {
-                    phase: "Q1 2026",
-                    title: "Launch",
-                    target: "10K+",
-                    items: [
-                      "Mainnet live",
-                      "VCoin sales",
-                      "Creator onboarding",
-                      "Platform launch",
-                    ],
-                  },
-                  {
-                    phase: "Q2 2026",
-                    title: "Growth",
-                    target: "50K+",
-                    items: [
-                      "Earning features",
-                      "Marketplace",
-                      "Partnerships",
-                      "Mobile optimization",
-                    ],
-                  },
-                  {
-                    phase: "Q3 2026",
-                    title: "DEX",
-                    target: "100K+",
-                    items: [
-                      "Raydium pool",
-                      "Public trading",
-                      "CMC/CG listing",
-                      "Creator tools",
-                    ],
-                  },
-                ].map((phase, idx) => (
-                  <motion.div
-                    key={idx}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: idx * 0.05 }}
-                    whileHover={{ scale: 1.03, y: -3 }}
-                    className="relative group"
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#00D4AA]/20 to-transparent rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity" />
-                    <Card className="relative bg-white/80 dark:bg-white/[0.08] border border-[#00D4AA]/30 dark:border-[#00D4AA]/50 backdrop-blur-xl hover:border-[#00D4AA]/60 transition-all shadow-lg dark:shadow-none h-full">
-                      <CardContent className="py-4 px-4">
-                        <div className="mb-3">
-                          <div className="text-xs font-bold text-[#00D4AA] mb-1">
-                            {phase.phase}
-                          </div>
-                          <CardTitle className="text-sm mb-1">
-                            {phase.title}
-                          </CardTitle>
-                          {phase.target && (
-                            <div className="text-[10px] text-cyan-600 dark:text-cyan-400 font-semibold">
-                              Target: {phase.target} users
-                            </div>
-                          )}
-                        </div>
-                        <div className="space-y-1.5">
-                          {phase.items.map((item, i) => (
-                            <div
-                              key={i}
-                              className="px-2 py-1 bg-gradient-to-r from-[#00D4AA]/5 to-transparent border border-[#00D4AA]/20 rounded text-[10px]"
-                            >
-                              {item}
-                            </div>
-                          ))}
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </motion.div>
-                ))}
+              <div>
+                <h2 className="text-4xl md:text-5xl font-black leading-tight tracking-tight mb-4">
+                  <span className="text-gray-900 dark:text-white">
+                    /DEVELOPMENT{" "}
+                  </span>
+                  <span className="bg-gradient-to-r from-[#00D4AA] to-cyan-400 bg-clip-text text-transparent">
+                    PRINCIPLES
+                  </span>
+                </h2>
+                <p className="text-lg text-gray-600 dark:text-gray-400">
+                  Our Core Values Guide Every Decision We Make To Build A Better
+                  Social Platform.
+                </p>
               </div>
 
-              {/* Mid-term phases */}
-              <div className="grid md:grid-cols-3 gap-4">
+              <div className="grid grid-cols-2 gap-4">
                 {[
                   {
-                    phase: "Q4 2026",
-                    title: "Platform Enhancement",
-                    target: "500K+ users",
-                    items: [
-                      "Orb AI advanced features",
-                      "Cross-platform integration",
-                      "International expansion",
-                      "Enterprise solutions beta",
-                    ],
+                    icon: "👥",
+                    title: "UX First",
+                    desc: "Simple onboarding",
                   },
                   {
-                    phase: "Q1-Q2 2027",
-                    title: "Scale & Innovation",
-                    target: "5-10M users",
-                    items: [
-                      "Multi-language support",
-                      "Advanced marketplace",
-                      "DeFi integrations",
-                      "Metaverse integration",
-                    ],
+                    icon: "💰",
+                    title: "Revenue-Funded",
+                    desc: "20% to liquidity",
                   },
                   {
-                    phase: "Q2-Q4 2027",
-                    title: "Global Expansion",
-                    target: "50-100M users",
-                    items: [
-                      "Multi-chain support",
-                      "Advanced AI capabilities",
-                      "Enterprise launch",
-                      "Web3 ecosystem integration",
-                    ],
+                    icon: "🎯",
+                    title: "Utility Focus",
+                    desc: "Real use cases",
                   },
-                ].map((phase, idx) => (
-                  <motion.div
-                    key={idx}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.2 + idx * 0.1 }}
-                    whileHover={{ scale: 1.02 }}
-                    className="relative group z-10"
+                  {
+                    icon: "🗣️",
+                    title: "Community",
+                    desc: "Feedback matters",
+                  },
+                ].map((principle, i) => (
+                  <div
+                    key={i}
+                    className="rounded-2xl bg-white dark:bg-black border-2 border-gray-200 dark:border-white/10 p-4 hover:border-[#00D4AA] transition-all"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#00D4AA]/10 to-transparent rounded-xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
-                    <Card className="relative bg-white/70 dark:bg-white/5 border-2 border-[#00D4AA]/30 dark:border-[#00D4AA]/50 backdrop-blur-xl hover:border-[#00D4AA]/60 transition-all shadow-lg dark:shadow-none h-full">
-                      <CardContent className="py-6">
-                        <div className="mb-4">
-                          <div className="text-sm font-bold text-[#00D4AA] mb-1">
-                            {phase.phase}
-                          </div>
-                          <CardTitle className="text-base mb-2">
-                            {phase.title}
-                          </CardTitle>
-                          {phase.target && (
-                            <div className="text-xs text-cyan-600 dark:text-cyan-400 font-semibold">
-                              Target: {phase.target}
-                            </div>
-                          )}
-                        </div>
-                        <div className="space-y-2">
-                          {phase.items.map((item, i) => (
-                            <div
-                              key={i}
-                              className="px-3 py-1.5 bg-gradient-to-r from-[#00D4AA]/5 to-transparent border border-[#00D4AA]/20 rounded-lg text-xs"
-                            >
-                              {item}
-                            </div>
-                          ))}
-                        </div>
-                      </CardContent>
-                    </Card>
-
-                    {/* Vertical connecting line from last card */}
-                    {idx === 2 && (
-                      <div className="absolute top-full left-1/2 -translate-x-1/2 w-0.5 h-12 bg-gradient-to-b from-[#00D4AA] to-purple-400 hidden lg:block" />
-                    )}
-                  </motion.div>
-                ))}
-              </div>
-
-              {/* Third Row - Long Term Vision */}
-              <div className="grid md:grid-cols-3 gap-8 relative">
-                {/* Horizontal connecting line for third row */}
-                <div className="absolute top-1/2 left-[16%] right-[16%] h-0.5 bg-gradient-to-r from-purple-400 to-purple-600 pointer-events-none hidden md:block z-0" />
-
-                {[
-                  {
-                    phase: "2028-2029",
-                    title: "Mass Adoption",
-                    target: "500M users",
-                    items: [
-                      "Full platform decentralization",
-                      "Cross-platform interoperability",
-                      "Advanced metaverse presence",
-                      "Quantum-ready security prep",
-                    ],
-                  },
-                  {
-                    phase: "Beyond 2029",
-                    title: "Vision Realized",
-                    target: "1B+ users (aspirational)",
-                    items: [
-                      "Leading Web3 social platform",
-                      "Full metaverse integration",
-                      "Quantum-resistant infrastructure",
-                      "Neural interface compatibility",
-                    ],
-                  },
-                  {
-                    phase: "Future",
-                    title: "Innovation Areas",
-                    items: [
-                      "Autonomous AI agents",
-                      "Cross-reality experiences",
-                      "Universal digital identity",
-                      "Global digital economy leader",
-                    ],
-                  },
-                ].map((phase, idx) => (
-                  <motion.div
-                    key={idx}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.4 + idx * 0.1 }}
-                    whileHover={{ scale: 1.02 }}
-                    className="relative group z-10"
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-transparent rounded-xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
-                    <Card className="relative bg-white/70 dark:bg-white/5 border-2 border-purple-400/30 dark:border-purple-400/50 backdrop-blur-xl hover:border-purple-400/60 transition-all shadow-lg dark:shadow-none h-full">
-                      <CardContent className="py-6">
-                        <div className="mb-4">
-                          <div className="text-sm font-bold text-purple-600 dark:text-purple-400 mb-1">
-                            {phase.phase}
-                          </div>
-                          <CardTitle className="text-base mb-2">
-                            {phase.title}
-                          </CardTitle>
-                          {phase.target && (
-                            <div className="text-xs text-purple-600 dark:text-purple-400 font-semibold">
-                              Target: {phase.target}
-                            </div>
-                          )}
-                        </div>
-                        <div className="space-y-2">
-                          {phase.items.map((item, i) => (
-                            <div
-                              key={i}
-                              className="px-3 py-1.5 bg-gradient-to-r from-purple-400/5 to-transparent border border-purple-400/20 rounded-lg text-xs"
-                            >
-                              {item}
-                            </div>
-                          ))}
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </motion.div>
+                    <div className="text-3xl mb-2">{principle.icon}</div>
+                    <h4 className="font-black text-sm mb-1 text-gray-900 dark:text-white">
+                      {principle.title}
+                    </h4>
+                    <p className="text-xs text-gray-600 dark:text-gray-400">
+                      {principle.desc}
+                    </p>
+                  </div>
                 ))}
               </div>
             </div>
 
-            {/* Development Principles - Compact */}
+            {/* Right: 3D Visual */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mt-8"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2 }}
+              className="relative flex items-center justify-center min-h-[400px]"
             >
-              <Card className="bg-gradient-to-br from-[#00D4AA]/10 to-cyan-400/10 dark:from-[#00D4AA]/15 dark:to-cyan-400/15 border border-[#00D4AA]/40 backdrop-blur-xl shadow-lg dark:shadow-none">
-                <CardContent className="py-6 px-6">
-                  <CardTitle className="text-xl mb-5 text-center font-bold">
-                    Development Principles
-                  </CardTitle>
-                  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-                    {[
-                      {
-                        icon: "👥",
-                        title: "UX First",
-                        desc: "Simple onboarding",
-                      },
-                      {
-                        icon: "💰",
-                        title: "Revenue-Funded",
-                        desc: "20% to liquidity",
-                      },
-                      {
-                        icon: "🎯",
-                        title: "Utility Focus",
-                        desc: "Real use cases",
-                      },
-                      {
-                        icon: "🗣️",
-                        title: "Community",
-                        desc: "Feedback matters",
-                      },
-                      { icon: "🔒", title: "Security", desc: "Regular audits" },
-                      {
-                        icon: "⚖️",
-                        title: "Compliant",
-                        desc: "Legal framework",
-                      },
-                    ].map((principle, i) => (
-                      <div key={i} className="text-center">
-                        <div className="text-2xl mb-1.5">{principle.icon}</div>
-                        <h4 className="font-bold text-xs mb-1">
-                          {principle.title}
-                        </h4>
-                        <p className="text-[10px] text-gray-600 dark:text-gray-400">
-                          {principle.desc}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
+              {/* Central Card */}
+              <div className="relative z-10 lg:z-20 rounded-3xl bg-gradient-to-br from-[#00D4AA]/20 to-cyan-400/20 border-2 border-[#00D4AA] p-8 w-full max-w-md">
+                <div className="text-center mb-6">
+                  <h3 className="text-3xl font-black text-gray-900 dark:text-white mb-2">
+                    Built Different
+                  </h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">
+                    Community-First Development
+                  </p>
+                </div>
+                <div className="grid grid-cols-2 gap-3">
+                  {[
+                    { icon: "🔒", title: "Security" },
+                    { icon: "⚖️", title: "Compliant" },
+                  ].map((item, i) => (
+                    <div
+                      key={i}
+                      className="rounded-xl bg-white/50 dark:bg-black/50 backdrop-blur-sm p-4 text-center"
+                    >
+                      <div className="text-3xl mb-2">{item.icon}</div>
+                      <div className="font-black text-xs">{item.title}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Floating Icons */}
+              <motion.div
+                animate={{ y: [0, -10, 0], rotate: [0, 5, 0] }}
+                transition={{ duration: 3, repeat: Infinity }}
+                className="absolute -top-6 -right-6 w-20 h-20 rounded-2xl bg-gradient-to-br from-[#00D4AA] to-cyan-400 shadow-2xl flex items-center justify-center text-3xl z-40"
+              >
+                ⚡
+              </motion.div>
+
+              <motion.div
+                animate={{ y: [0, -8, 0], rotate: [0, -5, 0] }}
+                transition={{ duration: 2.5, repeat: Infinity, delay: 0.5 }}
+                className="absolute bottom-6 -left-6 w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-500 to-pink-500 shadow-2xl flex items-center justify-center text-2xl z-40"
+              >
+                🚀
+              </motion.div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* CTA - Compact */}
+      {/* CTA */}
       <section className="relative py-20 px-6">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          className="max-w-4xl mx-auto"
-        >
+        <div className="max-w-4xl mx-auto">
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-r from-[#00D4AA] to-cyan-500 rounded-2xl blur-2xl opacity-40" />
             <div className="relative bg-gradient-to-br from-[#00D4AA]/20 to-cyan-500/20 border border-[#00D4AA]/40 dark:border-[#00D4AA]/50 backdrop-blur-xl rounded-2xl p-10 text-center shadow-lg dark:shadow-none">
@@ -1359,28 +1689,28 @@ export default function HomePage() {
               </div>
             </div>
           </div>
-        </motion.div>
+        </div>
       </section>
 
       {/* Footer */}
-      <footer className="relative py-16 px-6 border-t border-gray-200 dark:border-white/10">
+      <footer className="relative py-16 px-6 bg-[#00D4AA]">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-4 gap-12 mb-12">
             <div>
-              <h3 className="text-2xl font-bold text-[#00D4AA] mb-4">VYRAL</h3>
-              <p className="text-gray-600 dark:text-gray-400 text-sm">
+              <h3 className="text-3xl font-black text-white mb-4">VYRAL</h3>
+              <p className="text-white/80 text-sm leading-relaxed">
                 Decentralized social platform built on Solana. Empowering
                 creators, rewarding communities.
               </p>
             </div>
 
             <div>
-              <h4 className="font-bold mb-4">Platform</h4>
-              <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+              <h4 className="font-black text-white mb-4">Platform</h4>
+              <ul className="space-y-2">
                 <li>
                   <Link
                     href="/docs"
-                    className="hover:text-[#00D4AA] transition-colors"
+                    className="text-white/80 hover:text-white text-sm transition-colors"
                   >
                     Documentation
                   </Link>
@@ -1388,7 +1718,7 @@ export default function HomePage() {
                 <li>
                   <Link
                     href="/docs/whitepaper"
-                    className="hover:text-[#00D4AA] transition-colors"
+                    className="text-white/80 hover:text-white text-sm transition-colors"
                   >
                     Whitepaper
                   </Link>
@@ -1396,7 +1726,7 @@ export default function HomePage() {
                 <li>
                   <Link
                     href="/docs/tutorial"
-                    className="hover:text-[#00D4AA] transition-colors"
+                    className="text-white/80 hover:text-white text-sm transition-colors"
                   >
                     Get Started
                   </Link>
@@ -1405,12 +1735,12 @@ export default function HomePage() {
             </div>
 
             <div>
-              <h4 className="font-bold mb-4">Resources</h4>
-              <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+              <h4 className="font-black text-white mb-4">Resources</h4>
+              <ul className="space-y-2">
                 <li>
                   <Link
                     href="/docs/whitepaper/roadmap"
-                    className="hover:text-[#00D4AA] transition-colors"
+                    className="text-white/80 hover:text-white text-sm transition-colors"
                   >
                     Roadmap
                   </Link>
@@ -1418,7 +1748,7 @@ export default function HomePage() {
                 <li>
                   <Link
                     href="/docs/whitepaper/token-economics"
-                    className="hover:text-[#00D4AA] transition-colors"
+                    className="text-white/80 hover:text-white text-sm transition-colors"
                   >
                     Tokenomics
                   </Link>
@@ -1426,7 +1756,7 @@ export default function HomePage() {
                 <li>
                   <Link
                     href="/docs/compliance"
-                    className="hover:text-[#00D4AA] transition-colors"
+                    className="text-white/80 hover:text-white text-sm transition-colors"
                   >
                     Compliance
                   </Link>
@@ -1435,12 +1765,12 @@ export default function HomePage() {
             </div>
 
             <div>
-              <h4 className="font-bold mb-4">Legal</h4>
-              <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+              <h4 className="font-black text-white mb-4">Legal</h4>
+              <ul className="space-y-2">
                 <li>
                   <Link
                     href="/docs/compliance/privacy"
-                    className="hover:text-[#00D4AA] transition-colors"
+                    className="text-white/80 hover:text-white text-sm transition-colors"
                   >
                     Privacy Policy
                   </Link>
@@ -1448,7 +1778,7 @@ export default function HomePage() {
                 <li>
                   <Link
                     href="/docs/compliance/terms"
-                    className="hover:text-[#00D4AA] transition-colors"
+                    className="text-white/80 hover:text-white text-sm transition-colors"
                   >
                     Terms of Service
                   </Link>
@@ -1456,7 +1786,7 @@ export default function HomePage() {
                 <li>
                   <Link
                     href="/docs/compliance/risk-disclosure"
-                    className="hover:text-[#00D4AA] transition-colors"
+                    className="text-white/80 hover:text-white text-sm transition-colors"
                   >
                     Risk Disclosure
                   </Link>
@@ -1465,8 +1795,21 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="pt-8 border-t border-gray-200 dark:border-white/10 text-center text-sm text-gray-600 dark:text-gray-400">
-            <p>© 2025 VYRAL. All rights reserved. Built on Solana.</p>
+          <div className="pt-8 border-t border-white/20 flex justify-between items-center">
+            <p className="text-white/60 text-sm">
+              © 2025 VYRAL. All rights reserved. Built on Solana.
+            </p>
+            <div className="flex gap-4">
+              {["Twitter", "Discord", "Telegram"].map((social) => (
+                <Link
+                  key={social}
+                  href="#"
+                  className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white text-xs font-bold transition-colors"
+                >
+                  {social[0]}
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </footer>

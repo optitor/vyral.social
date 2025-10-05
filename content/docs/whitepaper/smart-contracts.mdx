@@ -3,15 +3,19 @@ title: Smart Contract Architecture
 description: Technical implementation of VCoin token and platform contracts
 ---
 
-import { Callout } from 'fumadocs-ui/components/callout';
-import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
+import { Callout } from "fumadocs-ui/components/callout";
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 
-<div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-purple-500/10 via-blue-500/5 to-background p-8 border border-purple-500/20 mb-8">
+<div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-cyan-500/10 via-blue-500/5 to-background p-8 border border-cyan-500/20 mb-8">
   <div className="relative z-10">
-    <h1 className="text-4xl md:text-5xl font-bold mb-3">Smart Contract Architecture</h1>
-    <p className="text-lg text-muted-foreground">Technical implementation of VCoin token and platform contracts</p>
+    <h1 className="text-4xl md:text-5xl font-bold mb-3">
+      Smart Contract Architecture
+    </h1>
+    <p className="text-lg text-muted-foreground">
+      Technical implementation of VCoin token and platform contracts
+    </p>
   </div>
-  <div className="absolute top-0 right-0 w-64 h-64 bg-purple-500/5 rounded-full blur-3xl"></div>
+  <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/5 rounded-full blur-3xl"></div>
 </div>
 
 ## Contract Addresses
@@ -30,31 +34,47 @@ import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
     </a>
   </div>
 
-  <div className="group relative overflow-hidden rounded-xl border border-primary/20 bg-gradient-to-br from-primary/5 to-primary/10 p-5 transition-all hover:border-primary/40 hover:shadow-lg">
-    <div className="flex items-center gap-2 mb-3">
-      <div className="h-8 w-8 rounded-lg bg-primary/10 flex items-center justify-center">
-        <span className="text-lg">🔥</span>
-      </div>
-      <span className="font-semibold text-sm">Burn Tracker</span>
+{" "}
+<div className="group relative overflow-hidden rounded-xl border border-primary/20 bg-gradient-to-br from-primary/5 to-primary/10 p-5 transition-all hover:border-primary/40 hover:shadow-lg">
+  <div className="flex items-center gap-2 mb-3">
+    <div className="h-8 w-8 rounded-lg bg-primary/10 flex items-center justify-center">
+      <span className="text-lg">🔥</span>
     </div>
-    <code className="text-xs font-mono text-primary/80 break-all block mb-2">HMf4URTq1NJCk7K9KNmPWnwxReFj6HX4wy2RdyXqXJoq</code>
-    <a href="https://explorer.solana.com/address/HMf4URTq1NJCk7K9KNmPWnwxReFj6HX4wy2RdyXqXJoq?cluster=devnet" target="_blank" rel="noopener noreferrer" className="text-xs text-primary hover:underline inline-flex items-center gap-1">
-      View on Explorer →
-    </a>
+    <span className="font-semibold text-sm">Burn Tracker</span>
   </div>
+  <code className="text-xs font-mono text-primary/80 break-all block mb-2">
+    HMf4URTq1NJCk7K9KNmPWnwxReFj6HX4wy2RdyXqXJoq
+  </code>
+  <a
+    href="https://explorer.solana.com/address/HMf4URTq1NJCk7K9KNmPWnwxReFj6HX4wy2RdyXqXJoq?cluster=devnet"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-xs text-primary hover:underline inline-flex items-center gap-1"
+  >
+    View on Explorer →
+  </a>
+</div>
 
-  <div className="group relative overflow-hidden rounded-xl border border-primary/20 bg-gradient-to-br from-primary/5 to-primary/10 p-5 transition-all hover:border-primary/40 hover:shadow-lg">
-    <div className="flex items-center gap-2 mb-3">
-      <div className="h-8 w-8 rounded-lg bg-primary/10 flex items-center justify-center">
-        <span className="text-lg">⏰</span>
-      </div>
-      <span className="font-semibold text-sm">Vesting</span>
+{" "}
+<div className="group relative overflow-hidden rounded-xl border border-primary/20 bg-gradient-to-br from-primary/5 to-primary/10 p-5 transition-all hover:border-primary/40 hover:shadow-lg">
+  <div className="flex items-center gap-2 mb-3">
+    <div className="h-8 w-8 rounded-lg bg-primary/10 flex items-center justify-center">
+      <span className="text-lg">⏰</span>
     </div>
-    <code className="text-xs font-mono text-primary/80 break-all block mb-2">GAEVrgug7i7zUAZss1s7od2bhFiAhv2e91zT2svX7nb3</code>
-    <a href="https://explorer.solana.com/address/GAEVrgug7i7zUAZss1s7od2bhFiAhv2e91zT2svX7nb3?cluster=devnet" target="_blank" rel="noopener noreferrer" className="text-xs text-primary hover:underline inline-flex items-center gap-1">
-      View on Explorer →
-    </a>
+    <span className="font-semibold text-sm">Vesting</span>
   </div>
+  <code className="text-xs font-mono text-primary/80 break-all block mb-2">
+    GAEVrgug7i7zUAZss1s7od2bhFiAhv2e91zT2svX7nb3
+  </code>
+  <a
+    href="https://explorer.solana.com/address/GAEVrgug7i7zUAZss1s7od2bhFiAhv2e91zT2svX7nb3?cluster=devnet"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-xs text-primary hover:underline inline-flex items-center gap-1"
+  >
+    View on Explorer →
+  </a>
+</div>
 
   <div className="group relative overflow-hidden rounded-xl border border-primary/20 bg-gradient-to-br from-primary/5 to-primary/10 p-5 transition-all hover:border-primary/40 hover:shadow-lg">
     <div className="flex items-center gap-2 mb-3">
@@ -71,7 +91,8 @@ import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
 </div>
 
 <Callout type="info">
-  All smart contract addresses are deployed on Solana devnet and can be verified on [Solana Explorer](https://explorer.solana.com).
+  All smart contract addresses are deployed on Solana devnet and can be verified
+  on [Solana Explorer](https://explorer.solana.com).
 </Callout>
 
 ## Source Code Verification
@@ -87,7 +108,7 @@ declare_id!("HMf4URTq1NJCk7K9KNmPWnwxReFj6HX4wy2RdyXqXJoq");
 
 #[program]
 pub mod burn_tracker {
-    use super::*;
+use super::\*;
 
     // Initialize burn tracker
     pub fn initialize(
@@ -298,50 +319,52 @@ pub mod burn_tracker {
 
         Ok(())
     }
+
 }
 
 // ===== ACCOUNTS STRUCTS =====
 
 #[derive(Accounts)]
 pub struct Initialize<'info> {
-    #[account(
-        init,
-        payer = authority,
-        space = 8 + BurnStats::INIT_SPACE,
-        seeds = [b"burn_stats"],
-        bump
-    )]
-    pub burn_stats: Account<'info, BurnStats>,
+#[account(
+init,
+payer = authority,
+space = 8 + BurnStats::INIT_SPACE,
+seeds = [b"burn_stats"],
+bump
+)]
+pub burn_stats: Account<'info, BurnStats>,
 
     #[account(mut)]
     pub authority: Signer<'info>,
 
     pub system_program: Program<'info, System>,
+
 }
 
 #[derive(Accounts)]
 pub struct RecordBurn<'info> {
-    #[account(
-        mut,
-        seeds = [b"burn_stats"],
-        bump
-    )]
-    pub burn_stats: Account<'info, BurnStats>,
+#[account(
+mut,
+seeds = [b"burn_stats"],
+bump
+)]
+pub burn_stats: Account<'info, BurnStats>,
 
     #[account(
         constraint = authority.key() == burn_stats.authority @ ErrorCode::Unauthorized
     )]
     pub authority: Signer<'info>,
+
 }
 
-#[derive(Accounts)]
-#[instruction(date: i64)]
+#[derive(Accounts)] #[instruction(date: i64)]
 pub struct RecordDailyAggregate<'info> {
-    #[account(
-        seeds = [b"burn_stats"],
-        bump
-    )]
-    pub burn_stats: Account<'info, BurnStats>,
+#[account(
+seeds = [b"burn_stats"],
+bump
+)]
+pub burn_stats: Account<'info, BurnStats>,
 
     #[account(
         init,
@@ -359,131 +382,131 @@ pub struct RecordDailyAggregate<'info> {
     pub authority: Signer<'info>,
 
     pub system_program: Program<'info, System>,
+
 }
 
 #[derive(Accounts)]
 pub struct GetBurnStats<'info> {
-    #[account(
-        seeds = [b"burn_stats"],
-        bump
-    )]
-    pub burn_stats: Account<'info, BurnStats>,
+#[account(
+seeds = [b"burn_stats"],
+bump
+)]
+pub burn_stats: Account<'info, BurnStats>,
 }
 
 #[derive(Accounts)]
 pub struct GetCirculatingSupply<'info> {
-    #[account(
-        seeds = [b"burn_stats"],
-        bump
-    )]
-    pub burn_stats: Account<'info, BurnStats>,
+#[account(
+seeds = [b"burn_stats"],
+bump
+)]
+pub burn_stats: Account<'info, BurnStats>,
 }
 
-#[derive(Accounts)]
-#[instruction(date: i64)]
+#[derive(Accounts)] #[instruction(date: i64)]
 pub struct GetDailyStats<'info> {
-    #[account(
-        seeds = [b"daily_stats", date.to_le_bytes().as_ref()],
-        bump
-    )]
-    pub daily_stats: Account<'info, DailyBurnStats>,
+#[account(
+seeds = [b"daily_stats", date.to_le_bytes().as_ref()],
+bump
+)]
+pub daily_stats: Account<'info, DailyBurnStats>,
 }
 
 #[derive(Accounts)]
 pub struct UpdateAuthority<'info> {
-    #[account(
-        mut,
-        seeds = [b"burn_stats"],
-        bump
-    )]
-    pub burn_stats: Account<'info, BurnStats>,
+#[account(
+mut,
+seeds = [b"burn_stats"],
+bump
+)]
+pub burn_stats: Account<'info, BurnStats>,
 
     pub authority: Signer<'info>,
+
 }
 
 // ===== STATE =====
 
-#[account]
-#[derive(InitSpace)]
+#[account] #[derive(InitSpace)]
 pub struct BurnStats {
-    pub authority: Pubkey,
-    pub total_burned: u64,
-    pub tip_burns: u64,
-    pub marketplace_burns: u64,
-    pub premium_burns: u64,
-    pub withdrawal_burns: u64,
-    pub other_burns: u64,
-    pub burn_count: u64,
-    pub last_burn_timestamp: i64,
-    pub largest_single_burn: u64,
+pub authority: Pubkey,
+pub total_burned: u64,
+pub tip_burns: u64,
+pub marketplace_burns: u64,
+pub premium_burns: u64,
+pub withdrawal_burns: u64,
+pub other_burns: u64,
+pub burn_count: u64,
+pub last_burn_timestamp: i64,
+pub largest_single_burn: u64,
 }
 
-#[account]
-#[derive(InitSpace)]
+#[account] #[derive(InitSpace)]
 pub struct DailyBurnStats {
-    pub date: i64,
-    pub total_burned: u64,
-    pub tip_burns: u64,
-    pub marketplace_burns: u64,
-    pub premium_burns: u64,
-    pub withdrawal_burns: u64,
-    pub other_burns: u64,
+pub date: i64,
+pub total_burned: u64,
+pub tip_burns: u64,
+pub marketplace_burns: u64,
+pub premium_burns: u64,
+pub withdrawal_burns: u64,
+pub other_burns: u64,
 }
 
 // ===== ENUMS =====
 
 #[derive(AnchorSerialize, AnchorDeserialize, Clone, Debug, PartialEq)]
 pub enum BurnSource {
-    Tip,
-    Marketplace,
-    Premium,
-    Withdrawal,
-    Other,
+Tip,
+Marketplace,
+Premium,
+Withdrawal,
+Other,
 }
 
 // ===== RETURN TYPES =====
 
 #[derive(AnchorSerialize, AnchorDeserialize, Clone)]
 pub struct BurnStatistics {
-    pub total_burned: u64,
-    pub tip_burns: u64,
-    pub marketplace_burns: u64,
-    pub premium_burns: u64,
-    pub withdrawal_burns: u64,
-    pub other_burns: u64,
-    pub burn_count: u64,
-    pub largest_single_burn: u64,
-    pub last_burn_timestamp: i64,
+pub total_burned: u64,
+pub tip_burns: u64,
+pub marketplace_burns: u64,
+pub premium_burns: u64,
+pub withdrawal_burns: u64,
+pub other_burns: u64,
+pub burn_count: u64,
+pub largest_single_burn: u64,
+pub last_burn_timestamp: i64,
 }
 
 // ===== EVENTS =====
 
 #[event]
 pub struct BurnRecorded {
-    pub amount: u64,
-    pub source: BurnSource,
-    pub total_burned: u64,
-    pub burn_count: u64,
-    pub timestamp: i64,
+pub amount: u64,
+pub source: BurnSource,
+pub total_burned: u64,
+pub burn_count: u64,
+pub timestamp: i64,
 }
 
 #[event]
 pub struct DailyBurnAggregated {
-    pub date: i64,
-    pub total_burned: u64,
+pub date: i64,
+pub total_burned: u64,
 }
 
 // ===== ERRORS =====
 
 #[error_code]
-pub enum ErrorCode {
-    #[msg("Invalid burn amount")]
-    InvalidAmount,
+pub enum ErrorCode { #[msg("Invalid burn amount")]
+InvalidAmount,
 
     #[msg("Unauthorized access")]
     Unauthorized,
+
 }
-```
+
+````
   </Tab>
 
   <Tab value="Fee Collection">
@@ -1188,7 +1211,8 @@ pub enum ErrorCode {
     #[msg("Fee split calculation error")]
     InvalidSplit,
 }
-```
+````
+
   </Tab>
 
   <Tab value="Reward Distribution">
@@ -1201,11 +1225,11 @@ declare_id!("EqjS5FgEfoGe9wnrRkvWyKendb3fb3Aza6WuxCbmaxPz");
 // Constants
 const DAILY_REWARD_POOL: u64 = 1_095_890_000_000_000; // 1,095,890 VCoin with 9 decimals
 const MAX_DAILY_REWARD_PER_USER: u64 = 10_000_000_000_000; // 10,000 VCoin with 9 decimals
-const REWARD_EXPIRY_SECONDS: i64 = 30 * 24 * 60 * 60; // 30 days
+const REWARD_EXPIRY_SECONDS: i64 = 30 _ 24 _ 60 \* 60; // 30 days
 
 #[program]
 pub mod reward_distribution {
-    use super::*;
+use super::\*;
 
     // Initialize the reward distribution program
     pub fn initialize(
@@ -1448,20 +1472,21 @@ pub mod reward_distribution {
             distribution_start: reward_config.distribution_start_date,
         })
     }
+
 }
 
 // ===== ACCOUNTS STRUCTS =====
 
 #[derive(Accounts)]
 pub struct Initialize<'info> {
-    #[account(
-        init,
-        payer = authority,
-        space = 8 + RewardConfig::INIT_SPACE,
-        seeds = [b"reward_config"],
-        bump
-    )]
-    pub reward_config: Account<'info, RewardConfig>,
+#[account(
+init,
+payer = authority,
+space = 8 + RewardConfig::INIT_SPACE,
+seeds = [b"reward_config"],
+bump
+)]
+pub reward_config: Account<'info, RewardConfig>,
 
     pub vcoin_mint: Account<'info, Mint>,
 
@@ -1469,33 +1494,35 @@ pub struct Initialize<'info> {
     pub authority: Signer<'info>,
 
     pub system_program: Program<'info, System>,
+
 }
 
 #[derive(Accounts)]
 pub struct InitializeUserAccount<'info> {
-    #[account(
-        init,
-        payer = user,
-        space = 8 + UserRewards::INIT_SPACE,
-        seeds = [b"user_rewards", user.key().as_ref()],
-        bump
-    )]
-    pub user_rewards: Account<'info, UserRewards>,
+#[account(
+init,
+payer = user,
+space = 8 + UserRewards::INIT_SPACE,
+seeds = [b"user_rewards", user.key().as_ref()],
+bump
+)]
+pub user_rewards: Account<'info, UserRewards>,
 
     #[account(mut)]
     pub user: Signer<'info>,
 
     pub system_program: Program<'info, System>,
+
 }
 
 #[derive(Accounts)]
 pub struct RecordRewards<'info> {
-    #[account(
-        mut,
-        seeds = [b"reward_config"],
-        bump
-    )]
-    pub reward_config: Account<'info, RewardConfig>,
+#[account(
+mut,
+seeds = [b"reward_config"],
+bump
+)]
+pub reward_config: Account<'info, RewardConfig>,
 
     #[account(
         mut,
@@ -1511,16 +1538,17 @@ pub struct RecordRewards<'info> {
         constraint = authority.key() == reward_config.authority @ ErrorCode::Unauthorized
     )]
     pub authority: Signer<'info>,
+
 }
 
 #[derive(Accounts)]
 pub struct ClaimRewards<'info> {
-    #[account(
-        mut,
-        seeds = [b"reward_config"],
-        bump
-    )]
-    pub reward_config: Account<'info, RewardConfig>,
+#[account(
+mut,
+seeds = [b"reward_config"],
+bump
+)]
+pub reward_config: Account<'info, RewardConfig>,
 
     #[account(
         mut,
@@ -1549,16 +1577,17 @@ pub struct ClaimRewards<'info> {
     pub rewards_pool_authority: Signer<'info>,
 
     pub token_program: Program<'info, Token>,
+
 }
 
 #[derive(Accounts)]
 pub struct ExpireRewards<'info> {
-    #[account(
-        mut,
-        seeds = [b"user_rewards", user.key().as_ref()],
-        bump
-    )]
-    pub user_rewards: Account<'info, UserRewards>,
+#[account(
+mut,
+seeds = [b"user_rewards", user.key().as_ref()],
+bump
+)]
+pub user_rewards: Account<'info, UserRewards>,
 
     /// CHECK: User whose rewards are expiring
     pub user: AccountInfo<'info>,
@@ -1573,109 +1602,109 @@ pub struct ExpireRewards<'info> {
         constraint = authority.key() == reward_config.authority @ ErrorCode::Unauthorized
     )]
     pub authority: Signer<'info>,
+
 }
 
 #[derive(Accounts)]
 pub struct UpdateAuthority<'info> {
-    #[account(
-        mut,
-        seeds = [b"reward_config"],
-        bump
-    )]
-    pub reward_config: Account<'info, RewardConfig>,
+#[account(
+mut,
+seeds = [b"reward_config"],
+bump
+)]
+pub reward_config: Account<'info, RewardConfig>,
 
     pub authority: Signer<'info>,
+
 }
 
 #[derive(Accounts)]
 pub struct GetPendingRewards<'info> {
-    #[account(
-        seeds = [b"user_rewards", user.key().as_ref()],
-        bump
-    )]
-    pub user_rewards: Account<'info, UserRewards>,
+#[account(
+seeds = [b"user_rewards", user.key().as_ref()],
+bump
+)]
+pub user_rewards: Account<'info, UserRewards>,
 
     /// CHECK: User querying rewards
     pub user: AccountInfo<'info>,
+
 }
 
 #[derive(Accounts)]
 pub struct GetStats<'info> {
-    #[account(
-        seeds = [b"reward_config"],
-        bump
-    )]
-    pub reward_config: Account<'info, RewardConfig>,
+#[account(
+seeds = [b"reward_config"],
+bump
+)]
+pub reward_config: Account<'info, RewardConfig>,
 }
 
 // ===== STATE =====
 
-#[account]
-#[derive(InitSpace)]
+#[account] #[derive(InitSpace)]
 pub struct RewardConfig {
-    pub authority: Pubkey,
-    pub rewards_pool_wallet: Pubkey,
-    pub vcoin_mint: Pubkey,
-    pub total_rewards_distributed: u64,
-    pub total_users_rewarded: u64,
-    pub distribution_start_date: i64,
-    pub daily_pool_remaining: u64,
-    pub last_distribution_date: i64,
+pub authority: Pubkey,
+pub rewards_pool_wallet: Pubkey,
+pub vcoin_mint: Pubkey,
+pub total_rewards_distributed: u64,
+pub total_users_rewarded: u64,
+pub distribution_start_date: i64,
+pub daily_pool_remaining: u64,
+pub last_distribution_date: i64,
 }
 
-#[account]
-#[derive(InitSpace)]
+#[account] #[derive(InitSpace)]
 pub struct UserRewards {
-    pub user: Pubkey,
-    pub pending_rewards: u64,
-    pub total_claimed: u64,
-    pub last_claim_date: i64,
-    pub rewards_count: u64,
+pub user: Pubkey,
+pub pending_rewards: u64,
+pub total_claimed: u64,
+pub last_claim_date: i64,
+pub rewards_count: u64,
 }
 
 // ===== RETURN TYPES =====
 
 #[derive(AnchorSerialize, AnchorDeserialize, Clone)]
 pub struct RewardStats {
-    pub total_distributed: u64,
-    pub total_users: u64,
-    pub daily_pool_remaining: u64,
-    pub distribution_start: i64,
+pub total_distributed: u64,
+pub total_users: u64,
+pub daily_pool_remaining: u64,
+pub distribution_start: i64,
 }
 
 // ===== EVENTS =====
 
 #[event]
 pub struct RewardsRecorded {
-    pub user: Pubkey,
-    pub amount: u64,
-    pub engagement_score: u64,
-    pub date: i64,
-    pub expiry_date: i64,
+pub user: Pubkey,
+pub amount: u64,
+pub engagement_score: u64,
+pub date: i64,
+pub expiry_date: i64,
 }
 
 #[event]
 pub struct RewardsClaimed {
-    pub user: Pubkey,
-    pub amount: u64,
-    pub total_claimed: u64,
-    pub timestamp: i64,
+pub user: Pubkey,
+pub amount: u64,
+pub total_claimed: u64,
+pub timestamp: i64,
 }
 
 #[event]
 pub struct RewardsExpired {
-    pub user: Pubkey,
-    pub amount: u64,
-    pub expiry_date: i64,
-    pub timestamp: i64,
+pub user: Pubkey,
+pub amount: u64,
+pub expiry_date: i64,
+pub timestamp: i64,
 }
 
 // ===== ERRORS =====
 
 #[error_code]
-pub enum ErrorCode {
-    #[msg("Invalid engagement score")]
-    InvalidEngagementScore,
+pub enum ErrorCode { #[msg("Invalid engagement score")]
+InvalidEngagementScore,
 
     #[msg("Daily reward pool exhausted")]
     DailyPoolExhausted,
@@ -1688,8 +1717,10 @@ pub enum ErrorCode {
 
     #[msg("Unauthorized access")]
     Unauthorized,
+
 }
-```
+
+````
   </Tab>
 
   <Tab value="Vesting">
@@ -2202,18 +2233,22 @@ pub enum ErrorCode {
     #[msg("Unauthorized access")]
     Unauthorized,
 }
-```
+````
+
   </Tab>
 </Tabs>
 
 <Callout type="info">
-  All smart contract source code is deployed on Solana devnet and can be independently verified against the program IDs listed above. The code uses the Anchor framework and includes comprehensive error handling, access control, and event emission for transparency.
+  All smart contract source code is deployed on Solana devnet and can be
+  independently verified against the program IDs listed above. The code uses the
+  Anchor framework and includes comprehensive error handling, access control,
+  and event emission for transparency.
 </Callout>
 
 ## VCoin Token Contract
 
 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
-  <div className="rounded-xl border border-purple-500/30 bg-gradient-to-br from-purple-500/10 to-purple-500/5 p-6">
+  <div className="rounded-xl border border-cyan-500/30 bg-gradient-to-br from-cyan-500/10 to-cyan-500/5 p-6">
     <h3 className="text-xl font-bold mb-4">Token Technical Specifications</h3>
     <div className="space-y-3">
       <div className="grid grid-cols-2 gap-3 text-sm">
@@ -2271,7 +2306,7 @@ pub enum ErrorCode {
           </div>
         </div>
         <div className="flex items-start gap-2">
-          <span className="text-purple-500 mt-1">📝</span>
+          <span className="text-cyan-500 mt-1">📝</span>
           <div>
             <div className="font-bold">Metadata: On-chain</div>
             <div className="text-xs text-muted-foreground">Name, symbol, logo stored</div>
@@ -2308,6 +2343,7 @@ pub enum ErrorCode {
         </div>
       </div>
     </div>
+
   </div>
 </div>
 
@@ -2374,6 +2410,7 @@ The token contract undergoes professional security audit before mainnet deployme
         </div>
       </div>
     </div>
+
   </div>
 
   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -2420,6 +2457,7 @@ The token contract undergoes professional security audit before mainnet deployme
         </div>
       </div>
     </div>
+
   </div>
 </div>
 
