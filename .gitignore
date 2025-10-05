@@ -27,3 +27,10 @@ yarn-error.log*
 .vercel
 next-env.d.ts
 desktop.ini
+
+# generated content
+.contentlayer
+.content-collections
+.source
+/dist                    # ← ADD THIS LINE
+**/dist/                 # ← Also add this for nested dist folders
