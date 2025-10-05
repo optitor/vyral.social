@@ -11,6 +11,21 @@ import { ScrollProgress } from "@/app/components/scroll-progress";
 import { AnimatedInfoTooltip } from "@/app/components/ui/animated-tooltip";
 import { BentoGrid, BentoGridItem } from "@/app/components/bento-grid";
 import {
+  FaXTwitter,
+  FaInstagram,
+  FaTiktok,
+  FaYoutube,
+  FaDiscord,
+  FaTelegram,
+  FaReddit,
+  FaLinkedin,
+  FaGithub,
+  FaFacebook,
+  FaWhatsapp,
+  FaMedium,
+  FaThreads,
+} from "react-icons/fa6";
+import {
   SocialFeedSkeleton,
   EncryptedChatSkeleton,
   MarketplaceSkeleton,
@@ -321,15 +336,18 @@ export default function HomePage() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Left - Large Typography */}
             <div className="space-y-8">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#00D4AA]/10 border border-[#00D4AA]/30 rounded-full"
-              >
-                <Sparkles className="w-4 h-4 text-[#00D4AA]" />
-                <span className="text-sm font-semibold">Now Available</span>
-              </motion.div>
-
+              <Link href="/docs/whitepaper">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#00D4AA]/10 border border-[#00D4AA]/30 rounded-full"
+                >
+                  <Sparkles className="w-4 h-4 text-[#00D4AA]" />
+                  <span className="text-sm font-semibold">View Whitepaper</span>
+                </motion.div>
+              </Link>
+              <br />
+              <br />
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -339,11 +357,11 @@ export default function HomePage() {
                   SOCIAL MEDIA{" "}
                 </span>
                 <span className="bg-gradient-to-r from-[#00D4AA] to-cyan-400 bg-clip-text text-transparent">
-                  BUILT FOR YOU
+                  Built For You
                 </span>
                 <br />
                 <span className="bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-400 bg-clip-text text-transparent">
-                  NOT AGAINST YOU
+                  Not Against You
                 </span>
               </motion.h1>
 
@@ -353,8 +371,9 @@ export default function HomePage() {
                 transition={{ delay: 0.1 }}
                 className="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-xl font-medium leading-relaxed"
               >
-                Own your content. Control your data. Earn real rewards. Join the
-                platform that actually respects you.
+                You've made others wealthy long enough. Join the platform where
+                your content pays you, your engagement rewards you, and your
+                privacy protects you. Your moment is now.
               </motion.p>
 
               {/* App Download Buttons */}
@@ -551,9 +570,8 @@ export default function HomePage() {
                   SOCIAL FEED
                 </h3>
                 <p className="text-sm text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
-                  Twitter-Style Threads, Rich Media Posts, And Trending
-                  Discovery. Connect With Your Community Through Powerful Social
-                  Features.
+                  X-Style Threads, Rich Media Posts, And Trending Discovery.
+                  Connect With Your Community Through Powerful Social Features.
                 </p>
 
                 <Link href="/docs">
@@ -791,22 +809,48 @@ export default function HomePage() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {[
-                  "Earn rewards for content",
-                  "Tip creators (80% to them)",
-                  "Buy & sell marketplace",
-                  "Withdraw anytime",
-                  "Trade on DEXs (soon)",
-                  "Real utility value",
+                  {
+                    icon: "🎁",
+                    title: "Earn Rewards",
+                    desc: "For quality content",
+                  },
+                  {
+                    icon: "💝",
+                    title: "Tip Creators",
+                    desc: "80% goes to them",
+                  },
+                  {
+                    icon: "🛒",
+                    title: "Marketplace",
+                    desc: "Buy & sell items",
+                  },
+                  {
+                    icon: "💸",
+                    title: "Withdraw Anytime",
+                    desc: "Full control",
+                  },
+                  {
+                    icon: "📈",
+                    title: "DEX Trading",
+                    desc: "Coming soon",
+                  },
+                  {
+                    icon: "⭐",
+                    title: "Real Utility",
+                    desc: "Actual value",
+                  },
                 ].map((item, idx) => (
-                  <div key={idx} className="flex items-start gap-2 text-sm">
-                    <div className="w-4 h-4 rounded-full bg-[#00D4AA]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <span className="text-[#00D4AA] font-bold text-xs">
-                        ✓
-                      </span>
+                  <div
+                    key={idx}
+                    className="flex items-start gap-3 p-3 rounded-lg bg-background border border-border"
+                  >
+                    <span className="text-2xl">{item.icon}</span>
+                    <div>
+                      <div className="font-bold text-sm mb-1">{item.title}</div>
+                      <div className="text-xs text-muted-foreground">
+                        {item.desc}
+                      </div>
                     </div>
-                    <span className="text-gray-700 dark:text-gray-300 font-medium">
-                      {item}
-                    </span>
                   </div>
                 ))}
               </div>
@@ -822,25 +866,25 @@ export default function HomePage() {
               {/* Central VCoin Card */}
               <div className="relative z-10 lg:z-20 rounded-3xl bg-gradient-to-br from-[#00D4AA] to-cyan-400 p-8 shadow-2xl border-8 border-white dark:border-gray-800 w-full max-w-sm">
                 <div className="text-center mb-6">
-                  <div className="text-7xl font-black text-white mb-2">10B</div>
-                  <div className="text-xl font-bold text-white/90">
+                  <div className="text-7xl font-black text-black mb-2">10B</div>
+                  <div className="text-xl font-bold text-black/90">
                     Total Supply
                   </div>
                 </div>
                 <div className="space-y-3">
                   <div className="bg-white/20 backdrop-blur-sm rounded-xl p-4">
-                    <div className="text-sm text-white/80 mb-1">
+                    <div className="text-sm text-black/80 mb-1">
                       Fixed Supply
                     </div>
-                    <div className="text-lg font-black text-white">
+                    <div className="text-lg font-black text-black">
                       No Inflation
                     </div>
                   </div>
                   <div className="bg-white/20 backdrop-blur-sm rounded-xl p-4">
-                    <div className="text-sm text-white/80 mb-1">
+                    <div className="text-sm text-black/80 mb-1">
                       Initial Price
                     </div>
-                    <div className="text-lg font-black text-white">$0.01</div>
+                    <div className="text-lg font-black text-black">$0.01</div>
                   </div>
                 </div>
               </div>
@@ -893,6 +937,189 @@ export default function HomePage() {
               </motion.div>
             </motion.div>
           </div>
+
+          {/* VCoin Economics */}
+          <section className="relative py-20 px-6 bg-gradient-to-b from-transparent via-gray-50 dark:via-gray-900/20 to-transparent">
+            <div className="max-w-7xl mx-auto">
+              <div className="grid lg:grid-cols-2 gap-16 items-center">
+                {/* Left: Info */}
+                <div className="space-y-6">
+                  <div>
+                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight mb-4">
+                      <span className="text-gray-900 dark:text-white">
+                        /VCOIN{" "}
+                      </span>
+                      <span className="bg-gradient-to-r from-[#00D4AA] to-cyan-400 bg-clip-text text-transparent">
+                        ECONOMICS
+                      </span>
+                    </h2>
+                    <p className="text-lg text-gray-600 dark:text-gray-400 max-w-lg">
+                      10 Billion Tokens With Deflationary Mechanics. Built On
+                      Solana For Maximum Speed And Minimal Fees.
+                    </p>
+                  </div>
+
+                  {/* Feature Cards */}
+                  <div className="grid grid-cols-2 gap-4">
+                    {/* Solana Blockchain */}
+                    <div className="rounded-3xl bg-white dark:bg-black border-2 border-gray-200 dark:border-white/10 p-5 hover:border-cyan-500 transition-all">
+                      <div className="flex items-center justify-between mb-3">
+                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500 to-pink-500 flex items-center justify-center">
+                          <span className="text-xl">⛓️</span>
+                        </div>
+                        <div className="text-right">
+                          <div className="text-2xl font-black text-gray-900 dark:text-white">
+                            10B
+                          </div>
+                          <div className="text-[10px] text-gray-600 dark:text-gray-400">
+                            Supply
+                          </div>
+                        </div>
+                      </div>
+                      <h3 className="text-base font-black mb-1">SOLANA</h3>
+                      <p className="text-xs text-gray-600 dark:text-gray-400">
+                        65K TPS, Low Fees
+                      </p>
+                    </div>
+
+                    {/* Fixed Supply */}
+                    <div className="rounded-3xl bg-white dark:bg-black border-2 border-gray-200 dark:border-white/10 p-5 hover:border-[#00D4AA] transition-all">
+                      <div className="flex items-center justify-between mb-3">
+                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#00D4AA] to-cyan-400 flex items-center justify-center">
+                          <span className="text-xl">🔒</span>
+                        </div>
+                        <div className="text-right">
+                          <div className="text-2xl font-black text-[#00D4AA]">
+                            10B
+                          </div>
+                          <div className="text-[10px] text-gray-600 dark:text-gray-400">
+                            Max
+                          </div>
+                        </div>
+                      </div>
+                      <h3 className="text-base font-black mb-1">
+                        FIXED SUPPLY
+                      </h3>
+                      <p className="text-xs text-gray-600 dark:text-gray-400">
+                        Mint Disabled Forever
+                      </p>
+                    </div>
+
+                    {/* Deflationary */}
+                    <div className="rounded-3xl bg-white dark:bg-black border-2 border-gray-200 dark:border-white/10 p-5 hover:border-orange-500 transition-all">
+                      <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center mb-3">
+                        <span className="text-xl">🔥</span>
+                      </div>
+                      <h3 className="text-base font-black mb-1">
+                        DEFLATIONARY
+                      </h3>
+                      <p className="text-xs text-gray-600 dark:text-gray-400">
+                        1% Tips Burned
+                      </p>
+                    </div>
+
+                    {/* 4-Year Vesting */}
+                    <div className="rounded-3xl bg-white dark:bg-black border-2 border-gray-200 dark:border-white/10 p-5 hover:border-blue-500 transition-all">
+                      <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-500 flex items-center justify-center mb-3">
+                        <span className="text-xl">⏰</span>
+                      </div>
+                      <h3 className="text-base font-black mb-1">
+                        4-YEAR VESTING
+                      </h3>
+                      <p className="text-xs text-gray-600 dark:text-gray-400">
+                        Team Alignment
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Right: Social Media Problems Visual */}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.2 }}
+                  className="relative flex items-end justify-center min-h-[500px] -mb-11"
+                >
+                  {/* Central Problem Cards */}
+                  <div className="relative z-10 lg:z-20 w-full max-w-lg space-y-4">
+                    {/* Header */}
+                    <div className="text-center mb-8">
+                      <h3 className="text-3xl md:text-4xl font-black mb-2">
+                        <span className="text-gray-900 dark:text-white">
+                          Social Media is{" "}
+                        </span>
+                        <span className="text-red-500">Broken</span>
+                      </h3>
+                      <p className="text-sm text-gray-600 dark:text-gray-400">
+                        Big Tech profits while you get exploited. It's time for
+                        change.
+                      </p>
+                    </div>
+
+                    {/* Problem Cards Grid */}
+                    <div className="grid grid-cols-2 gap-4">
+                      {/* Your Data, Their Billions */}
+                      <div className="rounded-2xl bg-white dark:bg-black border-2 border-gray-200 dark:border-white/10 p-5 hover:border-red-500 transition-all">
+                        <div className="text-3xl mb-3">🚫</div>
+                        <h4 className="text-base font-black mb-2 text-gray-900 dark:text-white">
+                          Your Data, Their Billions
+                        </h4>
+                        <p className="text-xs text-gray-600 dark:text-gray-400">
+                          Platforms make billions selling your personal
+                          information to advertisers. You get nothing.
+                        </p>
+                      </div>
+
+                      {/* Algorithmic Manipulation */}
+                      <div className="rounded-2xl bg-white dark:bg-black border-2 border-gray-200 dark:border-white/10 p-5 hover:border-red-500 transition-all">
+                        <div className="text-3xl mb-3">🎭</div>
+                        <h4 className="text-base font-black mb-2 text-gray-900 dark:text-white">
+                          Algorithmic Manipulation
+                        </h4>
+                        <p className="text-xs text-gray-600 dark:text-gray-400">
+                          Feeds optimized for engagement and addiction, not your
+                          wellbeing or interests.
+                        </p>
+                      </div>
+
+                      {/* Creators Exploited */}
+                      <div className="rounded-2xl bg-white dark:bg-black border-2 border-gray-200 dark:border-white/10 p-5 hover:border-red-500 transition-all">
+                        <div className="text-3xl mb-3">💸</div>
+                        <h4 className="text-base font-black mb-2 text-gray-900 dark:text-white">
+                          Creators Exploited
+                        </h4>
+                        <p className="text-xs text-gray-600 dark:text-gray-400">
+                          Platforms take 30-50% cuts and can demonetize you
+                          overnight without explanation.
+                        </p>
+                      </div>
+
+                      {/* Zero Privacy */}
+                      <div className="rounded-2xl bg-white dark:bg-black border-2 border-gray-200 dark:border-white/10 p-5 hover:border-red-500 transition-all">
+                        <div className="text-3xl mb-">🔓</div>
+                        <h4 className="text-base font-black mb-2 text-gray-900 dark:text-white">
+                          Zero Privacy
+                        </h4>
+                        <p className="text-xs text-gray-600 dark:text-gray-400">
+                          Every click, message, and like tracked, analyzed, and
+                          monetized without your consent.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Floating Warning Badge */}
+                  <motion.div
+                    animate={{ y: [0, -10, 0], rotate: [0, 5, 0] }}
+                    transition={{ duration: 3, repeat: Infinity }}
+                    className="absolute -top-6 -right-6 w-20 h-20 rounded-2xl bg-gradient-to-br from-red-500 to-red-600 shadow-2xl flex items-center justify-center text-3xl z-40"
+                  >
+                    ⚠️
+                  </motion.div>
+                </motion.div>
+              </div>
+            </div>
+          </section>
 
           {/* Built for Creators Section */}
           <div className="mt-20 grid lg:grid-cols-2 gap-16 items-center">
@@ -1008,181 +1235,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* VCoin Economics */}
-      <section className="relative py-20 px-6 bg-gradient-to-b from-transparent via-gray-50 dark:via-gray-900/20 to-transparent">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* Left: Info */}
-            <div className="space-y-6">
-              <div>
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight mb-4">
-                  <span className="text-gray-900 dark:text-white">/VCOIN </span>
-                  <span className="bg-gradient-to-r from-[#00D4AA] to-cyan-400 bg-clip-text text-transparent">
-                    ECONOMICS
-                  </span>
-                </h2>
-                <p className="text-lg text-gray-600 dark:text-gray-400 max-w-lg">
-                  10 Billion Tokens With Deflationary Mechanics. Built On Solana
-                  For Maximum Speed And Minimal Fees.
-                </p>
-              </div>
-
-              {/* Feature Cards */}
-              <div className="grid grid-cols-2 gap-4">
-                {/* Solana Blockchain */}
-                <div className="rounded-3xl bg-white dark:bg-black border-2 border-gray-200 dark:border-white/10 p-5 hover:border-cyan-500 transition-all">
-                  <div className="flex items-center justify-between mb-3">
-                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500 to-pink-500 flex items-center justify-center">
-                      <span className="text-xl">⛓️</span>
-                    </div>
-                    <div className="text-right">
-                      <div className="text-2xl font-black text-gray-900 dark:text-white">
-                        10B
-                      </div>
-                      <div className="text-[10px] text-gray-600 dark:text-gray-400">
-                        Supply
-                      </div>
-                    </div>
-                  </div>
-                  <h3 className="text-base font-black mb-1">SOLANA</h3>
-                  <p className="text-xs text-gray-600 dark:text-gray-400">
-                    65K TPS, Low Fees
-                  </p>
-                </div>
-
-                {/* Fixed Supply */}
-                <div className="rounded-3xl bg-white dark:bg-black border-2 border-gray-200 dark:border-white/10 p-5 hover:border-[#00D4AA] transition-all">
-                  <div className="flex items-center justify-between mb-3">
-                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#00D4AA] to-cyan-400 flex items-center justify-center">
-                      <span className="text-xl">🔒</span>
-                    </div>
-                    <div className="text-right">
-                      <div className="text-2xl font-black text-[#00D4AA]">
-                        10B
-                      </div>
-                      <div className="text-[10px] text-gray-600 dark:text-gray-400">
-                        Max
-                      </div>
-                    </div>
-                  </div>
-                  <h3 className="text-base font-black mb-1">FIXED SUPPLY</h3>
-                  <p className="text-xs text-gray-600 dark:text-gray-400">
-                    Mint Disabled Forever
-                  </p>
-                </div>
-
-                {/* Deflationary */}
-                <div className="rounded-3xl bg-white dark:bg-black border-2 border-gray-200 dark:border-white/10 p-5 hover:border-orange-500 transition-all">
-                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center mb-3">
-                    <span className="text-xl">🔥</span>
-                  </div>
-                  <h3 className="text-base font-black mb-1">DEFLATIONARY</h3>
-                  <p className="text-xs text-gray-600 dark:text-gray-400">
-                    1% Tips Burned
-                  </p>
-                </div>
-
-                {/* 4-Year Vesting */}
-                <div className="rounded-3xl bg-white dark:bg-black border-2 border-gray-200 dark:border-white/10 p-5 hover:border-blue-500 transition-all">
-                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-500 flex items-center justify-center mb-3">
-                    <span className="text-xl">⏰</span>
-                  </div>
-                  <h3 className="text-base font-black mb-1">4-YEAR VESTING</h3>
-                  <p className="text-xs text-gray-600 dark:text-gray-400">
-                    Team Alignment
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Right: Social Media Problems Visual */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2 }}
-              className="relative flex items-center justify-center min-h-[500px]"
-            >
-              {/* Central Problem Cards */}
-              <div className="relative z-10 lg:z-20 w-full max-w-lg space-y-4">
-                {/* Header */}
-                <div className="text-center mb-8">
-                  <h3 className="text-3xl md:text-4xl font-black mb-2">
-                    <span className="text-gray-900 dark:text-white">
-                      Social Media is{" "}
-                    </span>
-                    <span className="text-red-500">Broken</span>
-                  </h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">
-                    Big Tech profits while you get exploited. It's time for
-                    change.
-                  </p>
-                </div>
-
-                {/* Problem Cards Grid */}
-                <div className="grid grid-cols-2 gap-4">
-                  {/* Your Data, Their Billions */}
-                  <div className="rounded-2xl bg-white dark:bg-black border-2 border-gray-200 dark:border-white/10 p-5 hover:border-red-500 transition-all">
-                    <div className="text-3xl mb-3">🚫</div>
-                    <h4 className="text-base font-black mb-2 text-gray-900 dark:text-white">
-                      Your Data, Their Billions
-                    </h4>
-                    <p className="text-xs text-gray-600 dark:text-gray-400">
-                      Platforms make billions selling your personal information
-                      to advertisers. You get nothing.
-                    </p>
-                  </div>
-
-                  {/* Algorithmic Manipulation */}
-                  <div className="rounded-2xl bg-white dark:bg-black border-2 border-gray-200 dark:border-white/10 p-5 hover:border-red-500 transition-all">
-                    <div className="text-3xl mb-3">🎭</div>
-                    <h4 className="text-base font-black mb-2 text-gray-900 dark:text-white">
-                      Algorithmic Manipulation
-                    </h4>
-                    <p className="text-xs text-gray-600 dark:text-gray-400">
-                      Feeds optimized for engagement and addiction, not your
-                      wellbeing or interests.
-                    </p>
-                  </div>
-
-                  {/* Creators Exploited */}
-                  <div className="rounded-2xl bg-white dark:bg-black border-2 border-gray-200 dark:border-white/10 p-5 hover:border-red-500 transition-all">
-                    <div className="text-3xl mb-3">💸</div>
-                    <h4 className="text-base font-black mb-2 text-gray-900 dark:text-white">
-                      Creators Exploited
-                    </h4>
-                    <p className="text-xs text-gray-600 dark:text-gray-400">
-                      Platforms take 30-50% cuts and can demonetize you
-                      overnight without explanation.
-                    </p>
-                  </div>
-
-                  {/* Zero Privacy */}
-                  <div className="rounded-2xl bg-white dark:bg-black border-2 border-gray-200 dark:border-white/10 p-5 hover:border-red-500 transition-all">
-                    <div className="text-3xl mb-3">🔓</div>
-                    <h4 className="text-base font-black mb-2 text-gray-900 dark:text-white">
-                      Zero Privacy
-                    </h4>
-                    <p className="text-xs text-gray-600 dark:text-gray-400">
-                      Every click, message, and like tracked, analyzed, and
-                      monetized without your consent.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Floating Warning Badge */}
-              <motion.div
-                animate={{ y: [0, -10, 0], rotate: [0, 5, 0] }}
-                transition={{ duration: 3, repeat: Infinity }}
-                className="absolute -top-6 -right-6 w-20 h-20 rounded-2xl bg-gradient-to-br from-red-500 to-red-600 shadow-2xl flex items-center justify-center text-3xl z-40"
-              >
-                ⚠️
-              </motion.div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
       {/* Roadmap */}
       <section className="relative py-20 px-6 bg-gradient-to-b from-transparent via-gray-50 dark:via-gray-900/20 to-transparent">
         <div className="max-w-7xl mx-auto">
@@ -1200,21 +1252,20 @@ export default function HomePage() {
               Our Journey To Revolutionize Social Media. From Foundation To
               Global Scale.
             </p>
-            <div className="max-w-3xl mx-auto bg-amber-50 dark:bg-amber-900/20 border-2 border-amber-200 dark:border-amber-800/50 rounded-3xl p-5 text-left">
+
+            <div className="max-w-4xl mx-auto bg-amber-50 dark:bg-amber-900/20 border-2 border-amber-200 dark:border-amber-800/50 rounded-3xl p-5 text-center">
               <p className="text-xs text-gray-700 dark:text-gray-300 mb-2">
                 <strong>DISCLAIMER:</strong> Roadmap goals as of Oct 2025.
                 Timelines, user numbers, and features are projections subject to
                 change.
               </p>
-              <ul className="text-[10px] text-gray-600 dark:text-gray-400 space-y-0.5 list-disc list-inside">
-                <li>User growth estimates may vary</li>
-                <li>Timelines adjustable based on factors</li>
-                <li>1B+ user target is aspirational</li>
-                <li>VCoin is utility token, not investment</li>
-              </ul>
+              <p className="text-[10px] text-gray-600 dark:text-gray-400">
+                User growth estimates may vary, timelines are adjustable based
+                on various factors, and the 1B+ user target is aspirational.
+                VCoin is a utility token and not an investment.
+              </p>
             </div>
           </div>
-
           {/* Timeline Component */}
           <div className="mb-20">
             <Timeline
@@ -1693,16 +1744,50 @@ export default function HomePage() {
       </section>
 
       {/* Footer */}
-      <footer className="relative py-16 px-6 bg-[#00D4AA]">
+      <footer className="relative py-16 px-6 bg-[#0e0e0e]">
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-4 gap-12 mb-12">
-            <div>
-              <h3 className="text-3xl font-black text-white mb-4">VYRAL</h3>
+          <div className="grid md:grid-cols-4 gap-24 mb-12">
+            {/* <div>
+              <svg
+                width="120"
+                height="30"
+                viewBox="0 0 1002 256"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="mb-4"
+              >
+                <path
+                  d="M189.536 0H256V0.108471L194.546 167.202H128.082L189.536 0.108471"
+                  fill="#00D4AA"
+                />
+                <path
+                  d="M94.08 256L0 0H66.6348L128.08 167.202L95.2753 256"
+                  fill="white"
+                />
+                <path
+                  d="M860 255.901L923.975 0H976.862L924.26 209.839H1001.03L989.657 255.901H860Z"
+                  fill="white"
+                />
+                <path
+                  d="M631 255.9L803.156 0H803.705L849.558 255.9H802.607L795.193 211.969H711.175L681.796 255.9H631ZM737.533 172.43H788.329L783.936 147.17C782.655 140.397 781.556 133.899 780.641 127.675C779.726 121.269 779.177 113.855 778.994 105.435C774.967 113.672 770.94 120.994 766.913 127.401C763.069 133.807 758.858 140.397 754.282 147.17L737.533 172.43Z"
+                  fill="white"
+                />
+                <path
+                  d="M420.514 256L483.921 0.0987129H556.711C570.738 0.0987129 583.344 3.22639 594.527 9.48176C605.711 15.5476 614.526 23.8881 620.97 34.5032C627.605 45.1184 630.922 57.0604 630.922 70.3294C630.922 80.755 628.837 90.8963 624.667 100.753C620.497 110.421 614.715 119.235 607.322 127.196C600.119 134.968 591.779 141.508 582.301 146.815L620.97 256H568.369L535.67 158.758H494.157L469.989 256H420.514ZM504.678 116.107H537.66C545.622 116.107 552.92 114.307 559.554 110.705C566.189 107.103 571.401 102.27 575.193 96.2039C579.173 90.138 581.164 83.5036 581.164 76.3004C581.164 67.2017 577.941 59.9038 571.496 54.4066C565.051 48.9095 556.521 46.1609 545.906 46.1609H522.022L504.678 116.107Z"
+                  fill="white"
+                />
+                <path
+                  d="M279.667 255.901L310.091 134.775L270 0H324.024L339.946 57.4356C341.084 61.6059 342.221 65.8709 343.358 70.2307C344.496 74.5905 345.444 79.7085 346.202 85.5848C349.993 79.5189 353.5 74.4009 356.722 70.2307C359.945 65.8709 363.167 61.6059 366.389 57.4356L411.03 0H468.466L361.271 134.775L330.848 255.901H279.667Z"
+                  fill="white"
+                />
+              </svg>{" "}
               <p className="text-white/80 text-sm leading-relaxed">
-                Decentralized social platform built on Solana. Empowering
-                creators, rewarding communities.
+                A social platform built on Solana where creators earn what they
+                deserve, users get rewarded for their engagement, and privacy
+                comes standard. Powered by VCoin to create a user-first
+                ecosystem.
               </p>
-            </div>
+            </div> */}
 
             <div>
               <h4 className="font-black text-white mb-4">Platform</h4>
@@ -1731,6 +1816,14 @@ export default function HomePage() {
                     Get Started
                   </Link>
                 </li>
+                <li>
+                  <Link
+                    href="docs/tutorial/commerce/earning-vcoin"
+                    className="text-white/80 hover:text-white text-sm transition-colors"
+                  >
+                    Earning VCoin
+                  </Link>
+                </li>
               </ul>
             </div>
 
@@ -1755,10 +1848,56 @@ export default function HomePage() {
                 </li>
                 <li>
                   <Link
+                    href="/docs/whitepaper/smart-contracts"
+                    className="text-white/80 hover:text-white text-sm transition-colors"
+                  >
+                    Smart Contracts
+                  </Link>
+                </li>
+                <li>
+                  <Link
                     href="/docs/compliance"
                     className="text-white/80 hover:text-white text-sm transition-colors"
                   >
                     Compliance
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="font-black text-white mb-4">Company</h4>
+              <ul className="space-y-2">
+                <li>
+                  <Link
+                    href="/docs/compliance/privacy"
+                    className="text-white/80 hover:text-white text-sm transition-colors"
+                  >
+                    About Us
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/docs/compliance/terms"
+                    className="text-white/80 hover:text-white text-sm transition-colors"
+                  >
+                    Media Kit
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/docs/compliance/acceptable-use"
+                    className="text-white/80 hover:text-white text-sm transition-colors"
+                  >
+                    Changelogs
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/docs/compliance/risk-disclosure"
+                    className="text-white/80 hover:text-white text-sm transition-colors"
+                  >
+                    Contacts Us
                   </Link>
                 </li>
               </ul>
@@ -1785,6 +1924,14 @@ export default function HomePage() {
                 </li>
                 <li>
                   <Link
+                    href="/docs/compliance/acceptable-use"
+                    className="text-white/80 hover:text-white text-sm transition-colors"
+                  >
+                    Acceptable Use Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link
                     href="/docs/compliance/risk-disclosure"
                     className="text-white/80 hover:text-white text-sm transition-colors"
                   >
@@ -1797,18 +1944,153 @@ export default function HomePage() {
 
           <div className="pt-8 border-t border-white/20 flex justify-between items-center">
             <p className="text-white/60 text-sm">
-              © 2025 VYRAL. All rights reserved. Built on Solana.
+              © 2025 VYRAL. All rights reserved.
             </p>
-            <div className="flex gap-4">
-              {["Twitter", "Discord", "Telegram"].map((social) => (
-                <Link
-                  key={social}
-                  href="#"
-                  className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white text-xs font-bold transition-colors"
-                >
-                  {social[0]}
-                </Link>
-              ))}
+
+            <div className="flex gap-3 flex-wrap">
+              {/* Primary Social */}
+              <Link
+                href="https://x.com/getvyral"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors"
+                aria-label="X (Twitter)"
+              >
+                <FaXTwitter className="w-5 h-5" />
+              </Link>
+
+              {/* <Link
+                href="https://instagram.com/get.vyral"
+                    target="_blank"
+    rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors"
+                aria-label="Instagram"
+              >
+                <FaInstagram className="w-5 h-5" />
+              </Link> */}
+
+              <Link
+                href="https://tiktok.com/@getvyral"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors"
+                aria-label="TikTok"
+              >
+                <FaTiktok className="w-5 h-5" />
+              </Link>
+
+              <Link
+                href="https://youtube.com/@getvyralofficial"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors"
+                aria-label="YouTube"
+              >
+                <FaYoutube className="w-5 h-5" />
+              </Link>
+
+              {/* Community Platforms */}
+              {/* <Link
+                href="https://discord.gg/vyral"
+                    target="_blank"
+    rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors"
+                aria-label="Discord"
+              >
+                <FaDiscord className="w-5 h-5" />
+              </Link> */}
+
+              <Link
+                href="https://t.me/getvyral"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors"
+                aria-label="Telegram"
+              >
+                <FaTelegram className="w-5 h-5" />
+              </Link>
+
+              {/* <Link
+                href="https://reddit.com/r/vyral"
+                    target="_blank"
+    rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors"
+                aria-label="Reddit"
+              >
+                <FaReddit className="w-5 h-5" />
+              </Link> */}
+
+              <Link
+                href="https://chat.whatsapp.com/KtiX55ckxPaK2crwmlFO48?mode=ems_copy_t"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors"
+                aria-label="WhatsApp Community"
+              >
+                <FaWhatsapp className="w-5 h-5" />
+              </Link>
+
+              {/* Professional Platforms */}
+              <Link
+                href="https://linkedin.com/company/getvyral"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors"
+                aria-label="LinkedIn"
+              >
+                <FaLinkedin className="w-5 h-5" />
+              </Link>
+
+              <Link
+                href="https://github.com/getvyral"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors"
+                aria-label="GitHub"
+              >
+                <FaGithub className="w-5 h-5" />
+              </Link>
+
+              {/* Alternative/Additional Platforms */}
+              {/* <Link
+                href="https://truthsocial.com/@getvyral"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors"
+                aria-label="Truth Social"
+              >
+                <span className="text-xs font-bold">TS</span>
+              </Link> */}
+
+              {/* <Link
+                href="https://threads.net/@getvyral"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors"
+                aria-label="Threads"
+              >
+                <FaThreads className="w-5 h-5" />
+              </Link> */}
+
+              {/* <Link
+                href="https://facebook.com/getvyral"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors"
+                aria-label="Facebook"
+              >
+                <FaFacebook className="w-5 h-5" />
+              </Link> */}
+
+              {/* <Link
+                href="https://medium.com/@getvyral"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors"
+                aria-label="Medium"
+              >
+                <FaMedium className="w-5 h-5" />
+              </Link> */}
             </div>
           </div>
         </div>
