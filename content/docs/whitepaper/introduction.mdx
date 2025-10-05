@@ -170,25 +170,20 @@ import { Tab, Tabs } from "fumadocs-ui/components/tabs";
     <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity -z-10"></div>
   </div>
 
-{" "}
-
-<div className="group relative overflow-hidden rounded-xl border border-border bg-card p-6 transition-all hover:border-primary/50 hover:shadow-lg">
-  <div className="flex items-start gap-4">
-    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-2xl">
-      🚀
+  <div className="group relative overflow-hidden rounded-xl border border-border bg-card p-6 transition-all hover:border-primary/50 hover:shadow-lg">
+    <div className="flex items-start gap-4">
+      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-2xl">
+        🚀
+      </div>
+      <div>
+        <h3 className="text-lg font-semibold mb-2">Bootstrap Funding</h3>
+        <p className="text-sm text-muted-foreground">
+          Revenue-funded liquidity model. No VC dependency. Platform grows sustainably from $0.
+        </p>
+      </div>
     </div>
-    <div>
-      <h3 className="text-lg font-semibold mb-2">Bootstrap Funding</h3>
-      <p className="text-sm text-muted-foreground">
-        Revenue-funded liquidity model. No VC dependency. Platform grows
-        sustainably from $0.
-      </p>
-    </div>
+    <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity -z-10"></div>
   </div>
-  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity -z-10"></div>
-</div>
-
-{" "}
 
 <div className="group relative overflow-hidden rounded-xl border border-border bg-card p-6 transition-all hover:border-primary/50 hover:shadow-lg">
   <div className="flex items-start gap-4">
@@ -296,123 +291,117 @@ import { Tab, Tabs } from "fumadocs-ui/components/tabs";
       <div>
         <h4 className="font-semibold text-lg mb-2">Social Feed</h4>
         <ul className="space-y-1 text-muted-foreground">
-          <li>• Algorithmic + chronological sorting</li>
-          <li>• Text, photos, videos, mixed media</li>
-          <li>• X/Twitter-style threads</li>
-          <li>• Trending content discovery</li>
-          <li>• Follow, like, comment, share</li>
+          <li>Algorithmic + chronological sorting</li>
+          <li>Text, photos, videos, mixed media</li>
+          <li>X/Twitter-style threads</li>
+          <li>Trending content discovery</li>
+          <li>Follow, like, comment, share</li>
         </ul>
       </div>
       <div>
         <h4 className="font-semibold text-lg mb-2">Content Creation</h4>
         <ul className="space-y-1 text-muted-foreground">
-          <li>• Easy posting interface</li>
-          <li>• Rich media support</li>
-          <li>• Engagement analytics</li>
-          <li>• Creator monetization tools</li>
+          <li>Easy posting interface</li>
+          <li>Rich media support</li>
+          <li>Engagement analytics</li>
+          <li>Creator monetization tools</li>
         </ul>
       </div>
     </div>
   </Tab>
 
-{" "}
+  <Tab value="Communication">
+    <div className="p-6 space-y-4">
+      <div>
+        <h4 className="font-semibold text-lg mb-2">Encrypted Messaging (E2E)</h4>
+        <ul className="space-y-1 text-muted-foreground">
+          <li>• Military-grade encryption (Signal-level)</li>
+          <li>• Private & group chats</li>
+          <li>• Voice messages</li>
+          <li>• File sharing</li>
+          <li>• Zero-knowledge architecture</li>
+        </ul>
+      </div>
+      <div>
+        <h4 className="font-semibold text-lg mb-2">Privacy Guarantee</h4>
+        <ul className="space-y-1 text-muted-foreground">
+          <li>• Messages encrypted on device</li>
+          <li>• VYRAL cannot access content</li>
+          <li>• Keys never leave user devices</li>
+          <li>• Protected from breaches/subpoenas</li>
+        </ul>
+      </div>
+    </div>
+  </Tab>
 
-<Tab value="Communication">
-  <div className="p-6 space-y-4">
-    <div>
-      <h4 className="font-semibold text-lg mb-2">Encrypted Messaging (E2E)</h4>
-      <ul className="space-y-1 text-muted-foreground">
-        <li>• Military-grade encryption (Signal-level)</li>
-        <li>• Private & group chats</li>
-        <li>• Voice messages</li>
-        <li>• File sharing</li>
-        <li>• Zero-knowledge architecture</li>
-      </ul>
+  <Tab value="Commerce">
+    <div className="p-6 space-y-4">
+      <div>
+        <h4 className="font-semibold text-lg mb-2">Integrated Marketplace</h4>
+        <ul className="space-y-1 text-muted-foreground">
+          <li>• Buy/sell physical & digital goods</li>
+          <li>• VCoin native payments</li>
+          <li>• 5% fees (vs 13% eBay)</li>
+          <li>• Instant settlement</li>
+          <li>• No intermediaries</li>
+        </ul>
+      </div>
+      <div>
+        <h4 className="font-semibold text-lg mb-2">Transaction Benefits</h4>
+        <ul className="space-y-1 text-muted-foreground">
+          <li>• Direct peer-to-peer</li>
+          <li>• Escrow protection</li>
+          <li>• Dispute resolution</li>
+          <li>• Transparent fees</li>
+        </ul>
+      </div>
     </div>
-    <div>
-      <h4 className="font-semibold text-lg mb-2">Privacy Guarantee</h4>
-      <ul className="space-y-1 text-muted-foreground">
-        <li>• Messages encrypted on device</li>
-        <li>• VYRAL cannot access content</li>
-        <li>• Keys never leave user devices</li>
-        <li>• Protected from breaches/subpoenas</li>
-      </ul>
-    </div>
-  </div>
-</Tab>
+  </Tab>
 
-{" "}
-
-<Tab value="Commerce">
-  <div className="p-6 space-y-4">
-    <div>
-      <h4 className="font-semibold text-lg mb-2">Integrated Marketplace</h4>
-      <ul className="space-y-1 text-muted-foreground">
-        <li>• Buy/sell physical & digital goods</li>
-        <li>• VCoin native payments</li>
-        <li>• 5% fees (vs 13% eBay)</li>
-        <li>• Instant settlement</li>
-        <li>• No intermediaries</li>
-      </ul>
+  <Tab value="Communities">
+    <div className="p-6 space-y-4">
+      <div>
+        <h4 className="font-semibold text-lg mb-2">Topic-Based Groups</h4>
+        <ul className="space-y-1 text-muted-foreground">
+          <li>• Discord/Reddit-style communities</li>
+          <li>• Custom moderation rules</li>
+          <li>• Exclusive member benefits</li>
+          <li>• Event coordination</li>
+          <li>• Governance tools</li>
+        </ul>
+      </div>
+      <div>
+        <h4 className="font-semibold text-lg mb-2">Community Features</h4>
+        <ul className="space-y-1 text-muted-foreground">
+          <li>• Themed discussions</li>
+          <li>• Member roles & permissions</li>
+          <li>• Private/public spaces</li>
+          <li>• Integration with marketplace</li>
+        </ul>
+      </div>
     </div>
-    <div>
-      <h4 className="font-semibold text-lg mb-2">Transaction Benefits</h4>
-      <ul className="space-y-1 text-muted-foreground">
-        <li>• Direct peer-to-peer</li>
-        <li>• Escrow protection</li>
-        <li>• Dispute resolution</li>
-        <li>• Transparent fees</li>
-      </ul>
-    </div>
-  </div>
-</Tab>
-
-{" "}
-
-<Tab value="Communities">
-  <div className="p-6 space-y-4">
-    <div>
-      <h4 className="font-semibold text-lg mb-2">Topic-Based Groups</h4>
-      <ul className="space-y-1 text-muted-foreground">
-        <li>• Discord/Reddit-style communities</li>
-        <li>• Custom moderation rules</li>
-        <li>• Exclusive member benefits</li>
-        <li>• Event coordination</li>
-        <li>• Governance tools</li>
-      </ul>
-    </div>
-    <div>
-      <h4 className="font-semibold text-lg mb-2">Community Features</h4>
-      <ul className="space-y-1 text-muted-foreground">
-        <li>• Themed discussions</li>
-        <li>• Member roles & permissions</li>
-        <li>• Private/public spaces</li>
-        <li>• Integration with marketplace</li>
-      </ul>
-    </div>
-  </div>
-</Tab>
+  </Tab>
 
   <Tab value="AI & Tools">
     <div className="p-6 space-y-4">
       <div>
         <h4 className="font-semibold text-lg mb-2">Orb AI Assistant</h4>
         <ul className="space-y-1 text-muted-foreground">
-          <li>• Intelligent matchmaking</li>
-          <li>• Personalized recommendations</li>
-          <li>• Conversational search</li>
-          <li>• Proximity-based discovery</li>
-          <li>• Compatibility analysis</li>
+          <li>Intelligent matchmaking</li>
+          <li>Personalized recommendations</li>
+          <li>Conversational search</li>
+          <li>Proximity-based discovery</li>
+          <li>Compatibility analysis</li>
         </ul>
       </div>
       <div>
         <h4 className="font-semibold text-lg mb-2">Privacy-First AI</h4>
         <ul className="space-y-1 text-muted-foreground">
-          <li>• Opt-in behavioral learning</li>
-          <li>• Full data transparency</li>
-          <li>• User control over AI access</li>
-          <li>• Revocable consent anytime</li>
-          <li>• No hidden profiling</li>
+          <li>Opt-in behavioral learning</li>
+          <li>Full data transparency</li>
+          <li>User control over AI access</li>
+          <li>Revocable consent anytime</li>
+          <li>No hidden profiling</li>
         </ul>
       </div>
     </div>
@@ -442,11 +431,11 @@ import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 <Callout type="warn" title="🔒 Privacy Protections">
 **All behavioral analysis requires explicit, revocable consent:**
 
-- ✅ Users control what data Orb can access
-- ✅ View and delete all collected data anytime
-- ✅ AI never reveals non-public information
-- ✅ Match suggestions are one-way until mutual interest
-- ✅ Report inappropriate AI behavior
+  - ✅ Users control what data Orb can access
+  - ✅ View and delete all collected data anytime
+  - ✅ AI never reveals non-public information
+  - ✅ Match suggestions are one-way until mutual interest
+  - ✅ Report inappropriate AI behavior
 </Callout>
 
 ### Universal VCoin Integration

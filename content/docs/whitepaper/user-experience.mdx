@@ -298,9 +298,17 @@ Users who want to convert VCoin earnings to traditional currency have two option
 
 The second option allows users to request fiat conversion directly through the platform. The platform purchases VCoins from users at current market rate minus a small spread, converts those VCoins to USDC through DEXs, and sends fiat to users via PayPal, bank transfer, or other payment methods. This managed conversion simplifies the process for non-technical users at the cost of slightly less favorable rates than direct DEX trading.
 
-:::danger SECOND OPTION NOT AVAILBALE
-The second option is currently unavailable and may never be offered if the platform determines it could raise compliance issues.
-:::
+<div className="rounded-xl border border-red-500/30 bg-gradient-to-br from-red-500/10 to-red-500/5 p-6 my-6">
+  <div className="flex items-center gap-3 mb-3">
+    <span className="text-3xl">🚨</span>
+    <div>
+      <div className="font-bold text-lg text-red-500">SECOND OPTION NOT AVAILBALE</div>
+    </div>
+  </div>
+  <div className="text-sm text-muted-foreground">
+    The second option is currently unavailable and may never be offered if the platform determines it could raise compliance issues.
+  </div>
+</div>
 
 Minimum withdrawal thresholds ($10-50 depending on payment method) prevent inefficient micro-withdrawals where fees would consume most of the value. The platform publishes transparent fee schedules showing all costs associated with each withdrawal method, enabling users to choose the most cost-effective option for their situation.
 
